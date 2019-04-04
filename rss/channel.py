@@ -9,7 +9,7 @@ from rss.item import RSSItem
 
 class RSSChannel:
 
-    def __init__(self):
+    def __init__(self, items: List[RSSItem]):
         self.title = 'Events aggregator'
         self.link = 'http://unknown'
         self.description = 'Aggregation of several venues'
@@ -21,7 +21,7 @@ class RSSChannel:
         self.last_build_date = datetime.now()
         self.category = 'Entertainment'
         self.docs = 'https://cyber.harvard.edu/rss/rss.html'
-        self.items: List[RSSItem] = []
+        self.items = items
 
     def as_xml(self) -> str:
         root = Element('rss', {'version': '2.0'})
@@ -29,7 +29,7 @@ class RSSChannel:
         SubElement(channel, 'title').text = self.title
         SubElement(channel, 'link').text = self.link
         SubElement(channel, 'description').text = self.description
+
+        [item.as_xml(channel) for item in self.items]
         return ElementTree.tostring(root)
 
-    def add_items(self, items: List[RSSItem]):
-        self.items = items

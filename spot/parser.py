@@ -53,7 +53,6 @@ class SpotParser:
         return Item(url=article.a.get('href'),
                     title=content_title,
                     description=content.p.text,
-                    tags=[],
                     image_url=f'{self.base_url}{figure}',
                     source=self.source,
                     date_published=datetime.now(),

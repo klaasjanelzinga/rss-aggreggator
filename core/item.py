@@ -8,7 +8,6 @@ class Item:
                  url: str,
                  title: str,
                  description: str,
-                 tags: List[str],
                  source: str,
                  date_published: datetime,
                  when: datetime,
@@ -16,7 +15,6 @@ class Item:
         self.url = url
         self.title = title
         self.description = description
-        self.tags = tags
         self.source = source
         self.date_published = date_published
         self.when = when
