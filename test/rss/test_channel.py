@@ -9,12 +9,11 @@ from rss.item import RSSItem
 class TestRSSChannel:
 
     def test_as_xml(self):
-        channel = ChannelFactory.create_default_channel()
         rss_item = RSSItem(title='junit', link='http://dummy',
                            description='omschrijving',
                            author='junit', guid='unique',
                            source='the-truth')
-        channel.add_items([rss_item])
+        channel = ChannelFactory.create_default_channel([rss_item])
         as_xml = channel.as_xml()
         print(as_xml)
         assert_that(as_xml, is_not(none()))
