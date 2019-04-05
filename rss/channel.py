@@ -3,8 +3,7 @@ from typing import List
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 
-from core.item import Item
-from rss.item import RSSItem
+from rss.rss_item import RSSItem
 
 
 class RSSChannel:

@@ -4,9 +4,6 @@ from typing import List
 
 from bs4 import BeautifulSoup, Tag
 
-from core.item import Item
-
-
 #          <article class="program__item" data-datetime="1554285600"
 #                  data-description="klassiek-lunchconcert-in-het-cafe-van-de-oosterpoort"
 #                  data-filters="" data-genres="" data-title="lunchconcert-carlos-marin-rayo-piano">
@@ -25,6 +22,7 @@ from core.item import Item
 #            </div>
 #           </a>
 #          </article>
+from core.event import Event
 from spot.config import SpotConfig
 
 
@@ -35,14 +33,15 @@ class SpotParser:
     def __init__(self, config: SpotConfig):
         self.source = config.scrape_url
         self.base_url = config.base_url
+        self.venue_id = config.venue_id
 
-    def parse(self, content: str) -> List[Item]:
+    def parse(self, content: str) -> List[Event]:
         soup = BeautifulSoup(content, 'html.parser')
         program_items = soup.find_all('article')
         logging.info(f'Found {len(program_items)} items in {self.source}')
         return [self.transform(f) for f in program_items]
 
-    def transform(self, article: Tag) -> Item:
+    def transform(self, article: Tag) -> Event:
         content = article.find('div', {'class': 'program__content'})
         figure = article.find('figure').img.get('data-src')
         date = article.find('time')
@@ -50,10 +49,11 @@ class SpotParser:
         content_title = title.text if title.find('span') is None else \
             title.text.replace(title.span.text, '') + ' - ' + title.span.text
 
-        return Item(url=article.a.get('href'),
-                    title=content_title,
-                    description=content.p.text,
-                    image_url=f'{self.base_url}{figure}',
-                    source=self.source,
-                    date_published=datetime.now(),
-                    when=datetime.fromisoformat(date.get('datetime')))
+        return Event(url=article.a.get('href'),
+                     title=content_title,
+                     description=content.p.text,
+                     venue_id=self.venue_id,
+                     image_url=f'{self.base_url}{figure}',
+                     source=self.source,
+                     date_published=datetime.now(),
+                     when=datetime.fromisoformat(date.get('datetime')))

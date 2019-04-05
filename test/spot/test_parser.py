@@ -23,8 +23,9 @@ class TestSpotParser:
             assert_that(kamagurka[0].source, equal_to('test_parser.py'))
             assert_that(kamagurka[0].description, equal_to('De overtreffende trap van absurditeit'))
             assert_that(kamagurka[0].date_published, is_not(none()))
-            assert_that(kamagurka[0].image_url, equal_to('http://junit-test/wp-content/uploads/2019/02/Kamagurka-20-20De-20grenzen-20van-20de-20ernst-20Kamagurka-202-20300-20dpi-20RGB-150x150.jpg'))
+            assert_that(kamagurka[0].image_url,
+                        equal_to('http://junit-test/wp-content/uploads/2019/02/Kamagurka-20-20De-20grenzen-20van-20de-20ernst-20Kamagurka-202-20300-20dpi-20RGB-150x150.jpg'))
             assert_that(kamagurka[0].title, equal_to('Kamagurka - De grenzen van de ernst'))
             assert_that(kamagurka[0].when, equal_to(datetime.fromisoformat('2019-04-05T20:15:00+02:00')))
             assert_that(kamagurka[0].url, equal_to('https://www.spotgroningen.nl/programma/kamagurka/'))
-
+            assert_that(kamagurka[0].id, is_not(none()))

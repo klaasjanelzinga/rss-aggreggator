@@ -1,12 +1,12 @@
 from typing import List
 
-from core.item import Item
+from core.event import Event
 
 
 class Venue:
 
-    def __init__(self, venue_id: str, name: str, url: str, items: List[Item]):
+    def __init__(self, venue_id: str, name: str, url: str, events: List[Event]):
         self.name = name
         self.url = url
         self.venue_id = venue_id
-        self.items = items
+        self.events = events
