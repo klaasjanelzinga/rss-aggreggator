@@ -1,9 +1,9 @@
 import logging
 import os
 
-from core.item_store import ItemStore
+from core.event_repository import EventRepository
+from rss.channel import RSSChannel
 from rss.transformer import Transformer
-from rss.channel_factory import ChannelFactory
 from spot.processor import SpotProcessor
 
 logging.basicConfig(level=logging.INFO)
@@ -29,8 +29,8 @@ def hello():
 
 @app.route('/aggregated-events.xml')
 def fetch_rss():
-    items = [Transformer.item_to_rss(item) for item in ItemStore().fetch_items()]
-    channel = ChannelFactory.create_default_channel(items)
+    items = [Transformer.item_to_rss(item) for item in EventRepository().fetch_items()]
+    channel = RSSChannel(items)
     return Response(channel.as_xml(), mimetype='text/xml')
 
 
@@ -38,7 +38,7 @@ def fetch_rss():
 def fetch_dummy_rss():
     spot = SpotProcessor().dummy_items()
     rss_items = [Transformer.item_to_rss(item) for item in spot.items]
-    channel = ChannelFactory.create_default_channel(rss_items)
+    channel = RSSChannel(rss_items)
     return Response(channel.as_xml(), mimetype='text/xml')
 
 

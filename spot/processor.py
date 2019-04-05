@@ -1,7 +1,7 @@
 import logging
 from typing import List
 
-from core.item import Item
+from core.item import Event
 from core.venue import Venue
 from spot.config import SpotConfig
 from spot.fetcher import SpotFetcher
@@ -13,7 +13,7 @@ class SpotProcessor:
     def __init__(self):
         self.config = SpotConfig()
 
-    def create_venue(self, items: List[Item]) -> Venue:
+    def create_venue(self, items: List[Event]) -> Venue:
         return Venue(venue_id='spot-groningen', name='spot', url=self.config.base_url, items=items)
 
     def sync_stores(self) -> Venue:

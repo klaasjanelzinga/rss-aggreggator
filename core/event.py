@@ -1,8 +1,7 @@
 from datetime import datetime
-from typing import List
 
 
-class Item:
+class Event:
 
     def __init__(self,
                  url: str,

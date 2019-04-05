@@ -2,8 +2,8 @@ from xml.etree import ElementTree
 
 from hamcrest import none, is_not, assert_that, equal_to
 
-from rss.channel_factory import ChannelFactory
-from rss.item import RSSItem
+from rss.channel import RSSChannel
+from rss.rss_item import RSSItem
 
 
 class TestRSSChannel:
@@ -13,9 +13,8 @@ class TestRSSChannel:
                            description='omschrijving',
                            author='junit', guid='unique',
                            source='the-truth')
-        channel = ChannelFactory.create_default_channel([rss_item])
+        channel = RSSChannel([rss_item])
         as_xml = channel.as_xml()
-        print(as_xml)
         assert_that(as_xml, is_not(none()))
         root = ElementTree.fromstring(as_xml)
         channel = root.findall('channel')
