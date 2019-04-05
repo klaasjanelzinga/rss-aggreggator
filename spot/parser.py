@@ -33,6 +33,7 @@ class SpotParser:
     def __init__(self, config: SpotConfig):
         self.source = config.scrape_url
         self.base_url = config.base_url
+        self.venue_id = config.venue_id
 
     def parse(self, content: str) -> List[Event]:
         soup = BeautifulSoup(content, 'html.parser')
@@ -51,6 +52,7 @@ class SpotParser:
         return Event(url=article.a.get('href'),
                      title=content_title,
                      description=content.p.text,
+                     venue_id=self.venue_id,
                      image_url=f'{self.base_url}{figure}',
                      source=self.source,
                      date_published=datetime.now(),

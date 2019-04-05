@@ -1,5 +1,7 @@
 import logging
-import os
+
+from flask import Flask, Response, request
+from google.cloud import datastore
 
 from core.event_repository import EventRepository
 from rss.channel import RSSChannel
@@ -8,18 +10,14 @@ from spot.processor import SpotProcessor
 
 logging.basicConfig(level=logging.INFO)
 
-from flask import Flask, Response
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
 app = Flask(__name__)
 
-
-if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine/'):
-  pass
-  # Production
-else:
-  pass
+datastore_client = datastore.Client()
+event_repository = EventRepository(datastore_client)
+SpotProcessor(event_repository).sync_stores()
 
 
 @app.route('/')
@@ -27,18 +25,24 @@ def hello():
     return 'Hello World!'
 
 
-@app.route('/aggregated-events.xml')
+@app.route('/fetch-data')
+def fetch_data():
+    if 'X-Appengine-Cron' in request.headers:
+        venue_id = request.args.get('venue_id')
+        if venue_id == 'spot-groningen':
+            venue = SpotProcessor(event_repository).sync_stores()
+            logging.info(f'Refreshed venue {venue}')
+            return Response()
+        else:
+            raise Exception('Unsupported venue_id')
+    logging.warning('Header not set on maintenance url')
+    return Response(status=400)
+
+
+@app.route('/events.xml')
 def fetch_rss():
-    items = [Transformer.item_to_rss(item) for item in EventRepository().fetch_items()]
+    items = [Transformer.item_to_rss(item) for item in event_repository.fetch_items()]
     channel = RSSChannel(items)
-    return Response(channel.as_xml(), mimetype='text/xml')
-
-
-@app.route('/dummy-events.xml')
-def fetch_dummy_rss():
-    spot = SpotProcessor().dummy_items()
-    rss_items = [Transformer.item_to_rss(item) for item in spot.items]
-    channel = RSSChannel(rss_items)
     return Response(channel.as_xml(), mimetype='text/xml')
 
 
