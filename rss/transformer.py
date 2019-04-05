@@ -1,11 +1,11 @@
-from core.item import Item
-from rss.item import RSSItem
+from core.event import Event
+from rss.rss_item import RSSItem
 
 
 class Transformer:
 
     @staticmethod
-    def item_to_rss(item: Item) -> RSSItem:
+    def item_to_rss(item: Event) -> RSSItem:
         return RSSItem(title=item.title,
                        link=item.url,
                        description=item.description,

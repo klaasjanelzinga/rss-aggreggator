@@ -1,4 +1,4 @@
-from xml.etree.ElementTree import Element, SubElement, ElementTree
+from xml.etree.ElementTree import Element, SubElement
 
 
 class RSSItem:
