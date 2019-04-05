@@ -12,6 +12,10 @@ deploy:
   provider: gae
   keyfile: client-secret.json
   project: rss-aggregator-236618
+  version: $version
 before_install:
 - openssl aes-256-cbc -K $encrypted_290a4f8623c5_key -iv $encrypted_290a4f8623c5_iv
   -in client-secret.json.enc -out client-secret.json -d
+- export version="1.0-$(git log | wc -l)-$(git rev-parse --short head)"
+- echo "Version: $version"
+- echo "Version: $version" >version.txt

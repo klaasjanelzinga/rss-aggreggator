@@ -1,4 +1,5 @@
 import logging
+import os
 
 from core.item_store import ItemStore
 from rss.transformer import Transformer
@@ -12,6 +13,13 @@ from flask import Flask, Response
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
 app = Flask(__name__)
+
+
+if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine/'):
+  pass
+  # Production
+else:
+  pass
 
 
 @app.route('/')
