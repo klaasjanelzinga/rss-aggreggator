@@ -1,4 +1,4 @@
 cron:
   - description: "refresh data on spot-groningen"
-    url: /fetch-data&venue_id=spot-groningen
+    url: /fetch-data?venue_id=spot-groningen
     schedule: every 24 hours
