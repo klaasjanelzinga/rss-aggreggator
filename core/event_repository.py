@@ -1,9 +1,10 @@
 import logging
+from datetime import datetime
 from typing import List
 
 from google.cloud import datastore
-from google.cloud.datastore.client import Client
 from google.cloud.datastore import Entity
+from google.cloud.datastore.client import Client
 
 from core.event import Event
 
@@ -37,5 +38,14 @@ class EventRepository:
 
     def fetch_items(self) -> List[Event]:
         query = self.client.query(kind='Event')
+        query.order = ['-when']
         results = list(query.fetch())
         return [Event.from_map(entity) for entity in results]
+
+    def clean_items_before(self, date: datetime) -> int:
+        query = self.client.query(kind='Event')
+        query.add_filter('when', '<', date)
+        query.keys_only()
+        keys = [key for key in list(query.fetch())]
+        self.client.delete_multi(keys)
+        return len(keys)

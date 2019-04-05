@@ -11,7 +11,7 @@ class RSSItem:
         self.guid = guid
         self.source = source
 
-    def as_xml(self, root_element: Element) -> None:
+    def to_xml(self, root_element: Element) -> None:
         item_element = SubElement(root_element, 'item')
         SubElement(item_element, 'title').text = self.title
         SubElement(item_element, 'link').text = self.link

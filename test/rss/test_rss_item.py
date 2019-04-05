@@ -13,7 +13,7 @@ class TestRSSChannel:
                            author='junit', guid='unique',
                            source='the-truth')
         root = Element('root')
-        rss_item.as_xml(root)
+        rss_item.to_xml(root)
         assert_that(root.find('./item/title').text, equal_to('junit'))
         assert_that(root.find('./item/description').text, equal_to('omschrijving'))
         assert_that(root.find('./item/link').text, equal_to('http://dummy'))

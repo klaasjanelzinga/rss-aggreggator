@@ -14,13 +14,22 @@ class TestRSSChannel:
                            author='junit', guid='unique',
                            source='the-truth')
         channel = RSSChannel([rss_item])
-        as_xml = channel.as_xml()
+        as_xml = channel.to_xml()
         assert_that(as_xml, is_not(none()))
         root = ElementTree.fromstring(as_xml)
         channel = root.findall('channel')
         assert_that(len(channel), equal_to(1))
-        assert_that(channel[0].find('title').text, equal_to('Events aggregator'))
+        assert_that(channel[0].find('title').text, equal_to('Events from all venues'))
         parsed_items = root.findall('./channel/item')
         assert_that(len(parsed_items), equal_to(1))
+        assert_that(len(root.findall('./channel/image')), equal_to(1))
+        assert_that(root.find('./channel/image/title').text, equal_to('Events from all venues'))
+        assert_that(root.find('./channel/image/url').text, is_not(none()))
+        assert_that(root.find('./channel/image/link').text, is_not(none()))
+        assert_that(root.find('./channel/webMaster').text, equal_to('klaasjanelzinga@gmail.com'))
+        assert_that(root.find('./channel/managingEditor').text, equal_to('klaasjanelzinga@gmail.com'))
+        assert_that(root.find('./channel/managingEditor').text, equal_to('klaasjanelzinga@gmail.com'))
+        assert_that(root.find('./channel/generator').text, equal_to('Python3'))
+
 
 

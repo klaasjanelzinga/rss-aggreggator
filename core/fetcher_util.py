@@ -4,12 +4,14 @@ import re
 
 import requests
 
+from core.Config import AppConfig
+
 
 class FetcherUtil:
 
     @staticmethod
     def fetch(url: str) -> str:
-        if 'GAE_ENV' in os.environ:
+        if AppConfig.is_running_in_gae():
             logging.info(f'Fetching from url {url}')
             result = requests.get(url)
             if result.status_code > 299:

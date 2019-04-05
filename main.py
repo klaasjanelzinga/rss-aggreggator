@@ -1,8 +1,10 @@
 import logging
+from datetime import datetime, timedelta
 
 from flask import Flask, Response, request
 from google.cloud import datastore
 
+from core.Config import AppConfig
 from core.event_repository import EventRepository
 from rss.channel import RSSChannel
 from rss.transformer import Transformer
@@ -22,12 +24,12 @@ SpotProcessor(event_repository).sync_stores()
 
 @app.route('/')
 def hello():
-    return 'Hello World!'
+    return 'Hello World! App soon to arrive.'
 
 
-@app.route('/fetch-data')
-def fetch_data():
-    if 'X-Appengine-Cron' in request.headers:
+@app.route('/maintenance/fetch-data')
+def maintenance_fetch_data():
+    if AppConfig.is_web_request_allowed(request):
         venue_id = request.args.get('venue_id')
         if venue_id == 'spot-groningen':
             venue = SpotProcessor(event_repository).sync_stores()
@@ -35,7 +37,15 @@ def fetch_data():
             return Response()
         else:
             raise Exception('Unsupported venue_id')
-    logging.warning('Header not set on maintenance url')
+    return Response(status=400)
+
+
+@app.route('/maintenance/cleanup')
+def maintenance_clean_up():
+    if AppConfig.is_web_request_allowed(request):
+        number_cleaned = event_repository.clean_items_before(datetime.now() - timedelta(days=3))
+        logging.info(f'Number of items cleaned {number_cleaned}')
+        return Response(200)
     return Response(status=400)
 
 
@@ -43,7 +53,7 @@ def fetch_data():
 def fetch_rss():
     items = [Transformer.item_to_rss(item) for item in event_repository.fetch_items()]
     channel = RSSChannel(items)
-    return Response(channel.as_xml(), mimetype='text/xml')
+    return Response(channel.to_xml(), mimetype='text/xml')
 
 
 if __name__ == '__main__':
