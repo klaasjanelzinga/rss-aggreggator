@@ -4,7 +4,7 @@ import re
 
 import requests
 
-from core.Config import AppConfig
+from core.app_config import AppConfig
 
 
 class FetcherUtil:

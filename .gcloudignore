@@ -18,3 +18,7 @@
 __pycache__/
 # Ignored by the build system
 /setup.cfg
+
+test/
+client-secret.json.enc
+.travis.yml

@@ -46,6 +46,6 @@ class EventRepository:
         query = self.client.query(kind='Event')
         query.add_filter('when', '<', date)
         query.keys_only()
-        keys = [key for key in list(query.fetch())]
+        keys = [key.key for key in list(query.fetch())]
         self.client.delete_multi(keys)
         return len(keys)

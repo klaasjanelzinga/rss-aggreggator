@@ -4,7 +4,7 @@ from typing import Dict
 
 from pytz import timezone
 
-from core.Config import AppConfig
+from core.app_config import AppConfig
 
 
 class Event:
