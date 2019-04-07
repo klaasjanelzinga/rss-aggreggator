@@ -1,6 +1,5 @@
-from xml.etree import ElementTree
-
 from hamcrest import none, is_not, assert_that, equal_to
+from xml.etree import ElementTree
 
 from rss.channel import RSSChannel
 from rss.rss_item import RSSItem

@@ -1,5 +1,4 @@
 from datetime import datetime
-
 from hamcrest import is_not, none, equal_to
 from hamcrest.core import assert_that
 
@@ -14,7 +13,7 @@ class TestSpotParser:
         self.parser = SpotParser(self.config)
 
     def test_sample_file(self):
-        with open('test/samples/spot/Programma - Spot Groningen.html') as f:
+        with open('tests/samples/spot/Programma - Spot Groningen.html') as f:
             results = self.parser.parse(''.join(f.readlines()))
             assert_that(results, is_not(none()))
             assert_that(len(results), equal_to(233))

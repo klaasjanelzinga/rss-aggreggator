@@ -1,8 +1,6 @@
 import base64
-from datetime import datetime, tzinfo
+from datetime import datetime
 from typing import Dict
-
-from pytz import timezone
 
 from core.app_config import AppConfig
 

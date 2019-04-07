@@ -3,21 +3,25 @@
 [![Build Status](https://travis-ci.com/klaasjanelzinga/rss-aggreggator.svg?branch=master)](https://travis-ci.com/klaasjanelzinga/rss-aggreggator)
 
 
-### Required software
+## Required software
 
-travis
+### travis
 
         gem install travis -v 1.8.9 --no-rdoc --no-ri`
         travis login --com --auto
      
-gcloud
+### gcloud
 
         download sdk: https://cloud.google.com/sdk/docs/
         gcloud init
         gcloud config set project ...
 
-gcloud - travis
+### gcloud - travis
 
         travis encrypt-file client-secret.json --add --com
         
-        
+    
+### run coverage pytest -> html
+
+        (venv) $ pytest --cov . --cov-report=html 
+

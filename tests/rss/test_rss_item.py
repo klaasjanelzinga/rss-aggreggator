@@ -1,6 +1,5 @@
-from xml.etree.ElementTree import Element
-
 from hamcrest import assert_that, equal_to
+from xml.etree.ElementTree import Element
 
 from rss.rss_item import RSSItem
 

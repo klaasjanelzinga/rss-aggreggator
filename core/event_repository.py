@@ -1,10 +1,9 @@
 import logging
 from datetime import datetime
-from typing import List
-
 from google.cloud import datastore
 from google.cloud.datastore import Entity
 from google.cloud.datastore.client import Client
+from typing import List
 
 from core.event import Event
 
