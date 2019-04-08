@@ -2,8 +2,8 @@ from datetime import datetime
 from hamcrest import is_not, none, equal_to
 from hamcrest.core import assert_that
 
-from spot.config import SpotConfig
-from spot.parser import SpotParser
+from venues.spot.spot_config import SpotConfig
+from venues.spot.spot_parser import SpotParser
 
 
 class TestSpotParser:

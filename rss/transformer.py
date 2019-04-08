@@ -8,7 +8,7 @@ class Transformer:
     @staticmethod
     def item_to_rss(venue_repository: VenueRepository, item: Event) -> RSSItem:
         venue = venue_repository.get_venue_for(item.venue_id)
-        when = item.when.strftime('%Y-%m-%d %H:%M')
+        when = venue.convert_utc_to_venue_timezone(item.when).strftime('%Y-%m-%d %H:%M')
         description = \
             f'''<![CDATA[<html><body>
             <p>{item.description}</p>

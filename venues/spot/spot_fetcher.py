@@ -1,5 +1,5 @@
 from core.fetcher_util import FetcherUtil
-from spot.config import SpotConfig
+from venues.spot.spot_config import SpotConfig
 
 
 class SpotFetcher:

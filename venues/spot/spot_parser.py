@@ -23,10 +23,11 @@ from bs4 import BeautifulSoup, Tag
 #           </a>
 #          </article>
 from core.event import Event
-from spot.config import SpotConfig
+from core.parser import Parser
+from venues.spot.spot_config import SpotConfig
 
 
-class SpotParser:
+class SpotParser(Parser):
 
     dateformat: str = '%Y-%m-%dT:%H%M:%S%z'
 
@@ -39,9 +40,9 @@ class SpotParser:
         soup = BeautifulSoup(content, 'html.parser')
         program_items = soup.find_all('article')
         logging.info(f'Found {len(program_items)} items in {self.source}')
-        return [self.transform(f) for f in program_items]
+        return [self._transform(f) for f in program_items]
 
-    def transform(self, article: Tag) -> Event:
+    def _transform(self, article: Tag) -> Event:
         content = article.find('div', {'class': 'program__content'})
         figure = article.find('figure').img.get('data-src')
         date = article.find('time')

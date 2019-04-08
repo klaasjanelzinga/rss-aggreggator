@@ -34,8 +34,8 @@ class Event:
             description=entity_map['description'],
             venue_id=entity_map['venue_id'],
             source=entity_map['source'],
-            date_published=AppConfig.datetime_utc_to_amsterdam(entity_map['date_published']),
-            when=AppConfig.datetime_utc_to_amsterdam(entity_map['when']),
+            date_published=entity_map['date_published'],
+            when=entity_map['when'],
             image_url=entity_map['image_url'])
 
     def to_map(self) -> Dict:

@@ -21,10 +21,13 @@ class TestTransformer:
                       when=datetime.now(),
                       image_url='http://asdf')
         venue = Venue(
-            venue_id='spot-groningen', name='spott',
+            venue_id='spot-groningen',
+            name='spott',
             url='http://venue',
             city='Gron',
-            country='NL', phone='yes',
+            timezone='Europe/Amsterdam',
+            country='NL',
+            phone='yes',
             email='hotmail')
         venue_repository = VenueRepository()
         venue_repository.get_venue_for = MagicMock(return_value=venue)

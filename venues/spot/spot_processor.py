@@ -4,9 +4,9 @@ from core.event_repository import EventRepository
 from core.venue import Venue
 from core.venue_processor import VenueProcessor
 from core.venue_repository import VenueRepository
-from spot.config import SpotConfig
-from spot.fetcher import SpotFetcher
-from spot.parser import SpotParser
+from venues.spot.spot_config import SpotConfig
+from venues.spot.spot_fetcher import SpotFetcher
+from venues.spot.spot_parser import SpotParser
 
 
 class SpotProcessor(VenueProcessor):
@@ -21,6 +21,7 @@ class SpotProcessor(VenueProcessor):
                      phone='+31 (0)50-3680111',
                      city='Groningen',
                      country='NL',
+                     timezone='Europe/Amsterdam',
                      email='info@spotgroningen.nl',
                      url=self.config.base_url)
 
