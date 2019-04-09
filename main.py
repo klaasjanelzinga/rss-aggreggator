@@ -38,6 +38,8 @@ def hello():
 def maintenance_fetch_data():
     if AppConfig.is_web_request_allowed(request):
         venue_id = request.args.get('venue_id')
+        if venue_id is None or not venue_repository.is_registered(venue_id):
+            return Response(status=404)
         venue_repository.sync_stores_for_venue(venue_id)
         return Response()
     return Response(status=400)

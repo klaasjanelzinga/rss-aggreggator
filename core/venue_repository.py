@@ -23,3 +23,6 @@ class VenueRepository:
 
     def sync_stores_for_venue(self, venue_id: str):
         self.get_processor(venue_id).sync_stores()
+
+    def is_registered(self, venue_id) -> bool:
+        return venue_id in self.registry
