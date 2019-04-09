@@ -104,7 +104,8 @@ class VeraParser(Parser):
         else:
             when_date = datetime.min
         image_url = tag.find('div', {'class': 'artist-image'})['style']
-        image_url = image_url[image_url.find('https'):image_url.find('.jpg') + 4]
+        image_url_end = image_url.find('\'', image_url.find('https') + 4)
+        image_url = image_url[image_url.find('https'):image_url_end]
 
         return Event(url=url,
                      title=f'{artist} {extra_title}'.strip(),

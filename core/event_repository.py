@@ -37,7 +37,7 @@ class EventRepository:
 
     def fetch_items(self) -> List[Event]:
         query = self.client.query(kind='Event')
-        query.order = ['-when']
+        query.order = ['when']
         results = list(query.fetch())
         return [Event.from_map(entity) for entity in results]
 

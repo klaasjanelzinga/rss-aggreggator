@@ -10,7 +10,6 @@ class FetcherUtil:
     @staticmethod
     def fetch(url: str) -> str:
         if AppConfig.is_running_in_gae():
-            logging.info(f'Fetching from url {url}')
             result = requests.get(url)
             if result.status_code > 299:
                 raise Exception(f'unable to fetch data from {url} - {result.status_code}')
