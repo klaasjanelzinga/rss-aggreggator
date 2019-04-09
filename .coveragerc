@@ -2,7 +2,16 @@
 [run]
 branch = True
 
-omit=venv/**
+omit=
+    venv/**
+    tests/**
+    **/__init__.py
+
+include=
+    core/**
+    rss/**
+    main.py
+    venues/**
 
 [html]
 directory = htmlcov

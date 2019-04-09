@@ -1,12 +1,10 @@
 import logging
 import re
-from datetime import datetime, date
+from datetime import datetime
 from typing import List
 
 import dateparser
-from babel.dates import parse_date
 from bs4 import BeautifulSoup, Tag
-from dateutil.relativedelta import relativedelta
 
 from core.event import Event
 from core.parser import Parser

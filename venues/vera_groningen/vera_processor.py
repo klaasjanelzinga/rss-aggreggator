@@ -26,7 +26,7 @@ class VeraProcessor(VenueProcessor):
                      url=self.config.base_url)
 
     def sync_stores(self) -> None:
-        vera_fetcher = VeraFetcher(self.config)
+        vera_fetcher = VeraFetcher()
         vera_parser = VeraParser(self.config)
         page_index = 0
         items_per_page = 20

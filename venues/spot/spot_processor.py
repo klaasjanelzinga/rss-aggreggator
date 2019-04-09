@@ -26,7 +26,7 @@ class SpotProcessor(VenueProcessor):
                      url=self.config.base_url)
 
     def sync_stores(self) -> None:
-        spot_fetcher = SpotFetcher(self.config)
+        spot_fetcher = SpotFetcher()
         spot_parser = SpotParser(self.config)
 
         data = spot_fetcher.fetch()

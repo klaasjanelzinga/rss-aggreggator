@@ -32,7 +32,7 @@ class SpotParser(Parser):
     dateformat: str = '%Y-%m-%dT:%H%M:%S%z'
 
     def __init__(self, config: SpotConfig):
-        self.source = config.scrape_url
+        self.source = config.source_url
         self.base_url = config.base_url
         self.venue_id = config.venue_id
 
