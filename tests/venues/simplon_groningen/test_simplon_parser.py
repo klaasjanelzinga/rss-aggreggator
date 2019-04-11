@@ -12,7 +12,7 @@ class TestSimplonParser:
 
     def test_parse_sample(self):
         parser = SimplonParser(SimplonConfig(base_url='http://dumm'))
-        with open('tests/samples/simplon-groningen/simplon.html') as f:
+        with open('tests/samples/simplon-groningen/Simplon.html') as f:
             results = parser.parse(''.join(f.readlines()))
             assert_that(len(results), equal_to(34))
             event = results[0]

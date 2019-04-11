@@ -23,6 +23,6 @@ class FetcherUtil:
                 with open('tests/samples/vera-groningen/raw-fetch.html') as f:
                     return ''.join(f.readlines())
             elif re.match('.*simplon.nl.*', url):
-                with open('tests/samples/simplon-groningen/simplon.html') as f:
+                with open('tests/samples/simplon-groningen/Simplon.html') as f:
                     return ''.join(f.readlines())
             raise Exception(f'No support for stubbed url {url}')
