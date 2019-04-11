@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import dateparser
 from hamcrest import equal_to, none, is_not
 from hamcrest.core import assert_that
@@ -17,7 +19,7 @@ class TestVeraGroningenParser:
             assert_that(event.url, equal_to('http://www.vera-groningen.nl/?post_type=events&p=99134&lang=nl'))
             assert_that(event.venue_id, equal_to('vera-groningen'))
             assert_that(event.title, equal_to('CLASH XXL Expo'))
-            assert_that(event.when, equal_to(dateparser.parse('2019-04-07T14:00:00+02:00')))
+            assert_that(event.when, equal_to(datetime.fromisoformat('2019-04-07T14:00:00+02:00')))
             assert_that(event.image_url,
                         equal_to('https://www.vera-groningen.nl/content/uploads/2019/03/Sirene-Bouke-Groen-1-2-360x250.jpg'))
             assert_that(event.description, equal_to("CLASH XXL Expo with support BoukeGroen:Sirene+Lilnu'meVeen:SCHLÆGERCORE"))

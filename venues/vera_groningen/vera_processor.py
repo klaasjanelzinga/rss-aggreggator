@@ -21,7 +21,7 @@ class VeraProcessor(VenueProcessor):
                      phone='+31 (0)50 313 46 81',
                      city='Groningen',
                      country='NL',
-                     timezone='Europe/Amsterdam',
+                     timezone=self.config.timezone,
                      email='info@vera-groningen.nl',
                      url=self.config.base_url)
 

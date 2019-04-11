@@ -6,3 +6,5 @@ class VeraConfig:
         self.base_url = base_url
         self.source = source_url
         self.venue_id = 'vera-groningen'
+        self.timezone = 'Europe/Amsterdam'
+        self.timezone_short = '+02:00'
