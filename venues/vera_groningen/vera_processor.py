@@ -39,7 +39,6 @@ class VeraProcessor(VenueProcessor):
             new_events = vera_parser.parse(data)
             done = len(new_events) < items_per_page
             events.extend(new_events)
-        logging.info(f'fetched a total of {len(events)} items')
         self.event_repository.upsert(events)
 
     def register_venue_at(self, venue_repository: VenueRepository):

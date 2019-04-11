@@ -24,3 +24,8 @@ class TestSimplonParser:
             assert_that(event.when, equal_to(datetime.fromisoformat('2019-04-11T21:30:00+02:00')))
             assert_that(event.source, equal_to('http://dumm'))
             assert_that(event.date_published, is_not(none()))
+
+            [assert_that(event.when, is_not(none)) for event in results]
+            [assert_that(event.description, is_not(none)) for event in results]
+            [assert_that(event.title, is_not(none)) for event in results]
+            [assert_that(event.url, is_not(none)) for event in results]

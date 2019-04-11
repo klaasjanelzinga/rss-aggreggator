@@ -28,3 +28,8 @@ class TestSpotParser:
             assert_that(kamagurka[0].when, equal_to(datetime.fromisoformat('2019-04-05T20:15:00+02:00')))
             assert_that(kamagurka[0].url, equal_to('https://www.spotgroningen.nl/programma/kamagurka/'))
             assert_that(kamagurka[0].id, is_not(none()))
+
+            [assert_that(event.when, is_not(none)) for event in results]
+            [assert_that(event.description, is_not(none)) for event in results]
+            [assert_that(event.title, is_not(none)) for event in results]
+            [assert_that(event.url, is_not(none)) for event in results]

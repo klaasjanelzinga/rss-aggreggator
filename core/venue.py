@@ -25,3 +25,6 @@ class Venue:
     def convert_utc_to_venue_timezone(self, when: datetime) -> datetime:
         venue_tz = get_timezone(self.timezone)
         return when.astimezone(venue_tz)
+
+    def __repr__(self):
+        return f'Venue {self.venue_id} {self.url}'

@@ -38,7 +38,6 @@ class SimplonParser:
         soup = BeautifulSoup(content, features='html.parser')
         events = soup.find_all('a', {'class': 'item'})
 
-        logging.info(f'found {len(events)} event in {self}')
         return [self._transform(tag) for tag in events]
 
     def _transform(self, tag: Tag) -> Event:

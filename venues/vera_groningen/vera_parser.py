@@ -47,7 +47,6 @@ class VeraParser(Parser):
         soup = BeautifulSoup(content, features='html.parser')
         events = soup.find_all('div', {'class': 'event-wrapper'})
 
-        logging.info(f'found {len(events)} event in {self.source}')
         return [self._transform(tag) for tag in events]
 
     @staticmethod

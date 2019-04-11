@@ -1,4 +1,5 @@
 import base64
+import logging
 from datetime import datetime
 from typing import Dict
 
@@ -49,3 +50,18 @@ class Event:
             'when': self.when,
             'image_url': self.image_url
         }
+
+    def __repr__(self) -> str:
+        return f'core.Event {self.url} {self.title} {self.description}'
+
+    @staticmethod
+    def is_not_empty(text: str) -> bool:
+        return text is not None and text != ''
+
+    def is_valid(self) -> bool:
+        valid = Event.is_not_empty(self.title) and \
+               Event.is_not_empty(self.description) and \
+               Event.is_not_empty(self.url)
+        if not valid:
+            logging.warning(f'Invalid event {self}')
+        return valid

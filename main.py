@@ -9,6 +9,7 @@ from core.event_repository import EventRepository
 from core.venue_repository import VenueRepository
 from rss.channel import RSSChannel
 from rss.transformer import Transformer
+from venues.simplon_groningen.simplon_processor import SimplonProcessor
 from venues.spot.spot_processor import SpotProcessor
 from venues.vera_groningen.vera_processor import VeraProcessor
 
@@ -24,7 +25,9 @@ event_repository = EventRepository(datastore_client)
 venue_repository = VenueRepository()
 
 # sync stores at start of app and register venues
-processors = [SpotProcessor(event_repository), VeraProcessor(event_repository)]
+processors = [SpotProcessor(event_repository),
+              VeraProcessor(event_repository),
+              SimplonProcessor(event_repository)]
 [processor.sync_stores() for processor in processors]
 [processor.register_venue_at(venue_repository) for processor in processors]
 
