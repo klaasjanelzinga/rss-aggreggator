@@ -41,12 +41,12 @@ class VeraParser(Parser):
         self.source = config.source
         self.base_url = config.base_url
         self.venue_id = config.venue_id
+        self.config = config
 
     def parse(self, content: str) -> List[Event]:
         soup = BeautifulSoup(content, features='html.parser')
         events = soup.find_all('div', {'class': 'event-wrapper'})
 
-        logging.info(f'found {len(events)} event in {self.source}')
         return [self._transform(tag) for tag in events]
 
     @staticmethod
@@ -98,7 +98,7 @@ class VeraParser(Parser):
             when = VeraParser._sanitize_text(when)
             when_time = tag.find('div', {'class': 'schedule'}).text
             when_time = when_time[when_time.find('start: ') + 7:when_time.find('start: ') + 12]
-            when_date: datetime = dateparser.parse(f'{when} {when_time}+02:00', languages=['nl'])
+            when_date: datetime = dateparser.parse(f'{when} {when_time}{self.config.timezone_short}', languages=['nl'])
         else:
             when_date = datetime.min
         image_url = tag.find('div', {'class': 'artist-image'})['style']

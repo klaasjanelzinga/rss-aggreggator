@@ -25,13 +25,13 @@ class EventRepository:
 
     def insert_new_events(self, events: List[Event]) -> None:
         current_keys = self.fetch_all_keys_as_string()
-        updatable_events = [event for event in events if event.id not in current_keys]
+        updatable_events = [event for event in events if event.id not in current_keys and event.is_valid()]
         entities = [self._generate_entity(event) for event in updatable_events]
         logging.info(f'Inserting {len(entities)} new events out of {len(events)} events')
         self.client.put_multi(entities)
 
     def upsert(self, events: List[Event]) -> None:
-        entities = [self._generate_entity(event) for event in events]
+        entities = [self._generate_entity(event) for event in events if event.is_valid()]
         logging.info(f'Upserting {len(entities)} new events out of {len(events)} events')
         self.client.put_multi(entities)
 

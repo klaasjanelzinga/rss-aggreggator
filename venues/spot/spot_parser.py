@@ -28,7 +28,6 @@ from venues.spot.spot_config import SpotConfig
 
 
 class SpotParser(Parser):
-
     dateformat: str = '%Y-%m-%dT:%H%M:%S%z'
 
     def __init__(self, config: SpotConfig):
@@ -42,17 +41,30 @@ class SpotParser(Parser):
         logging.info(f'Found {len(program_items)} items in {self.source}')
         return [self._transform(f) for f in program_items]
 
+    @staticmethod
+    def strip_optional_tag_text(tag: Tag) -> str:
+        if tag is None or tag.text is None:
+            return None
+        return tag.text.strip()
+
+    @staticmethod
+    def is_empty(text: str) -> bool:
+        return text is None or text == ''
+
     def _transform(self, article: Tag) -> Event:
+        url = article.a.get('href')
         content = article.find('div', {'class': 'program__content'})
         figure = article.find('figure').img.get('data-src')
         date = article.find('time')
         title = content.h1
         content_title = title.text if title.find('span') is None else \
             title.text.replace(title.span.text, '') + ' - ' + title.span.text
+        description_text = SpotParser.strip_optional_tag_text(content.p)
+        description = description_text if not SpotParser.is_empty(description_text) else content_title
 
-        return Event(url=article.a.get('href'),
+        return Event(url=url,
                      title=content_title,
-                     description=content.p.text,
+                     description=description,
                      venue_id=self.venue_id,
                      image_url=f'{self.base_url}{figure}',
                      source=self.source,
