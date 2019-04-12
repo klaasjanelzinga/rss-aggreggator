@@ -38,7 +38,6 @@ class SpotParser(Parser):
     def parse(self, content: str) -> List[Event]:
         soup = BeautifulSoup(content, 'html.parser')
         program_items = soup.find_all('article')
-        logging.info(f'Found {len(program_items)} items in {self.source}')
         return [self._transform(f) for f in program_items]
 
     @staticmethod
