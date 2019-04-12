@@ -8,6 +8,9 @@ cron:
   - description: "refresh data on simplon-groningen"
     url: /maintenance/fetch-data?venue_id=simplon-groningen
     schedule: every 24 hours
+  - description: "refresh data on oost-groningen"
+    url: /maintenance/fetch-data?venue_id=oost-groningen
+    schedule: every 24 hours
   - description: "clean old events"
     url: /maintenance/cleanup
     schedule: every 24 hours

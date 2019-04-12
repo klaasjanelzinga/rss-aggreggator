@@ -1,12 +1,11 @@
 from datetime import datetime
-import logging
 from typing import List
 
 import dateparser
 from bs4 import BeautifulSoup, Tag
 
 from core.event import Event
-from venues.simplon_groningen import simplon_config
+from venues.simplon_groningen.simplon_config import SimplonConfig
 
 
 class SimplonParser:
@@ -31,7 +30,7 @@ class SimplonParser:
     #             <div data-ticket="https://simplon.stager.nl/web/tickets/282459" data-type="concert" class="buy-ticket color-black border-concert bg-color-concert">Koop tickets</div>
     #     </div>
     # </a>
-    def __init__(self, config: simplon_config):
+    def __init__(self, config: SimplonConfig):
         self.config = config
 
     def parse(self, content: str) -> List[Event]:

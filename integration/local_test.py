@@ -20,6 +20,7 @@ validate('http://localhost:8080/maintenance/cleanup')
 validate('http://localhost:8080/maintenance/fetch-data?venue_id=spot-groningen')
 validate('http://localhost:8080/maintenance/fetch-data?venue_id=vera-groningen')
 validate('http://localhost:8080/maintenance/fetch-data?venue_id=simplon-groningen')
+validate('http://localhost:8080/maintenance/fetch-data?venue_id=oost-groningen')
 validate('http://localhost:8080')
 
 should_fail('http://localhost:8080/maintenance/fetch-data?venue_id=kumbatcha-groningen', 404)
