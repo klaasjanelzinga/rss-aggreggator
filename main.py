@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 # set to react specific build artifacts
-app = Flask(__name__, static_folder='static/build/static', template_folder='static/build')
+app = Flask(__name__, static_folder='static/app/static', template_folder='static/app')
 
 # sync stores at start of app and register venues
 processors = [SpotProcessor(event_repository),
@@ -37,7 +37,7 @@ def hello():
 
 @app.route('/channel-image.png')
 def send_channel_image():
-    return send_from_directory('static/build', 'channel-image.png')
+    return send_from_directory('static/app', 'channel-image.png')
 
 
 @app.route('/events.xml')

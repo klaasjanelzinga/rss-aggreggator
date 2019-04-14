@@ -18,7 +18,7 @@ const styles = theme => ({
     },
     gridList: {
         width: '100%',
-        height: 450,
+        height: '100%',
         overflow: 'scroll',
     },
     progressbar: {
@@ -36,10 +36,14 @@ class Agenda extends React.Component {
             fetched: false,
             events: []
         }
+
+        this.endpoint = (window.location.hostname === 'localhost') 
+            ? 'http://localhost:8080/api/events'
+            : '/api/events'
     }
 
     componentDidMount() {
-        fetch('/api/events')
+        fetch(this.endpoint)
             .then(results => results.json())
             .then(results => {
                 this.setState({ events: results, fetched: true })
