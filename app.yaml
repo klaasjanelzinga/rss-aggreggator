@@ -1,5 +1,6 @@
 runtime: python37
 
+handlers:
 - url: ('/')
   static_files: static/build/index.html
   upload: static/build/index.html
@@ -12,6 +13,6 @@ runtime: python37
   static_files: static/build/static/js/\1
   upload: static/build/static/css/.*\.(css|map)$
 
--url: /(.*\.(json|png|ico|html|js))$
+- url: /(.*\.(json|png|ico|html|js))$
   static_files: static/build/\1
   upload: static/build/.*\.(json|png|ico|html|js)$

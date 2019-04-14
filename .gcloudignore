@@ -26,3 +26,6 @@ client-secret.json.enc
 frontend/
 tests/
 .idea/
+venv/
+htmlcov/
+integration/
