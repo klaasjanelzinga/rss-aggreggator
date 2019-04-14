@@ -22,3 +22,7 @@ __pycache__/
 test/
 client-secret.json.enc
 .travis.yml
+
+frontend/
+tests/
+.idea/

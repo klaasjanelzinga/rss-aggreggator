@@ -22,8 +22,12 @@ deploy:
     project: rss-aggregator-236707
     version: $version
     config: cron.yaml
+
 before_install:
 - openssl aes-256-cbc -K $encrypted_290a4f8623c5_key -iv $encrypted_290a4f8623c5_iv
   -in client-secret.json.enc -out client-secret.json -d
 - export version="develop-$(git log | wc -l)"
 - echo $version
+
+before_deploy:
+  - find static
