@@ -5,8 +5,11 @@ python:
 
 install:
 - pip install -r requirements.txt
+- (cd frontend && npm ci)
 
-script: pytest tests
+script:
+  - pytest tests
+  - (cd frontend && npm run-script build && mv build/ ../static )
 
 deploy:
   - provider: gae

@@ -22,5 +22,7 @@ validate('http://localhost:8080/maintenance/fetch-data?venue_id=vera-groningen')
 validate('http://localhost:8080/maintenance/fetch-data?venue_id=simplon-groningen')
 validate('http://localhost:8080/maintenance/fetch-data?venue_id=oost-groningen')
 validate('http://localhost:8080')
+validate('http://localhost:8080/api/events')
+validate('http://localhost:8080/channel-image.png')
 
 should_fail('http://localhost:8080/maintenance/fetch-data?venue_id=kumbatcha-groningen', 404)

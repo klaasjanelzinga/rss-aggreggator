@@ -1,12 +1,10 @@
 import logging
-from datetime import datetime, timedelta
 
-from flask import Flask, Response, request
-from google.cloud import datastore
+from flask import Flask, Response, render_template, send_from_directory
 
-from core.app_config import AppConfig
-from core.event_repository import EventRepository
-from core.venue_repository import VenueRepository
+from api.maintenance import maintenance
+from api.api import api_routes
+from application_data import event_repository, venue_repository
 from rss.channel import RSSChannel
 from rss.transformer import Transformer
 from venues.oost_groningen.oost_groningen_processor import OostGroningenProcessor
@@ -17,13 +15,8 @@ from venues.vera_groningen.vera_processor import VeraProcessor
 logging.basicConfig(level=logging.INFO)
 
 
-# If `entrypoint` is not defined in app.yaml, App Engine will look for an app
-# called `app` in `main.py`.
-app = Flask(__name__)
-
-datastore_client = datastore.Client()
-event_repository = EventRepository(datastore_client)
-venue_repository = VenueRepository()
+# set to react specific build artifacts
+app = Flask(__name__, static_folder='static/build/static', template_folder='static/build')
 
 # sync stores at start of app and register venues
 processors = [SpotProcessor(event_repository),
@@ -33,30 +26,18 @@ processors = [SpotProcessor(event_repository),
 [processor.sync_stores() for processor in processors]
 [processor.register_venue_at(venue_repository) for processor in processors]
 
+app.register_blueprint(api_routes)
+app.register_blueprint(maintenance)
+
 
 @app.route('/')
 def hello():
-    return 'Hello World! App soon to arrive.'
+    return render_template('index.html')
 
 
-@app.route('/maintenance/fetch-data')
-def maintenance_fetch_data():
-    if AppConfig.is_web_request_allowed(request):
-        venue_id = request.args.get('venue_id')
-        if venue_id is None or not venue_repository.is_registered(venue_id):
-            return Response(status=404)
-        venue_repository.sync_stores_for_venue(venue_id)
-        return Response()
-    return Response(status=400)
-
-
-@app.route('/maintenance/cleanup')
-def maintenance_clean_up():
-    if AppConfig.is_web_request_allowed(request):
-        number_cleaned = event_repository.clean_items_before(datetime.now() - timedelta(days=3))
-        logging.info(f'Number of items cleaned {number_cleaned}')
-        return Response(status=200)
-    return Response(status=400)
+@app.route('/channel-image.png')
+def send_channel_image():
+    return send_from_directory('static/build', 'channel-image.png')
 
 
 @app.route('/events.xml')

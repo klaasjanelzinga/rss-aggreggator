@@ -1,0 +1,3785 @@
+[
+  {
+    "description": "Klassiek lunchconcert in Het Caf\u00e9 van De Oosterpoort",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbHVuY2hjb25jZXJ0LTMtYXBy\naWwtMjAxOS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2017/09/lunchconcerten-nieuw-150x150.jpg",
+    "title": "Lunchconcert: Carlos Mar\u00edn Rayo (piano)",
+    "url": "https://www.spotgroningen.nl/programma/lunchconcert-3-april-2019/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-03T12:00:00+02:00"
+  },
+  {
+    "description": "Laat je meevoeren naar de klassieke countrysound van de tweede helft van de zestiger jaren",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvemVwaGFuaWFoLW9ob3JhLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Zephaniah-OHora-150x150.jpg",
+    "title": "Zephaniah OHora  - + support: Elijah Ocean ",
+    "url": "https://www.spotgroningen.nl/programma/zephaniah-ohora/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-03T20:00:00+02:00"
+  },
+  {
+    "description": "\u201cAanraakbaar en meeslepend. De dansers stijgen boven zichzelf uit.\u201d (de Volkskrant \u2605\u2605\u2605\u2605\u2605)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmF0c2hldmEtZGFuY2UtY29t\ncGFueS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Batsheva-20Dance-20Company-20-20Sadeh-2021-20Maxim-20Waratt-20-20Gadi-20Dagon-201-150x150.jpg",
+    "title": "Batsheva Dance Company - Sadeh 21",
+    "url": "https://www.spotgroningen.nl/programma/batsheva-dance-company/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-03T20:15:00+02:00"
+  },
+  {
+    "description": "\u201cBij dit kwartet versmelt de muziek tot iets onbenoembaar moois\u201d (Trouw *****)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEveXVyaS1ob25pbmctYWNvdXN0\naWMtcXVhcnRldC1nb2xkYnJ1bi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Yuri-Honing-Goldbrun-Mariecke-van-der-Linden-1-300-dpi-RGB-150x150.jpg",
+    "title": "Yuri Honing Acoustic Quartet - Goldbrun",
+    "url": "https://www.spotgroningen.nl/programma/yuri-honing-acoustic-quartet-goldbrun/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-03T20:30:00+02:00"
+  },
+  {
+    "description": "Een interessante kruisbestuiving van culturen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmVpcnV0Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/10/Beirut-e1551456912484-150x150.jpg",
+    "title": "Beirut  - + support: Helado Negro ",
+    "url": "https://www.spotgroningen.nl/programma/beirut/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-04T20:00:00+02:00"
+  },
+  {
+    "description": "Comedian terug in het theater",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYXJqZW4tbHViYWNoLTQv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Arjen_Lubach_-_Arjen_Lubach_LIVE_Merlijn_Doomernik_98b-150x150.jpg",
+    "title": "Arjen Lubach - LIVE",
+    "url": "https://www.spotgroningen.nl/programma/arjen-lubach-4/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-04T20:15:00+02:00"
+  },
+  {
+    "description": "De overtreffende trap van absurditeit",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEva2FtYWd1cmthLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Kamagurka-20-20De-20grenzen-20van-20de-20ernst-20Kamagurka-202-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Kamagurka - De grenzen van de ernst",
+    "url": "https://www.spotgroningen.nl/programma/kamagurka/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-05T20:15:00+02:00"
+  },
+  {
+    "description": "Met wereldpremi\u00e8re van 'Pianoconcert' van Ralph van Raat",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbm9vcmQtbmVkZXJsYW5kcy1v\ncmtlc3QtNTIv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Noord-20Nederlands-20Orkest-20-20Mysterie-20minimal-20pianist-20Ralph-20van-20Raat-20onbekend-201-e1551518933404-150x150.jpg",
+    "title": "Noord Nederlands Orkest - Ralph van Raat",
+    "url": "https://www.spotgroningen.nl/programma/noord-nederlands-orkest-52/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-05T20:15:00+02:00"
+  },
+  {
+    "description": "Muzikaal cabaret",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhvbWFzLWFjZGEv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Thomas-20Acda-20-20Motel-20Koos-20Breukel-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Thomas Acda - Motel",
+    "url": "https://www.spotgroningen.nl/programma/thomas-acda/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-05T20:15:00+02:00"
+  },
+  {
+    "description": "Ingetogen nummers begeleidt door gitaar",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbGF1cmEtZ2lic29uLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/11/Laura_Lead_Photo300DPI-uitsnede-e1551458391301-150x150.jpg",
+    "title": " Laura Gibson",
+    "url": "https://www.spotgroningen.nl/programma/laura-gibson/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-05T20:30:00+02:00"
+  },
+  {
+    "description": "De Matth\u00e4us volgens Philippe Herreweghe",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbmVkZXJsYW5kc2UtYmFjaC12\nZXJlbmlnaW5nLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Nederlandse-20Bachvereniging-20-20Matthaus-20Passion-20-20Philippe-20Herreweghe-203-20Michiel-20Hendryckx-20300-20dpi-20RGB-e1551540300629-150x150.jpg",
+    "title": "Nederlandse Bachvereniging - Matthaeus Passion ",
+    "url": "https://www.spotgroningen.nl/programma/nederlandse-bach-vereniging/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-06T19:00:00+02:00"
+  },
+  {
+    "description": "Comedian terug in het theater",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYXJqZW4tbHViYWNoLTMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Arjen-Lubach-Arjen-Lubach-LIVE-Merlijn-Doomernik-300-dpi-RGB-e1545301366170-150x150.jpg",
+    "title": "Arjen Lubach - LIVE",
+    "url": "https://www.spotgroningen.nl/programma/arjen-lubach-3/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-06T20:15:00+02:00"
+  },
+  {
+    "description": "Avontuurlijke composities in een po\u00ebtische nieuwe wereld",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcmVteS12YW4ta2VzdGVyZW4t\ncmVsZWF2ZS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Remy-van-Kesteren-RELEAVE-Peter-van-der-Heyden-3-300-dpi-RGB-150x150.jpg",
+    "title": "Remy van Kesteren - RELEAVE.",
+    "url": "https://www.spotgroningen.nl/programma/remy-van-kesteren-releave/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-06T20:30:00+02:00"
+  },
+  {
+    "description": "Yoga \u00e9n muziek van noordelijke talenten in de Grote Zaal",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEveW9nYS1pbi1jb25jZXJ0LXhs\nLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/Yoga-in-Concert-CB-panorama-150x150.jpg",
+    "title": "YOGA IN CONCERT XL",
+    "url": "https://www.spotgroningen.nl/programma/yoga-in-concert-xl/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-07T11:00:00+02:00"
+  },
+  {
+    "description": "Monumentale en dramatische passie",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvb3JrZXN0LXYtZC0xOGUtZWV1\ndy1lbi1jYXBwZWxsYS1hbXN0ZXJkYW0v\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Orkest-20van-20de-20Achttiende-20Eeuw-20Annelies-20van-20der-20Vegt-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Orkest v/d 18e Eeuw en Cappella Amsterdam - Johannes Passion (Bach) ",
+    "url": "https://www.spotgroningen.nl/programma/orkest-v-d-18e-eeuw-en-cappella-amsterdam/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-07T20:15:00+02:00"
+  },
+  {
+    "description": "Een muzikale reis door Ierland",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGFudS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Danu-300-dpi-RGB-150x150.jpg",
+    "title": "Dan\u00fa",
+    "url": "https://www.spotgroningen.nl/programma/danu/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-07T20:30:00+02:00"
+  },
+  {
+    "description": "Vijftig talentvolle muzikale studenten, onder leiding van Sander Teepen.",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbmVkZXJsYW5kcy1zdHVkZW50\nZW4ta2FtZXJvcmtlc3QtMi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Nesko-2019-1-150x150.jpg",
+    "title": "Nederlands Studenten Kamerorkest  - Nesko: Van de kaart!",
+    "url": "https://www.spotgroningen.nl/programma/nederlands-studenten-kamerorkest-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-08T20:15:00+02:00"
+  },
+  {
+    "description": "\u201dRoeland Fernhout ontroert als feeks in kleurrijke Shakespeare\u201d (NRC \u2605\u2605\u2605\u2605)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdG9uZWVsc2NodXVyLXByb2R1\nY3RpZXMtNy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Scenefoto-Temmen-van-de-Feeks-Sanne-Peper-150x150.jpg",
+    "title": "Toneelschuur Producties - Het temmen van de feeks",
+    "url": "https://www.spotgroningen.nl/programma/toneelschuur-producties-7/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-08T20:15:00+02:00"
+  },
+  {
+    "description": "Beyond Hip Hop with support A Lecture By Rich Medina",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk4ODk5Jmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2019/03/rich-medina-website2-360x250.jpg",
+    "title": "Beyond Hip Hop (STUDIUM GENERALE PRESENTS)",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=98899&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-08T20:30:00+02:00"
+  },
+  {
+    "description": "Met Jason Lindner & Ryan Dahle, onder leiding van Jules Buckley",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbWV0cm9wb2xlLW9ya2VzdC1p\nbnZpdGVzLWRvbm55LW1jY2FzbGluLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/10/McCaslin_58A4765_rt-LR-150x150.jpg",
+    "title": "Metropole Orkest invites Donny McCaslin  - with Jason Lindner & Ryan Dahle",
+    "url": "https://www.spotgroningen.nl/programma/metropole-orkest-invites-donny-mccaslin/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-08T20:30:00+02:00"
+  },
+  {
+    "description": "Anti-sprookje voor volwassenen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdG9uZWVsZ3JvZXAtb29zdHBv\nb2wtMTQv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Bambi-09-\u00a9-Sanne-Peper-e1551788190624-150x150.jpg",
+    "title": "Toneelgroep Oostpool - What's in a fairytale?! - Bambi",
+    "url": "https://www.spotgroningen.nl/programma/toneelgroep-oostpool-14/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-09T20:15:00+02:00"
+  },
+  {
+    "description": "Acusada",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk3MzQzJmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2019/01/acusada_the_accused_still_1-1-360x250.jpg",
+    "title": "Acusada (MOVIES THAT MATTER)",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=97343&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-09T20:30:00+02:00"
+  },
+  {
+    "description": "Het laatste concert van dit seizoen met jazz pianist John di Martino drummer Eric Allen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvam9yaXMtdGVlcGUtcHJlc2Vu\ndHMtbnljdGctc3Bpa2Utd2lsbmVyLTktYXByaWwv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2017/05/johndimartino-e1551465892143-150x150.png",
+    "title": "Joris Teepe presents: NYCTG - John di Martino (piano)",
+    "url": "https://www.spotgroningen.nl/programma/joris-teepe-presents-nyctg-spike-wilner-9-april/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-09T20:30:00+02:00"
+  },
+  {
+    "description": "Scherp en ontroerend",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvb2xkZW5oZXJtYW5ucy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/OLDENHERMANNS-20-20UNSEXED-20Karel-20Sanders-202-20300-20dpi-20RGB-e1527592500940-150x150.jpg",
+    "title": "OLDENHERMANNS - Unsexed",
+    "url": "https://www.spotgroningen.nl/programma/oldenhermanns/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-09T20:30:00+02:00"
+  },
+  {
+    "description": "Klassiek lunchconcert in Het Caf\u00e9 van De Oosterpoort.",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbHVuY2hjb25jZXJ0LTEwLWFw\ncmlsLTIwMTkv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2017/09/lunchconcerten-nieuw-150x150.jpg",
+    "title": "Lunchconcert",
+    "url": "https://www.spotgroningen.nl/programma/lunchconcert-10-april-2019/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-10T12:00:00+02:00"
+  },
+  {
+    "description": "De toekomstige wereldsterren",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZmluYWxpc3Rlbi1saXN6dGNv\nbmNvdXJzLWFsZXhhbmRlci11bGxtYW4v\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Finalisten-20Liszt-20Concours-201-20Allard-20Willemse-20300-20dpi-20RGB-e1526548162464-150x150.jpg",
+    "title": "Finalisten Liszt Concours: Alexander Ullman - Minsoo Hong en Dina Ivanova",
+    "url": "https://www.spotgroningen.nl/programma/finalisten-lisztconcours-alexander-ullman/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-10T20:15:00+02:00"
+  },
+  {
+    "description": "Lenette fileert dromen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbGVuZXR0ZS12YW4tZG9uZ2Vu\nLTQv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Lenette-20van-20Dongen-20-20Paradijskleier-20ALEK-20300-20dpi-20RGB-e1552989500844-150x150.jpg",
+    "title": "Lenette van Dongen - Paradijskleier",
+    "url": "https://www.spotgroningen.nl/programma/lenette-van-dongen-4/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-10T20:15:00+02:00"
+  },
+  {
+    "description": "Marissa Nadler (USA) with support Klaske Oenema (NL)",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk2NTI0Jmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2018/11/Marissa-web-360x250.jpg",
+    "title": "Marissa Nadler (USA)",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=96524&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-10T20:30:00+02:00"
+  },
+  {
+    "description": "Meesterwerk raakt recht in het hart",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvaGV0LW5hdGlvbmFsZS1iYWxs\nZXQtZ2lzZWxsZS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Het-Nationale-Ballet-Giselle-Angela-Sterling-4-300-dpi-RGB-150x150.jpg",
+    "title": "Het Nationale Ballet - Giselle",
+    "url": "https://www.spotgroningen.nl/programma/het-nationale-ballet-giselle/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-11T20:15:00+02:00"
+  },
+  {
+    "description": "Speelse ode aan de liefde",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvc2FsdXQtc2Fsb24v\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Salut-20Salon-20-20Love-202-20onbekend-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Salut Salon",
+    "url": "https://www.spotgroningen.nl/programma/salut-salon/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-11T20:15:00+02:00"
+  },
+  {
+    "description": "Movie Screening \u2022\u00a0Group Discussion",
+    "id": "aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2V2ZW50cy82MTA0MjE1MzkzODMyMjAv\n",
+    "image_url": "https://www.komoost.nl/media/56721601_1992667177522931_8267801960216788992_o.jpg",
+    "title": "HOMOOST \u2022\u00a0Movie Night: Party Monster the Shockumentary",
+    "url": "https://www.facebook.com/events/610421539383220/",
+    "venue": {
+      "city": "Groningen",
+      "id": "oost-groningen",
+      "name": "Oost Groningen"
+    },
+    "when": "2019-04-11T20:30:00+02:00"
+  },
+  {
+    "description": "'Afrikaanse Bob Marley' na 5 jaar terug in De Oosterpoort",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYWxwaGEtYmxvbmR5LXRoZS1z\nb2xhci1zeXN0ZW0v\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/ab_photo12_credit_r-deluze_et_s-derradji_md-150x150.jpg",
+    "title": "Alpha Blondy and The Solar System ",
+    "url": "https://www.spotgroningen.nl/programma/alpha-blondy-the-solar-system/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-11T20:30:00+02:00"
+  },
+  {
+    "description": "Msafiri Zawose (TZA) with support Support DJ Josz",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk4MjMyJmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2019/02/Msafiri-Zawose-web-360x250.jpg",
+    "title": "Msafiri Zawose (TZA) (CLUBKAARTSHOW)",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=98232&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-11T21:00:00+02:00"
+  },
+  {
+    "description": "Simplon UP",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzYwMg==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/03/FOXLANE-MAIN-PRESS-PHOTO-600x600.jpg",
+    "title": "Foxlane + Car Pets",
+    "url": "http://simplon.nl/?post_type=events&p=17602",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-04-11T21:30:00+02:00"
+  },
+  {
+    "description": "Een thrillerkomedie",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvanVsZXMtY3JvaXNldC1lbi12\naWN0b3ItcmVpbmllci8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/EenGoedMens-HummelinckStuurman-10-150x150.jpg",
+    "title": "Jules Croiset en Victor Reinier - Een goed mens",
+    "url": "https://www.spotgroningen.nl/programma/jules-croiset-en-victor-reinier/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-12T20:15:00+02:00"
+  },
+  {
+    "description": "Kwetsbaarheid, kracht, woede en wellust",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvc2FtaXItY2FsaXh0by13Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/W-SamirCalixto-\u00a9JorisJanBos1511_0763-1-e1552913587578-150x150.jpg",
+    "title": "Samir Calixto/Korzo producties - W",
+    "url": "https://www.spotgroningen.nl/programma/samir-calixto-w/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-12T20:15:00+02:00"
+  },
+  {
+    "description": "Muzikale avond vol ervaringen van frontvrouw Sanne Hans",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbWlzcy1tb250cmVhbC00Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Miss-Montreal-Fu-Fu-Fu-Fuck-it-Ruben-van-Vliet-300-dpi-RGB-150x150.jpg",
+    "title": "Miss Montreal - Fu-Fu-Fu-F'ck it",
+    "url": "https://www.spotgroningen.nl/programma/miss-montreal-4/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-12T20:30:00+02:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Kleine zaal Open: 20:30 - 23:00 uur\n\n                VVK: \u20ac 10,- DVK: \u20ac 10,- \n                Aanvang: 21:00 uur\n\n\n            Genre: Pop\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNjg1Nw==\n",
+    "image_url": "",
+    "title": "The Daily Indie presents:GOSTO",
+    "url": "http://simplon.nl/?post_type=events&p=16857",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-04-12T21:00:00+02:00"
+  },
+  {
+    "description": "The Grand East with support Boogie Monster",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk2Njk1Jmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2018/12/The-Grand-East_Pressphoto-360x250.jpg",
+    "title": "The Grand East",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=96695&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-12T21:00:00+02:00"
+  },
+  {
+    "description": "Lupe \u2022 Fafi Abdel Nour",
+    "id": "aHR0cHM6Ly93dy5mYWNlYm9vay5jb20vZXZlbnRzLzMwOTM1NjU0MzI3MTkwNS8=\n",
+    "image_url": "https://www.komoost.nl/media/52258686_1930610950395221_3366340975138963456_o.jpg",
+    "title": "HOMOOST \u2022 Queer Night w/ Lupe + Fafi Abdel Nour",
+    "url": "https://ww.facebook.com/events/309356543271905/",
+    "venue": {
+      "city": "Groningen",
+      "id": "oost-groningen",
+      "name": "Oost Groningen"
+    },
+    "when": "2019-04-12T23:05:00+02:00"
+  },
+  {
+    "description": "Americana pur sang met verbluffende samenzang, fraaie songs en pure muzikaliteit",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvY29yZG92YXMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/12/Cordovas_2018-Press-Photo1-150x150.jpg",
+    "title": "Cordovas - + support: Joe Nolan ",
+    "url": "https://www.spotgroningen.nl/programma/cordovas/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-13T20:00:00+02:00"
+  },
+  {
+    "description": "Swingend theater over vrijheid, idealen en solidariteit",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdXJiYW4tbXl0aC0yLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Celia_scenefotografie_cAnne-van-Zantwijk-32-e1552293790922-150x150.jpg",
+    "title": "Urban Myth - Celia!",
+    "url": "https://www.spotgroningen.nl/programma/urban-myth-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-13T20:15:00+02:00"
+  },
+  {
+    "description": "Blaasmuziek en G\u00e9 Reinders, dat zijn twee handen op een buik",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZ2UtcmVpbmRlcnMtMi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Ge-20Reinders-20-20plaatselijk-20orkest-20-20Oetblaoze-20Bob-20Bronshoff-201-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Ge Reinders - Oetblaoze!",
+    "url": "https://www.spotgroningen.nl/programma/ge-reinders-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-13T20:30:00+02:00"
+  },
+  {
+    "description": "Muzikale avond vol ervaringen van frontvrouw Sanne Hans",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbWlzcy1tb250cmVhbC01Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Miss-Montreal-Fu-Fu-Fu-Fuck-it-Ruben-van-Vliet-300-dpi-RGB-150x150.jpg",
+    "title": "Miss Montreal - Fu-Fu-Fu-F'ck it",
+    "url": "https://www.spotgroningen.nl/programma/miss-montreal-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-13T20:30:00+02:00"
+  },
+  {
+    "description": "On The Road Tour",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzQxMg==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/03/IDALY_ONTHEROAD_FINALARTWORK_CLEAN-600x600.jpg",
+    "title": "Idaly",
+    "url": "http://simplon.nl/?post_type=events&p=17412",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-04-13T21:00:00+02:00"
+  },
+  {
+    "description": "CAVE (USA) with support King Champion Sounds (NL)",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk2NDIzJmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2018/11/pressphoto-web-1-360x250.jpg",
+    "title": "CAVE (USA)",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=96423&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-13T21:00:00+02:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Grote zaal Open: 23:00 - 05:00 uur\n\n                VVK: \u20ac 12,- DVK: \u20ac 14,- \n                Aanvang: 23:00 uur\n\n\n            Genre: House / Techno\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzM4Nw==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/02/HMH_2560-600x600.jpg",
+    "title": "Wildernis presents:Finnebassen",
+    "url": "http://simplon.nl/?post_type=events&p=17387",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-04-13T23:00:00+02:00"
+  },
+  {
+    "description": "Swine Tax (UK)",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk4NzkwJmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2019/03/Swine_Tax_May_18-e1552938546728-360x250.jpg",
+    "title": "Swine Tax (UK)",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=98790&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-13T23:00:00+02:00"
+  },
+  {
+    "description": "DJ Leoni \u2022\u00a0Long Bram",
+    "id": "aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2V2ZW50cy83Nzg2MzM2NDU4NTIwNzcv\n",
+    "image_url": "https://www.komoost.nl/media/52840132_1943519875770995_7303705364178927616_o.jpg",
+    "title": "OOST \u2022 The Clubnacht Special (attend for free entrance)",
+    "url": "https://www.facebook.com/events/778633645852077/",
+    "venue": {
+      "city": "Groningen",
+      "id": "oost-groningen",
+      "name": "Oost Groningen"
+    },
+    "when": "2019-04-13T23:05:00+02:00"
+  },
+  {
+    "description": "KLM Urban Trail Groningen with support DJNoname&DJJosz",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk4NDA1Jmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2019/02/KLM-Urban-Trail-Groningen-360x250.jpg",
+    "title": "KLM Urban Trail Groningen",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=98405&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-14T09:30:00+02:00"
+  },
+  {
+    "description": "Projectensemble \u201cSpring Variations\u201d o.l.v. Peter Stam",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcHJpbnMtY2xhdXMtY29uc2Vy\ndmF0b3JpdW0tcHJlc2VudGVlcnQtMTIv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Sunday-20Morning-20Classics-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Prins Claus Conservatorium presenteert: - Sunday Morning Classics",
+    "url": "https://www.spotgroningen.nl/programma/prins-claus-conservatorium-presenteert-12/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-14T11:00:00+02:00"
+  },
+  {
+    "description": "Wervelende dansvoorstelling voor kleuters",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbWFhcy10aGVhdGVyLWVuLWRh\nbnMtNS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Maas-20theater-20en-20dans-20I-20Tuning-20People-20-20ChitChat-20Roosmarijn-20Knijnenburg-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Maas theater en dans / Tuning people - ChitChat (4+)",
+    "url": "https://www.spotgroningen.nl/programma/maas-theater-en-dans-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-14T14:30:00+02:00"
+  },
+  {
+    "description": "D\u00e9 godfather van de blues",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvam9obi1tYXlhbGwtMi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/DGP_9524-Vivid-150x150.jpg",
+    "title": "John Mayall - 85th Anniversary tour ",
+    "url": "https://www.spotgroningen.nl/programma/john-mayall-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-14T20:30:00+02:00"
+  },
+  {
+    "description": "Grammy-genomineerde zanger, songwriter en componist",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcnVmdXMtd2FpbndyaWdodC8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/06/rufus-voor-fb-e1551777113238-150x150.jpg",
+    "title": "Rufus Wainwright + support: Rachel Eckroth - All These Poses Anniversary Tour 2019 ",
+    "url": "https://www.spotgroningen.nl/programma/rufus-wainwright/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-14T20:30:00+02:00"
+  },
+  {
+    "description": "\u201cBerg & Bos\u2019 oorlogsverhaal golft naar climax in het nu.\u201d (DvhN \u2605\u2605\u2605\u2605\u2605)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmVyZ2Jvcy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/IN-VREDE-BERGBOS\u00a9KAMERICH-BUDWILOWITZ-EYES2_-28-150x150.jpg",
+    "title": "BERG&BOS - In vrede",
+    "url": "https://www.spotgroningen.nl/programma/bergbos/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-15T20:15:00+02:00"
+  },
+  {
+    "description": "Elektrisch geladen en grillig virtuoze dans",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZHVuamEtam9jaWMta29yem8t\ncHJvZHVjdGllcy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/The-protagonist-1-2-150x150.jpg",
+    "title": "Dunja Jocic/Korzo producties - The Protagonist",
+    "url": "https://www.spotgroningen.nl/programma/dunja-jocic-korzo-producties/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-16T20:15:00+02:00"
+  },
+  {
+    "description": "Groningsche Muziekvereeniging - Michael Foyle (viool) & Maksim Stsura (piano)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbWljaGFlbC1mb3lsZS1lbi1t\nYWtzaW0tc3RzdXJhLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/GMV-20-20Michael-20Foyle-20-20Maksim-20Stsura-201-20300-20dpi-20RGB-e1551519344492-150x150.jpg",
+    "title": "Groningsche Muziekvereeniging - Michael Foyle (viool) & Maksim Stsura (piano)",
+    "url": "https://www.spotgroningen.nl/programma/michael-foyle-en-maksim-stsura/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-16T20:15:00+02:00"
+  },
+  {
+    "description": "Ex Drummer",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk3OTU0Jmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2019/02/ex-drummer-360x250.jpg",
+    "title": "Ex Drummer",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=97954&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-16T20:30:00+02:00"
+  },
+  {
+    "description": "Spannende elektronisch geori\u00ebnteerde muziek met bijzondere instrumenten",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmlua2JlYXRzLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/BinkBeats-naamsvermelding-Isabelle-Renate-la-Poutr\u00e9-32-150x150.jpg",
+    "title": "Binkbeats",
+    "url": "https://www.spotgroningen.nl/programma/binkbeats/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-16T20:30:00+02:00"
+  },
+  {
+    "description": "Vintage Crop (AUS)",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk4NzA1Jmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2019/03/52401199_2103549656348689_6345961394139037696_o-e1552343269142-360x250.jpg",
+    "title": "Vintage Crop (AUS) (DOWNSTAGE EXTRA)",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=98705&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-16T22:30:00+02:00"
+  },
+  {
+    "description": "Klassiek lunchconcert van het Prins Claus Conservatorium in Het Caf\u00e9 van De Oosterpoort",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbHVuY2hjb25jZXJ0LXByaW5z\nLWNsYXVzLWNvbnNlcnZhdG9yaXVtLTE3LWFwcmlsLTIwMTkv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2017/09/lunchconcerten-nieuw-150x150.jpg",
+    "title": "Lunchconcert: Prins Claus Conservatorium",
+    "url": "https://www.spotgroningen.nl/programma/lunchconcert-prins-claus-conservatorium-17-april-2019/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-17T12:00:00+02:00"
+  },
+  {
+    "description": "Technologietheater met vijf jonge acteurs, 500 stemmen en 50.000 comments.",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGUtdG9uZWVsbWFrZXJpai00\nLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Snowflake-03-\u00a9-Sanne-Peper-e1551802125403-150x150.jpg",
+    "title": "De Toneelmakerij - Snowflake (12+)",
+    "url": "https://www.spotgroningen.nl/programma/de-toneelmakerij-4/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-17T19:30:00+02:00"
+  },
+  {
+    "description": "Lol is een serieuze zaak",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcGV0ZXItaGVlcnNjaG9wLTIv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Peter-20Heerschop-20-20De-20Minister-20van-20Enthousiasme-20Walt-20Cisco-20Joris-20van-20Bennekom-20en-20Geert-20Gratama-201-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Peter Heerschop - De Minister van Enthousiasme",
+    "url": "https://www.spotgroningen.nl/programma/peter-heerschop-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-17T20:15:00+02:00"
+  },
+  {
+    "description": "Bas Birker + Ronald Smink & more",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzQ3NA==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/03/comedynight_vierkant2.jpg",
+    "title": "Comedy Night",
+    "url": "http://simplon.nl/?post_type=events&p=17474",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-04-17T20:30:00+02:00"
+  },
+  {
+    "description": "Een van de beste rockbands van Nederland",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGktcmVjdC10aGVhdGVydG91\nci8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/DIRECT-Persfoto-JPEG-150x150.jpg",
+    "title": "DI-RECT  - Rolling With The Punches Theatertour ",
+    "url": "https://www.spotgroningen.nl/programma/di-rect-theatertour/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-17T20:30:00+02:00"
+  },
+  {
+    "description": "Cherry Glazerr (USA) with support Support",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk4NTkxJmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2019/03/clem-creevy-cherry-glazerr-360x250.jpg",
+    "title": "Cherry Glazerr (USA) (CLUBKAARTSHOW)",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=98591&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-17T21:00:00+02:00"
+  },
+  {
+    "description": "Al vaak beluisterd of nog nooit, gelovig of niet: de muziek raakt telkens opnieuw recht in het hart.",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbm9vcmQtbmVkZXJsYW5kcy1v\ncmtlc3QtNTEv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Noord-20Nederlands-20Orkest-20-20Mattheus-20Passion-20onbekend-201-150x150.jpg",
+    "title": "Noord Nederlands Orkest - Matthaeus Passion",
+    "url": "https://www.spotgroningen.nl/programma/noord-nederlands-orkest-51/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-18T19:30:00+02:00"
+  },
+  {
+    "description": "Funky grooves, uptempo swingers en diepe soul ballads",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvaGFubmFoLXdpbGxpYW1zLXRo\nZS1hZmZpcm1hdGlvbnMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/hannahwilliamstheaffirmations-150x150.jpg",
+    "title": "Hannah Williams & The Affirmations",
+    "url": "https://www.spotgroningen.nl/programma/hannah-williams-the-affirmations/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-18T20:30:00+02:00"
+  },
+  {
+    "description": "Simplon UP",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzYwNg==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/03/northwest_by_ignaciohergueta_web_quality_1-600x600.jpg",
+    "title": "Northwest",
+    "url": "http://simplon.nl/?post_type=events&p=17606",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-04-18T21:30:00+02:00"
+  },
+  {
+    "description": "The Damn Truth (CAN)",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk2MTM3Jmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2018/11/WEB-1-360x250.jpg",
+    "title": "The Damn Truth (CAN)",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=96137&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-18T22:00:00+02:00"
+  },
+  {
+    "description": "Al vaak beluisterd of nog nooit, gelovig of niet: de muziek raakt telkens opnieuw recht in het hart.",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbm9vcmQtbmVkZXJsYW5kcy1v\ncmtlc3QtNDYv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Noord-20Nederlands-20Orkest-20-20Mattheus-20Passion-20onbekend-201-150x150.jpg",
+    "title": "Noord Nederlands Orkest - Matthaeus Passion",
+    "url": "https://www.spotgroningen.nl/programma/noord-nederlands-orkest-46/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-19T15:00:00+02:00"
+  },
+  {
+    "description": "Hiphop-sensatie Mara(donnie) blijft spannend tot het eind",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZG9ubmllLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Donnie-Tour-foto-150x150.jpg",
+    "title": "Donnie + support: Cry - 'Donnie Gaat Kwijt Tour' ",
+    "url": "https://www.spotgroningen.nl/programma/donnie/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-19T20:00:00+02:00"
+  },
+  {
+    "description": "\u201cEen feest van een voorstelling.\u201d (de Volkskrant \u2605\u2605\u2605\u2605\u2605)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdG9uZWVsZ3JvZXAtbWFhc3Ry\naWNodC8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/TGM-Persbeelden-Noem-het-maar-liefde-foto-Ben-van-Duin-4-150x150.jpg",
+    "title": "Toneelgroep Maastricht - Noem het maar liefde",
+    "url": "https://www.spotgroningen.nl/programma/toneelgroep-maastricht/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-19T20:15:00+02:00"
+  },
+  {
+    "description": "PopGroningen Talent Award (2019) with support Het KanaalDORCashmyraHollow Men (GR)",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk3OTY1Jmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2019/02/Webversie-Popgroningen-Talent-Award-360x250.jpg",
+    "title": "PopGroningen Talent Award (2019) (EINDRONDE)",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=97965&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-19T20:30:00+02:00"
+  },
+  {
+    "description": "+ CYNN",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzQxNg==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/03/thumb_8564_artist_full-01-600x600.jpg",
+    "title": "Inge van Calkar",
+    "url": "http://simplon.nl/?post_type=events&p=17416",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-04-19T21:00:00+02:00"
+  },
+  {
+    "description": "Het kroonjuweel van de Estse muziek",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZXdlcnQtYW5kLXRoZS10d28t\nZHJhZ29ucy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/Ewert-and-The-Two-Dragons-by-Herkki-Merila-1-150x150.jpg",
+    "title": "Ewert and the Two Dragons",
+    "url": "https://www.spotgroningen.nl/programma/ewert-and-the-two-dragons/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-19T21:30:00+02:00"
+  },
+  {
+    "description": "Bambounou \u2022\u00a0Will Jr. \u2022\u00a0Kabor",
+    "id": "aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2V2ZW50cy8zOTE3MzY2MjQ5NTA1NzMv\n",
+    "image_url": "https://www.komoost.nl/media/53098702_1940766209379695_1302960534915645440_o.jpg",
+    "title": "OOST \u2022 Kiosk w/ Bambounou, Will Jr. and Kabor",
+    "url": "https://www.facebook.com/events/391736624950573/",
+    "venue": {
+      "city": "Groningen",
+      "id": "oost-groningen",
+      "name": "Oost Groningen"
+    },
+    "when": "2019-04-19T23:05:00+02:00"
+  },
+  {
+    "description": "Club Kelder with support SurvivalBoutique&DJRabobank",
+    "id": "aHR0cDovL3d3dy52ZXJhLWdyb25pbmdlbi5ubC8/cG9zdF90eXBlPWV2ZW50cyZwPTk5MDIzJmxh\nbmc9bmw=\n",
+    "image_url": "https://www.vera-groningen.nl/content/uploads/2019/03/header-web-360x250.jpg",
+    "title": "Club Kelder",
+    "url": "http://www.vera-groningen.nl/?post_type=events&p=99023&lang=nl",
+    "venue": {
+      "city": "Groningen",
+      "id": "vera-groningen",
+      "name": "VERA-Groningen"
+    },
+    "when": "2019-04-19T23:30:00+02:00"
+  },
+  {
+    "description": "Nora Fischer & Marnix Dorrestein halen eeuwenoude songs naar het heden.",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbm9yYS1maXNjaGVyLW1hcm5p\neC1kb3JyZXN0ZWluLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/Nora-Fischer-Marnix-Dorrestein-e1551456745277-150x150.jpg",
+    "title": "Nora Fischer & Marnix Dorrestein - Hush - + support: Jawa Manla",
+    "url": "https://www.spotgroningen.nl/programma/nora-fischer-marnix-dorrestein/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-20T20:00:00+02:00"
+  },
+  {
+    "description": "'To Lose My Life' bracht White Lies eind jaren 00 naar de top van de alternatieve indiescene",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvd2hpdGUtbGllcy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/White-Lies-150x150.jpg",
+    "title": "White Lies",
+    "url": "https://www.spotgroningen.nl/programma/white-lies/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-20T20:00:00+02:00"
+  },
+  {
+    "description": "\u201cAlles klopt aan deze voorstelling\u201d (Theaterkrant *****)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvb3JrYXRlci01Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/237RedenenOmDoorTeGaan-LageveenWitte-01-e1551197519494-150x150.jpg",
+    "title": "Orkater - 237 Redenen om door te gaan",
+    "url": "https://www.spotgroningen.nl/programma/orkater-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-20T20:15:00+02:00"
+  },
+  {
+    "description": "+ support",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNjkwMQ==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/01/2018MAR17-OrangeGroveWall-00042klntl-600x600.jpg",
+    "title": "Orange Grove",
+    "url": "http://simplon.nl/?post_type=events&p=16901",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-04-20T21:00:00+02:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Kleine zaal Open: 20:30 - 23:30 uur\n\n                VVK: \u20ac 10,- DVK: \u20ac 10,- \n                Aanvang: 21:15 uur\n\n\n            Genre: Indie\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNjg0Ng==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/01/visual-common-vierkant-600x600.jpg",
+    "title": "The Visual + Van Common",
+    "url": "http://simplon.nl/?post_type=events&p=16846",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-04-20T21:15:00+02:00"
+  },
+  {
+    "description": "Kate Miller \u2022\u00a0Miss Jay",
+    "id": "aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2V2ZW50cy81ODExOTM5NjIzOTU1ODAv\n",
+    "image_url": "https://www.komoost.nl/media/53896986_1950243465098636_8332370089068199936_o.jpg",
+    "title": "OOST \u2022 Clubnacht: Miss Jay invites Kate Miller",
+    "url": "https://www.facebook.com/events/581193962395580/",
+    "venue": {
+      "city": "Groningen",
+      "id": "oost-groningen",
+      "name": "Oost Groningen"
+    },
+    "when": "2019-04-20T23:05:00+02:00"
+  },
+  {
+    "description": "E\u00e9n voordeur. Vier huishoudens. En hoe niets blijft zoals het is.",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvaGV0LW5hdGlvbmFsZS10aGVh\ndGVyLTcv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/02_Beeld_Onze_Straat_liggend-c_Gordon_Meuleman_9e4-150x150.jpg",
+    "title": "Het Nationale Theater - Onze straat",
+    "url": "https://www.spotgroningen.nl/programma/het-nationale-theater-7/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-23T20:15:00+02:00"
+  },
+  {
+    "description": "Klassiek lunchconcert in Het Caf\u00e9 van De Oosterpoort.",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbHVuY2hjb25jZXJ0LTI2Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2017/09/lunchconcerten-nieuw-150x150.jpg",
+    "title": "Lunchconcert",
+    "url": "https://www.spotgroningen.nl/programma/lunchconcert-26/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-24T12:00:00+02:00"
+  },
+  {
+    "description": "E\u00e9n van de beste zangeressen komt dit voorjaar langs met een clubtour",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZ2xlbm5pcy1ncmFjZS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/GlennisGrace-e1551456239729-150x150.jpg",
+    "title": "Glennis Grace ",
+    "url": "https://www.spotgroningen.nl/programma/glennis-grace/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-24T20:00:00+02:00"
+  },
+  {
+    "description": "Schurend eerlijk, verbaal agressief, intrigerend en charmant",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGFuaWVsLWFyZW5kcy1tZWVy\nLXZhbi1oZXR6ZWxmZGUv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Daniel-Arends-Meer-van-hetzelfde-deel-1-Herman-Poppelaars-1-e1551776841295-150x150.jpg",
+    "title": "Daniel Arends  - Meer van hetzelfde (deel 1)",
+    "url": "https://www.spotgroningen.nl/programma/daniel-arends-meer-van-hetzelfde/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-24T20:15:00+02:00"
+  },
+  {
+    "description": "Examenconcert",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbm9vcmQtbmVkZXJsYW5kcy1v\ncmtlc3QtZXhhbWVuY29uY2VydC8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/Examen-Master-Dirigent-150x150.jpg",
+    "title": "Noord Nederlands Orkest: Examenconcert - Nationale Master Orkestdirectie ",
+    "url": "https://www.spotgroningen.nl/programma/noord-nederlands-orkest-examenconcert/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-25T00:20:00+02:00"
+  },
+  {
+    "description": "Schurend eerlijk, verbaal agressief, intrigerend en charmant",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGFuaWVsLWFyZW5kcy1tZWVy\nLXZhbi1oZXR6ZWxmZGUtMi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Daniel-Arends-Meer-van-hetzelfde-deel-1-Herman-Poppelaars-1-e1551776841295-150x150.jpg",
+    "title": "Daniel Arends  - Meer van hetzelfde (deel 1)",
+    "url": "https://www.spotgroningen.nl/programma/daniel-arends-meer-van-hetzelfde-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-25T20:15:00+02:00"
+  },
+  {
+    "description": "Simplon UP",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzY3Nw==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/03/21688259_1168022989966064_8141556875834627516_o-1-600x600.jpg",
+    "title": "Love Cans + Sleazebag Jack",
+    "url": "http://simplon.nl/?post_type=events&p=17677",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-04-25T21:30:00+02:00"
+  },
+  {
+    "description": "Een po\u00ebtische en humorrijke circus show vol acrobatiek, manipuleren en jongleren",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbWFjaGluZS1kZS1jaXJxdWUv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Machine-20de-20Cirque-20William-20Th-c3-a9berge-201-20300-20dpi-20RGB-e1526478557238-150x150.jpg",
+    "title": "Machine de Cirque",
+    "url": "https://www.spotgroningen.nl/programma/machine-de-cirque/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-26T20:15:00+02:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Grote zaal Open: 20:00 - 22:30 uur\n\n                VVK: \u20ac 14,- DVK: \u20ac 15,- \n                Aanvang: 20:30 uur\n\n\n            Genre: Ska\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzkwOQ==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/02/svn18_jtc_boat_225_small-600x600.jpg",
+    "title": "Verplaatst: Jaya The Cat",
+    "url": "http://simplon.nl/?post_type=events&p=17909",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-04-26T20:30:00+02:00"
+  },
+  {
+    "description": "Genre-overstijgende songs in het sfeervolle Der Aa-Theater",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvc3VzdG8v\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/susto-1-150x150.jpg",
+    "title": "SUSTO",
+    "url": "https://www.spotgroningen.nl/programma/susto/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-26T20:30:00+02:00"
+  },
+  {
+    "description": "Meedogenloze beats en basslines, de wereldwijde top van drum & bass",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbm9pc2lhLWludml0ZXMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/Noisia-2016-2-Landscape-by-Rutger-Prins-150x150.jpg",
+    "title": "Noisia Invites",
+    "url": "https://www.spotgroningen.nl/programma/noisia-invites/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-26T22:00:00+02:00"
+  },
+  {
+    "description": "John Talabot \u2022\u00a0Orpheu The Wizard \u2022\u00a0Nathan Homan",
+    "id": "aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2V2ZW50cy8zMzk5ODc2MzAxNzgzMzk=\n",
+    "image_url": "https://www.komoost.nl/media/50663846_1893655097424140_2335277824547487744_o.jpg",
+    "title": "OOST \u2022 Kingsnight w/ John Talabot + Orpheu The Wizard",
+    "url": "https://www.facebook.com/events/339987630178339",
+    "venue": {
+      "city": "Groningen",
+      "id": "oost-groningen",
+      "name": "Oost Groningen"
+    },
+    "when": "2019-04-26T23:05:00+02:00"
+  },
+  {
+    "description": "Prime + Tera K\u00f2r\u00e1 + SMP & more",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzQwMA==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/02/koningskopje_2019-600x600.jpg",
+    "title": "Koningskopje",
+    "url": "http://simplon.nl/?post_type=events&p=17400",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-04-26T23:45:00+02:00"
+  },
+  {
+    "description": "I-F \u2022\u00a0Optimo \u2022\u00a0Max Abysmal \u2022\u00a0Woody'92 \u2022\u00a0KI/KI \u2022\u00a0Fafi Abdel Nour \u2022\u00a0Miss Jay \u2022\u00a0Tjade \u2022\u00a0Nathan Homan b2b Andrew \u2022\u00a0Long Bram b2b DJ Boeing 747",
+    "id": "aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2V2ZW50cy80MDI5NDg1NzAyNzEwNjE=\n",
+    "image_url": "https://www.komoost.nl/media/52898462_1942101282579521_2558043269791481856_o.jpg",
+    "title": "The King's Favorites \u2022 A Kingsday Festival by OOST & KopjeK",
+    "url": "https://www.facebook.com/events/402948570271061",
+    "venue": {
+      "city": "Groningen",
+      "id": "oost-groningen",
+      "name": "Oost Groningen"
+    },
+    "when": "2019-04-27T14:00:00+02:00"
+  },
+  {
+    "description": "Special Guest TBA \u2022\u00a0Flo Flux \u2022\u00a0DJ Boeing 747 b2b Long Bram",
+    "id": "aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2V2ZW50cy8zOTUzMzYyMTEwMTQyMTYv\n",
+    "image_url": "https://www.komoost.nl/media/53283540_1952852504837732_1315766482419843072_o.jpg",
+    "title": "OOST \u2022\u00a0Kingsday (attend for free entrance)",
+    "url": "https://www.facebook.com/events/395336211014216/",
+    "venue": {
+      "city": "Groningen",
+      "id": "oost-groningen",
+      "name": "Oost Groningen"
+    },
+    "when": "2019-04-27T23:05:00+02:00"
+  },
+  {
+    "description": "Magische familiemusical",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlYXRlci10ZXJyYS0yLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Theater-Terra-Aladdin-Darren-van-der-Lek-1-e1551434709256-150x150.jpg",
+    "title": "Theater Terra - Aladdin (6+)",
+    "url": "https://www.spotgroningen.nl/programma/theater-terra-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-28T14:30:00+02:00"
+  },
+  {
+    "description": "Urban House Groningen",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzg0Nw==\n",
+    "image_url": "https://simplon.nl/content/uploads/2018/04/Podium-NA-dans-600x600.jpg",
+    "title": "Podium New Attraction Dans",
+    "url": "http://simplon.nl/?post_type=events&p=17847",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-04-28T19:00:00+02:00"
+  },
+  {
+    "description": "Beroemde barok volgens Vlaams recept",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYnJvY2stb3JjaGVzdHJhLXZv\neC1sdW1pbmlzLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/BRock-20-20Vox-20Luminis-20-20BRock-201-20Mirjam-20Devriendt-20300-20dpi-20RGB-150x150.jpg",
+    "title": "B'Rock Orchestra & Vox Luminis  - Barokfeest met Purcell en Charpentier",
+    "url": "https://www.spotgroningen.nl/programma/brock-orchestra-vox-luminis/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-28T20:15:00+02:00"
+  },
+  {
+    "description": "Een van de grootste sterren aan het Afrikaanse popfirmament",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZmF0b3VtYXRhLWRpYXdhcmEv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/08/AIDA_MULUNEH_FATU_COVER_IMAGE_v3-150x150.jpg",
+    "title": "Fatoumata Diawara",
+    "url": "https://www.spotgroningen.nl/programma/fatoumata-diawara/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-28T20:30:00+02:00"
+  },
+  {
+    "description": "Een melancholische reis met een donker randje langs pop, country, soul en blues",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbmljb2xlLWF0a2lucy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Nicole-Atkins-promo-150x150.jpg",
+    "title": "Nicole Atkins  - + support:Caleb Elliott ",
+    "url": "https://www.spotgroningen.nl/programma/nicole-atkins/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-28T20:30:00+02:00"
+  },
+  {
+    "description": "Met een mix van funk, rock, gospel, R&B, metal en jazz baanbrekend in de jaren 70",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbW90aGVycy1maW5lc3Qv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/Mothers-Finest-bijgesneden-150x150.jpg",
+    "title": "Mother's Finest",
+    "url": "https://www.spotgroningen.nl/programma/mothers-finest/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-29T20:00:00+02:00"
+  },
+  {
+    "description": "Enorme trivialiteiten en intellectuele bespiegelingen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdG9uZWVsZ3JvZXAtaGV0LXZv\nbGstNS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/podiumfoto-3-Het-vermoeden-van-Poincar\u00e9-Toneelgroep-Het-Volk-\u00a9-Hans-Vissers-150x150.jpg",
+    "title": "Toneelgroep Het Volk - Het vermoeden van Poincare",
+    "url": "https://www.spotgroningen.nl/programma/toneelgroep-het-volk-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-29T20:15:00+02:00"
+  },
+  {
+    "description": "Reis terug naar de jaren twintig, dertig en veertig, de tijd van de calypso- en ragtimeblues",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYy13LXN0b25la2luZy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/CWStoneking_DavidMcClisterPhoto_0034copy_874-e1551452215133-150x150.jpg",
+    "title": "C.W. Stoneking",
+    "url": "https://www.spotgroningen.nl/programma/c-w-stoneking/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-29T20:30:00+02:00"
+  },
+  {
+    "description": "Een relatie-fuck-up, Gummbah-cartoon en tragedie in \u00e9\u00e9n",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZmVpa2VzLWh1aXMtZHVkYS1w\nYWl2YS1jb21wYW55LWRpbmctZG9uZy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/stroet-150x150.jpg",
+    "title": "Stichting Stroet, Feikes Huis & DudaPaiva Company  - Ding dong: een relatietragedie",
+    "url": "https://www.spotgroningen.nl/programma/feikes-huis-duda-paiva-company-ding-dong/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-30T20:15:00+02:00"
+  },
+  {
+    "description": "Mooiste liedjes en strafste verhalen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEva29tbWlsLWZvby0yLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Kommil-Foo-Oogst-Johan-Jacobs-300-dpi-RGB-1-150x150.jpg",
+    "title": "Kommil Foo - Oogst",
+    "url": "https://www.spotgroningen.nl/programma/kommil-foo-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-04-30T20:15:00+02:00"
+  },
+  {
+    "description": "Klassiek lunchconcert in Het Caf\u00e9 van De Oosterpoort",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbHVuY2hjb25jZXJ0LTEtbWVp\nLTIwMTkv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2017/09/lunchconcerten-nieuw-150x150.jpg",
+    "title": "Lunchconcert",
+    "url": "https://www.spotgroningen.nl/programma/lunchconcert-1-mei-2019/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-01T12:00:00+02:00"
+  },
+  {
+    "description": "Urban House Groningen",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzg1MA==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/04/34158183_1671039686306664_6025898820628381696_n-900x600-600x600.jpg",
+    "title": "Podium New Attraction Spoken Word",
+    "url": "http://simplon.nl/?post_type=events&p=17850",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-01T19:30:00+02:00"
+  },
+  {
+    "description": "Danteske recreatiehel",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdXJsYW5kLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/urland-urlaub-campagnebeeldsquare-e1551777497144-150x150.jpg",
+    "title": "Urland - URLAUB",
+    "url": "https://www.spotgroningen.nl/programma/urland/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-01T20:15:00+02:00"
+  },
+  {
+    "description": "Absoluut hoogtepunt in de Nederlandse Kleinkunst (***** de Volkskrant)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlby1uaWpsYW5kLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Theo-Nijland-En-de-rest-is-onzin-Ben-van-Duin-2-150x150.jpg",
+    "title": "Theo Nijland - En de rest is onzin",
+    "url": "https://www.spotgroningen.nl/programma/theo-nijland/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-02T20:15:00+02:00"
+  },
+  {
+    "description": "\u00c9\u00e9n van de meest toonaangevende namen binnen de internationale jazz scene van dit moment",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYXZpc2hhaS1jb2hlbi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/02_ZivRavitz2018-1516824645-e1551451552445-150x150.jpg",
+    "title": "Avishai Cohen Quartet ",
+    "url": "https://www.spotgroningen.nl/programma/avishai-cohen/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-02T20:30:00+02:00"
+  },
+  {
+    "description": "Simplon UP",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzQwNA==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/02/51919759_1225608870924303_6006317042523701248_o-600x600.jpg",
+    "title": "The Pool Of Tears",
+    "url": "http://simplon.nl/?post_type=events&p=17404",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-02T21:30:00+02:00"
+  },
+  {
+    "description": "Urban House Groningen",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzg1Mw==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/04/900x500_newattractionmuziek-900x500vierkant.jpg",
+    "title": "Podium New Attraction Muziek",
+    "url": "http://simplon.nl/?post_type=events&p=17853",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-03T20:00:00+02:00"
+  },
+  {
+    "description": "Cinematische melodie\u00ebn en warme vocalen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvaGFldm4v\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/haevn_header_nieuws1-150x150.jpg",
+    "title": "HAEVN - + support: Matt Parriment ",
+    "url": "https://www.spotgroningen.nl/programma/haevn/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-03T20:00:00+02:00"
+  },
+  {
+    "description": "melodieuze poprockminiatuurtjes",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbm92YXN0YXIv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Novastar-poster-ontwerp-002-150x150.jpg",
+    "title": "Novastar - + support: Geike",
+    "url": "https://www.spotgroningen.nl/programma/novastar/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-03T20:00:00+02:00"
+  },
+  {
+    "description": "Theatraal feestje voor oog en oor",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvamFrb3AtYWhsYm9tLWxlLWJh\nbC8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/JAC_Lebal_groot_paneelmidden_korter-e1550141221850-150x150.jpg",
+    "title": "Jakop Ahlbom Company - Le bal",
+    "url": "https://www.spotgroningen.nl/programma/jakop-ahlbom-le-bal/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-03T20:15:00+02:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Grote zaal Open: 23:59 - 05:00 uur\n\n                VVK: \u20ac 3,- DVK: \u20ac 5,- \n                Aanvang: 23:59 uur\n\n\n            Genre: Eclectic\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzkxNQ==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/04/Banner_website_lines_mei2019-600x600.jpg",
+    "title": "ONGEHOORD",
+    "url": "http://simplon.nl/?post_type=events&p=17915",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-03T23:59:00+02:00"
+  },
+  {
+    "description": "Muzikale hoogstandjes en bezwerende geluiden met muziek icoon Alan Parsons",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYWxhbi1wYXJzb25zLWxpdmUt\ncHJvamVjdC8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/Alan-Parsons-bijgesneden-150x150.jpg",
+    "title": "Alan Parsons Live Project ",
+    "url": "https://www.spotgroningen.nl/programma/alan-parsons-live-project/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-04T21:00:00+02:00"
+  },
+  {
+    "description": "Jubileumconcert 4 Mei-Projekt 'OVER GRENZEN'  - Koor 4 Mei-Projekt & blaasorkest De Eendracht ",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvanViaWxldW1jb25jZXJ0LTQt\nbWVpLXByb2pla3Qtb3Zlci1ncmVuemVuLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/Koorfoto-2-150x150.jpg",
+    "title": "Jubileumconcert 4 Mei-Projekt 'OVER GRENZEN'  - Koor 4 Mei-Projekt & blaasorkest De Eendracht ",
+    "url": "https://www.spotgroningen.nl/programma/jubileumconcert-4-mei-projekt-over-grenzen/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-04T21:00:00+02:00"
+  },
+  {
+    "description": "Onvergetelijke klassieker in fraai muziektheater",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbWF0emVyLXRoZWF0ZXJwcm9k\ndWN0aWVzLWNhc2FibGFuY2Ev\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Persselectie_Casablanca_credits-Raymond-van-Olphen-1-150x150.jpg",
+    "title": "MATZER Theaterproducties - Casablanca",
+    "url": "https://www.spotgroningen.nl/programma/matzer-theaterproducties-casablanca/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-04T21:00:00+02:00"
+  },
+  {
+    "description": "Soul, hip hop \u00e9n folk met verassende nieuwe arrangementen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvc2FicmluYS1zdGFya2Uv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Sabrina-Stark-150x150.jpg",
+    "title": "Sabrina Starke - + support: Paa Kofi ",
+    "url": "https://www.spotgroningen.nl/programma/sabrina-starke/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-07T20:00:00+02:00"
+  },
+  {
+    "description": "Niets te verbergen, alles te verliezen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGUtdmVybGVpZGVycy02Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/DE-VERLEIDERS-Niksteverbergen-04-Copyright-Raymond-van-Olphen-e1552294951106-150x150.jpg",
+    "title": "De Verleiders met o.a. Pierre Bokma - #niksteverbergen",
+    "url": "https://www.spotgroningen.nl/programma/de-verleiders-6/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-07T20:15:00+02:00"
+  },
+  {
+    "description": "Klassiek lunchconcert in Het Caf\u00e9 van De Oosterpoort.",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbHVuY2hjb25jZXJ0LTgtbWVp\nLTIwMTkv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2017/09/lunchconcerten-nieuw-150x150.jpg",
+    "title": "Lunchconcert",
+    "url": "https://www.spotgroningen.nl/programma/lunchconcert-8-mei-2019/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-08T12:00:00+02:00"
+  },
+  {
+    "description": "Niets te verbergen, alles te verliezen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGUtdmVybGVpZGVycy01Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/DE-VERLEIDERS-Niksteverbergen-04-Copyright-Raymond-van-Olphen-e1552294951106-150x150.jpg",
+    "title": "De Verleiders met o.a. Pierre Bokma - #niksteverbergen",
+    "url": "https://www.spotgroningen.nl/programma/de-verleiders-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-08T20:15:00+02:00"
+  },
+  {
+    "description": "Bach & Soefi",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbmVkZXJsYW5kcy1ibGF6ZXJz\nLWVuc2VtYmxlLTUv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Nederlands-20Blazers-20Ensemble-20-20Bach-20-20Soefi-20Peter-20Lodder-201-20300-20dpi-20RGB-e1551519593270-150x150.jpg",
+    "title": "Nederlands Blazers Ensemble - Bach & Soefi",
+    "url": "https://www.spotgroningen.nl/programma/nederlands-blazers-ensemble-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-08T20:15:00+02:00"
+  },
+  {
+    "description": "Singer-songwriter en multi-instrumentalist, bekend van o.a. Daryll-Ann en Her Majesty",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcGF1bHVzbWEtMi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Jelle-150x150.jpg",
+    "title": "Paulusma - + support: Seewolf",
+    "url": "https://www.spotgroningen.nl/programma/paulusma-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-08T20:30:00+02:00"
+  },
+  {
+    "description": "Verplaatst naar dinsdag 12 februari!",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZnJlZWstZGUtam9uZ2UtNC8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/03/Freek-20de-20Jonge-20-20De-20Suppoost-20Bibi-20Veth-20300-20dpi-20RGB-e1526546801509-150x150.jpg",
+    "title": "Freek de Jonge - De suppoost",
+    "url": "https://www.spotgroningen.nl/programma/freek-de-jonge-4/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-09T20:15:00+02:00"
+  },
+  {
+    "description": "Noord Nederlands Orkest - o.l.v. Kerem Hasan en celliste Harriet Krijgh",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbm9vcmQtbmVkZXJsYW5kcy1v\ncmtlc3QtNTAv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Noord-20Nederlands-20Orkest-20-20Alles-20stroomt-20celliste-20Harriet-20Krijgh-20onbekend-201-e1530014833144-150x150.jpg",
+    "title": "Noord Nederlands Orkest - o.l.v. Kerem Hasan en celliste Harriet Krijgh",
+    "url": "https://www.spotgroningen.nl/programma/noord-nederlands-orkest-50/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-09T20:15:00+02:00"
+  },
+  {
+    "description": "Randje van gekte",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbmF0aGFsaWUtYmFhcnRtYW4t\nMy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Nathalie-20Baartman-20-20BREEK-20Jochem-20Jurgens-201-20300-20dpi-20RGB-e1552932455953-150x150.jpg",
+    "title": "Nathalie Baartman - Breek",
+    "url": "https://www.spotgroningen.nl/programma/nathalie-baartman-3/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-09T20:15:00+02:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Grote zaal Open: 20:00 - 22:30 uur\n\n                VVK: \u20ac 14,- DVK: \u20ac 15,- \n                Aanvang: 21:00 uur\n\n\n            Genre: Ska\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzMzNQ==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/02/svn18_jtc_boat_225_small-600x600.jpg",
+    "title": "Jaya The Cat",
+    "url": "http://simplon.nl/?post_type=events&p=17335",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-09T21:00:00+02:00"
+  },
+  {
+    "description": "Simplon UP",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzkyMg==\n",
+    "image_url": "",
+    "title": "K-boy en de Goedzo Jongens + Clasine",
+    "url": "http://simplon.nl/?post_type=events&p=17922",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-09T21:30:00+02:00"
+  },
+  {
+    "description": "Een goede mix van folk, country en bluegrass",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbWFuZG9saW4tb3JhbmdlLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/d0455a7d_Mandolin20Orange20201500-20Photo20-20Feb20and20March201920dates20-20lower20res-150x150.jpg",
+    "title": "Mandolin Orange",
+    "url": "https://www.spotgroningen.nl/programma/mandolin-orange/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-10T20:00:00+02:00"
+  },
+  {
+    "description": "verplaatst naar dinsdag 12 februari!",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZnJlZWstZGUtam9uZ2UtZGUt\nc3VwcG9vc3Qv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/03/Freek-20de-20Jonge-20-20De-20Suppoost-20Bibi-20Veth-20300-20dpi-20RGB-e1526546801509-150x150.jpg",
+    "title": "Freek de Jonge - De suppoost",
+    "url": "https://www.spotgroningen.nl/programma/freek-de-jonge-de-suppoost/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-10T20:15:00+02:00"
+  },
+  {
+    "description": "Nog 1 Keertje Dan",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNjUyNw==\n",
+    "image_url": "",
+    "title": "Hausmagger",
+    "url": "http://simplon.nl/?post_type=events&p=16527",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-10T21:00:00+02:00"
+  },
+  {
+    "description": "Twintig (inter)nationale topacts uit de rhythm & blues",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9mZXN0aXZhbHMvcmh5dGhtLWJsdWVzLW5pZ2h0\nLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/11/rhythm-bluesnight-150x150.jpg",
+    "title": "Rhythm & Blues Night",
+    "url": "https://www.spotgroningen.nl/festivals/rhythm-blues-night/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-11T16:00:00+02:00"
+  },
+  {
+    "description": "Theater in zijn meest prangende, relevante verschijningsvorm.\u00a0(de Morgen \u2605\u2605\u2605\u2605\u2605)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbnRnZW50LWx1ay1wZXJjZXZh\nbC8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/04/IMG_5146_druk-c-Michiel-Devijver-150x150.jpg",
+    "title": "NTGent / Luk Perceval - Black, The Sorrows of Belgium I: Congo",
+    "url": "https://www.spotgroningen.nl/programma/ntgent-luk-perceval/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-11T20:15:00+02:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Kleine zaal Open: 20:00 - 23:00 uur\n\n                VVK: \u20ac 11,- DVK: \u20ac 11,- \n                Aanvang: 20:45 uur\n\n\n            Genre: Pop\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNjk1NA==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/01/celinecairo_vierkant-600x600.jpg",
+    "title": "Celine Cairo",
+    "url": "http://simplon.nl/?post_type=events&p=16954",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-11T20:45:00+02:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Hele pand Open: 23:30 - 05:00 uur\n\n\n                Aanvang: 23:30 uur\n\n\n            Genre: R&B / Urban\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzY4NQ==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/03/vunzige-foto-600x600.jpg",
+    "title": "Vunzige Deuntjes",
+    "url": "http://simplon.nl/?post_type=events&p=17685",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-11T23:30:00+02:00"
+  },
+  {
+    "description": "Kwaliteitspop van Nederlandse bodem",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcm9uZGUtMi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/1541521641_magicfields__akw_artist_persfoto_1_1-150x150.jpg",
+    "title": "ROND\u00c9 ",
+    "url": "https://www.spotgroningen.nl/programma/ronde-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-12T20:00:00+02:00"
+  },
+  {
+    "description": "Een unieke show voor de ware Elvis-fan en iedere muziekliefhebber",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlLWVsdmlzLWNvbmNlcnQt\nMjAxOS0yLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/THE-ELVIS-CONCERT-2018-150x150.jpg",
+    "title": "The Elvis Concert 2019 - Met originele bandleden van Elvis Presley! ",
+    "url": "https://www.spotgroningen.nl/programma/the-elvis-concert-2019-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-13T20:30:00+02:00"
+  },
+  {
+    "description": "Lunchconcert Openbare Repetitie van het Noord Nederlands Orkest.",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbHVuY2hjb25jZXJ0LW5vb3Jk\nLW5lZGVybGFuZHMtb3JrZXN0LW9wZW5iYXJlLXJlcGV0aXRpZS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2017/09/lunchconcerten-nieuw-150x150.jpg",
+    "title": "Lunchconcert: Noord Nederlands Orkest openbare repetitie",
+    "url": "https://www.spotgroningen.nl/programma/lunchconcert-noord-nederlands-orkest-openbare-repetitie/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-15T12:00:00+02:00"
+  },
+  {
+    "description": "\"Prachtig theater\" (NRC *****)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZXZhLWNydXR6ZW4tMi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Eva-20Crutzen-20-20Opslaan-20Als-20Brenda-20de-20Vries-201-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Eva Crutzen - Opslaan als",
+    "url": "https://www.spotgroningen.nl/programma/eva-crutzen-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-15T20:15:00+02:00"
+  },
+  {
+    "description": "Improvisatie op zijn best",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcGV0ZXItZGUtYmFhbi1lLWEv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Vloer-150x150.jpg",
+    "title": "Peter de Baan e.a. - De vloer op",
+    "url": "https://www.spotgroningen.nl/programma/peter-de-baan-e-a/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-15T20:15:00+02:00"
+  },
+  {
+    "description": "Duits vioolwonder",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYWNhZGVteS1vZi1zdC1tYXJ0\naW4taW4tdGhlLWZpZWxkcy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/04/Academy-of-St-Martin-in-the-Fields-Julia-Fischer-3-Felix-Broede-300-dpi-RGB-e1547719121444-150x150.jpg",
+    "title": "Academy of St Martin in the Fields - en Julia Fischer (viool)/Bach en Schnittke",
+    "url": "https://www.spotgroningen.nl/programma/academy-of-st-martin-in-the-fields/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-16T20:15:00+02:00"
+  },
+  {
+    "description": "Harteklop uit vele delen van de wereld",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGFuc3RoZWF0ZXItYXlhLTIt\nYmxhY2stbWVtb3JpZXMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Danstheater-20AYA-20-20Black-20Memories-20Eddy-20Wenting-20300-20dpi-20RGB-e1526479231569-150x150.jpg",
+    "title": "Danstheater AYA - Black Memories (14+)",
+    "url": "https://www.spotgroningen.nl/programma/danstheater-aya-2-black-memories/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-16T20:15:00+02:00"
+  },
+  {
+    "description": "Dans, live muziek en toneel door een cast van 25 spelers",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbml0ZS1hc2tvLXNjaG9uYmVy\nZ3Mta2hhb3MtMy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/NITE_BNW2.0_0007_Fotografie-Lex-Vesseur-Jelmer-Buitenga-150x150.jpg",
+    "title": "NITE (regie: Guy Weizman)  - Brave new world 2.0",
+    "url": "https://www.spotgroningen.nl/programma/nite-asko-schonbergs-khaos-3/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-16T20:15:00+02:00"
+  },
+  {
+    "description": "Simplon UP",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzQwOA==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/02/Press_banner_Paulien_Verheyen-600x600.jpg",
+    "title": "Walden",
+    "url": "http://simplon.nl/?post_type=events&p=17408",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-16T21:30:00+02:00"
+  },
+  {
+    "description": "Maakt indruk met zijn persoonlijke nummers, bijzondere stembereik en altijd soulvolle sound",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvamVhbmd1LW1hY3Jvb3kv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Jeangu-Macrooy-persfoto-150x150.jpg",
+    "title": "Jeangu Macrooy",
+    "url": "https://www.spotgroningen.nl/programma/jeangu-macrooy/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-17T20:00:00+02:00"
+  },
+  {
+    "description": "Dans, live muziek en toneel door een cast van 25 spelers",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbml0ZS1hc2tvLXNjaG9uYmVy\nZ3Mta2hhb3MtMi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/NITE_BNW2.0_0007_Fotografie-Lex-Vesseur-Jelmer-Buitenga-150x150.jpg",
+    "title": "NITE (regie: Guy Weizman)  - Brave new world 2.0",
+    "url": "https://www.spotgroningen.nl/programma/nite-asko-schonbergs-khaos-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-17T20:15:00+02:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Kleine zaal Open: 20:00 - 23:00 uur\n\n                VVK: \u20ac 8,- DVK: \u20ac 8,- \n                Aanvang: 20:30 uur\n\n\n            Genre: Rock / Pop\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNjk3NA==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/01/Persfoto-Audio-Adam-2018-1-600x600.jpg",
+    "title": "Audio Adam",
+    "url": "http://simplon.nl/?post_type=events&p=16974",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-17T20:30:00+02:00"
+  },
+  {
+    "description": "Noord Nederlands Orkest - Muzikale moviestars",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbm9vcmQtbmVkZXJsYW5kcy1v\ncmtlc3QtNDkv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Noord-20Nederlands-20Orkest-20-20Muzikale-20moviestars-20onbekend-201-150x150.jpg",
+    "title": "Noord Nederlands Orkest - Muzikale moviestars",
+    "url": "https://www.spotgroningen.nl/programma/noord-nederlands-orkest-49/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-18T20:15:00+02:00"
+  },
+  {
+    "description": "Dans, live muziek en toneel door een cast van 25 spelers",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbml0ZS1hc2tvLXNjaG9uYmVy\nZ3Mta2hhb3Mv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/NITE_BNW2.0_0007_Fotografie-Lex-Vesseur-Jelmer-Buitenga-150x150.jpg",
+    "title": "NITE (regie: Guy Weizman)  - Brave new world 2.0",
+    "url": "https://www.spotgroningen.nl/programma/nite-asko-schonbergs-khaos/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-18T20:15:00+02:00"
+  },
+  {
+    "description": "Throwback to: Kim Hoorweg & Sven Hammond  - play Amy Winehouse ",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEva2ltaG9vcndlZy1zdmVuaGFt\nbW9uZC1wbGF5LWFteS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/KimSvenpromofoto_2_HighRes-150x150.jpg",
+    "title": "Throwback to: Kim Hoorweg & Sven Hammond  - play Amy Winehouse ",
+    "url": "https://www.spotgroningen.nl/programma/kimhoorweg-svenhammond-play-amy/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-18T20:30:00+02:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Kleine zaal Open: 20:00 - 22:30 uur\n\n                VVK: \u20ac 11,- DVK: \u20ac 11,- \n                Aanvang: 20:45 uur\n\n\n            Genre: Indie\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzY0MQ==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/03/The-Bony-King-Of-Nowhere-foto-Anton-Coene-600x600.jpg",
+    "title": "The Bony King of Nowhere",
+    "url": "http://simplon.nl/?post_type=events&p=17641",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-18T20:45:00+02:00"
+  },
+  {
+    "description": "Optocht vol humor",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZWJvbml0LXNheG9mb29ua3dh\ncnRldC1vb3JrYWFuLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Oorkaan-20I-20Ebonit-20Saxofoonkwartet-20-20Het-20Pleintje-20van-20Meneer-20Sax-20Boy-20Hazes-201-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Ebonit Saxofoonkwartet / Oorkaan - Het pleintje van Meneer Sax (5+)",
+    "url": "https://www.spotgroningen.nl/programma/ebonit-saxofoonkwartet-oorkaan/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-19T15:30:00+02:00"
+  },
+  {
+    "description": "Leadzanger van Roxy Music komt met spectaculair concert naar De Oosterpoort",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYnJ5YW4tZmVycnkv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/BF-Hand-In-Air-Photo-002-150x150.jpg",
+    "title": "Bryan Ferry - World Tour 2019",
+    "url": "https://www.spotgroningen.nl/programma/bryan-ferry/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-20T20:00:00+02:00"
+  },
+  {
+    "description": "Een reis door het werk van Sidi Larbi Cherkaoui, een van de meest toonaangevende hedendaagse choreografen.",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvaW50cm9kYW5zLWxldmVsYXJi\naS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/04/larbi-150x150.jpg",
+    "title": "Introdans  - Leve Larbi ",
+    "url": "https://www.spotgroningen.nl/programma/introdans-levelarbi/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-20T20:15:00+02:00"
+  },
+  {
+    "description": "Spin-off van The Nation",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvaGV0LW5hdGlvbmFsZS10aGVh\ndGVyLTYv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/img21348_223-150x150.jpg",
+    "title": "Het Nationale Theater - De wereld volgens John",
+    "url": "https://www.spotgroningen.nl/programma/het-nationale-theater-6/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-21T20:15:00+02:00"
+  },
+  {
+    "description": "Geprezen tribute-act met waardige ode aan George Michael",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZmFzdGxvdmUtYS10cmlidXRl\nLXRvLWdlb3JnZS1taWNoYWVsLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/171127_fast_love_0012-e1525265101786-150x150.jpg",
+    "title": "Fastlove: A Tribute To George Michael ",
+    "url": "https://www.spotgroningen.nl/programma/fastlove-a-tribute-to-george-michael/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-21T20:30:00+02:00"
+  },
+  {
+    "description": "Klassiek lunchconcert van het Prins Claus Conservatorium in Het Caf\u00e9 van De Oosterpoort",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbHVuY2hjb25jZXJ0LXByaW5z\nLWNsYXVzLWNvbnNlcnZhdG9yaXVtLTIyLW1laS0yMDE5Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2017/09/lunchconcerten-nieuw-150x150.jpg",
+    "title": "Lunchconcert: Prins Claus Conservatorium",
+    "url": "https://www.spotgroningen.nl/programma/lunchconcert-prins-claus-conservatorium-22-mei-2019/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-22T12:00:00+02:00"
+  },
+  {
+    "description": "Covers in akoestische setting door Nederlandse internetsensatie",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvc3V6YW4tZnJlZWsv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Suzan-Freek-150x150.jpg",
+    "title": "Suzan & Freek",
+    "url": "https://www.spotgroningen.nl/programma/suzan-freek/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-22T20:00:00+02:00"
+  },
+  {
+    "description": "Comedian terug in het theater",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYXJqZW4tbHViYWNoLTIv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Arjen-20Lubach-20-20Arjen-20Lubach-20LIVE-20Merlijn-20Doomernik-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Arjen Lubach - LIVE",
+    "url": "https://www.spotgroningen.nl/programma/arjen-lubach-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-22T20:15:00+02:00"
+  },
+  {
+    "description": "Met hits als \u2018Mind Made Up\u2019 en \u2018All Things Under The Sun\u2019 is hij niet meer van de radio af te slaan",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvd3VsZi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Wulf-klein-150x150.jpg",
+    "title": "Wulf",
+    "url": "https://www.spotgroningen.nl/programma/wulf/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-23T20:00:00+02:00"
+  },
+  {
+    "description": "Comedian terug in het theater",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYXJqZW4tbHViYWNoLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Arjen-20Lubach-20-20Arjen-20Lubach-20LIVE-20Merlijn-20Doomernik-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Arjen Lubach - LIVE",
+    "url": "https://www.spotgroningen.nl/programma/arjen-lubach/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-23T20:15:00+02:00"
+  },
+  {
+    "description": "Zanger, gitarist, componist, producer en vooral: muzikant in hart en nieren",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYWxhaW4tY2xhcmsv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Alain-Clark-bijgesneden-150x150.jpg",
+    "title": "Alain Clark",
+    "url": "https://www.spotgroningen.nl/programma/alain-clark/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-23T20:30:00+02:00"
+  },
+  {
+    "description": "Philip Glass \u2013 Einstein on the Beach",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvY29sbGVnaXVtLXZvY2FsZS1n\nZW50LWljdHVzLXN1emFubmUtdmVnYS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/04/Collegium-20Vocale-20Gent-201-20M.-20Hendryckx-e1551264048463-150x150.jpg",
+    "title": "Collegium Vocale Gent, Ictus Ensemble  - en Suzanne Vega / Einstein on the Beach ",
+    "url": "https://www.spotgroningen.nl/programma/collegium-vocale-gent-ictus-suzanne-vega/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-24T19:30:00+02:00"
+  },
+  {
+    "description": "Prikkelend, tergend, ontregelend en tegendraads",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbWljaGEtd2VydGhlaW0tNi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Micha-20Wertheim-20-20Micha-20Wertheim-20Voor-20alle-20Duidelijkheid-20Merlijn-20Doomernik-201-20300-20dpi-20RGB-e1527598678582-150x150.jpg",
+    "title": "Micha Wertheim - Micha Wertheim voor alle duidelijkheid",
+    "url": "https://www.spotgroningen.nl/programma/micha-wertheim-6/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-24T20:15:00+02:00"
+  },
+  {
+    "description": "+ Sam & Julia",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNjkzNg==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/01/judy-blank-pers-600x600.jpg",
+    "title": "Judy Blank",
+    "url": "http://simplon.nl/?post_type=events&p=16936",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-24T20:30:00+02:00"
+  },
+  {
+    "description": "+ Hibakusha + BAA$",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzI5MQ==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/02/fiak-i-promo-2018-full-body-cut-fiak-2018-promo-i-black-and-white-gold-detail-600x600.jpg",
+    "title": "For I Am King",
+    "url": "http://simplon.nl/?post_type=events&p=17291",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-24T20:30:00+02:00"
+  },
+  {
+    "description": "Amsterdamse inhakers en Engelse love songs",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZHJpZXMtcm9lbHZpbmsv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/Dries_soc_4k-groningen-bijgesnden-150x150.jpg",
+    "title": "Dries Roelvink",
+    "url": "https://www.spotgroningen.nl/programma/dries-roelvink/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-24T20:30:00+02:00"
+  },
+  {
+    "description": "Het NNO en het Jostiband Orkest vormen samen een reusachtig symfonieorkest.",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbm9vcmQtbmVkZXJsYW5kcy1v\ncmtlc3QtNDcv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Noord-20Nederlands-20Orkest-20-20Jostiband-20onbekend-201-e1542873207132-150x150.jpg",
+    "title": "Noord Nederlands Orkest - NNO en Jostiband orkest spelen de Bolero",
+    "url": "https://www.spotgroningen.nl/programma/noord-nederlands-orkest-47/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-25T19:00:00+02:00"
+  },
+  {
+    "description": "Samen met zijn vrienden komt Beats by Esko een feestje bouwen in De Oosterpoort",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmVhdHMtYnktZXNrby1mcmll\nbmRzLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/Esko-Friends-3-e1552932707251-150x150.jpg",
+    "title": "Beats By Esko & Friends",
+    "url": "https://www.spotgroningen.nl/programma/beats-by-esko-friends/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-25T19:30:00+02:00"
+  },
+  {
+    "description": "Zoemende analoge synths, elegante glijdende baslijnen en ruimtelijke atmosferen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvamFjY28tZ2FyZG5lci8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/jaccogardner_somnium_mar\u00edapandiello-150x150.jpg",
+    "title": "Jacco Gardner's Somnium ",
+    "url": "https://www.spotgroningen.nl/programma/jacco-gardner/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-25T20:00:00+02:00"
+  },
+  {
+    "description": "Prikkelend, tergend, ontregelend en tegendraads",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbWljaGEtd2VydGhlaW0tNS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Micha-20Wertheim-20-20Micha-20Wertheim-20Voor-20alle-20Duidelijkheid-20Merlijn-20Doomernik-201-20300-20dpi-20RGB-e1527598678582-150x150.jpg",
+    "title": "Micha Wertheim - Micha Wertheim voor alle duidelijkheid",
+    "url": "https://www.spotgroningen.nl/programma/micha-wertheim-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-25T20:15:00+02:00"
+  },
+  {
+    "description": "Eigenzinnige Canadees die van country en pop springt naar psychedelica en punk",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGFuaWVsLXJvbWFuby8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Daniel-Romano-e1551360583419-150x150.jpg",
+    "title": "Daniel Romano - + support: Ian Daniel Kehoe",
+    "url": "https://www.spotgroningen.nl/programma/daniel-romano/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-26T20:00:00+02:00"
+  },
+  {
+    "description": "Intelligent, ingetogen en technisch briljant",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEva3J5c3RpYW4temltZXJtYW4t\nMi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/04/Krystian-20Zimerman-201-20Kasskara-20and-20DGG-150x150.jpg",
+    "title": "Krystian Zimerman (piano)",
+    "url": "https://www.spotgroningen.nl/programma/krystian-zimerman-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-26T20:15:00+02:00"
+  },
+  {
+    "description": "Een flitsende montage van groteske taferelen (de Standaard \u2605\u2605\u2605)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvaGV0LXRvbmVlbGh1aXMtYmFn\nYWFyLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/04/Toneelhuis-Bagaar-3-e1553004102878-150x150.jpg",
+    "title": "Het Toneelhuis - Bagaar",
+    "url": "https://www.spotgroningen.nl/programma/het-toneelhuis-bagaar/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-27T20:15:00+02:00"
+  },
+  {
+    "description": "Volgens connaisseurs \u00e9\u00e9n van de meest veelbelovende namen uit de vermaarde Nashville-scene",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvY2hhbmNlLW1jY295Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/Chance-McCoy-H-1-150x150.jpg",
+    "title": "Chance McCoy ",
+    "url": "https://www.spotgroningen.nl/programma/chance-mccoy/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-27T20:30:00+02:00"
+  },
+  {
+    "description": "Afrikaanse, Spaanse en Cubaanse invloeden",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbmljay1tdWx2ZXktMy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/NickMulvey1-150x150.jpg",
+    "title": "Nick Mulvey (solo) ",
+    "url": "https://www.spotgroningen.nl/programma/nick-mulvey-3/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-28T20:00:00+02:00"
+  },
+  {
+    "description": "Gloedvol manifest tegen discriminatie",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbGlrZW1pbmRzLXNhbWFuLWFt\naW5pLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Likeminds-20I-20Saman-20Amini-20-20A-20Seat-20At-20The-20Table-20Casper-20Koster-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Likeminds / Saman Amini - A seat at the table",
+    "url": "https://www.spotgroningen.nl/programma/likeminds-saman-amini/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-28T20:15:00+02:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Kleine zaal Open: 20:00 - 23:00 uur\n\n                VVK: \u20ac 13,- DVK: \u20ac 13,- \n                Aanvang: 20:30 uur\n\n\n            Genre: Hiphop\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzI0OA==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/02/CREDIT-Kim-Newmoney-OME-Promo-Image-600x600.jpg",
+    "title": "Homebase presents:Open Mike Eagle",
+    "url": "http://simplon.nl/?post_type=events&p=17248",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-29T20:30:00+02:00"
+  },
+  {
+    "description": "Feitjes, woordgrappen en schatergelach",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbm8tc3VjaC10aGluZy1hcy1h\nLWZpc2gv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/NSTAAF_landscape_press-150x150.jpg",
+    "title": "No Such Thing As A Fish ",
+    "url": "https://www.spotgroningen.nl/programma/no-such-thing-as-a-fish/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-29T20:30:00+02:00"
+  },
+  {
+    "description": "Einde seizoensfeest met veel korte voorstellingen van Gronings theatertalent",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlYXRlcm5hY2h0LWdyb25p\nbmdlbi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/theaternacht4HR-150x150.jpg",
+    "title": "Theaternacht ",
+    "url": "https://www.spotgroningen.nl/programma/theaternacht-groningen/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-31T19:00:00+02:00"
+  },
+  {
+    "description": "jong bruisend cabarettalent",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvY2FiYXJlc3RhZmV0dGUtNS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Cabarestafette-202018-2019-20Paul-20Roos-202-20300-20dpi-20RGB-e1526998899554-150x150.jpg",
+    "title": "Cabarestafette - 2018-2019",
+    "url": "https://www.spotgroningen.nl/programma/cabarestafette-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-05-31T20:15:00+02:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Kleine zaal Open: 20:30 - 23:00 uur\n\n                VVK: \u20ac 9,50 \n                Aanvang: 21:00 uur\n\n\n            Genre: Trippy Electro Hiphop\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNjkyMw==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/01/fata-vierkant-01-600x600.jpg",
+    "title": "FATA BOOM",
+    "url": "http://simplon.nl/?post_type=events&p=16923",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-31T21:00:00+02:00"
+  },
+  {
+    "description": "Unit Moebius & more",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzc1Mg==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/04/acid_website-600x600.jpg",
+    "title": "303 Acid",
+    "url": "http://simplon.nl/?post_type=events&p=17752",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-05-31T23:59:00+02:00"
+  },
+  {
+    "description": "Small Town Bandits + Swinder + Electropo\u00ebzie & more",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzU4Ng==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/03/coverfoto_aidition2019_bewerkt-600x600.jpg",
+    "title": "AIDition",
+    "url": "http://simplon.nl/?post_type=events&p=17586",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-06-01T20:00:00+02:00"
+  },
+  {
+    "description": "'s Werelds beste musicalgroep",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvY29sbGFicm8v\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/COLLABRO-EDIT-RAW-2-RGB-bijgewerkt-3.0-150x150.jpg",
+    "title": "Collabro ",
+    "url": "https://www.spotgroningen.nl/programma/collabro/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-01T20:15:00+02:00"
+  },
+  {
+    "description": "Feest, vrouwen, bier, sigaretten en livemuziek van De Mannen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvb25kZXItdnJvdXdlbi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Onder-Vrouwen-Eindelijk-Feest-Maarten-Corbijn-Bob-Bronshoff-Annaleen-Louwes-Joost-Overbeek-1-e1531138037224-150x150.jpg",
+    "title": "Onder Vrouwen - Eindelijk feest!",
+    "url": "https://www.spotgroningen.nl/programma/onder-vrouwen/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-01T20:15:00+02:00"
+  },
+  {
+    "description": "Zing mee in het Requiem van Mozart",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvc2NyYXRjaC1tb3phcnQtcmVx\ndWllbS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/05/Zing-20mee-20in-20het-20Requiem-20van-20Mozart-20-20Geert-Jan-20van-20Beijeren-20Bergen-20en-20Henegouwen-202-20Ronald-20Lowijs-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Zing mee in het Requiem van Mozart - Scratch Mozart Requiem o.l.v. GJ van Beijeren",
+    "url": "https://www.spotgroningen.nl/programma/scratch-mozart-requiem/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-01T20:15:00+02:00"
+  },
+  {
+    "description": "Het theaterprogramma New Orleans is dramatisch, informatief en inspirerend",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEva29vbGUtZW4tYmxva2h1aXMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Ricky-20Koole-20Leo-20Blokhuis-20en-20Ivan-20Peroti-20-20New-20Orleans-20Rob-20Becker-201-20300-20dpi-20RGB-e1551350805771-150x150.jpg",
+    "title": "Ricky Koole, Leo Blokhuis en Ivan Peroti - New Orleans",
+    "url": "https://www.spotgroningen.nl/programma/koole-en-blokhuis/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-01T20:30:00+02:00"
+  },
+  {
+    "description": "Jubileumconcert 50 jaar GSO Mira",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZ3JvbmluZ2VyLXN0dWRlbnRl\nbm9ya2VzdC1taXJhLTIv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/DSC_3592-150x150.jpg",
+    "title": "Groninger Studentenorkest MIRA  - 50-jarig jubileumconcert ",
+    "url": "https://www.spotgroningen.nl/programma/groninger-studentenorkest-mira-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-02T14:30:00+02:00"
+  },
+  {
+    "description": "\u201cOnbetaalbaar geestig.\u201d (AD *****)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmVydC12aXNzY2hlci0xNS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Bert-20Visscher-20-20Hij-20wordt-20vanzelf-20moe-20Maarten-20van-20der-20Wal-202-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Bert Visscher - Hij wordt vanzelf moe",
+    "url": "https://www.spotgroningen.nl/programma/bert-visscher-15/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-04T20:15:00+02:00"
+  },
+  {
+    "description": "Een soulvolle stem en lovers rock",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmVyZXMtaGFtbW9uZC8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/w1AfOGxw.jpeg_Beres_Hammond-Never-Ending_High_res-e1553075943446-150x150.jpg",
+    "title": "Beres Hammond & Harmony House Band ",
+    "url": "https://www.spotgroningen.nl/programma/beres-hammond/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-04T20:30:00+02:00"
+  },
+  {
+    "description": "Britse folk singer-songwriter zingt literaire teksten met rasperige stem",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvd2lsbC12YXJsZXkv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/WV-1-150x150.jpg",
+    "title": "Will Varley",
+    "url": "https://www.spotgroningen.nl/programma/will-varley/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-05T20:00:00+02:00"
+  },
+  {
+    "description": "\u201cOnbetaalbaar geestig.\u201d (AD *****)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmVydC12aXNzY2hlci0xNC8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Bert-20Visscher-20-20Hij-20wordt-20vanzelf-20moe-20Maarten-20van-20der-20Wal-202-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Bert Visscher - Hij wordt vanzelf moe",
+    "url": "https://www.spotgroningen.nl/programma/bert-visscher-14/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-05T20:15:00+02:00"
+  },
+  {
+    "description": "\u201cOnbetaalbaar geestig.\u201d (AD *****)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmVydC12aXNzY2hlci0xMy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Bert-20Visscher-20-20Hij-20wordt-20vanzelf-20moe-20Maarten-20van-20der-20Wal-202-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Bert Visscher - Hij wordt vanzelf moe",
+    "url": "https://www.spotgroningen.nl/programma/bert-visscher-13/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-06T20:15:00+02:00"
+  },
+  {
+    "description": "\u201cOnbetaalbaar geestig.\u201d (AD *****)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmVydC12aXNzY2hlci0xMi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Bert-20Visscher-20-20Hij-20wordt-20vanzelf-20moe-20Maarten-20van-20der-20Wal-202-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Bert Visscher - Hij wordt vanzelf moe",
+    "url": "https://www.spotgroningen.nl/programma/bert-visscher-12/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-07T20:15:00+02:00"
+  },
+  {
+    "description": "Vlaamse singer-songwriter gaat 'back to basics'",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvamFzcGVyLXN0ZXZlcmxpbmNr\nLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/JasperSteverlinck01-150x150.jpg",
+    "title": "Jasper Steverlinck ",
+    "url": "https://www.spotgroningen.nl/programma/jasper-steverlinck/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-07T20:30:00+02:00"
+  },
+  {
+    "description": "The Freestyle Tour",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNTMyNw==\n",
+    "image_url": "https://simplon.nl/content/uploads/2018/08/Beair_Portrait_KRSOne-1251-600x600.jpg",
+    "title": "Homebase presents:KRS-One",
+    "url": "http://simplon.nl/?post_type=events&p=15327",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-06-07T21:00:00+02:00"
+  },
+  {
+    "description": "Afterparty KRS-One",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzAzMg==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/01/28061843_1269219946512974_6366033246553115493_o-600x600.jpg",
+    "title": "Ladi Dadi",
+    "url": "http://simplon.nl/?post_type=events&p=17032",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-06-07T23:00:00+02:00"
+  },
+  {
+    "description": "\u201cOnbetaalbaar geestig.\u201d (AD *****)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmVydC12aXNzY2hlci0xMS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Bert-20Visscher-20-20Hij-20wordt-20vanzelf-20moe-20Maarten-20van-20der-20Wal-202-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Bert Visscher - Hij wordt vanzelf moe",
+    "url": "https://www.spotgroningen.nl/programma/bert-visscher-11/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-08T20:15:00+02:00"
+  },
+  {
+    "description": "Bitterzoete soulfolk en een diep-broeierige stem",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbWljaGFlbC1raXdhbnVrYS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/Michael-Kiwanuka1-LR-150x150.jpg",
+    "title": "Michael Kiwanuka",
+    "url": "https://www.spotgroningen.nl/programma/michael-kiwanuka/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-09T20:00:00+02:00"
+  },
+  {
+    "description": "Kris Kristofferson deelt podium met The Strangers",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEva3Jpcy1rcmlzdG9mZmVyc29u\nLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Kris_Kristofferson_ApprovedPhoto_2012-150x150.jpg",
+    "title": "Kris Kristofferson & The Strangers ",
+    "url": "https://www.spotgroningen.nl/programma/kris-kristofferson/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-11T20:00:00+02:00"
+  },
+  {
+    "description": "Een mix van scheurende bluesrock en rauwe, ingetogen soul",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdmludGFnZS10cm91YmxlLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/VINTAGE-TROUBLE-\u252c\u00ae-Jay-Gilbert-2018-e1553179487291-150x150.jpeg",
+    "title": "Vintage Trouble",
+    "url": "https://www.spotgroningen.nl/programma/vintage-trouble/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-12T20:00:00+02:00"
+  },
+  {
+    "description": "Verhalen uit de wijk in de Stadsschouwburg",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGUtd2lqay1kZS13ZXJlbGQt\nOC8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/RBF_2640-copy-150x150.jpg",
+    "title": "De Wijk De Wereld - Try-out",
+    "url": "https://www.spotgroningen.nl/programma/de-wijk-de-wereld-8/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-13T20:15:00+02:00"
+  },
+  {
+    "description": "The Fatal Flowers zijn terug met een heuse 'reunion'",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlLWZhdGFsLWZsb3dlcnMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/fatal-flowers-foto-150x150.jpg",
+    "title": "The Fatal Flowers - #FF2019 Reunion Tour ",
+    "url": "https://www.spotgroningen.nl/programma/the-fatal-flowers/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-13T20:30:00+02:00"
+  },
+  {
+    "description": "Verhalen uit de wijk in de Stadsschouwburg",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGUtd2lqay1kZS13ZXJlbGQt\nNy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/RBF_2640-copy-150x150.jpg",
+    "title": "De Wijk De Wereld - premiere",
+    "url": "https://www.spotgroningen.nl/programma/de-wijk-de-wereld-7/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-14T20:15:00+02:00"
+  },
+  {
+    "description": "Stef Bos - Ruimte",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvc3RlZi1ib3Mv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Stef-20Bos-20-20RUIMTE-20Lieke-20Anna-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Stef Bos - Ruimte",
+    "url": "https://www.spotgroningen.nl/programma/stef-bos/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-14T20:30:00+02:00"
+  },
+  {
+    "description": "Elvis Presley-achtige rock, Roy Orbison-stijl ballades en onweerstaanbare pop",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlLW1hdmVyaWNrcy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/mavericks-30th-Logo-White-150x150.jpeg",
+    "title": "The Mavericks",
+    "url": "https://www.spotgroningen.nl/programma/the-mavericks/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-14T20:30:00+02:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Kleine zaal Open: 20:00 - 22:30 uur\n\n                VVK: \u20ac 11,- DVK: \u20ac 11,- \n                Aanvang: 20:45 uur\n\n\n            Genre: Soul\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzY0Mg==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/03/SteffenMorrison-JonathanHielkema010-0.3-600x600.jpg",
+    "title": "Steffen Morrison",
+    "url": "http://simplon.nl/?post_type=events&p=17642",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-06-14T20:45:00+02:00"
+  },
+  {
+    "description": "Verhalen uit de wijk in de Stadsschouwburg",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGUtd2lqay1kZS13ZXJlbGQt\nNi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/RBF_2640-copy-150x150.jpg",
+    "title": "De Wijk De Wereld",
+    "url": "https://www.spotgroningen.nl/programma/de-wijk-de-wereld-6/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-15T14:30:00+02:00"
+  },
+  {
+    "description": "Verhalen uit de wijk in de Stadsschouwburg",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGUtd2lqay1kZS13ZXJlbGQt\nNS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/RBF_2640-copy-150x150.jpg",
+    "title": "De Wijk De Wereld",
+    "url": "https://www.spotgroningen.nl/programma/de-wijk-de-wereld-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-15T20:15:00+02:00"
+  },
+  {
+    "description": "Mengeling van blues, country, R&B, rock 'n roll, jazz, gospel en wereldmuziek",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvaGF6bWF0LW1vZGluZS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Hazmat-Modine-2-150x150.jpg",
+    "title": "Hazmat Modine - Box of Breath Tour 2019 ",
+    "url": "https://www.spotgroningen.nl/programma/hazmat-modine/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-19T20:30:00+02:00"
+  },
+  {
+    "description": "Meesterwerk over patstelling",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZ29vdi1tdXppZWt0aGVhdGVy\nLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/GOOV-Muziektheater-Chess-300-dpi-RGB-1-e1527163382988-150x150.jpg",
+    "title": "GOOV Muziektheater - CHESS (Premi\u00e8re)",
+    "url": "https://www.spotgroningen.nl/programma/goov-muziektheater/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-20T20:15:00+02:00"
+  },
+  {
+    "description": "Doortimmerende rocksongs en subtiele elektronische arrangementen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZ2FyYmFnZS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/07-GARBAGE-2017_1087V1-final-1-1280x1536-150x150.jpg",
+    "title": "Garbage",
+    "url": "https://www.spotgroningen.nl/programma/garbage/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-21T20:00:00+02:00"
+  },
+  {
+    "description": "Meesterwerk over patstelling",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZ29vdi1tdXppZWt0aGVhdGVy\nLTIv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/GOOV-Muziektheater-Chess-300-dpi-RGB-1-e1527163382988-150x150.jpg",
+    "title": "GOOV Muziektheater - CHESS",
+    "url": "https://www.spotgroningen.nl/programma/goov-muziektheater-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-21T20:15:00+02:00"
+  },
+  {
+    "description": "Power Shift",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzkwNg==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/04/Sputnik-vierkant-v1.2-600x600.jpg",
+    "title": "Sputnik",
+    "url": "http://simplon.nl/?post_type=events&p=17906",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-06-21T23:00:00+02:00"
+  },
+  {
+    "description": "Met Sting, Anouk, The Specials, Tom Odell, Ronnie Flex & Deuxperience en Dani\u00ebl Lohues!",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvc3RhZHNwYXJrLWxpdmUv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/12/Sting-MySongsPhoto-e1551708104212-150x150.png",
+    "title": "Stadspark Live",
+    "url": "https://www.spotgroningen.nl/programma/stadspark-live/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-22T13:00:00+02:00"
+  },
+  {
+    "description": "Meesterwerk over patstelling",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZ29vdi1tdXppZWt0aGVhdGVy\nLTMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/GOOV-Muziektheater-Chess-300-dpi-RGB-1-e1527163382988-150x150.jpg",
+    "title": "GOOV Muziektheater - CHESS",
+    "url": "https://www.spotgroningen.nl/programma/goov-muziektheater-3/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-22T20:15:00+02:00"
+  },
+  {
+    "description": "Meesterwerk over patstelling",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZ29vdi1tdXppZWt0aGVhdGVy\nLTQv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/GOOV-Muziektheater-Chess-300-dpi-RGB-1-e1527163382988-150x150.jpg",
+    "title": "GOOV Muziektheater - CHESS",
+    "url": "https://www.spotgroningen.nl/programma/goov-muziektheater-4/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-23T14:30:00+02:00"
+  },
+  {
+    "description": "Meesterwerk over patstelling",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZ29vdi1tdXppZWt0aGVhdGVy\nLTUv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/GOOV-Muziektheater-Chess-300-dpi-RGB-1-e1527163382988-150x150.jpg",
+    "title": "GOOV Muziektheater - CHESS",
+    "url": "https://www.spotgroningen.nl/programma/goov-muziektheater-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-23T20:15:00+02:00"
+  },
+  {
+    "description": "De multi-instrumentalist weet de harten van mensen over de hele wereld te veroveren",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEveGF2aWVyLXJ1ZGQtMy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Xavier-Rudd-bg-150x150.jpg",
+    "title": "Xavier Rudd",
+    "url": "https://www.spotgroningen.nl/programma/xavier-rudd-3/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-06-27T20:00:00+02:00"
+  },
+  {
+    "description": "\u201cWiskunde was nog nooit zo grappig.\u201d (NRC *****)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvamFuLWJldXZpbmctMy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/podiumfoto-3-_-Rotatie-_-Jan-Beuving-_-\u00a9-Jaap-Reedijk-150x150.jpg",
+    "title": "Jan Beuving  - Rotatie (reprise)",
+    "url": "https://www.spotgroningen.nl/programma/jan-beuving-3/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-09-06T20:15:00+02:00"
+  },
+  {
+    "description": "Zachte weemoed en keiharde actualiteit",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEveW91cC10LWhlay1tZXQtZGUt\na2VubmlzLXZhbi1udS0yNS1zZXAv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Youp-van-t-Hek_Met-de-kennis-van-nu_1819_foto-Bob-Bronshoff_hor-150x150.jpg",
+    "title": "Youp van 't Hek  - Met de kennis van nu",
+    "url": "https://www.spotgroningen.nl/programma/youp-t-hek-met-de-kennis-van-nu-25-sep/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-09-25T20:15:00+02:00"
+  },
+  {
+    "description": "Zachte weemoed en keiharde actualiteit",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEveW91cC12YW4tdC1oZWstbWV0\nLWRlLWtlbm5pcy12YW4tbnUtMjYtc2VwLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Youp-van-t-Hek_Met-de-kennis-van-nu_1819_foto-Bob-Bronshoff_hor-150x150.jpg",
+    "title": "Youp van 't Hek  - Met de kennis van nu",
+    "url": "https://www.spotgroningen.nl/programma/youp-van-t-hek-met-de-kennis-van-nu-26-sep/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-09-26T20:15:00+02:00"
+  },
+  {
+    "description": "Opwindende mix van pop, techno, industrial en jaren '80 wave",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhvbWFzLWF6aWVyLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2017/06/04_ThomasAzier_-\u00ae-2017-Patricia-Khan-kleiner-150x150.jpg",
+    "title": "Thomas Azier",
+    "url": "https://www.spotgroningen.nl/programma/thomas-azier/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-09-27T20:00:00+02:00"
+  },
+  {
+    "description": "Zachte weemoed en keiharde actualiteit",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEveW91cC12YW4tdC1oZWstbWV0\nLWRlLWtlbm5pcy12YW4tbnUtMjctc2VwLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Youp-van-t-Hek_Met-de-kennis-van-nu_1819_foto-Bob-Bronshoff_hor-150x150.jpg",
+    "title": "Youp van 't Hek  - Met de kennis van nu",
+    "url": "https://www.spotgroningen.nl/programma/youp-van-t-hek-met-de-kennis-van-nu-27-sep/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-09-27T20:15:00+02:00"
+  },
+  {
+    "description": "De zelfbekroonde Texas space cowboy",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZ2FycmV0dC10LWNhcHBzLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Garrett-T.-Capps-1-150x150.jpg",
+    "title": "Garrett T. Capps",
+    "url": "https://www.spotgroningen.nl/programma/garrett-t-capps/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-09-28T20:00:00+02:00"
+  },
+  {
+    "description": "Zachte weemoed en keiharde actualiteit",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEveW91cC12YW4tdC1oZWstbWV0\nLWRlLWtlbm5pcy12YW4tbnUtMjgtc2VwLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Youp-van-t-Hek_Met-de-kennis-van-nu_1819_foto-Bob-Bronshoff_hor-150x150.jpg",
+    "title": "Youp van 't Hek  - Met de kennis van nu",
+    "url": "https://www.spotgroningen.nl/programma/youp-van-t-hek-met-de-kennis-van-nu-28-sep/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-09-28T20:15:00+02:00"
+  },
+  {
+    "description": "Schurend eerlijk, verbaal agressief, intrigerend en charmant",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGFuaWVsLWFyZW5kcy02Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Daniel-Arends-Meer-van-hetzelfde-deel-1-Herman-Poppelaars-1-e1551776841295-150x150.jpg",
+    "title": "Daniel Arends  - Meer van hetzelfde (deel 1) ",
+    "url": "https://www.spotgroningen.nl/programma/daniel-arends-6/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-01T20:15:00+02:00"
+  },
+  {
+    "description": "Schurend eerlijk, verbaal agressief, intrigerend en charmant",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGFuaWVsLWFyZW5kcy03Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Daniel-Arends-Meer-van-hetzelfde-deel-1-Herman-Poppelaars-1-e1551776841295-150x150.jpg",
+    "title": "Daniel Arends  - Meer van hetzelfde (deel 1) ",
+    "url": "https://www.spotgroningen.nl/programma/daniel-arends-7/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-02T20:15:00+02:00"
+  },
+  {
+    "description": "Schurend eerlijk, verbaal agressief, intrigerend en charmant",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGFuaWVsLWFyZW5kcy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Daniel-Arends-Meer-van-hetzelfde-deel-1-Herman-Poppelaars-1-e1551776841295-150x150.jpg",
+    "title": "Daniel Arends  - Meer van hetzelfde (deel 1) reprise",
+    "url": "https://www.spotgroningen.nl/programma/daniel-arends/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-03T20:15:00+02:00"
+  },
+  {
+    "description": "Schurend eerlijk, verbaal agressief, intrigerend en charmant",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGFuaWVsLWFyZW5kcy00Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Daniel-Arends-Meer-van-hetzelfde-deel-1-Herman-Poppelaars-1-e1551776841295-150x150.jpg",
+    "title": "Daniel Arends  - Meer van hetzelfde (deel 1) reprise",
+    "url": "https://www.spotgroningen.nl/programma/daniel-arends-4/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-04T20:15:00+02:00"
+  },
+  {
+    "description": "Legende in de Ierse folkmuziek",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlLWR1Ymxpbi1sZWdlbmRz\nLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2016/03/TDL-fotoWoutervanNoort-150x150.jpg",
+    "title": "The Dublin Legends (The Dubliners)",
+    "url": "https://www.spotgroningen.nl/programma/the-dublin-legends/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-04T20:30:00+02:00"
+  },
+  {
+    "description": "Schurend eerlijk, verbaal agressief, intrigerend en charmant",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGFuaWVsLWFyZW5kcy01Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Daniel-Arends-Meer-van-hetzelfde-deel-1-Herman-Poppelaars-1-e1551776841295-150x150.jpg",
+    "title": "Daniel Arends  - Meer van hetzelfde (deel 1) reprise",
+    "url": "https://www.spotgroningen.nl/programma/daniel-arends-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-05T20:15:00+02:00"
+  },
+  {
+    "description": "\u201cOnbetaalbaar geestig.\u201d (AD \u2605\u2605\u2605\u2605\u2605)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmVydC12aXNzY2hlci0xNi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Bert-Visscher-Hij-wordt-vanzelf-moe-Maarten-van-der-Wal-2-150x150.jpg",
+    "title": "Bert Visscher  - Hij wordt vanzelf moe (reprise)",
+    "url": "https://www.spotgroningen.nl/programma/bert-visscher-16/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-08T20:15:00+02:00"
+  },
+  {
+    "description": "\u201cOnbetaalbaar geestig.\u201d (AD \u2605\u2605\u2605\u2605\u2605)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmVydC12aXNzY2hlci0xNy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Bert-Visscher-Hij-wordt-vanzelf-moe-Maarten-van-der-Wal-2-150x150.jpg",
+    "title": "Bert Visscher  - Hij wordt vanzelf moe (reprise)",
+    "url": "https://www.spotgroningen.nl/programma/bert-visscher-17/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-09T20:15:00+02:00"
+  },
+  {
+    "description": "\u201cOnbetaalbaar geestig.\u201d (AD \u2605\u2605\u2605\u2605\u2605)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmVydC12aXNzY2hlci0xOC8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Bert-Visscher-Hij-wordt-vanzelf-moe-Maarten-van-der-Wal-2-150x150.jpg",
+    "title": "Bert Visscher  - Hij wordt vanzelf moe (reprise)",
+    "url": "https://www.spotgroningen.nl/programma/bert-visscher-18/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-10T20:15:00+02:00"
+  },
+  {
+    "description": "\u201cOnbetaalbaar geestig.\u201d (AD \u2605\u2605\u2605\u2605\u2605)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYmVydC12aXNzY2hlci0xOS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Bert-Visscher-Hij-wordt-vanzelf-moe-Maarten-van-der-Wal-2-150x150.jpg",
+    "title": "Bert Visscher  - Hij wordt vanzelf moe (reprise)",
+    "url": "https://www.spotgroningen.nl/programma/bert-visscher-19/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-11T20:15:00+02:00"
+  },
+  {
+    "description": "Bluesrocker in hart en nieren",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvd2FsdGVyLXRyb3V0Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Walter-Trout-1-150x150.jpg",
+    "title": "Walter Trout",
+    "url": "https://www.spotgroningen.nl/programma/walter-trout/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-14T20:30:00+02:00"
+  },
+  {
+    "description": "Djamila terug naar Groningen met de Unbreakable Tour 2019",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGphbWlsYS0yMDE5Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/DJAMILA4-JPEG-150x150.jpg",
+    "title": "Djamila",
+    "url": "https://www.spotgroningen.nl/programma/djamila-2019/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-18T19:00:00+02:00"
+  },
+  {
+    "description": "Een portret van liefde in de 21ste eeuw",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvY2x1Yi1ndXktcm9uaS1sb3Zl\nLXRyeS1vdXQtMi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/lovetryout-1-150x150.jpg",
+    "title": "Club Guy & Roni - LOVE (Try-out) ",
+    "url": "https://www.spotgroningen.nl/programma/club-guy-roni-love-try-out-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-18T20:15:00+02:00"
+  },
+  {
+    "description": "H\u00e9t soul- & dansfeest van Nederland",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvc291bC1saXZlLTIv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/soul-live-150x150.jpg",
+    "title": "Soul Live ",
+    "url": "https://www.spotgroningen.nl/programma/soul-live-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-19T21:00:00+02:00"
+  },
+  {
+    "description": "Waylons langverwachte theatertour",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvd2F5bG9uLTMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/W_2W_2-150x150.jpg",
+    "title": "Waylon  - My Heroes Have Always Been Cowboys ",
+    "url": "https://www.spotgroningen.nl/programma/waylon-3/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-20T20:15:00+02:00"
+  },
+  {
+    "description": "Popsongs in verrassende vocale vermommingen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbmF0dXJhbGx5LTcv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2017/05/1920_GV_Naturally7_f_pr_Naturally7-1-150x150.jpg",
+    "title": "Naturally 7",
+    "url": "https://www.spotgroningen.nl/programma/naturally-7/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-20T20:30:00+02:00"
+  },
+  {
+    "description": "De helden van The Voice of Holland mixen de boel lekker door elkaar",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbmF2YXJvbmUv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/MIXTOUR_bandfoto-1-150x150.jpg",
+    "title": "Navarone - Mixing It Up",
+    "url": "https://www.spotgroningen.nl/programma/navarone/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-24T20:00:00+02:00"
+  },
+  {
+    "description": "Een mix van klassiek, jazz, pop en Turkse nummers",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEva2Fyc3Uv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/karsu-2.1-150x150.png",
+    "title": "Karsu",
+    "url": "https://www.spotgroningen.nl/programma/karsu/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-25T20:30:00+02:00"
+  },
+  {
+    "description": "Unieke concertervaring met hologrammen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcm95LW9yYmlzb24tYW5kLWJ1\nZGR5LWhvbGx5Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/RNR-Dream-Tour-Ad-Mat-11x17-vierkant-achtig-e1553870445631-150x150.jpg",
+    "title": "Roy Orbison and Buddy Holly - The Rock 'N' Roll Dream Tour",
+    "url": "https://www.spotgroningen.nl/programma/roy-orbison-and-buddy-holly/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-27T19:00:00+01:00"
+  },
+  {
+    "description": "EXTRA SHOW: \u00e9\u00e9n van Neerlands meest gerespecteerde vrouwelijke artiesten",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvaWxzZS1kZWxhbmdlLTItMi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Ilse-DeLange-gesneden-2.0-150x150.jpg",
+    "title": "Ilse DeLange  - New Amsterdam - theatertour ",
+    "url": "https://www.spotgroningen.nl/programma/ilse-delange-2-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-29T19:30:00+01:00"
+  },
+  {
+    "description": "\u00c9\u00e9n van\u00a0Neerlands meest gerespecteerde vrouwelijke artiesten",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvaWxzZS1kZWxhbmdlLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Ilse-DeLange-gesneden-2.0-150x150.jpg",
+    "title": "Ilse DeLange  - New Amsterdam - theatertour ",
+    "url": "https://www.spotgroningen.nl/programma/ilse-delange/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-30T19:30:00+01:00"
+  },
+  {
+    "description": "Nederlands grootste rockband ooit is terug van nooit weggeweest",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZ29sZGVuLWVhcnJpbmcv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/Golden-Earring-150x150.jpg",
+    "title": "Golden Earring",
+    "url": "https://www.spotgroningen.nl/programma/golden-earring/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-10-31T19:00:00+01:00"
+  },
+  {
+    "description": "Victor Wooten presenteert zijn nieuwe album samen met zijn getalenteerde broers",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvd29vdGVuLWJyb3RoZXJzLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/Wooten-Brothers-2013-002-150x150.jpg",
+    "title": "Wooten Brothers",
+    "url": "https://www.spotgroningen.nl/programma/wooten-brothers/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-11-05T19:30:00+01:00"
+  },
+  {
+    "description": "\n\n\n                Waar: Grote zaal Open: 20:00 - 22:30 uur\n\n                VVK: \u20ac 12,- DVK: \u20ac 12,- \n                Aanvang: 20:30 uur\n\n\n            Genre: Pop\n",
+    "id": "aHR0cDovL3NpbXBsb24ubmwvP3Bvc3RfdHlwZT1ldmVudHMmcD0xNzE4NQ==\n",
+    "image_url": "https://simplon.nl/content/uploads/2019/02/Merol_vierkant-600x600.jpg",
+    "title": "MEROL",
+    "url": "http://simplon.nl/?post_type=events&p=17185",
+    "venue": {
+      "city": "Groningen",
+      "id": "simplon-groningen",
+      "name": "Simplon Groningen"
+    },
+    "when": "2019-11-08T19:30:00+01:00"
+  },
+  {
+    "description": "Gevestigde namen en rising stars; Rockit brengt artiesten die zich openstellen voor het onbekende",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9mZXN0aXZhbHMvcm9ja2l0Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/\u00a9OAK-social-banner-YouTube-150x150.png",
+    "title": "Rockit - A Journey into Jazz and Beyond",
+    "url": "https://www.spotgroningen.nl/festivals/rockit/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-11-09T15:00:00+01:00"
+  },
+  {
+    "description": "Singer-songwritershow met klassieke hits, nieuw materiaal en aantrekkelijke akoestische sessies",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvY2hyaXN0b3BoZXItY3Jvc3Mv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/Christopher-Cross-4-1-e1552892479362-150x150.jpg",
+    "title": "Christopher Cross ",
+    "url": "https://www.spotgroningen.nl/programma/christopher-cross/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-11-11T19:00:00+01:00"
+  },
+  {
+    "description": "Opruiende rechttoe-rechtaan rock \u2019n roll",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYm9ra2Vycy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/B\u00f6kkers-150x150.jpg",
+    "title": "B\u00f6kkers",
+    "url": "https://www.spotgroningen.nl/programma/bokkers/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-11-14T19:30:00+01:00"
+  },
+  {
+    "description": "Bekend van o.a. \u2018Kids in America\u2019, \u2018Cambodia\u2019, \u2018View from a Bridge\u2019 en \u2018Never trust a stranger\u2019",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEva2ltLXdpbGRlLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/01/KIM-TITLE-IMAGE-2018-150x150.jpg",
+    "title": "Kim Wilde",
+    "url": "https://www.spotgroningen.nl/programma/kim-wilde/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-11-20T19:30:00+01:00"
+  },
+  {
+    "description": "De nieuwe Nederlandse popsensatie bekend van de record brekende hit 'Duurt te lang'",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGF2aW5hLW1pY2hlbGxlLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/Davina-Michelle_030_049-RGB-LR-1-e1553607017498-150x150.png",
+    "title": "Davina Michelle  - Skyward Clubtour",
+    "url": "https://www.spotgroningen.nl/programma/davina-michelle/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-11-22T19:00:00+01:00"
+  },
+  {
+    "description": "Vuige rockmuziek met een basis van dansbare elektronica en oer-Hollandse recalcitrantie",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGUtc3RhYXQv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/EXAMPLE_POSTER-TEMPLATE_BUBBLE-GUM-TOUR_PHOTO_A3-uitsnede-1-150x150.jpg",
+    "title": "De Staat",
+    "url": "https://www.spotgroningen.nl/programma/de-staat/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-11-23T19:00:00+01:00"
+  },
+  {
+    "description": "Swingende bluegrass",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGltLWtub2wtYmx1ZS1ncmFz\ncy1ib29naWVtZW4v\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/Tim-Knol-The-Blue-Grass-Boogiemen-150x150.jpg",
+    "title": "Tim Knol & Blue Grass Boogiemen ",
+    "url": "https://www.spotgroningen.nl/programma/tim-knol-blue-grass-boogiemen/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-11-28T19:30:00+01:00"
+  },
+  {
+    "description": "Een ding is duidelijk: de blues verlaat je nooit",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGUtZGlqay8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/DeDijkKleur-150x150.jpg",
+    "title": "De Dijk ",
+    "url": "https://www.spotgroningen.nl/programma/de-dijk/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-12-05T19:00:00+01:00"
+  },
+  {
+    "description": "Een ding is duidelijk: de blues verlaat je nooit",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZGUtZGlqay05Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/DeDijkKleur-150x150.jpg",
+    "title": "De Dijk ",
+    "url": "https://www.spotgroningen.nl/programma/de-dijk-9/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-12-06T19:00:00+01:00"
+  },
+  {
+    "description": "Roxeanne Hazes is terug met een eigen sound",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcm94ZWFubmUtaGF6ZXMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Roxeanne-Hazes-e1551277190674-150x150.png",
+    "title": "Roxeanne Hazes ",
+    "url": "https://www.spotgroningen.nl/programma/roxeanne-hazes/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-12-07T19:00:00+01:00"
+  },
+  {
+    "description": "Actueel, geraffineerd en op het randje",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcGV0ZXItcGFubmVrb2VrLTMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/PP-LWAB-poster-beeld-A4-RGB-150x150.jpg",
+    "title": "Peter Pannekoek - Later was alles beter (reprise)",
+    "url": "https://www.spotgroningen.nl/programma/peter-pannekoek-3/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-12-12T19:15:00+01:00"
+  },
+  {
+    "description": "Actueel, geraffineerd en op het randje",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcGV0ZXItcGFubmVrb2VrLTQv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/PP-LWAB-poster-beeld-A4-RGB-150x150.jpg",
+    "title": "Peter Pannekoek - Later was alles beter (reprise)",
+    "url": "https://www.spotgroningen.nl/programma/peter-pannekoek-4/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-12-13T19:15:00+01:00"
+  },
+  {
+    "description": "Actueel, geraffineerd en op het randje",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcGV0ZXItcGFubmVrb2VrLTIv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/PP-LWAB-poster-beeld-A4-RGB-150x150.jpg",
+    "title": "Peter Pannekoek - Later was alles beter (reprise)",
+    "url": "https://www.spotgroningen.nl/programma/peter-pannekoek-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-12-14T19:15:00+01:00"
+  },
+  {
+    "description": "Persoonlijke ballads in een melancholisch jasje",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbWFyaWEtbWVuYS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/MariaMena_FotoSolveigSelj1135-gesneden-150x150.jpg",
+    "title": "Maria Mena ",
+    "url": "https://www.spotgroningen.nl/programma/maria-mena/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-12-16T19:30:00+01:00"
+  },
+  {
+    "description": "Orkestrale vertolking van Kovacs' nieuwe album",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbWV0cm9wb2xlLW9ya2VzdC1r\nb3ZhY3Mv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/KOVACS_PRESS_607-LR-150x150.png",
+    "title": "Metropole Orkest & Kovacs",
+    "url": "https://www.spotgroningen.nl/programma/metropole-orkest-kovacs/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-12-23T19:30:00+01:00"
+  },
+  {
+    "description": "Unieke mix van jazz, dance, latin, salsa, afrobeat en boogaloo",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbmV3LWNvb2wtY29sbGVjdGl2\nZS0yLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2018/03/NCC-2017-by_IAMKAT_2-@050-150x150.jpg",
+    "title": "New Cool Collective",
+    "url": "https://www.spotgroningen.nl/programma/new-cool-collective-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2019-12-30T19:30:00+01:00"
+  },
+  {
+    "description": "De \u2018Breder dan klassiek\u2019 nieuwjaarstournee van Amsterdam Sinfonietta",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvYW1zdGVyZGFtLXNpbmZvbmll\ndHRhLWpvbmF0aGFuLWplcmVtaWFoLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/optimized_jj-gibsonguitar_f9c-150x150.jpg",
+    "title": "Amsterdam Sinfonietta & Jonathan Jeremiah - Breder dan klassiek",
+    "url": "https://www.spotgroningen.nl/programma/amsterdam-sinfonietta-jonathan-jeremiah/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-01-07T19:15:00+01:00"
+  },
+  {
+    "description": "Hilarische monoloog",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlby1tYWFzc2VuLTMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/mail-beeld-SITUATIE-GEWIJZIGD-e1552983881581-150x150.jpeg",
+    "title": "Theo Maassen  - Situatie gewijzigd ",
+    "url": "https://www.spotgroningen.nl/programma/theo-maassen-3/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-01-09T19:15:00+01:00"
+  },
+  {
+    "description": "Hilarische monoloog",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlby1tYWFzc2VuLTQv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/mail-beeld-SITUATIE-GEWIJZIGD-e1552983881581-150x150.jpeg",
+    "title": "Theo Maassen  - Situatie gewijzigd ",
+    "url": "https://www.spotgroningen.nl/programma/theo-maassen-4/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-01-10T19:15:00+01:00"
+  },
+  {
+    "description": "Hilarische monoloog",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlby1tYWFzc2VuLTUv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/mail-beeld-SITUATIE-GEWIJZIGD-e1552983881581-150x150.jpeg",
+    "title": "Theo Maassen  - Situatie gewijzigd ",
+    "url": "https://www.spotgroningen.nl/programma/theo-maassen-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-01-30T19:15:00+01:00"
+  },
+  {
+    "description": "Hilarische monoloog",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlby1tYWFzc2VuLTYv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/mail-beeld-SITUATIE-GEWIJZIGD-e1552983881581-150x150.jpeg",
+    "title": "Theo Maassen  - Situatie gewijzigd ",
+    "url": "https://www.spotgroningen.nl/programma/theo-maassen-6/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-01-31T19:15:00+01:00"
+  },
+  {
+    "description": "Een avond met Diana Ross' bekendste hits, groots en intiem",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvZ2lvdmFuY2EtaG9ub3Vycy1k\naWFuYS1yb3NzLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/Giovanca-Honours-Diana-Ross-Instagram-Vertical-De-Oosterpoort-byJelleSmid-e1553247680943-150x150.jpg",
+    "title": "Giovanca honours Diana Ross",
+    "url": "https://www.spotgroningen.nl/programma/giovanca-honours-diana-ross/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-02-08T19:30:00+01:00"
+  },
+  {
+    "description": "Hilarisch familiespektakel",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlYXRlci1yb3R0ZXJkYW0t\nNS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/MARK-DAVID-TR-Repelsteeltje-Print-DEF-e1552985181587-150x150.jpg",
+    "title": "Theater Rotterdam  - Repelsteeltje en de blinde prinses (8+) ",
+    "url": "https://www.spotgroningen.nl/programma/theater-rotterdam-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-02-14T18:00:00+01:00"
+  },
+  {
+    "description": "Hilarisch familiespektakel",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlYXRlci1yb3R0ZXJkYW0t\nNy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/MARK-DAVID-TR-Repelsteeltje-Print-DEF-e1552985078727-150x150.jpg",
+    "title": "Theater Rotterdam  - Repelsteeltje en de blinde prinses (8+) ",
+    "url": "https://www.spotgroningen.nl/programma/theater-rotterdam-7/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-02-15T18:00:00+01:00"
+  },
+  {
+    "description": "Hilarisch familiespektakel",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlYXRlci1yb3R0ZXJkYW0t\nNi8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/MARK-DAVID-TR-Repelsteeltje-Print-DEF-e1552985181587-150x150.jpg",
+    "title": "Theater Rotterdam  - Repelsteeltje en de blinde prinses (8+) ",
+    "url": "https://www.spotgroningen.nl/programma/theater-rotterdam-6/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-02-16T13:30:00+01:00"
+  },
+  {
+    "description": "De ultieme The Beatles tributeband",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvdGhlLWJvb3RsZWctYmVhdGxl\ncy8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/Bootleg-Beatles-Band-Only-Abbey-Road-Internationalkopie-e1553073364685-150x150.png",
+    "title": "The Bootleg Beatles",
+    "url": "https://www.spotgroningen.nl/programma/the-bootleg-beatles/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-02-20T19:30:00+01:00"
+  },
+  {
+    "description": "Megatalent",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbG91aXNlLWtvcnRoYWxzLTIv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/Louise-20Korthals-20-20Alles-20is-20er-20Astrid-20Verhoef-201-20300-20dpi-20RGB-150x150.jpg",
+    "title": "Louise Korthals - Alles is er",
+    "url": "https://www.spotgroningen.nl/programma/louise-korthals-2/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-03-20T19:15:00+01:00"
+  },
+  {
+    "description": "Gortdroge observaties (voorstelling in 2020)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcGF0cmljay1sYXVyZWlqLTMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/patrick-laureij-e1544519550796-150x150.jpg",
+    "title": "Patrick Laureij  - Nederlands Hoop (reprise)",
+    "url": "https://www.spotgroningen.nl/programma/patrick-laureij-3/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-04-06T20:15:00+02:00"
+  },
+  {
+    "description": "Gortdroge observaties (voorstelling in 2020)",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcGF0cmljay1sYXVyZWlqLTQv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/patrick-laureij-e1544519550796-150x150.jpg",
+    "title": "Patrick Laureij  - Nederlands Hoop (reprise)",
+    "url": "https://www.spotgroningen.nl/programma/patrick-laureij-4/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-04-07T20:15:00+02:00"
+  },
+  {
+    "description": "Bekend van oa 'I'm Not In Love'",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvMTBjY18yMDIwLw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/04/10cc-Paul-Iain-Graham-Rick-Keith-2018.01-150x150.jpg",
+    "title": "10CC",
+    "url": "https://www.spotgroningen.nl/programma/10cc_2020/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-04-12T20:30:00+02:00"
+  },
+  {
+    "description": "Swingende latin show inclusief liveband Latin Society en sexy danseressen",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvcm9sZi1zYW5jaGV6Lw==\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/02/1819_GV_Rolf_Sanchez_f_PR_Rolf_Sanchez-150x150.jpg",
+    "title": "Rolf Sanchez",
+    "url": "https://www.spotgroningen.nl/programma/rolf-sanchez/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-04-25T20:30:00+02:00"
+  },
+  {
+    "description": "Debuut van populaire YouTube-vlogger",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvbmllbmtlLXBsYXMv\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/04/Nienke-Plas-\u2013-Van-de-hak-op-de-tak-PR-Nienke-Plas-2-150x150.jpg",
+    "title": "Nienke Plas  - Van de hak op de tak ",
+    "url": "https://www.spotgroningen.nl/programma/nienke-plas/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-04-30T20:15:00+02:00"
+  },
+  {
+    "description": "Even hilarisch als confronterend",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvaGVucnktdmFuLWxvb24tNC8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/Henry-van-Loon-Onze-Henry-Jouk-Oosterhof-1-e1553505785550-150x150.jpg",
+    "title": "Henry van Loon  - Onze Henry ",
+    "url": "https://www.spotgroningen.nl/programma/henry-van-loon-4/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-05-06T20:15:00+02:00"
+  },
+  {
+    "description": "Even hilarisch als confronterend",
+    "id": "aHR0cHM6Ly93d3cuc3BvdGdyb25pbmdlbi5ubC9wcm9ncmFtbWEvaGVucnktdmFuLWxvb24tNS8=\n",
+    "image_url": "https://www.spotgroningen.nl/wp-content/uploads/2019/03/Henry-van-Loon-Onze-Henry-Jouk-Oosterhof-1-e1553505785550-150x150.jpg",
+    "title": "Henry van Loon  - Onze Henry ",
+    "url": "https://www.spotgroningen.nl/programma/henry-van-loon-5/",
+    "venue": {
+      "city": "Groningen",
+      "id": "spot-groningen",
+      "name": "SPOT"
+    },
+    "when": "2020-05-07T20:15:00+02:00"
+  }
+]
