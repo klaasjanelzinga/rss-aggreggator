@@ -61,6 +61,7 @@ class Event:
     def is_valid(self) -> bool:
         valid = Event.is_not_empty(self.title) and \
                Event.is_not_empty(self.description) and \
+               self.when != datetime.min and \
                Event.is_not_empty(self.url)
         if not valid:
             logging.warning(f'Invalid event {self}')
