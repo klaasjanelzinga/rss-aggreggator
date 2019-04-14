@@ -15,8 +15,8 @@ from venues.vera_groningen.vera_processor import VeraProcessor
 logging.basicConfig(level=logging.INFO)
 
 
-# set to react specific build artifacts
-app = Flask(__name__, static_folder='static/app/static', template_folder='static/app')
+# set to react specific build artifacts, NOTE, only localhost, gae -> app.yaml
+app = Flask(__name__, static_folder='static/build/static', template_folder='static/build')
 
 # sync stores at start of app and register venues
 processors = [SpotProcessor(event_repository),

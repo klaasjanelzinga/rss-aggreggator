@@ -9,7 +9,7 @@ install:
 
 script:
   - pytest tests
-  - (cd frontend && npm run-script build && mv build/ ../static && mv ../static/build ../static/app )
+  - (cd frontend && npm run-script build && mv build/ ../static )
 
 deploy:
   - provider: gae
