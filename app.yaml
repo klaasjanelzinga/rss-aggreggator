@@ -1,18 +1,29 @@
 runtime: python37
 
 handlers:
+
+- url: /static/js/(.*\.js)
+  static_files: static/build/static/js/\1
+  upload: static/build/static/js/*.js
+
+- url: /static/css/(.*\.css)
+  static_files: static/build/static/css/\1
+  upload: static/build/static/css/*.css
+
+- url: /(.*\.(json|png|ico|js))$
+  static_files: static/build/\1
+  upload: static/build/.*\.(json|png|ico|js)$
+
+- url: /index.html
+  static_files: static/build/index.html
+  upload: static/build/index.html
+
 - url: ('/')
   static_files: static/build/index.html
   upload: static/build/index.html
 
-- url: /static/css/(.*\.css)$
-  static_files: static/build/static/css/\1
-  upload: static/build/static/css/.*\.css$
+- url: ('/api/.*')
+  script: auto
 
-- url: /static/js/(.*\.js)$
-  static_files: static/build/static/js/\1
-  upload: static/build/static/css/.*\.(css|map)$
-
-- url: /(.*\.(json|png|ico|html|js))$
-  static_files: static/build/\1
-  upload: static/build/.*\.(json|png|ico|html|js)$
+- url: ('/maintenance/.*')
+  script: auto

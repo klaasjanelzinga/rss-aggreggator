@@ -30,15 +30,16 @@ app.register_blueprint(api_routes)
 app.register_blueprint(maintenance)
 
 
-# @app.route('/')
-# def hello():
-#     return render_template('index.html')
-#
-#
-# @app.route('/channel-image.png')
-# def send_channel_image():
-#     return send_from_directory('static/app', 'channel-image.png')
-#
+@app.route('/')
+def hello():
+    logging.warning('serging static resource index.html')
+    return render_template('index.html')
+
+
+@app.route('/channel-image.png')
+def send_channel_image():
+    return send_from_directory('static/build', 'channel-image.png')
+
 
 @app.route('/events.xml')
 def fetch_rss():

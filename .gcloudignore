@@ -29,3 +29,6 @@ tests/
 venv/
 htmlcov/
 integration/
+
+static/build/static/css/*.map
+static/build/static/js/*.map
