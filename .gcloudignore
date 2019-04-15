@@ -19,7 +19,6 @@ __pycache__/
 # Ignored by the build system
 /setup.cfg
 
-test/
 client-secret.json.enc
 .travis.yml
 
@@ -30,5 +29,4 @@ venv/
 htmlcov/
 integration/
 
-static/build/static/css/*.map
 static/build/static/js/*.map

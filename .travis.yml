@@ -9,7 +9,7 @@ install:
 
 script:
   - pytest tests
-  - (cd frontend && npm run-script build && mv build ../static )
+  - (cd frontend && ./deploy.sh )
 
 deploy:
   - provider: gae
@@ -30,6 +30,3 @@ before_install:
   -in client-secret.json.enc -out client-secret.json -d
 - export version="develop-$(git log | wc -l)"
 - echo $version
-
-before_deploy:
-  - find static

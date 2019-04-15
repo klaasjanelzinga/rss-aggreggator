@@ -2,13 +2,13 @@ runtime: python37
 
 handlers:
 
-- url: /static/js/(.*\.js)
+- url: /static/js/(.*\.js)$
   static_files: static/build/static/js/\1
   upload: static/build/static/js/*.js
 
-- url: /static/css/(.*)
-  static_files: static/build/static/css/\1
-  upload: static/build/static/css/*.css
+- url: /static/css/main.css
+  static_files: static/build/static/css/main.css
+  upload: static/build/static/css/main.css
 
 - url: /(.*\.(json|png|ico|js))$
   static_files: static/build/\1
