@@ -17,6 +17,7 @@ deploy:
     project: rss-aggregator-236707
     version: $version
     verbosity: debug
+    skip_cleanup: true
     config: app.yaml
   - provider: gae
     keyfile: client-secret.json
