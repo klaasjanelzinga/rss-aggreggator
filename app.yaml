@@ -18,12 +18,12 @@ handlers:
   static_files: static/build/index.html
   upload: static/build/index.html
 
-- url: ('/')
+- url: /
   static_files: static/build/index.html
   upload: static/build/index.html
 
-- url: ('/api/.*')
+- url: /api/.*
   script: auto
 
-- url: ('/maintenance/.*')
+- url: /maintenance/.*
   script: auto
