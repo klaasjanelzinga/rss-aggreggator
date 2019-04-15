@@ -7,7 +7,7 @@ import { LinearProgress } from '@material-ui/core';
 
 const styles = theme => ({
     agenda: {
-        top: '85px',
+        top: '80px',
         left: '0px',
         right: '0px',
         bottom: '0px',
@@ -43,6 +43,7 @@ class Agenda extends React.Component {
     }
 
     componentDidMount() {
+        console.log('=== fetching items. welcome to the app ===')
         fetch(this.endpoint)
             .then(results => results.json())
             .then(results => {

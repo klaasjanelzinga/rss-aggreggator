@@ -6,7 +6,7 @@ handlers:
   static_files: static/build/static/js/\1
   upload: static/build/static/js/*.js
 
-- url: /static/css/(.*\.css)
+- url: /static/css/(.*)
   static_files: static/build/static/css/\1
   upload: static/build/static/css/*.css
 
