@@ -3,13 +3,12 @@ import PropTypes, { string } from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import AgendaItem from './AgendaItem'
-import { LinearProgress, Fab, Icon } from '@material-ui/core';
+import { LinearProgress, Fab } from '@material-ui/core';
+import { NavigateNext} from  '@material-ui/icons'
 
 const styles = theme => ({
     agenda: {
-        display: 'block',
         top: '80px',
-        width: '100%',
         left: '0px',
         right: '0px',
         bottom: '0px',
@@ -20,16 +19,17 @@ const styles = theme => ({
         marginLeft: '10px',
     },
     agendaFooter: {
-        display: 'block',
-        height: '56px',
-        backgroundColor: 'blue',
+        width: '100%',
+        position: 'relative',
+        float: 'bottom',
+        backgroundColor: '#3f51b5',
+        height: '60px',
     },
     nextButton: {
+        margin: '20px',
+        float: 'right'
     },
     gridList: {
-        width: '100%',
-        height: '100%',
-        overflowY: 'scroll',
     },
     progressbar: {
         flexGrow: 1,
@@ -92,7 +92,7 @@ class Agenda extends React.Component {
                     <div className={classes.agendaFooter}>
                         <Fab color="secondary" aria-label="Next" className={classes.nextButton}
                              onClick={this.fetchMore}>
-                            <Icon>next_icon</Icon>
+                             <NavigateNext></NavigateNext>
                         </Fab>
                     </div>
                 </div>
