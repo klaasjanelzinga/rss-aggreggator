@@ -13,7 +13,7 @@ def fetch_events():
     fetch_offset = request.args.get('fetch_offset')
     cursor = bytes(fetch_offset, 'utf-8') if fetch_offset is not None else None
 
-    events, new_fetch_offset = event_repository.fetch_items(cursor=cursor, limit=25)
+    events, new_fetch_offset = event_repository.fetch_items(cursor=cursor, limit=5)
     sorted(events, key=lambda event: event.when)
     return jsonify({
         'events': [transform(item) for item in events],

@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import AgendaItem from './AgendaItem'
 import { LinearProgress, Fab, Icon } from '@material-ui/core';
-import { relative } from 'path';
 
 const styles = theme => ({
     agenda: {
@@ -17,6 +16,7 @@ const styles = theme => ({
         position: 'absolute',
         justifyContent: 'space-around',
         overflowY: 'scroll',
+        overflowX: 'hidden',
         marginLeft: '10px',
     },
     agendaFooter: {
@@ -29,7 +29,7 @@ const styles = theme => ({
     gridList: {
         width: '100%',
         height: '100%',
-        overflow: 'scroll',
+        overflowY: 'scroll',
     },
     progressbar: {
         flexGrow: 1,
@@ -90,7 +90,7 @@ class Agenda extends React.Component {
                         ))}
                     </GridList>
                     <div className={classes.agendaFooter}>
-                        <Fab color="secondary" aria-labe="Next" className={classes.nextButton}
+                        <Fab color="secondary" aria-label="Next" className={classes.nextButton}
                              onClick={this.fetchMore}>
                             <Icon>next_icon</Icon>
                         </Fab>
