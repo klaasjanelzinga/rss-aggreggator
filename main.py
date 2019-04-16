@@ -1,6 +1,7 @@
+import base64
 import logging
 
-from flask import Flask, Response, render_template, send_from_directory
+from flask import Flask, Response, render_template, send_from_directory, request
 
 from api.maintenance import maintenance
 from api.api import api_routes

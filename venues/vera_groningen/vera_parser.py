@@ -105,6 +105,8 @@ class VeraParser(Parser):
         image_url_end = image_url.find('\'', image_url.find('https') + 4)
         image_url = image_url[image_url.find('https'):image_url_end]
 
+        when_date = when_date if when_date is not None else datetime.now()
+
         return Event(url=url,
                      title=f'{artist} {extra_title}'.strip(),
                      description=f'{artist}{" with support" if extra != "" else ""} {extra}'.strip(),

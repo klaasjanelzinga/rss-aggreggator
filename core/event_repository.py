@@ -1,9 +1,10 @@
+import base64
 import logging
 from datetime import datetime
 from google.cloud import datastore
 from google.cloud.datastore import Entity
 from google.cloud.datastore.client import Client
-from typing import List
+from typing import List, Tuple
 
 from core.event import Event
 
@@ -35,11 +36,21 @@ class EventRepository:
         logging.info(f'Upserting {len(entities)} new events out of {len(events)} events')
         self.client.put_multi(entities)
 
-    def fetch_items(self) -> List[Event]:
+    def fetch_items(self, cursor: bytes = None, limit: int = 0) -> Tuple[List[Event], bytes]:
+        google_cursor = base64.decodebytes(cursor) if cursor is not None else None
+        if google_cursor is not None and google_cursor.decode('utf-8') == 'DONE':
+            return [], base64.encodebytes('DONE')
         query = self.client.query(kind='Event')
         query.order = ['when']
-        results = list(query.fetch())
-        return [Event.from_map(entity) for entity in results]
+
+        query_iter = query.fetch(start_cursor=google_cursor, limit=limit)
+        page = next(query_iter.pages)
+        results = list(page)
+        next_cursor = query_iter.next_page_token
+        next_cursor_encoded = base64.encodebytes(next_cursor) if next_cursor is not None \
+            else base64.encodebytes(bytes('DONE', 'UTF-8'))
+
+        return [Event.from_map(entity) for entity in results], next_cursor_encoded
 
     def clean_items_before(self, date: datetime) -> int:
         query = self.client.query(kind='Event')

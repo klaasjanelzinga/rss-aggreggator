@@ -1,20 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import AgendaItem from './AgendaItem'
-import { LinearProgress } from '@material-ui/core';
+import { LinearProgress, Fab, Icon } from '@material-ui/core';
+import { relative } from 'path';
 
 const styles = theme => ({
     agenda: {
+        display: 'block',
         top: '80px',
+        width: '100%',
         left: '0px',
         right: '0px',
         bottom: '0px',
         position: 'absolute',
         justifyContent: 'space-around',
-        overflowY: 'hidden',
+        overflowY: 'scroll',
         marginLeft: '10px',
+    },
+    agendaFooter: {
+        display: 'block',
+        height: '56px',
+        backgroundColor: 'blue',
+    },
+    nextButton: {
     },
     gridList: {
         width: '100%',
@@ -34,12 +44,13 @@ class Agenda extends React.Component {
         super(props);
         this.state = {
             fetched: false,
+            fetch_offset: string,
             events: []
         }
-
-        this.endpoint = (window.location.hostname === 'localhost') 
+        this.fetchMore = this.fetchMore.bind(this);
+        this.endpoint = (window.location.hostname === 'localhost')
             ? 'http://localhost:8080/api/events'
-            : '/api/events'
+            : '/api/events';
     }
 
     componentDidMount() {
@@ -47,13 +58,29 @@ class Agenda extends React.Component {
         fetch(this.endpoint)
             .then(results => results.json())
             .then(results => {
-                this.setState({ events: results, fetched: true })
+                this.setState({
+                    events: results.events,
+                    fetch_offset: results.fetch_offset,
+                    fetched: true
+                })
             })
     }
 
+    fetchMore() {
+        fetch(this.endpoint + '?fetch_offset=' + this.state.fetch_offset)
+            .then(results => results.json())
+            .then(results => {
+                this.setState({
+                    events: this.state.events.concat(results.events),
+                    fetch_offset: results.fetch_offset,
+                    fetched: true
+                })
+            })
+
+    }
 
     render() {
-        const {classes} = this.props
+        const { classes } = this.props
         if (this.state.fetched) {
             return (
                 <div className={classes.agenda}>
@@ -62,6 +89,12 @@ class Agenda extends React.Component {
                             <AgendaItem item={event} />
                         ))}
                     </GridList>
+                    <div className={classes.agendaFooter}>
+                        <Fab color="secondary" aria-labe="Next" className={classes.nextButton}
+                             onClick={this.fetchMore}>
+                            <Icon>next_icon</Icon>
+                        </Fab>
+                    </div>
                 </div>
             );
         } else {

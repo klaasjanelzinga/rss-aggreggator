@@ -1,4 +1,6 @@
-from flask import Blueprint, jsonify, Response
+import base64
+
+from flask import Blueprint, jsonify, Response, request
 
 from application_data import venue_repository, event_repository
 from core.event import Event
@@ -6,16 +8,17 @@ from core.event import Event
 api_routes = Blueprint('api', __name__, template_folder='templates')
 
 
-@api_routes.route('/api/events', methods=['OPTIONS'])
-def options_maintenance_fetch_data():
-    return Response(status=200)
-
-
 @api_routes.route('/api/events', methods=['GET'])
-def maintenance_fetch_data():
-    events = event_repository.fetch_items()
+def fetch_events():
+    fetch_offset = request.args.get('fetch_offset')
+    cursor = bytes(fetch_offset, 'utf-8') if fetch_offset is not None else None
+
+    events, new_fetch_offset = event_repository.fetch_items(cursor=cursor, limit=25)
     sorted(events, key=lambda event: event.when)
-    return jsonify([transform(item) for item in event_repository.fetch_items()])
+    return jsonify({
+        'events': [transform(item) for item in events],
+        'fetch_offset': new_fetch_offset.decode('utf-8')
+    })
     # if AppConfig.is_running_in_gae():
     # else:
     #     with open('tests/samples/api/events.json') as f:
