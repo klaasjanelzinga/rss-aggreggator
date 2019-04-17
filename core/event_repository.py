@@ -36,7 +36,7 @@ class EventRepository:
         logging.info(f'Upserting {len(entities)} new events out of {len(events)} events')
         self.client.put_multi(entities)
 
-    def fetch_items(self, cursor: bytes = None, limit: int = 0) -> Tuple[List[Event], bytes]:
+    def fetch_items(self, cursor: bytes = None, limit: int = None) -> Tuple[List[Event], bytes]:
         google_cursor = base64.decodebytes(cursor) if cursor is not None else None
         if google_cursor is not None and google_cursor.decode('utf-8') == 'DONE':
             return [], base64.encodebytes('DONE')

@@ -1,10 +1,9 @@
-import base64
 import logging
 
-from flask import Flask, Response, render_template, send_from_directory, request
+from flask import Flask, Response, render_template, send_from_directory
 
-from api.maintenance import maintenance
 from api.api import api_routes
+from api.maintenance import maintenance
 from application_data import event_repository, venue_repository
 from rss.channel import RSSChannel
 from rss.transformer import Transformer
@@ -44,7 +43,7 @@ def send_channel_image():
 
 @app.route('/events.xml')
 def fetch_rss():
-    items = [Transformer.item_to_rss(venue_repository, item) for item in event_repository.fetch_items()]
+    items = [Transformer.item_to_rss(venue_repository, item) for item in event_repository.fetch_items()[0]]
     channel = RSSChannel(items)
     return Response(channel.to_xml(), mimetype='application/rss+xml')
 
