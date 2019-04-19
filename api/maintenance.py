@@ -23,7 +23,7 @@ def maintenance_fetch_data():
 @maintenance.route('/maintenance/cleanup')
 def maintenance_clean_up():
     if AppConfig.is_web_request_allowed(request):
-        number_cleaned = event_repository.clean_items_before(datetime.now() - timedelta(days=3))
+        number_cleaned = event_repository.clean_items_before(datetime.now() - timedelta(days=1))
         logging.info(f'Number of items cleaned {number_cleaned}')
         return Response(status=200)
     return Response(status=400)

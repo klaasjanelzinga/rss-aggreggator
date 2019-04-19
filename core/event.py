@@ -25,7 +25,7 @@ class Event:
         self.date_published = date_published
         self.when = when
         self.image_url = image_url
-        self.id = str(base64.encodebytes(bytes(self.url, 'utf-8')), 'utf-8')
+        self.id = str(base64.encodebytes(bytes(self.url, 'utf-8')), 'utf-8') if self.url is not None else None
 
     @staticmethod
     def from_map(entity_map):

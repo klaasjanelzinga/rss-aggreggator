@@ -16,7 +16,7 @@ class TestSpotParser:
         with open('tests/samples/spot/Programma - Spot Groningen.html') as f:
             results = self.parser.parse(''.join(f.readlines()))
             assert_that(results, is_not(none()))
-            assert_that(len(results), equal_to(233))
+            assert_that(len(results), equal_to(58))
             kamagurka = [item for item in results if item.url == 'https://www.spotgroningen.nl/programma/kamagurka/']
             assert_that(len(kamagurka), equal_to(1))
             assert_that(kamagurka[0].source, equal_to('test_parser.py'))

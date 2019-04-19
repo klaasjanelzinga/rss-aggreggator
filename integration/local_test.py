@@ -1,18 +1,21 @@
 import requests
 
+GREEN = '\033[92m'
+END = '\033[0m'
+
 
 def validate(url: str) -> None:
     response = requests.get(url)
     if response.status_code > 200:
         raise Exception(f'Should validate url {url} failed with status {response.status_code} - {response.content}')
-    print(f'[OK] url {url} validated')
+    print(f'[{GREEN}OK{END}] url {url} validated')
 
 
 def should_fail(url: str, expected_status:int) -> None:
     response = requests.get(url)
     if response.status_code != expected_status:
         raise Exception(f'Expected status code {expected_status} but was {response.status_code}')
-    print(f'[OK] url {url} should fail failed as expected')
+    print(f'[{GREEN}OK{END}] url {url} should fail failed as expected')
 
 
 validate('http://localhost:8080/events.xml')
