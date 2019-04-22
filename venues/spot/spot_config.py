@@ -6,3 +6,5 @@ class SpotConfig:
         self.base_url = base_url
         self.source_url = source_url
         self.venue_id = 'spot-groningen'
+        self.timezone = 'Europe/Amsterdam'
+        self.timezone_short = '+02:00'

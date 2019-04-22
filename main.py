@@ -5,11 +5,13 @@ from flask import Flask, Response, render_template, send_from_directory
 from api.api import api_routes
 from api.maintenance import maintenance
 from application_data import event_repository, venue_repository
+from core.app_config import AppConfig
 from rss.channel import RSSChannel
 from rss.transformer import Transformer
 from venues.oost_groningen.oost_groningen_processor import OostGroningenProcessor
 from venues.simplon_groningen.simplon_processor import SimplonProcessor
 from venues.spot.spot_processor import SpotProcessor
+from venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
 from venues.vera_groningen.vera_processor import VeraProcessor
 
 logging.basicConfig(level=logging.INFO)
@@ -22,8 +24,9 @@ app = Flask(__name__, static_folder='static/build/static', template_folder='stat
 processors = [SpotProcessor(event_repository),
               VeraProcessor(event_repository),
               OostGroningenProcessor(event_repository),
-              SimplonProcessor(event_repository)]
-[processor.sync_stores() for processor in processors]
+              SimplonProcessor(event_repository),
+              TivoliProcessor(event_repository)]
+[processor.sync_stores() for processor in processors if not AppConfig.is_running_in_gae()]
 [processor.register_venue_at(venue_repository) for processor in processors]
 
 app.register_blueprint(api_routes)
@@ -32,7 +35,6 @@ app.register_blueprint(maintenance)
 
 @app.route('/')
 def hello():
-    logging.warning('serging static resource index.html')
     return render_template('index.html')
 
 
