@@ -1,5 +1,3 @@
-import logging
-
 from flask import Flask, Response, render_template, send_from_directory
 
 from api.api import api_routes
@@ -13,9 +11,6 @@ from venues.simplon_groningen.simplon_processor import SimplonProcessor
 from venues.spot.spot_processor import SpotProcessor
 from venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
 from venues.vera_groningen.vera_processor import VeraProcessor
-
-logging.basicConfig(level=logging.INFO)
-
 
 # set to react specific build artifacts, NOTE, only localhost, gae -> app.yaml
 app = Flask(__name__, static_folder='static/build/static', template_folder='static/build')
@@ -51,8 +46,5 @@ def fetch_rss():
 
 
 if __name__ == '__main__':
-    # This is used when running locally only. When deploying to Google App
-    # Engine, a webserver process such as Gunicorn will serve the app. This
-    # can be configured by adding an `entrypoint` to app.yaml.
     app.run(host='127.0.0.1', port=8080, debug=True)
 # [END gae_python37_app]
