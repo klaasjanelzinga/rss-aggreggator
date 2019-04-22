@@ -24,11 +24,11 @@ class SpotProcessor(VenueProcessor):
                            url=self.config.base_url)
 
     def sync_stores(self) -> None:
-        spot_fetcher = SpotFetcher()
-        spot_parser = SpotParser(self.config)
+        fetcher = SpotFetcher()
+        parser = SpotParser(self.config)
 
-        data = spot_fetcher.fetch()
-        events = spot_parser.parse(data)
+        data = fetcher.fetch()
+        events = parser.parse(data)
         logging.info(f'fetched a total of {len(events)} items from {self.venue}')
         self.event_repository.upsert(events)
 

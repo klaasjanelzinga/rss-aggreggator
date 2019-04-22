@@ -1,4 +1,3 @@
-import logging
 from datetime import datetime
 from typing import List
 
@@ -24,6 +23,7 @@ from bs4 import BeautifulSoup, Tag
 #          </article>
 from core.event import Event
 from core.parser import Parser
+from core.parser_util import ParserUtil
 from venues.spot.spot_config import SpotConfig
 
 
@@ -40,16 +40,6 @@ class SpotParser(Parser):
         program_items = soup.find_all('article')
         return [self._transform(f) for f in program_items]
 
-    @staticmethod
-    def strip_optional_tag_text(tag: Tag) -> str:
-        if tag is None or tag.text is None:
-            return None
-        return tag.text.strip()
-
-    @staticmethod
-    def is_empty(text: str) -> bool:
-        return text is None or text == ''
-
     def _transform(self, article: Tag) -> Event:
         url = article.a.get('href')
         content = article.find('div', {'class': 'program__content'})
@@ -58,8 +48,7 @@ class SpotParser(Parser):
         title = content.h1
         content_title = title.text if title.find('span') is None else \
             title.text.replace(title.span.text, '') + ' - ' + title.span.text
-        description_text = SpotParser.strip_optional_tag_text(content.p)
-        description = description_text if not SpotParser.is_empty(description_text) else content_title
+        description = ParserUtil.stripped_text_or_default_if_empty(content.p, content_title)
 
         return Event(url=url,
                      title=content_title,
