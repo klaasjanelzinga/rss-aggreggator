@@ -14,6 +14,20 @@ class EventRepository:
     def __init__(self, client: Client):
         self.client = client
 
+    @staticmethod
+    def slice_it(batches: int, items: List) -> List[List]:
+        result = []
+        pivot = batches
+        index = 0
+        done = False
+        while not done:
+            actual = min(pivot+index, len(items))
+            first = items[index:actual+index]
+            done = actual == len(items)
+            result.append(first)
+            index += pivot
+        return result
+
     def fetch_all_keys_as_string(self) -> List[str]:
         query = self.client.query(kind='Event')
         query.keys_only()
@@ -24,17 +38,10 @@ class EventRepository:
         entity.update(event.to_map())
         return entity
 
-    def insert_new_events(self, events: List[Event]) -> None:
-        current_keys = self.fetch_all_keys_as_string()
-        updatable_events = [event for event in events if event.id not in current_keys and event.is_valid()]
-        entities = [self._generate_entity(event) for event in updatable_events]
-        logging.info(f'Inserting {len(entities)} new events out of {len(events)} events')
-        self.client.put_multi(entities)
-
     def upsert(self, events: List[Event]) -> None:
-        entities = [self._generate_entity(event) for event in events if event.is_valid()]
-        logging.info(f'Upserting {len(entities)} new events out of {len(events)} events')
-        self.client.put_multi(entities)
+        entities = [self._generate_entity(event) for event in set(events) if event.is_valid()]
+        logging.info(f'Upserting {len(entities)} entities out of {len(events)} events')
+        [self.client.put_multi(entities) for entities in EventRepository.slice_it(500, entities)]
 
     def fetch_items(self, cursor: bytes = None, limit: int = None) -> Tuple[List[Event], bytes]:
         google_cursor = base64.decodebytes(cursor) if cursor is not None else None

@@ -27,6 +27,12 @@ class Event:
         self.image_url = image_url
         self.id = str(base64.encodebytes(bytes(self.url, 'utf-8')), 'utf-8') if self.url is not None else None
 
+    def __eq__(self, other):
+        return self.id == other.id
+
+    def __hash__(self):
+        return hash(self.id)
+
     @staticmethod
     def from_map(entity_map):
         return Event(

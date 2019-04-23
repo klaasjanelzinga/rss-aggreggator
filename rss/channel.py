@@ -35,7 +35,7 @@ class RSSChannel:
         SubElement(channel, 'category').text = self.category
 
         image = SubElement(channel, 'image')
-        SubElement(image, 'url').text = f'{self.link}/static/assets/channel-image.png'
+        SubElement(image, 'url').text = f'{self.link}/channel-image.png'
         SubElement(image, 'title').text = self.title
         SubElement(image, 'link').text = self.link
 

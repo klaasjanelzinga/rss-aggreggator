@@ -27,18 +27,15 @@ class TivoliProcessor(VenueProcessor):
     def sync_stores(self) -> None:
         fetcher = TivoliFetcher()
         parser = TivoliParser(self.config)
-
-        number_of_pages_to_fetch = 15 if AppConfig.is_running_in_gae() else 2
-
         page_index = 0
 
         done = False
         events = []
         while not done:
-            page_index = page_index + 1
+            page_index += 1
             data = fetcher.fetch(page_index)
             new_events = parser.parse(data)
-            done = number_of_pages_to_fetch <= page_index
+            done = len(new_events) < 30
             events.extend(new_events)
         logging.info(f'fetched a total of {len(events)} items from {self.venue}')
         self.event_repository.upsert(events)
