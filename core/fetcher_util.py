@@ -34,4 +34,10 @@ class FetcherUtil:
             elif re.match('.*tivolivredenburg.nl.*page=2.*', url):
                 with open('tests/samples/tivoli-utrecht/ajax-2.js') as f:
                     return ''.join(f.readlines())
+            elif re.match('.*paradiso.nl.*page=1.*', url):
+                with open('tests/samples/paradiso-amsterdam/ajax-1.js') as f:
+                    return ''.join(f.readlines())
+            elif re.match('.*paradiso.nl.*page=2.*', url):
+                with open('tests/samples/paradiso-amsterdam/ajax-2.js') as f:
+                    return ''.join(f.readlines())
             raise Exception(f'No support for stubbed url {url}')

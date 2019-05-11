@@ -16,7 +16,7 @@ class Event:
                  source: str,
                  date_published: datetime,
                  when: datetime,
-                 image_url: str):
+                 image_url: str = None):
         self.url = url
         self.title = title
         self.description = description

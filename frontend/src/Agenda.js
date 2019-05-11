@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes, { string } from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import { Fab, LinearProgress } from '@material-ui/core';
 import GridList from '@material-ui/core/GridList';
-import AgendaItem from './AgendaItem'
-import { LinearProgress, Fab } from '@material-ui/core';
-import { NavigateNext} from  '@material-ui/icons'
+import { withStyles } from '@material-ui/core/styles';
+import { NavigateNext } from '@material-ui/icons';
+import PropTypes, { string } from 'prop-types';
+import React from 'react';
+import AgendaItem from './AgendaItem';
 
 const styles = theme => ({
     agenda: {
@@ -51,7 +51,7 @@ class Agenda extends React.Component {
         this.endpoint = (window.location.hostname === 'localhost')
             ? 'http://localhost:8080/api/events'
             : '/api/events';
-    }
+        }
 
     componentDidMount() {
         console.log('=== fetching items. welcome to the app ===')

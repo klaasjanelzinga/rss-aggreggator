@@ -14,6 +14,9 @@ cron:
   - description: "refresh data on tivoli-utrecht"
     url: /maintenance/fetch-data?venue_id=tivoli-utrecht
     schedule: every 24 hours
+  - description: "refresh data on paradiso-amsterdam"
+    url: /maintenance/fetch-data?venue_id=paradiso-amsterdam
+    schedule: every 24 hours
   - description: "clean old events"
     url: /maintenance/cleanup
     schedule: every 24 hours

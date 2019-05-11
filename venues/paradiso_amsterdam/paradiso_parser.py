@@ -7,12 +7,12 @@ import dateparser
 from core.event import Event
 from core.parser import Parser
 from core.parser_util import ParserUtil
-from venues.tivoli_utrecht.tivoli_config import TivoliConfig
+from venues.paradiso_amsterdam.paradiso_config import ParadisoConfig
 
 
-class TivoliParser(Parser):
+class ParadisoParser(Parser):
 
-    def __init__(self, config: TivoliConfig):
+    def __init__(self, config: ParadisoConfig):
         self.source = config.source_url
         self.base_url = config.base_url
         self.venue_id = config.venue_id
@@ -23,20 +23,18 @@ class TivoliParser(Parser):
         return [self._transform(f) for f in program_items]
 
     def _transform(self, data: Dict) -> Event:
-        url = data['link']
+        url = f'https://www.paradiso.nl/en/program/{data["slug"]}/{data["id"]}'
         title = data['title']
-        image_url = data['image']
         description = data['subtitle']
         description = description if ParserUtil.not_empty(description) else title
-        when_format = f'{data["day"]} {data["month"]} {data["year"]} 00:00{self.tz_short}'
+        when_format = f'{data["start_date_time"]}{self.tz_short}'
 
-        when = dateparser.parse(when_format, languages=['nl'])
+        when = dateparser.parse(when_format, languages=['en'])
 
         return Event(url=url,
                      title=title,
                      description=description,
                      venue_id=self.venue_id,
-                     image_url=image_url,
                      source=self.source,
                      date_published=datetime.now(),
                      when=when)

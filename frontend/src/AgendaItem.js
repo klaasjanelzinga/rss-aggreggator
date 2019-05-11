@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
+import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+import React from 'react';
 import ICSButton from './ICSButton';
 
 
@@ -46,10 +46,11 @@ class AgendaItem extends React.Component {
     render() {
         const { classes } = this.props;
         const event = this.props.item;
+        const image_url = event.image_url === null ? 'missing-image.png'  : event.image_url;
         return (
             <GridListTile className={classes.gridListTile} key={event.id}>
                 <a href={event.url}>
-                    <img className={classes.agenda_image} src={event.image_url} alt={event.title} />
+                    <img className={classes.agenda_image} src={image_url} alt={event.title} />
                     <div className={classes.details}>
                         <div className={classes.details_title}>{event.title}</div>
                         <div className={classes.description}>{event.description}</div>
