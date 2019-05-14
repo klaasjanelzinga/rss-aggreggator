@@ -1,30 +1,26 @@
+from dataclasses import dataclass
 from datetime import datetime
 
 from babel.dates import get_timezone
 
+from core.datastore_utils import DatastoreUtils
 
+
+@dataclass
 class Venue:
 
-    def __init__(self, venue_id: str,
-                 name: str,
-                 url: str,
-                 city: str,
-                 country: str,
-                 timezone: str,
-                 phone: str,
-                 email: str):
-        self.name = name
-        self.url = url
-        self.venue_id = venue_id
-        self.email = email
-        self.phone = phone
-        self.city = city
-        self.country = country
-        self.timezone = timezone
+    name: str
+    url: str
+    venue_id: str
+    email: str
+    phone: str
+    city: str
+    country: str
+    timezone: str
+
+    def __post_init__(self):
+        self.search_terms = [term.lower() for term in DatastoreUtils.split_term(self.name) + [self.city]]
 
     def convert_utc_to_venue_timezone(self, when: datetime) -> datetime:
         venue_tz = get_timezone(self.timezone)
         return when.astimezone(venue_tz)
-
-    def __repr__(self):
-        return f'Venue {self.venue_id} {self.url}'

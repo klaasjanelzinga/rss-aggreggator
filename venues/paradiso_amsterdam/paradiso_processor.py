@@ -2,6 +2,7 @@ import logging
 
 from core.app_config import AppConfig
 from core.event_repository import EventRepository
+from core.parsing_context import ParsingContext
 from core.venue import Venue
 from core.venue_processor import VenueProcessor
 from core.venue_repository import VenueRepository
@@ -21,7 +22,7 @@ class ParadisoProcessor(VenueProcessor):
         self.venue = Venue(venue_id=self.config.venue_id,
                            name='Paradiso Amsterdam',
                            phone='',
-                           city='Amstrdam',
+                           city='Amsterdam',
                            country='NL',
                            timezone='Europe/Amsterdam',
                            email='info@paradiso.nl',
@@ -37,7 +38,7 @@ class ParadisoProcessor(VenueProcessor):
         while not done:
             page_index += 1
             data = fetcher.fetch(page_index)
-            new_events = parser.parse(data)
+            new_events = parser.parse(ParsingContext(venue=self.venue, content=data))
             done = len(new_events) < 30
             events.extend(new_events)
         logging.info(f'fetched a total of {len(events)} items from {self.venue}')

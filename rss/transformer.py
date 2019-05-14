@@ -1,13 +1,12 @@
 from core.event import Event
-from core.venue_repository import VenueRepository
 from rss.rss_item import RSSItem
 
 
 class Transformer:
 
     @staticmethod
-    def item_to_rss(venue_repository: VenueRepository, item: Event) -> RSSItem:
-        venue = venue_repository.get_venue_for(item.venue_id)
+    def item_to_rss(item: Event) -> RSSItem:
+        venue = item.venue
         when = venue.convert_utc_to_venue_timezone(item.when).strftime('%Y-%m-%d %H:%M')
         description = \
             f'''<![CDATA[<html><body>

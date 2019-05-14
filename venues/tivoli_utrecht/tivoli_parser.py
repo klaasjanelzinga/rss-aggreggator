@@ -7,6 +7,8 @@ import dateparser
 from core.event import Event
 from core.parser import Parser
 from core.parser_util import ParserUtil
+from core.parsing_context import ParsingContext
+from core.venue import Venue
 from venues.tivoli_utrecht.tivoli_config import TivoliConfig
 
 
@@ -18,11 +20,11 @@ class TivoliParser(Parser):
         self.venue_id = config.venue_id
         self.tz_short = config.timezone_short
 
-    def parse(self, content: str) -> List[Event]:
-        program_items = json.loads(content)
-        return [self._transform(f) for f in program_items]
+    def parse(self, context: ParsingContext) -> List[Event]:
+        program_items = json.loads(context.content)
+        return [self._transform(context.venue, f) for f in program_items]
 
-    def _transform(self, data: Dict) -> Event:
+    def _transform(self, venue: Venue, data: Dict) -> Event:
         url = data['link']
         title = data['title']
         image_url = data['image']
@@ -35,7 +37,7 @@ class TivoliParser(Parser):
         return Event(url=url,
                      title=title,
                      description=description,
-                     venue_id=self.venue_id,
+                     venue=venue,
                      image_url=image_url,
                      source=self.source,
                      date_published=datetime.now(),

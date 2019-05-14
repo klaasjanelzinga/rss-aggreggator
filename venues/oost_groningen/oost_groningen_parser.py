@@ -5,6 +5,9 @@ import dateparser
 from bs4 import BeautifulSoup, Tag
 
 from core.event import Event
+from core.parser import Parser
+from core.parsing_context import ParsingContext
+from core.venue import Venue
 from venues.oost_groningen.oost_groningen_config import OostGroningenConfig
 
 #     <div class="agenda-item brick col m6">
@@ -32,18 +35,18 @@ from venues.oost_groningen.oost_groningen_config import OostGroningenConfig
 #     </div>
 
 
-class OostGroningenParser:
+class OostGroningenParser(Parser):
 
     def __init__(self, config: OostGroningenConfig):
         self.config = config
 
-    def parse(self, content: str) -> List[Event]:
-        soup = BeautifulSoup(content, features='html.parser')
+    def parse(self, context: ParsingContext) -> List[Event]:
+        soup = BeautifulSoup(context.content, features='html.parser')
         events = soup.find_all('div', {'class': 'agenda-item'})
 
-        return [self._transform(tag) for tag in events]
+        return [self._transform(context.venue, tag) for tag in events]
 
-    def _transform(self, tag: Tag) -> Event:
+    def _transform(self, venue: Venue, tag: Tag) -> Event:
         when_text = tag.find('span', {'class': 'agenda-date'}).text
         when_text = when_text.replace('\n', '').strip()
         when_text = when_text[0:when_text.find('/')].strip()
@@ -58,7 +61,7 @@ class OostGroningenParser:
         return Event(url=url,
                      title=f'{title}',
                      description=description,
-                     venue_id=self.config.venue_id,
+                     venue=venue,
                      source=self.config.base_url,
                      date_published=datetime.now(),
                      when=when_datetime,

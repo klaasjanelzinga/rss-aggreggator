@@ -1,31 +1,28 @@
 import base64
 import logging
+import re
 from datetime import datetime
-from typing import Dict
+from typing import List
+from dataclasses import dataclass
 
-from core.app_config import AppConfig
+from core.datastore_utils import DatastoreUtils
+from core.venue import Venue
 
 
+@dataclass
 class Event:
+    url: str
+    title: str
+    description: str
+    venue: Venue
+    source: str
+    date_published: datetime
+    when: datetime
+    image_url: str = None
 
-    def __init__(self,
-                 url: str,
-                 title: str,
-                 description: str,
-                 venue_id: str,
-                 source: str,
-                 date_published: datetime,
-                 when: datetime,
-                 image_url: str = None):
-        self.url = url
-        self.title = title
-        self.description = description
-        self.venue_id = venue_id
-        self.source = source
-        self.date_published = date_published
-        self.when = when
-        self.image_url = image_url
+    def __post_init__(self):
         self.id = str(base64.encodebytes(bytes(self.url, 'utf-8')), 'utf-8') if self.url is not None else None
+        self.search_terms = self.generate_search_terms()
 
     def __eq__(self, other):
         return self.id == other.id
@@ -33,29 +30,11 @@ class Event:
     def __hash__(self):
         return hash(self.id)
 
-    @staticmethod
-    def from_map(entity_map):
-        return Event(
-            url=entity_map['url'],
-            title=entity_map['title'],
-            description=entity_map['description'],
-            venue_id=entity_map['venue_id'],
-            source=entity_map['source'],
-            date_published=entity_map['date_published'],
-            when=entity_map['when'],
-            image_url=entity_map['image_url'])
-
-    def to_map(self) -> Dict:
-        return {
-            'url': self.url,
-            'title': self.title,
-            'description': self.description,
-            'venue_id': self.venue_id,
-            'source': self.source,
-            'date_published': self.date_published,
-            'when': self.when,
-            'image_url': self.image_url
-        }
+    def generate_search_terms(self) -> List[str]:
+        search_terms = DatastoreUtils.split_term(self.title) + DatastoreUtils.split_term(self.description)
+        search_terms = [re.sub(r'[^\w]+', '', term.lower()) for term in search_terms if len(term) > 3]
+        search_terms.extend(self.venue.search_terms)
+        return [term for term in search_terms if len(term) > 3]
 
     def __repr__(self) -> str:
         return f'core.Event {self.url} {self.title} {self.description}'

@@ -1,20 +1,23 @@
+import unittest
 from datetime import datetime
 from hamcrest import is_not, none, equal_to
 from hamcrest.core import assert_that
 
+from core.parsing_context import ParsingContext
+from tests.core.fixtures import fixture_vera_venue
 from venues.spot.spot_config import SpotConfig
 from venues.spot.spot_parser import SpotParser
 
 
-class TestSpotParser:
+class TestSpotParser(unittest.TestCase):
 
-    def setup(self):
+    def setUp(self):
         self.config = SpotConfig('http://junit-test', 'test_parser.py')
         self.parser = SpotParser(self.config)
 
     def test_sample_file(self):
         with open('tests/samples/spot/Programma - Spot Groningen.html') as f:
-            results = self.parser.parse(''.join(f.readlines()))
+            results = self.parser.parse(ParsingContext(venue=fixture_vera_venue(), content=''.join(f.readlines())))
             assert_that(results, is_not(none()))
             assert_that(len(results), equal_to(58))
             kamagurka = [item for item in results if item.url == 'https://www.spotgroningen.nl/programma/kamagurka/']
@@ -28,6 +31,7 @@ class TestSpotParser:
             assert_that(kamagurka[0].when, equal_to(datetime.fromisoformat('2019-04-05T20:15:00+02:00')))
             assert_that(kamagurka[0].url, equal_to('https://www.spotgroningen.nl/programma/kamagurka/'))
             assert_that(kamagurka[0].id, is_not(none()))
+            assert_that(kamagurka[0].venue, equal_to(fixture_vera_venue()))
 
             [assert_that(event.when, is_not(none)) for event in results]
             [assert_that(event.description, is_not(none)) for event in results]

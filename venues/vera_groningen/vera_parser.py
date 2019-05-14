@@ -8,6 +8,8 @@ from bs4 import BeautifulSoup, Tag
 from core.event import Event
 from core.parser import Parser
 from core.parser_util import ParserUtil
+from core.parsing_context import ParsingContext
+from core.venue import Venue
 from venues.vera_groningen.vera_config import VeraConfig
 
 
@@ -42,18 +44,18 @@ class VeraParser(Parser):
         self.venue_id = config.venue_id
         self.config = config
 
-    def parse(self, content: str) -> List[Event]:
-        soup = BeautifulSoup(content, features='html.parser')
+    def parse(self, context: ParsingContext) -> List[Event]:
+        soup = BeautifulSoup(context.content, features='html.parser')
         events = soup.find_all('div', {'class': 'event-wrapper'})
 
-        return [self._transform(tag) for tag in events]
+        return [self._transform(context.venue, tag) for tag in events]
 
     @staticmethod
     def _add_sup_text_from_text(parent_tag: Tag, text: str) -> str:
         sup = parent_tag.find('sup')
         return f'{text} ({sup.text})' if ParserUtil.has_non_empty_text(sup) else text
 
-    def _transform(self, tag: Tag) -> Event:
+    def _transform(self, venue: Venue, tag: Tag) -> Event:
         url = tag.find('a', {'class': 'event-link'})['href']
         artist_tag = tag.find('h3', {'class': re.compile(r'artist|artist ')})
         if artist_tag is not None:
@@ -95,7 +97,7 @@ class VeraParser(Parser):
         return Event(url=url,
                      title=f'{artist} {extra_title}'.strip(),
                      description=f'{artist}{" with support" if extra != "" else ""} {extra}'.strip(),
-                     venue_id=self.venue_id,
+                     venue=venue,
                      source=self.source,
                      date_published=datetime.now(),
                      when=when_date,

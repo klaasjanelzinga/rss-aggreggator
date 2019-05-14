@@ -1,3 +1,5 @@
+import unittest
+
 from hamcrest import none, is_not, assert_that, equal_to
 from xml.etree import ElementTree
 
@@ -5,7 +7,7 @@ from rss.channel import RSSChannel
 from rss.rss_item import RSSItem
 
 
-class TestRSSChannel:
+class TestRSSChannel(unittest.TestCase):
 
     def test_as_xml(self):
         rss_item = RSSItem(title='junit', link='http://dummy',

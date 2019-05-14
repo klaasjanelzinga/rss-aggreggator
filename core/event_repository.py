@@ -1,32 +1,23 @@
 import base64
 import logging
+import re
 from datetime import datetime
+from typing import List, Tuple
+
 from google.cloud import datastore
 from google.cloud.datastore import Entity
 from google.cloud.datastore.client import Client
-from typing import List, Tuple
 
+from core.datastore_utils import DatastoreUtils
 from core.event import Event
+from core.event_entity_transformer import EventEntitytTransformer
 
 
 class EventRepository:
 
-    def __init__(self, client: Client):
+    def __init__(self, event_entity_transformer: EventEntitytTransformer, client: Client):
         self.client = client
-
-    @staticmethod
-    def slice_it(batches: int, items: List) -> List[List]:
-        result = []
-        pivot = batches
-        index = 0
-        done = False
-        while not done:
-            actual = min(pivot+index, len(items))
-            first = items[index:actual+index]
-            done = actual == len(items)
-            result.append(first)
-            index += pivot
-        return result
+        self.event_entity_transformer = event_entity_transformer
 
     def fetch_all_keys_as_string(self) -> List[str]:
         query = self.client.query(kind='Event')
@@ -35,29 +26,38 @@ class EventRepository:
 
     def _generate_entity(self, event: Event) -> Entity:
         entity = datastore.Entity(self.client.key('Event', event.id))
-        entity.update(event.to_map())
+        entity.update(EventEntitytTransformer.to_entity(event))
         return entity
 
     def upsert(self, events: List[Event]) -> None:
         entities = [self._generate_entity(event) for event in set(events) if event.is_valid()]
         logging.info(f'Upserting {len(entities)} entities out of {len(events)} events')
-        [self.client.put_multi(entities) for entities in EventRepository.slice_it(500, entities)]
+        [self.client.put_multi(entities) for entities in DatastoreUtils.slice_it(500, entities)]
 
     def fetch_items(self, cursor: bytes = None, limit: int = None) -> Tuple[List[Event], bytes]:
-        google_cursor = base64.decodebytes(cursor) if cursor is not None else None
+        google_cursor = DatastoreUtils.create_cursor(earlier_curor=cursor)
         if google_cursor is not None and google_cursor.decode('utf-8') == 'DONE':
             return [], base64.encodebytes('DONE')
         query = self.client.query(kind='Event')
         query.order = ['when']
 
         query_iter = query.fetch(start_cursor=google_cursor, limit=limit)
-        page = next(query_iter.pages)
-        results = list(page)
-        next_cursor = query_iter.next_page_token
-        next_cursor_encoded = base64.encodebytes(next_cursor) if next_cursor is not None \
-            else base64.encodebytes(bytes('DONE', 'UTF-8'))
+        results, next_cursor_encoded = DatastoreUtils.entities_and_cursor(query_iter)
 
-        return [Event.from_map(entity) for entity in results], next_cursor_encoded
+        return [self.event_entity_transformer.to_event(entity) for entity in results], next_cursor_encoded
+
+    def search(self, term: str, cursor: bytes = None, limit: int = None) -> Tuple[List[Event], bytes]:
+        google_cursor = DatastoreUtils.create_cursor(earlier_curor=cursor)
+        if google_cursor is not None and google_cursor.decode('utf-8') == 'DONE':
+            return [], base64.encodebytes('DONE')
+
+        query = self.client.query(kind='Event')
+        [query.add_filter('search_terms', '=', term) for term in DatastoreUtils.split_term(term)]
+        query.order = ['when']
+        query_iter = query.fetch(start_cursor=google_cursor, limit=limit)
+        results, next_cursor_encoded = DatastoreUtils.entities_and_cursor(query_iter)
+
+        return [self.event_entity_transformer.to_event(entity) for entity in results], next_cursor_encoded
 
     def clean_items_before(self, date: datetime) -> int:
         query = self.client.query(kind='Event')

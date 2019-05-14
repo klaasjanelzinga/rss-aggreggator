@@ -1,6 +1,7 @@
 import logging
 
 from core.event_repository import EventRepository
+from core.parsing_context import ParsingContext
 from core.venue import Venue
 from core.venue_processor import VenueProcessor
 from core.venue_repository import VenueRepository
@@ -26,15 +27,14 @@ class VeraProcessor(VenueProcessor):
     def sync_stores(self) -> None:
         vera_fetcher = VeraFetcher()
         vera_parser = VeraParser(self.config)
-        page_index = 0
         items_per_page = 20
 
         done = False
         events = []
         while not done:
-            page_index = page_index + 1
+            page_index =+ 1
             data = vera_fetcher.fetch(page_index, items_per_page)
-            new_events = vera_parser.parse(data)
+            new_events = vera_parser.parse(ParsingContext(venue=self.venue, content=data))
             done = len(new_events) < items_per_page
             events.extend(new_events)
         logging.info(f'fetched a total of {len(events)} items from {self.venue}')

@@ -1,22 +1,26 @@
+import unittest
 from datetime import datetime
 
 import dateparser
 from hamcrest import equal_to, none, is_not
 from hamcrest.core import assert_that
 
+from core.parsing_context import ParsingContext
+from tests.core.fixtures import fixture_vera_venue
 from venues.simplon_groningen.simplon_config import SimplonConfig
 from venues.simplon_groningen.simplon_parser import SimplonParser
 
 
-class TestSimplonParser:
+class TestSimplonParser(unittest.TestCase):
 
     def test_parse_sample(self):
         parser = SimplonParser(SimplonConfig(base_url='http://dumm'))
         with open('tests/samples/simplon-groningen/Simplon.html') as f:
-            results = parser.parse(''.join(f.readlines()))
+            results = parser.parse(ParsingContext(venue=fixture_vera_venue(), content=''.join(f.readlines())))
             assert_that(len(results), equal_to(34))
             event = results[0]
             assert_that(event.title, equal_to('Foxlane + Car Pets'))
+            assert_that(event.venue, equal_to(fixture_vera_venue()))
             assert_that(event.description, equal_to('Simplon UP'))
             assert_that(event.url, equal_to('http://simplon.nl/?post_type=events&p=17602'))
             assert_that(event.image_url,

@@ -1,10 +1,12 @@
+import unittest
+
 from hamcrest import assert_that, equal_to
 from xml.etree.ElementTree import Element
 
 from rss.rss_item import RSSItem
 
 
-class TestRSSChannel:
+class TestRSSChannel(unittest.TestCase):
 
     def test_as_xml(self):
         rss_item = RSSItem(title='junit', link='http://dummy',

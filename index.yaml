@@ -1,0 +1,6 @@
+indexes:
+
+- kind: Event
+  properties:
+  - name: search_terms
+  - name: when

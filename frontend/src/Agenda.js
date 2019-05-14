@@ -2,7 +2,7 @@ import { Fab, LinearProgress } from '@material-ui/core';
 import GridList from '@material-ui/core/GridList';
 import { withStyles } from '@material-ui/core/styles';
 import { NavigateNext } from '@material-ui/icons';
-import PropTypes, { string } from 'prop-types';
+import PropTypes from 'prop-types';
 import React from 'react';
 import AgendaItem from './AgendaItem';
 
@@ -40,60 +40,31 @@ const styles = theme => ({
 
 class Agenda extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            fetched: false,
-            fetch_offset: string,
-            events: []
-        }
-        this.fetchMore = this.fetchMore.bind(this);
-        this.endpoint = (window.location.hostname === 'localhost')
-            ? 'http://localhost:8080/api/events'
-            : '/api/events';
-        }
-
-    componentDidMount() {
-        console.log('=== fetching items. welcome to the app ===')
-        fetch(this.endpoint)
-            .then(results => results.json())
-            .then(results => {
-                this.setState({
-                    events: results.events,
-                    fetch_offset: results.fetch_offset,
-                    fetched: true
-                })
-            })
-    }
-
-    fetchMore() {
-        fetch(this.endpoint + '?fetch_offset=' + this.state.fetch_offset)
-            .then(results => results.json())
-            .then(results => {
-                this.setState({
-                    events: this.state.events.concat(results.events),
-                    fetch_offset: results.fetch_offset,
-                    fetched: true
-                })
-            })
-
-    }
-
     render() {
         const { classes } = this.props
-        if (this.state.fetched) {
+        if (this.props.eventsFetched) {
+            let moreButton
+            let nothingFound
+            if (!this.props.isFetchingDone) {
+                moreButton = <Fab color="secondary" aria-label="Next" className={classes.nextButton}
+                    onClick={this.props.fetchMoreEvents} isFetchingDone>
+                    <NavigateNext></NavigateNext>
+                </Fab>
+            }
+            if (this.props.events.length === 0){
+                nothingFound = <p>Nothing found !</p>
+            }
+
             return (
                 <div className={classes.agenda}>
+                    {nothingFound}
                     <GridList cellHeight={180} cols={1} className={classes.gridList}>
-                        {this.state.events.map(event => (
+                        {this.props.events.map(event => (
                             <AgendaItem item={event} />
                         ))}
                     </GridList>
                     <div className={classes.agendaFooter}>
-                        <Fab color="secondary" aria-label="Next" className={classes.nextButton}
-                             onClick={this.fetchMore}>
-                             <NavigateNext></NavigateNext>
-                        </Fab>
+                            {moreButton}
                     </div>
                 </div>
             );

@@ -1,6 +1,7 @@
 import logging
 
 from core.event_repository import EventRepository
+from core.parsing_context import ParsingContext
 from core.venue import Venue
 from core.venue_processor import VenueProcessor
 from core.venue_repository import VenueRepository
@@ -27,7 +28,7 @@ class OostGroningenProcessor(VenueProcessor):
         fetcher = OostGroningenFetcher()
         parser = OostGroningenParser(self.config)
         data = fetcher.fetch()
-        events = parser.parse(data)
+        events = parser.parse(ParsingContext(venue=self.venue, content=data))
         logging.info(f'fetched a total of {len(events)} items from {self.venue}')
         self.event_repository.upsert(events)
 

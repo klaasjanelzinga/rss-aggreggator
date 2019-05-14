@@ -24,6 +24,8 @@ from bs4 import BeautifulSoup, Tag
 from core.event import Event
 from core.parser import Parser
 from core.parser_util import ParserUtil
+from core.parsing_context import ParsingContext
+from core.venue import Venue
 from venues.spot.spot_config import SpotConfig
 
 
@@ -33,14 +35,13 @@ class SpotParser(Parser):
     def __init__(self, config: SpotConfig):
         self.source = config.source_url
         self.base_url = config.base_url
-        self.venue_id = config.venue_id
 
-    def parse(self, content: str) -> List[Event]:
-        soup = BeautifulSoup(content, 'html.parser')
+    def parse(self, context: ParsingContext) -> List[Event]:
+        soup = BeautifulSoup(context.content, 'html.parser')
         program_items = soup.find_all('article')
-        return [self._transform(f) for f in program_items]
+        return [self._transform(context.venue, f) for f in program_items]
 
-    def _transform(self, article: Tag) -> Event:
+    def _transform(self, venue: Venue, article: Tag) -> Event:
         url = article.a.get('href')
         content = article.find('div', {'class': 'program__content'})
         figure = article.find('figure').img.get('data-src')
@@ -53,7 +54,7 @@ class SpotParser(Parser):
         return Event(url=url,
                      title=content_title,
                      description=description,
-                     venue_id=self.venue_id,
+                     venue=venue,
                      image_url=f'{self.base_url}{figure}',
                      source=self.source,
                      date_published=datetime.now(),
