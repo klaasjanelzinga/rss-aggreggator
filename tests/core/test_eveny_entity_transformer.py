@@ -1,12 +1,11 @@
 import unittest
 from datetime import datetime
-from unittest.mock import MagicMock, Mock
+from unittest.mock import Mock
 
 from hamcrest import equal_to, not_none
 from hamcrest.core import assert_that
 
 from core.event_entity_transformer import EventEntitytTransformer
-from core.venue import Venue
 from core.venue_repository import VenueRepository
 from tests.core.fixtures import fixture_vera_venue, fixture_vera_event
 

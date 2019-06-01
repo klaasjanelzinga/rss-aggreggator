@@ -11,7 +11,7 @@ def validate(url: str) -> None:
     print(f'[{GREEN}OK{END}] url {url} validated')
 
 
-def should_fail(url: str, expected_status:int) -> None:
+def should_fail(url: str, expected_status: int) -> None:
     response = requests.get(url)
     if response.status_code != expected_status:
         raise Exception(f'Expected status code {expected_status} but was {response.status_code}')

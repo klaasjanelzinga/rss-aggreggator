@@ -1,6 +1,5 @@
 import logging
 
-from core.app_config import AppConfig
 from core.event_repository import EventRepository
 from core.parsing_context import ParsingContext
 from core.venue import Venue
@@ -9,9 +8,6 @@ from core.venue_repository import VenueRepository
 from venues.paradiso_amsterdam.paradiso_config import ParadisoConfig
 from venues.paradiso_amsterdam.paradiso_fetcher import ParadisoFetcher
 from venues.paradiso_amsterdam.paradiso_parser import ParadisoParser
-from venues.tivoli_utrecht.tivoli_config import TivoliConfig
-from venues.tivoli_utrecht.tivoli_fetcher import TivoliFetcher
-from venues.tivoli_utrecht.tivoli_parser import TivoliParser
 
 
 class ParadisoProcessor(VenueProcessor):

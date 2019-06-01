@@ -8,5 +8,5 @@ from core.parsing_context import ParsingContext
 class Parser(ABC):
 
     @abstractmethod
-    def parse(self, parsing_context:ParsingContext) -> List[Event]:
+    def parse(self, parsing_context: ParsingContext) -> List[Event]:
         pass

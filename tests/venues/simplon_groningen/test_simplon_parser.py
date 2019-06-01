@@ -1,7 +1,6 @@
 import unittest
 from datetime import datetime
 
-import dateparser
 from hamcrest import equal_to, none, is_not
 from hamcrest.core import assert_that
 

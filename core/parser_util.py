@@ -1,6 +1,6 @@
 import re
 
-from bs4 import Tag
+from bs4.element import Tag
 
 
 class ParserUtil:

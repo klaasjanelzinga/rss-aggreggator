@@ -28,11 +28,12 @@ class VeraProcessor(VenueProcessor):
         vera_fetcher = VeraFetcher()
         vera_parser = VeraParser(self.config)
         items_per_page = 20
+        page_index = 0
 
         done = False
         events = []
         while not done:
-            page_index =+ 1
+            page_index += 1
             data = vera_fetcher.fetch(page_index, items_per_page)
             new_events = vera_parser.parse(ParsingContext(venue=self.venue, content=data))
             done = len(new_events) < items_per_page

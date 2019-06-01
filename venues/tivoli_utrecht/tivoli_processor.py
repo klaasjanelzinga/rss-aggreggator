@@ -1,6 +1,5 @@
 import logging
 
-from core.app_config import AppConfig
 from core.event_repository import EventRepository
 from core.parsing_context import ParsingContext
 from core.venue import Venue

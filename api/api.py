@@ -1,8 +1,6 @@
-import base64
+from flask import Blueprint, jsonify, request
 
-from flask import Blueprint, jsonify, Response, request
-
-from application_data import venue_repository, event_repository
+from application_data import event_repository
 from core.event import Event
 
 api_routes = Blueprint('api', __name__, template_folder='templates')

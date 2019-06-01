@@ -1,6 +1,5 @@
 import base64
 import logging
-import re
 from datetime import datetime
 from typing import List, Tuple
 

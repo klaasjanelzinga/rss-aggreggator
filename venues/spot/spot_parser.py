@@ -1,7 +1,8 @@
 from datetime import datetime
 from typing import List
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4.element import Tag
 
 #          <article class="program__item" data-datetime="1554285600"
 #                  data-description="klassiek-lunchconcert-in-het-cafe-van-de-oosterpoort"

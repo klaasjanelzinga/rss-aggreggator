@@ -1,7 +1,6 @@
 import unittest
 from datetime import datetime
 
-from bs4 import BeautifulSoup
 from hamcrest import equal_to, is_not, none
 from hamcrest.core import assert_that
 

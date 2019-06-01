@@ -3,7 +3,8 @@ from datetime import datetime
 from typing import List
 
 import dateparser
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
+from bs4.element import Tag
 
 from core.event import Event
 from core.parser import Parser
