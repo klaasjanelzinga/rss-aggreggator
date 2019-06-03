@@ -5,6 +5,12 @@
 
 ## Required software
 
+### python 
+
+Upgrade all deps:
+
+        cat requirements.txt | cut -f1 -d= | pip install --upgrade 
+
 ### travis
 
         gem install travis -v 1.8.9 --no-rdoc --no-ri`
