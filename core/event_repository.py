@@ -9,12 +9,12 @@ from google.cloud.datastore.client import Client
 
 from core.datastore_utils import DatastoreUtils
 from core.event import Event
-from core.event_entity_transformer import EventEntitytTransformer
+from core.event_entity_transformer import EventEntityTransformer
 
 
 class EventRepository:
 
-    def __init__(self, event_entity_transformer: EventEntitytTransformer, client: Client):
+    def __init__(self, event_entity_transformer: EventEntityTransformer, client: Client):
         self.client = client
         self.event_entity_transformer = event_entity_transformer
 
@@ -25,13 +25,17 @@ class EventRepository:
 
     def _generate_entity(self, event: Event) -> Entity:
         entity = datastore.Entity(self.client.key('Event', event.id))
-        entity.update(EventEntitytTransformer.to_entity(event))
+        entity.update(EventEntityTransformer.to_entity(event))
         return entity
 
-    def upsert(self, events: List[Event]) -> None:
+    def upsert(self, events: List[Event]) -> List[List[Event]]:
         entities = [self._generate_entity(event) for event in set(events) if event.is_valid()]
         logging.info(f'Upserting {len(entities)} entities out of {len(events)} events')
-        [self.client.put_multi(entities) for entities in DatastoreUtils.slice_it(500, entities)]
+        return [self.client.put_multi(entities) for entities in DatastoreUtils.slice_it(500, entities)]
+
+    def upsert_no_slicing(self, events: List[Event]) -> List[Event]:
+        self.client.put_multi([self._generate_entity(event) for event in set(events)])
+        return events
 
     def fetch_items(self, cursor: bytes = None, limit: int = None) -> Tuple[List[Event], bytes]:
         google_cursor = DatastoreUtils.create_cursor(earlier_curor=cursor)

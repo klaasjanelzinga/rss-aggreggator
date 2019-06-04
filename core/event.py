@@ -1,9 +1,9 @@
 import base64
 import logging
 import re
+from dataclasses import dataclass
 from datetime import datetime
 from typing import List
-from dataclasses import dataclass
 
 from core.datastore_utils import DatastoreUtils
 from core.venue import Venue

@@ -17,10 +17,6 @@ def fetch_events():
         'events': [transform(item) for item in events],
         'fetch_offset': new_fetch_offset.decode('utf-8')
     })
-    # if AppConfig.is_running_in_gae():
-    # else:
-    #     with open('tests/samples/api/events.json') as f:
-    #         return Response(''.join(f.readlines()), 'application/json')
 
 
 @api_routes.route('/api/search', methods=['GET'])

@@ -12,17 +12,9 @@ from venues.oost_groningen.oost_groningen_parser import OostGroningenParser
 
 class OostGroningenProcessor(VenueProcessor):
 
-    def __init__(self, event_repository: EventRepository):
+    def __init__(self, event_repository: EventRepository, venue_repository: VenueRepository):
         self.config = OostGroningenConfig()
-        self.event_repository = event_repository
-        self.venue = Venue(venue_id=self.config.venue_id,
-                           name='Oost Groningen',
-                           phone='',
-                           city='Groningen',
-                           country='NL',
-                           timezone=self.config.timezone,
-                           email='info@komoost.nl',
-                           url=self.config.base_url)
+        super().__init__(event_repository, venue_repository, self.config.venue())
 
     def sync_stores(self) -> None:
         fetcher = OostGroningenFetcher()
@@ -31,6 +23,3 @@ class OostGroningenProcessor(VenueProcessor):
         events = parser.parse(ParsingContext(venue=self.venue, content=data))
         logging.info(f'fetched a total of {len(events)} items from {self.venue}')
         self.event_repository.upsert(events)
-
-    def register_venue_at(self, venue_repository: VenueRepository):
-        venue_repository.register(self.config.venue_id, self.venue, self)

@@ -19,8 +19,11 @@ class FetcherUtil:
             if re.match('.*spotgroningen.*', url):
                 with open('tests/samples/spot/Programma - Spot Groningen.html') as f:
                     return ''.join(f.readlines())
-            elif re.match('.*vera-groningen.*', url):
-                with open('tests/samples/vera-groningen/raw-fetch.html') as f:
+            elif re.match('.*vera-groningen.*page=1.*', url):
+                with open('tests/samples/vera-groningen/raw-fetch-0.html') as f:
+                    return ''.join(f.readlines())
+            elif re.match('.*vera-groningen.*page=2.*', url):
+                with open('tests/samples/vera-groningen/raw-fetch-1.html') as f:
                     return ''.join(f.readlines())
             elif re.match('.*simplon.nl.*', url):
                 with open('tests/samples/simplon-groningen/Simplon.html') as f:

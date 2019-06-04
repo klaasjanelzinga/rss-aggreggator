@@ -2,7 +2,6 @@ import logging
 
 from core.event_repository import EventRepository
 from core.parsing_context import ParsingContext
-from core.venue import Venue
 from core.venue_processor import VenueProcessor
 from core.venue_repository import VenueRepository
 from venues.paradiso_amsterdam.paradiso_config import ParadisoConfig
@@ -12,17 +11,9 @@ from venues.paradiso_amsterdam.paradiso_parser import ParadisoParser
 
 class ParadisoProcessor(VenueProcessor):
 
-    def __init__(self, event_repository: EventRepository):
+    def __init__(self, event_repository: EventRepository, venue_repository: VenueRepository):
         self.config = ParadisoConfig()
-        self.event_repository = event_repository
-        self.venue = Venue(venue_id=self.config.venue_id,
-                           name='Paradiso Amsterdam',
-                           phone='',
-                           city='Amsterdam',
-                           country='NL',
-                           timezone='Europe/Amsterdam',
-                           email='info@paradiso.nl',
-                           url=self.config.base_url)
+        super().__init__(event_repository, venue_repository, self.config.venue())
 
     def sync_stores(self) -> None:
         fetcher = ParadisoFetcher()
@@ -39,6 +30,3 @@ class ParadisoProcessor(VenueProcessor):
             events.extend(new_events)
         logging.info(f'fetched a total of {len(events)} items from {self.venue}')
         self.event_repository.upsert(events)
-
-    def register_venue_at(self, venue_repository: VenueRepository):
-        venue_repository.register(self.config.venue_id, self.venue, self)

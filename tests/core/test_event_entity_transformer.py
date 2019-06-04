@@ -5,7 +5,7 @@ from unittest.mock import Mock
 from hamcrest import equal_to, not_none
 from hamcrest.core import assert_that
 
-from core.event_entity_transformer import EventEntitytTransformer
+from core.event_entity_transformer import EventEntityTransformer
 from core.venue_repository import VenueRepository
 from tests.core.fixtures import fixture_vera_venue, fixture_vera_event
 
@@ -14,7 +14,7 @@ class TestEventEntitytTransformer(unittest.TestCase):
 
     def setUp(self) -> None:
         self.venue_repository = Mock(spec=VenueRepository)
-        self.event_entity_transformer = EventEntitytTransformer(self.venue_repository)
+        self.event_entity_transformer = EventEntityTransformer(self.venue_repository)
         self.venue_repository.get_venue_for.return_value = fixture_vera_venue()
 
     def test_mapping_to_event(self):
@@ -39,7 +39,7 @@ class TestEventEntitytTransformer(unittest.TestCase):
         self.venue_repository.get_venue_for.assert_called_with('vera')
 
     def test_mapping_to_entity(self):
-        entity = EventEntitytTransformer.to_entity(fixture_vera_event())
+        entity = EventEntityTransformer.to_entity(fixture_vera_event())
         assert_that(entity['url'], fixture_vera_event().url)
         assert_that(entity['venue_id'], fixture_vera_event().venue.venue_id)
         assert_that(entity['image_url'], fixture_vera_event().image_url)

@@ -22,9 +22,10 @@ class TestVeraGroningenParser(unittest.TestCase):
             assert_that(event.venue, equal_to(fixture_vera_venue()))
             assert_that(event.title, equal_to('CLASH XXL Expo'))
             assert_that(event.when, equal_to(datetime.fromisoformat('2019-04-07T14:00:00+02:00')))
-            assert_that(event.image_url,
-                        equal_to('https://www.vera-groningen.nl/content/uploads/2019/03/Sirene-Bouke-Groen-1-2-360x250.jpg'))
-            assert_that(event.description, equal_to("CLASH XXL Expo with support BoukeGroen:Sirene+Lilnu'meVeen:SCHLÆGERCORE"))
+            assert_that(event.image_url, equal_to(
+                'https://www.vera-groningen.nl/content/uploads/2019/03/Sirene-Bouke-Groen-1-2-360x250.jpg'))
+            assert_that(event.description, equal_to(
+                "CLASH XXL Expo with support BoukeGroen:Sirene+Lilnu'meVeen:SCHLÆGERCORE"))
             assert_that(event.date_published, is_not(none()))
             assert_that(event.source, equal_to('https://www.vera-groningen.nl/programma/'))
 
@@ -51,17 +52,9 @@ class TestVeraGroningenParser(unittest.TestCase):
             [assert_that(event.title, is_not(none)) for event in results]
             [assert_that(event.url, is_not(none)) for event in results]
 
-        with open('tests/samples/vera-groningen/raw-fetch-2.html') as f:
+        with open('tests/samples/vera-groningen/raw-fetch-0.html') as f:
             results = parser.parse(ParsingContext(venue=fixture_vera_venue(), content=''.join(f.readlines())))
             [assert_that(event.when, is_not(none)) for event in results]
             [assert_that(event.description, is_not(none)) for event in results]
             [assert_that(event.title, is_not(none)) for event in results]
             [assert_that(event.url, is_not(none)) for event in results]
-
-        with open('tests/samples/vera-groningen/raw-fetch-3.html') as f:
-            results = parser.parse(ParsingContext(venue=fixture_vera_venue(), content=''.join(f.readlines())))
-            [assert_that(event.when, is_not(none)) for event in results]
-            [assert_that(event.description, is_not(none)) for event in results]
-            [assert_that(event.title, is_not(none)) for event in results]
-            [assert_that(event.url, is_not(none)) for event in results]
-

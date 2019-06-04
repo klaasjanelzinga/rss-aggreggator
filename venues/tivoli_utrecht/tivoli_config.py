@@ -1,3 +1,6 @@
+from core.venue import Venue
+
+
 class TivoliConfig:
 
     def __init__(self,
@@ -8,3 +11,13 @@ class TivoliConfig:
         self.venue_id = 'tivoli-utrecht'
         self.timezone = 'Europe/Amsterdam'
         self.timezone_short = '+02:00'
+
+    def venue(self) -> Venue:
+        return Venue(venue_id=self.venue_id,
+                     name='Tivoli Vredenburg',
+                     phone='030 - 2314544',
+                     city='Utrecht',
+                     country='NL',
+                     timezone='Europe/Amsterdam',
+                     email='info@tivolivredenburg.nl',
+                     url=self.base_url)

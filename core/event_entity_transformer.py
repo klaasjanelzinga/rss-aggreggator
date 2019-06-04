@@ -4,7 +4,7 @@ from core.event import Event
 from core.venue_repository import VenueRepository
 
 
-class EventEntitytTransformer:
+class EventEntityTransformer:
 
     def __init__(self, venue_repository: VenueRepository):
         self.venue_repository = venue_repository
