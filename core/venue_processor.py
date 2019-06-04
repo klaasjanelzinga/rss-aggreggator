@@ -1,5 +1,5 @@
 import logging
-from abc import ABC
+from abc import ABC, abstractmethod
 
 from rx.operators import filter, map, buffer_with_count
 
@@ -27,5 +27,6 @@ class VenueProcessor(ABC):
             on_error=lambda e: print(f"Error Occurred: {e}"),
         )
 
+    @abstractmethod
     def fetch_source(self) -> Source:
         pass

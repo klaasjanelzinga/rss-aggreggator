@@ -1,12 +1,9 @@
-import logging
-
 from core.event_repository import EventRepository
-from core.parsing_context import ParsingContext
+from core.source import Source
 from core.venue_processor import VenueProcessor
 from core.venue_repository import VenueRepository
 from venues.spot.spot_config import SpotConfig
-from venues.spot.spot_fetcher import SpotFetcher
-from venues.spot.spot_parser import SpotParser
+from venues.spot.spot_source import SpotSource
 
 
 class SpotProcessor(VenueProcessor):
@@ -15,11 +12,6 @@ class SpotProcessor(VenueProcessor):
         self.config = SpotConfig()
         super().__init__(event_repository, venue_repository, self.config.venue())
 
-    def sync_stores(self) -> None:
-        fetcher = SpotFetcher()
-        parser = SpotParser(self.config)
+    def fetch_source(self) -> Source:
+        return SpotSource(self.config)
 
-        data = fetcher.fetch()
-        events = parser.parse(ParsingContext(venue=self.venue, content=data))
-        logging.info(f'fetched a total of {len(events)} items from {self.venue}')
-        self.event_repository.upsert(events)

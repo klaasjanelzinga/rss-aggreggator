@@ -16,7 +16,7 @@ class TestSimplonParser(unittest.TestCase):
         parser = SimplonParser(SimplonConfig(base_url='http://dumm'))
         with open('tests/samples/simplon-groningen/Simplon.html') as f:
             results = parser.parse(ParsingContext(venue=fixture_vera_venue(), content=''.join(f.readlines())))
-            assert_that(len(results), equal_to(34))
+            assert_that(len(results), equal_to(29))
             event = results[0]
             assert_that(event.title, equal_to('Foxlane + Car Pets'))
             assert_that(event.venue, equal_to(fixture_vera_venue()))

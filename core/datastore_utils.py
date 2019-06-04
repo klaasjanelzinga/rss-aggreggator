@@ -19,22 +19,5 @@ class DatastoreUtils:
         return results, next_cursor_encoded
 
     @staticmethod
-    def slice_it(batches: int, items: List) -> List[List]:
-        """
-        Slice items in list of lists with max batches size.
-        """
-        result = []
-        pivot = batches
-        index = 0
-        done = False
-        while not done:
-            actual = min(pivot + index, len(items))
-            first = items[index:actual + index]
-            done = actual == len(items)
-            result.append(first)
-            index += pivot
-        return result
-
-    @staticmethod
     def split_term(term: str) -> List[str]:
         return [re.sub(r'[^\w]+', '', t.lower()) for t in re.split(' |-', term)]

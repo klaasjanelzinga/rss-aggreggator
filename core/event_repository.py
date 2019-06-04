@@ -28,11 +28,6 @@ class EventRepository:
         entity.update(EventEntityTransformer.to_entity(event))
         return entity
 
-    def upsert(self, events: List[Event]) -> List[List[Event]]:
-        entities = [self._generate_entity(event) for event in set(events) if event.is_valid()]
-        logging.info(f'Upserting {len(entities)} entities out of {len(events)} events')
-        return [self.client.put_multi(entities) for entities in DatastoreUtils.slice_it(500, entities)]
-
     def upsert_no_slicing(self, events: List[Event]) -> List[Event]:
         self.client.put_multi([self._generate_entity(event) for event in set(events)])
         return events

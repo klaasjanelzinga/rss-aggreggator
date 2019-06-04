@@ -1,11 +1,10 @@
-from flask import Flask, Response, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory
 
 from api.api import api_routes
 from api.maintenance import maintenance
-from application_data import event_repository, venue_repository, processors
+from application_data import processors
 from core.app_config import AppConfig
-from rss.channel import RSSChannel
-from rss.transformer import Transformer
+from rss.rss_api import rss_routes
 
 # set to react specific build artifacts, NOTE, only localhost, gae -> app.yaml
 app = Flask(__name__, static_folder='static/build/static', template_folder='static/build')
@@ -15,6 +14,7 @@ app = Flask(__name__, static_folder='static/build/static', template_folder='stat
 
 app.register_blueprint(api_routes)
 app.register_blueprint(maintenance)
+app.register_blueprint(rss_routes)
 
 
 @app.route('/')
@@ -25,15 +25,6 @@ def hello():
 @app.route('/channel-image.png')
 def send_channel_image():
     return send_from_directory('static/build', 'channel-image.png')
-
-
-@app.route('/events.xml')
-def fetch_rss():
-    venue_filtered_items = [event for event in event_repository.fetch_items()[0]
-                            if venue_repository.is_registered(event.venue.venue_id)]
-    rss_items = [Transformer.item_to_rss(item) for item in venue_filtered_items]
-    channel = RSSChannel(rss_items)
-    return Response(channel.to_xml(), mimetype='application/rss+xml')
 
 
 if __name__ == '__main__':
