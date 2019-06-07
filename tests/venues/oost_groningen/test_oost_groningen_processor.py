@@ -14,7 +14,8 @@ class TestOostGroningenProcessor(unittest.TestCase):
     def setUp(self) -> None:
         self.event_repository = Mock(spec=EventRepository)
         self.venue_repository = Mock(spec=VenueRepository)
-        self.processor = OostGroningenProcessor(event_repository=self.event_repository, venue_repository=self.venue_repository)
+        self.processor = OostGroningenProcessor(event_repository=self.event_repository,
+                                                venue_repository=self.venue_repository)
 
     def test_process_upserted_all_events(self):
         self.event_repository.upsert_no_slicing.return_value = []

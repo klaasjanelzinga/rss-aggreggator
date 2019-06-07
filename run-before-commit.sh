@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e "test-failed"
-
 VENV_SOURCED="NO"
 
 if [ -z "$VIRTUAL_ENV" ]
@@ -15,17 +13,19 @@ echo "Running pytests"
 pytest tests --cov . --cov-report=html
 
 echo "Starting app"
+ps aux | grep main.py |grep -v gre | awk '{ print $2 }' | xargs kill
 export GOOGLE_APPLICATION_CREDENTIALS=/Users/klaasjanelzinga/Downloads/ds.json
-export FLASK_DEBUG=0
 python3 main.py | grep -v INFO &
-PID=$!
 
 sleep 10
 
 echo "Running integration..."
 python3 integration/local_test.py
+result=$?
 
 ps aux | grep main.py |grep -v gre | awk '{ print $2 }' | xargs kill
+
+[ $result != 0 ] && echo "Test failed" && exit 1
 
 sleep 2
 

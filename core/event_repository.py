@@ -1,5 +1,4 @@
 import base64
-import logging
 from datetime import datetime
 from typing import List, Tuple
 
@@ -43,6 +42,11 @@ class EventRepository:
         results, next_cursor_encoded = DatastoreUtils.entities_and_cursor(query_iter)
 
         return [self.event_entity_transformer.to_event(entity) for entity in results], next_cursor_encoded
+
+    def fetch_all_items(self):
+        query = self.client.query(kind='Event')
+        query.order = ['when']
+        return query.fetch()
 
     def search(self, term: str, cursor: bytes = None, limit: int = None) -> Tuple[List[Event], bytes]:
         google_cursor = DatastoreUtils.create_cursor(earlier_curor=cursor)

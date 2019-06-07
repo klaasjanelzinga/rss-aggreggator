@@ -1,5 +1,4 @@
 from core.event import Event
-from core.venue_repository import VenueRepository
 from rss.rss_item import RSSItem
 
 
