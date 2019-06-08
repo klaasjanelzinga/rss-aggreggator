@@ -3,7 +3,7 @@ from xml.etree import ElementTree
 
 from hamcrest import assert_that, equal_to
 
-from rss.rss_item import RSSItem
+from app.rss.rss_item import RSSItem
 
 
 class TestRSSChannel(unittest.TestCase):

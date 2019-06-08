@@ -5,8 +5,8 @@ from unittest.mock import Mock
 from hamcrest import equal_to, not_none
 from hamcrest.core import assert_that
 
-from core.event_entity_transformer import EventEntityTransformer
-from core.venue_repository import VenueRepository
+from app.core.event_entity_transformer import EventEntityTransformer
+from app.core.venue_repository import VenueRepository
 from tests.core.fixtures import fixture_vera_venue, fixture_vera_event
 
 

@@ -2,7 +2,7 @@ import unittest
 
 from hamcrest import assert_that, equal_to, matches_regexp
 
-from rss.transformer import Transformer
+from app.rss.transformer import Transformer
 from tests.core.fixtures import fixture_vera_event
 
 

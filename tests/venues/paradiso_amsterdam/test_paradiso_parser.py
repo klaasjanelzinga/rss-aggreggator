@@ -4,10 +4,10 @@ from datetime import datetime
 from hamcrest import equal_to, none, is_not
 from hamcrest.core import assert_that
 
-from core.parsing_context import ParsingContext
+from app.core.parsing_context import ParsingContext
 from tests.core.fixtures import fixture_vera_venue
-from venues.paradiso_amsterdam.paradiso_config import ParadisoConfig
-from venues.paradiso_amsterdam.paradiso_parser import ParadisoParser
+from app.venues.paradiso_amsterdam.paradiso_config import ParadisoConfig
+from app.venues.paradiso_amsterdam.paradiso_parser import ParadisoParser
 
 
 class TestParadisoParser(unittest.TestCase):

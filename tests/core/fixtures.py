@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from core.event import Event
-from core.venue import Venue
+from app.core.event import Event
+from app.core.venue import Venue
 
 
 def fixture_vera_event() -> Event:

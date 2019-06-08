@@ -4,10 +4,10 @@ from datetime import datetime
 from hamcrest import equal_to, none, is_not
 from hamcrest.core import assert_that
 
-from core.parsing_context import ParsingContext
+from app.core.parsing_context import ParsingContext
 from tests.core.fixtures import fixture_vera_venue
-from venues.vera_groningen.vera_config import VeraConfig
-from venues.vera_groningen.vera_parser import VeraParser
+from app.venues.vera_groningen.vera_config import VeraConfig
+from app.venues.vera_groningen.vera_parser import VeraParser
 
 
 class TestVeraGroningenParser(unittest.TestCase):

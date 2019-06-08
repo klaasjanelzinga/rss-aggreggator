@@ -4,10 +4,10 @@ from datetime import datetime
 from hamcrest import equal_to, none, is_not
 from hamcrest.core import assert_that
 
-from core.parsing_context import ParsingContext
+from app.core.parsing_context import ParsingContext
 from tests.core.fixtures import fixture_vera_venue
-from venues.tivoli_utrecht.tivoli_config import TivoliConfig
-from venues.tivoli_utrecht.tivoli_parser import TivoliParser
+from app.venues.tivoli_utrecht.tivoli_config import TivoliConfig
+from app.venues.tivoli_utrecht.tivoli_parser import TivoliParser
 
 
 class TestTivoliParser(unittest.TestCase):

@@ -4,10 +4,10 @@ from datetime import datetime
 from hamcrest import equal_to, none, is_not
 from hamcrest.core import assert_that
 
-from core.parsing_context import ParsingContext
+from app.core.parsing_context import ParsingContext
 from tests.core.fixtures import fixture_vera_venue
-from venues.simplon_groningen.simplon_config import SimplonConfig
-from venues.simplon_groningen.simplon_parser import SimplonParser
+from app.venues.simplon_groningen.simplon_config import SimplonConfig
+from app.venues.simplon_groningen.simplon_parser import SimplonParser
 
 
 class TestSimplonParser(unittest.TestCase):

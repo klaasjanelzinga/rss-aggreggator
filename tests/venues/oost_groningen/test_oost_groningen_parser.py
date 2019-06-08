@@ -4,10 +4,10 @@ from datetime import datetime
 from hamcrest import equal_to, is_not, none
 from hamcrest.core import assert_that
 
-from core.parsing_context import ParsingContext
+from app.core.parsing_context import ParsingContext
 from tests.core.fixtures import fixture_vera_venue
-from venues.oost_groningen.oost_groningen_config import OostGroningenConfig
-from venues.oost_groningen.oost_groningen_parser import OostGroningenParser
+from app.venues.oost_groningen.oost_groningen_config import OostGroningenConfig
+from app.venues.oost_groningen.oost_groningen_parser import OostGroningenParser
 
 
 class TestOostGroningenParser(unittest.TestCase):

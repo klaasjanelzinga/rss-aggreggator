@@ -4,17 +4,17 @@ from typing import Dict, List
 import google.cloud.logging
 from google.cloud import datastore
 
-from core.app_config import AppConfig
-from core.event_entity_transformer import EventEntityTransformer
-from core.event_repository import EventRepository
-from core.venue_processor import VenueProcessor
-from core.venue_repository import VenueRepository
-from venues.oost_groningen.oost_groningen_processor import OostGroningenProcessor
-from venues.paradiso_amsterdam.paradiso_processor import ParadisoProcessor
-from venues.simplon_groningen.simplon_processor import SimplonProcessor
-from venues.spot.spot_processor import SpotProcessor
-from venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
-from venues.vera_groningen.vera_processor import VeraProcessor
+from app.core.app_config import AppConfig
+from app.core.event_entity_transformer import EventEntityTransformer
+from app.core.event_repository import EventRepository
+from app.core.venue_processor import VenueProcessor
+from app.core.venue_repository import VenueRepository
+from app.venues.oost_groningen.oost_groningen_processor import OostGroningenProcessor
+from app.venues.paradiso_amsterdam.paradiso_processor import ParadisoProcessor
+from app.venues.simplon_groningen.simplon_processor import SimplonProcessor
+from app.venues.spot.spot_processor import SpotProcessor
+from app.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
+from app.venues.vera_groningen.vera_processor import VeraProcessor
 
 datastore_client = datastore.Client()
 venue_repository: VenueRepository = VenueRepository()

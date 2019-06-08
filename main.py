@@ -1,10 +1,10 @@
 from flask import Flask, render_template, send_from_directory
 
-from api.api import api_routes
-from api.maintenance import maintenance
+from app.api.api import api_routes
+from app.api.maintenance import maintenance
 from application_data import processors
-from core.app_config import AppConfig
-from rss.rss_api import rss_routes
+from app.core.app_config import AppConfig
+from app.rss.rss_api import rss_routes
 
 # set to react specific build artifacts, NOTE, only localhost, gae -> app.yaml
 app = Flask(__name__, static_folder='static/build/static', template_folder='static/build')

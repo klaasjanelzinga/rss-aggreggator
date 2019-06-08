@@ -3,7 +3,7 @@ import unittest
 from hamcrest import has_items
 from hamcrest.core import assert_that
 
-from core.datastore_utils import DatastoreUtils
+from app.core.datastore_utils import DatastoreUtils
 
 
 class TestDatastoreUtils(unittest.TestCase):

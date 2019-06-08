@@ -5,8 +5,8 @@ from hamcrest.core import assert_that
 from pytest import fail
 from rx.operators import count, buffer_with_count, map
 
-from venues.vera_groningen.vera_config import VeraConfig
-from venues.vera_groningen.vera_source import VeraSource
+from app.venues.vera_groningen.vera_config import VeraConfig
+from app.venues.vera_groningen.vera_source import VeraSource
 
 
 class TestVeraGroningenSource(unittest.TestCase):

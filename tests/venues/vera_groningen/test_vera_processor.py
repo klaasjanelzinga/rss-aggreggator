@@ -4,9 +4,9 @@ from unittest.mock import Mock
 from hamcrest import equal_to
 from hamcrest.core import assert_that
 
-from core.event_repository import EventRepository
-from core.venue_repository import VenueRepository
-from venues.vera_groningen.vera_processor import VeraProcessor
+from app.core.event_repository import EventRepository
+from app.core.venue_repository import VenueRepository
+from app.venues.vera_groningen.vera_processor import VeraProcessor
 
 
 class TestVeraGroningenProcessor(unittest.TestCase):

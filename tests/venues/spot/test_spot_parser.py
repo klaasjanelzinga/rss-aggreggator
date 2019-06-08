@@ -3,10 +3,10 @@ from datetime import datetime
 from hamcrest import is_not, none, equal_to
 from hamcrest.core import assert_that
 
-from core.parsing_context import ParsingContext
+from app.core.parsing_context import ParsingContext
 from tests.core.fixtures import fixture_vera_venue
-from venues.spot.spot_config import SpotConfig
-from venues.spot.spot_parser import SpotParser
+from app.venues.spot.spot_config import SpotConfig
+from app.venues.spot.spot_parser import SpotParser
 
 
 class TestSpotParser(unittest.TestCase):
