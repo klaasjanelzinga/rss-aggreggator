@@ -15,6 +15,7 @@ Upgrade all deps:
 
         gem install travis -v 1.8.9 --no-rdoc --no-ri`
         travis login --com --auto
+       
      
 ### gcloud
 
@@ -24,7 +25,8 @@ Upgrade all deps:
 
 ### gcloud - travis
 
-        travis encrypt-file client-secret.json --add --com
+        travis encrypt-file secrets.tar --add --com
+        # contains travis-deployer.json and test-ds.json
         
     
 ### run coverage pytest -> html
