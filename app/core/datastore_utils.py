@@ -20,4 +20,4 @@ class DatastoreUtils:
 
     @staticmethod
     def split_term(term: str) -> List[str]:
-        return [re.sub(r'[^\w]+', '', t.lower()) for t in re.split(' |-', term)]
+        return [re.sub(r'[^\w]+', '', t.lower()) for t in re.split(' |-', term) if len(t) > 3]

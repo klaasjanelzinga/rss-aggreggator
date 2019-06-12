@@ -2,7 +2,7 @@ from flask import Flask, render_template, send_from_directory
 
 from app.api.api import api_routes
 from app.api.maintenance import maintenance
-from application_data import processors
+from app.application_data import processors
 from app.core.app_config import AppConfig
 from app.rss.rss_api import rss_routes
 

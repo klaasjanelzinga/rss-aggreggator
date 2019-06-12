@@ -5,13 +5,12 @@ branch = True
 omit=
     venv/**
     tests/**
+    integration/**
     **/__init__.py
 
 include=
-    core/**
-    rss/**
+    app/**
     main.py
-    venues/**
 
 [html]
 directory = htmlcov
