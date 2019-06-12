@@ -19,7 +19,6 @@ __pycache__/
 # Ignored by the build system
 /setup.cfg
 
-client-secret.json.enc
 .travis.yml
 
 frontend/
@@ -30,3 +29,11 @@ htmlcov/
 integration/
 
 static/build/static/js/*.map
+
+*.sh
+*.tar
+*.enc
+test-ds.json
+travis-deployer.json
+.coverage
+README.md
