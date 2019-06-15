@@ -38,4 +38,4 @@ class TestEventsXml(unittest.TestCase):
             if child.tag == 'category':
                 assert_that(child.text, equal_to('Entertainment'))
 
-        assert_that(len(channel), equal_to(185))
+        assert_that(len(channel), equal_to(231))

@@ -9,9 +9,9 @@ fi
 
 echo "Starting app"
 ps aux | grep main.py |grep -v gre | awk '{ print $2 }' | xargs kill
-if [[ -f ${HOME}/Downloads/ds.json ]]
+if [[ -f ${HOME}/Downloads/test-ds.json ]]
 then
-    export GOOGLE_APPLICATION_CREDENTIALS=/Users/klaasjanelzinga/Downloads/ds.json
+    export GOOGLE_APPLICATION_CREDENTIALS=/Users/klaasjanelzinga/Downloads/test-ds.json
 else
     export GOOGLE_APPLICATION_CREDENTIALS=`pwd`/test-ds.json
 fi

@@ -5,9 +5,7 @@
 	"image": "https:\/\/www.tivolivredenburg.nl\/wp-content\/uploads\/2019\/03\/TIVOLI_SQUAD_02_FB_BANNER-195x130.jpg",
 	"title": "Squad: Poke, Supergaande, Tabitha",
 	"subtitle": "Lekker he?",
-	"day": "do 2",
-	"month": "mei",
-	"year": "2019",
+	{{random_future_date:tivoli}}
 	"yearMonth": "201905",
 	"status": {
 		"status": "tickets",

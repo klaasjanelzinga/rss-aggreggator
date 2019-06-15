@@ -9,6 +9,7 @@ from app.core.event_entity_transformer import EventEntityTransformer
 from app.core.event_repository import EventRepository
 from app.core.venue_processor import VenueProcessor
 from app.core.venue_repository import VenueRepository
+from app.venues.melkweg_amsterdam.melkweg_processor import MelkwegProcessor
 from app.venues.oost_groningen.oost_groningen_processor import OostGroningenProcessor
 from app.venues.paradiso_amsterdam.paradiso_processor import ParadisoProcessor
 from app.venues.simplon_groningen.simplon_processor import SimplonProcessor
@@ -26,6 +27,7 @@ processors: List[VenueProcessor] = [SpotProcessor(event_repository, venue_reposi
                                     OostGroningenProcessor(event_repository, venue_repository),
                                     SimplonProcessor(event_repository, venue_repository),
                                     ParadisoProcessor(event_repository, venue_repository),
+                                    MelkwegProcessor(event_repository, venue_repository),
                                     TivoliProcessor(event_repository, venue_repository)]
 processors_map: Dict[str, VenueProcessor] = {processor.venue.venue_id: processor for processor in processors}
 

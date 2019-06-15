@@ -5,6 +5,8 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import List
 
+import pytz
+
 from app.core.datastore_utils import DatastoreUtils
 from app.core.venue import Venue
 
@@ -44,10 +46,11 @@ class Event:
         return text is not None and text != ''
 
     def is_valid(self) -> bool:
-        valid = Event.is_not_empty(self.title) and \
-               Event.is_not_empty(self.description) and \
-               self.when != datetime.min and \
-               Event.is_not_empty(self.url)
+        valid = (Event.is_not_empty(self.title) and
+                 Event.is_not_empty(self.description) and
+                 self.when != datetime.min and
+                 self.when > datetime.now(pytz.timezone(self.venue.timezone)) and
+                 Event.is_not_empty(self.url))
         if not valid:
             logging.warning(f'Invalid event {self}')
         return valid

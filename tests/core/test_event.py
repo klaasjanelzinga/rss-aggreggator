@@ -1,6 +1,7 @@
 import unittest
-from datetime import datetime
+from datetime import datetime, timedelta
 
+import pytz
 from hamcrest import equal_to, is_not
 from hamcrest.core import assert_that
 
@@ -37,6 +38,17 @@ class TestEvent(unittest.TestCase):
         event = fixture_vera_event()
         event.when = datetime.min
         assert_that(event.is_valid(), equal_to(False))
+
+    def test_when_too_old(self):
+        event = fixture_vera_event()
+        event.when = datetime.now(pytz.timezone('Europe/Amsterdam')) - timedelta(days=1)
+        assert_that(event.is_valid(), equal_to(False))
+
+        event.when = datetime.now(pytz.timezone('Europe/Amsterdam')) - timedelta(minutes=1)
+        assert_that(event.is_valid(), equal_to(False))
+
+        event.when = datetime.now(pytz.timezone('Europe/Amsterdam')) + timedelta(minutes=1)
+        assert_that(event.is_valid(), equal_to(True))
 
     def test_equality(self):
         event = fixture_vera_event()

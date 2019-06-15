@@ -1,4 +1,6 @@
-from datetime import datetime
+from datetime import datetime, timedelta
+
+import pytz
 
 from app.core.event import Event
 from app.core.venue import Venue
@@ -12,7 +14,7 @@ def fixture_vera_event() -> Event:
                  date_published=datetime.now(),
                  image_url='http://image-url-vera-event.jpg',
                  venue=fixture_vera_venue(),
-                 when=datetime.now())
+                 when=datetime.now(pytz.timezone('Europe/Amsterdam')) + timedelta(days=10))
 
 
 def fixture_vera_event_mock() -> Event:
@@ -23,7 +25,7 @@ def fixture_vera_event_mock() -> Event:
                  date_published=datetime.now(),
                  image_url='http://image-url-vera-event-mock.jpg',
                  venue=fixture_vera_venue(),
-                 when=datetime.now())
+                 when=datetime.now(pytz.timezone('Europe/Amsterdam')) + timedelta(days=10))
 
 
 def fixture_vera_venue() -> Venue:

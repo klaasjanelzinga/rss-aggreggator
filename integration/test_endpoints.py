@@ -32,6 +32,7 @@ class TestEndpoints(unittest.TestCase):
         TestEndpoints.validate(f'{self.endpoint}/maintenance/fetch-data?venue_id=oost-groningen')
         TestEndpoints.validate(f'{self.endpoint}/maintenance/fetch-data?venue_id=tivoli-utrecht')
         TestEndpoints.validate(f'{self.endpoint}/maintenance/fetch-data?venue_id=paradiso-amsterdam')
+        TestEndpoints.validate(f'{self.endpoint}/maintenance/fetch-data?venue_id=melkweg-amsterdam')
         response = requests.get(f'{self.endpoint}/maintenance/fetch-data?venue_id=kumbatcha-groningen')
         assert_that(response.status_code, equal_to(404))
 
