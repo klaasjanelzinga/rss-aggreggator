@@ -32,7 +32,7 @@ class TestMelkwegParser(unittest.TestCase):
                 'vervolg met een nieuw album en een film. De nieuwe tour is nu al legendarisch en gelukkig slaan '
                 'ze Amsterdam niet over!\xa0'))
             assert_that(inna_event.image_url, equal_to(
-                'https://s3-eu-west-1.amazonaws.com/static.melkweg.nl/uploads/images/scaled/agenda_thumbnail/26279'))
+                'https://s3-eu-west-1.amazonaws.com/static.melkweg.nl/uploads/images/scaled/agenda_thumbnail/25520'))
             assert_that(inna_event.source, equal_to('https://www.melkweg.nl/agenda'))
             assert_that(inna_event.url, equal_to('https://www.melkweg.nl/nl/agenda/inna-da-yard-13-06-2019'))
             assert_that(inna_event.when, equal_to(datetime.fromisoformat('2019-06-13T19:30:00+02:00')))

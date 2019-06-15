@@ -33,7 +33,7 @@ class MelkwegParser(Parser):
                 date = datetime.fromtimestamp(int(event['date']), pytz.timezone("Europe/Amsterdam"))
                 title = event['name']
                 image_url = f'https://s3-eu-west-1.amazonaws.com/static.melkweg.nl/uploads/images/' \
-                    f'scaled/agenda_thumbnail/{event["id"]}'
+                    f'scaled/agenda_thumbnail/{event["thumbnail"]}'
                 url = f'https://www.melkweg.nl/nl/agenda/{event["slug"]}'
                 results.append(Event(url=url,
                                      title=title,
