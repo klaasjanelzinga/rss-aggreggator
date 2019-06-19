@@ -19,10 +19,9 @@ class VenueProcessor(ABC):
         self.fetch_source().observable().pipe(
             rx_filter(lambda event: event.is_valid()),
             buffer_with_count(200),
-            rx_map(self.event_repository.upsert_no_slicing),
-            rx_map(len),
+            rx_map(self.event_repository.upsert_no_slicing)
         ).subscribe(
-            on_next=lambda e: self.logger.info('Upserted %d events for %s', e, self.venue.venue_id),
+            on_next=lambda e: self.logger.info('Upserted %d events for %s', len(e), self.venue.venue_id),
             on_error=lambda e: self.logger.error('Error occurred syncing stores: %s', e),
         )
 
