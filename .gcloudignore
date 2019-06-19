@@ -27,6 +27,7 @@ tests/
 venv/
 htmlcov/
 integration/
+build-reports/
 
 static/build/static/js/*.map
 
