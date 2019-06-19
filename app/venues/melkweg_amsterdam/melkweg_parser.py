@@ -1,7 +1,7 @@
 import json
 import logging
 from datetime import datetime
-from typing import List
+from typing import List, Dict
 
 import pytz
 from bs4 import BeautifulSoup
@@ -14,6 +14,12 @@ from app.core.parsing_context import ParsingContext
 
 class MelkwegParser(Parser):
 
+    @staticmethod
+    def _make_description(event: Dict) -> str:
+        description_item = event['description']
+        return (BeautifulSoup(description_item, features='html.parser').text
+                if description_item is not None else event['name'])
+
     def parse(self, parsing_context: ParsingContext) -> List[Event]:
         venue = parsing_context.venue
         source = venue.source_url
@@ -24,7 +30,7 @@ class MelkwegParser(Parser):
             events = [event for event in day['events'] if
                       event['type'] == 'event']
             for event in events:
-                description = BeautifulSoup(event['description'], features='html.parser').text
+                description = MelkwegParser._make_description(event)
                 date = datetime.fromtimestamp(int(event['date']), pytz.timezone("Europe/Amsterdam"))
                 title = event['name']
                 image_url = f'https://s3-eu-west-1.amazonaws.com/static.melkweg.nl/uploads/images/' \
