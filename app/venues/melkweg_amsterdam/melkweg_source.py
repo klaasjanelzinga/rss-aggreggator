@@ -1,6 +1,5 @@
 from rx import Observable, create, from_iterable
 from rx.core import Observer
-from rx.core.typing import Disposable
 from rx.operators import flat_map
 
 from app.core.fetcher_util import fetch
@@ -18,7 +17,7 @@ class MelkwegSource(Source):
         self.venue = venue
         self.scrape_url = scrape_url
 
-    def melkweg_observer(self, observer: Observer, _) -> Disposable:
+    def melkweg_observer(self, observer: Observer, _) -> Observer:
         parser = MelkwegParser()
         data = fetch(self.scrape_url)
         observer.on_next(parser.parse(ParsingContext(venue=self.venue, content=data)))

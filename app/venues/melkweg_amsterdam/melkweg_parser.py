@@ -1,4 +1,5 @@
 import json
+import logging
 from datetime import datetime
 from typing import List
 
@@ -38,4 +39,5 @@ class MelkwegParser(Parser):
                                      when=date,
                                      image_url=image_url
                                      ))
+        logging.getLogger(__name__).info('parsed %d events melkweg', len(results))
         return results

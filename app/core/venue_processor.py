@@ -15,6 +15,10 @@ class VenueProcessor(ABC):
         self.venue = venue
         self.logger = logging.getLogger(__name__)
 
+    def _log_error(self, error):
+        self.logger.error('Error occurred syncing stores: %s', error)
+        self.logger.fatal(error, exc_info=True)
+
     def sync_stores(self) -> None:
         self.fetch_source().observable().pipe(
             rx_filter(lambda event: event.is_valid()),
@@ -22,7 +26,7 @@ class VenueProcessor(ABC):
             rx_map(self.event_repository.upsert_no_slicing)
         ).subscribe(
             on_next=lambda e: self.logger.info('Upserted %d events for %s', len(e), self.venue.venue_id),
-            on_error=lambda e: self.logger.error('Error occurred syncing stores: %s', e),
+            on_error=self._log_error,
         )
 
     @abstractmethod

@@ -22,13 +22,15 @@ venue_repository: VenueRepository = VenueRepository()
 event_entity_transformer: EventEntityTransformer = EventEntityTransformer(venue_repository=venue_repository)
 event_repository: EventRepository = EventRepository(event_entity_transformer=event_entity_transformer,
                                                     client=DATASTORE_CLIENT)
-processors: List[VenueProcessor] = [SpotProcessor(event_repository, venue_repository),
-                                    VeraProcessor(event_repository, venue_repository),
-                                    OostGroningenProcessor(event_repository, venue_repository),
-                                    SimplonProcessor(event_repository, venue_repository),
-                                    ParadisoProcessor(event_repository, venue_repository),
-                                    MelkwegProcessor(event_repository, venue_repository),
-                                    TivoliProcessor(event_repository, venue_repository)]
+processors: List[VenueProcessor] = [
+    SpotProcessor(event_repository, venue_repository),
+    VeraProcessor(event_repository, venue_repository),
+    OostGroningenProcessor(event_repository, venue_repository),
+    SimplonProcessor(event_repository, venue_repository),
+    ParadisoProcessor(event_repository, venue_repository),
+    MelkwegProcessor(event_repository, venue_repository),
+    TivoliProcessor(event_repository, venue_repository)
+]
 processors_map: Dict[str, VenueProcessor] = {processor.venue.venue_id: processor for processor in processors}
 
 if AppConfig.is_running_in_gae():
