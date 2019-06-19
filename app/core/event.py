@@ -21,16 +21,18 @@ class Event:
     date_published: datetime
     when: datetime
     image_url: str = None
+    search_terms: List[str] = None
+    event_id: str = None
 
     def __post_init__(self):
-        self.id = str(base64.encodebytes(bytes(self.url, 'utf-8')), 'utf-8') if self.url is not None else None
+        self.event_id = str(base64.encodebytes(bytes(self.url, 'utf-8')), 'utf-8') if self.url is not None else None
         self.search_terms = self.generate_search_terms()
 
     def __eq__(self, other):
-        return self.id == other.id
+        return self.event_id == other.event_id
 
     def __hash__(self):
-        return hash(self.id)
+        return hash(self.event_id)
 
     def generate_search_terms(self) -> List[str]:
         search_terms = DatastoreUtils.split_term(self.title) + DatastoreUtils.split_term(self.description)
@@ -52,5 +54,5 @@ class Event:
                  self.when > datetime.now(pytz.timezone(self.venue.timezone)) and
                  Event.is_not_empty(self.url))
         if not valid:
-            logging.warning(f'Invalid event {self}')
+            logging.getLogger(__name__).warning('Invalid event %s', self)
         return valid

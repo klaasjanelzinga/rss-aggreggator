@@ -1,23 +1,23 @@
+from dataclasses import dataclass
 from datetime import datetime
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 
 
+@dataclass
 class RSSChannel:
-
-    def __init__(self):
-        self.title = 'Events from all venues'
-        self.link = 'https://rss-aggregator-236707.appspot.com'
-        self.description = 'Aggregation of several venues'
-        self.language = 'nl'
-        self.copyright = 'None'
-        self.managing_editor = 'klaasjanelzinga@gmail.com'
-        self.web_master = 'klaasjanelzinga@gmail.com'
-        self.generator = 'Python3'
-        self.pub_date = datetime.now()
-        self.last_build_date = datetime.now()
-        self.category = 'Entertainment'
-        self.docs = 'https://cyber.harvard.edu/rss/rss.html'
+    title: str = 'Events from all venues'
+    link: str = 'https://rss-aggregator-236707.appspot.com'
+    description: str = 'Aggregation of several venues'
+    language: str = 'nl'
+    copyright: str = 'None'
+    managing_editor: str = 'klaasjanelzinga@gmail.com'
+    web_master: str = 'klaasjanelzinga@gmail.com'
+    generator: str = 'Python3'
+    pub_date: str = datetime.now()
+    last_build_date: str = datetime.now()
+    category: str = 'Entertainment'
+    docs: str = 'https://cyber.harvard.edu/rss/rss.html'
 
     def generate_pre_amble(self) -> str:
         root = Element('rss', {'version': '2.0'})

@@ -23,7 +23,7 @@ class EventRepository:
         return [key.key.name for key in list(query.fetch())]
 
     def _generate_entity(self, event: Event) -> Entity:
-        entity = datastore.Entity(self.client.key('Event', event.id))
+        entity = datastore.Entity(self.client.key('Event', event.event_id))
         entity.update(EventEntityTransformer.to_entity(event))
         return entity
 
@@ -54,6 +54,7 @@ class EventRepository:
             return [], base64.encodebytes('DONE')
 
         query = self.client.query(kind='Event')
+        # pylint: disable=expression-not-assigned
         [query.add_filter('search_terms', '=', term) for term in DatastoreUtils.split_term(term)]
         query.order = ['when']
         query_iter = query.fetch(start_cursor=google_cursor, limit=limit)

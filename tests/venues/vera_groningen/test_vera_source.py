@@ -5,14 +5,14 @@ from hamcrest.core import assert_that
 from pytest import fail
 from rx.operators import count, buffer_with_count, map
 
-from app.venues.vera_groningen.vera_config import VeraConfig
+from app.venues.vera_groningen.vera_processor import VeraProcessor
 from app.venues.vera_groningen.vera_source import VeraSource
 
 
 class TestVeraGroningenSource(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.source = VeraSource(config=VeraConfig())
+        self.source = VeraSource(VeraProcessor.create_venue())
 
     def test_sample_file(self):
         self.source.observable().pipe(count()).subscribe(

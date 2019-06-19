@@ -19,6 +19,8 @@ sleep 1
 echo "Building frontend"
 (cd frontend && npm run-script build)
 
+pylint main.py app/**
+
 if [ ${VENV_SOURCED} == "YES" ]
 then
     deactivate

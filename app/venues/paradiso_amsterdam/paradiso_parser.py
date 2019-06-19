@@ -9,27 +9,23 @@ from app.core.parser import Parser
 from app.core.parser_util import ParserUtil
 from app.core.parsing_context import ParsingContext
 from app.core.venue import Venue
-from app.venues.paradiso_amsterdam.paradiso_config import ParadisoConfig
 
 
 class ParadisoParser(Parser):
 
-    def __init__(self, config: ParadisoConfig):
-        self.source = config.source_url
-        self.base_url = config.base_url
-        self.venue_id = config.venue_id
-        self.tz_short = config.timezone_short
+    def parse(self, parsing_context: ParsingContext) -> List[Event]:
+        program_items = json.loads(parsing_context.content)
+        return [ParadisoParser._transform(parsing_context.venue, item) for item in program_items]
 
-    def parse(self, context: ParsingContext) -> List[Event]:
-        program_items = json.loads(context.content)
-        return [self._transform(context.venue, f) for f in program_items]
-
-    def _transform(self, venue: Venue, data: Dict) -> Event:
+    @staticmethod
+    def _transform(venue: Venue, data: Dict) -> Event:
+        source = venue.source_url
+        tz_short = venue.timezone_short
         url = f'https://www.paradiso.nl/en/program/{data["slug"]}/{data["id"]}'
         title = data['title']
         description = data['subtitle']
         description = description if ParserUtil.not_empty(description) else title
-        when_format = f'{data["start_date_time"]}{self.tz_short}'
+        when_format = f'{data["start_date_time"]}{tz_short}'
 
         when = dateparser.parse(when_format, languages=['en'])
 
@@ -37,6 +33,6 @@ class ParadisoParser(Parser):
                      title=title,
                      description=description,
                      venue=venue,
-                     source=self.source,
+                     source=source,
                      date_published=datetime.now(),
                      when=when)

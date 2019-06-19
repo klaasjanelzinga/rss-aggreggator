@@ -2,14 +2,14 @@ dist: xenial
 language: python
 python:
 - '3.7'
-
 install:
 - pip install -r requirements.txt
 - "(cd frontend && npm ci)"
 script:
-- pytest tests
+- pytest tests --cov . --cov-report=html --cov-report=xml:build-reports/coverage.xml
 - "(cd frontend && ./deploy.sh )"
-- "./run-integration-test.sh"
+- ./run-integration-test.sh
+- pylint main.py app/**
 
 deploy:
 - provider: gae

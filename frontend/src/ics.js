@@ -73,7 +73,7 @@ export var icsFormatter = function() {
             // Since some calendars don't add 0 second events, we need to remove time if there is none...
             var start_time = '';
             var end_time = '';
-            if (start_minutes + start_seconds + end_minutes + end_seconds !== 0) {
+            if (start_minutes + start_seconds + end_minutes + end_seconds !== "0") {
                 start_time = 'T' + start_hours + start_minutes + start_seconds;
                 end_time = 'T' + end_hours + end_minutes + end_seconds;
             }

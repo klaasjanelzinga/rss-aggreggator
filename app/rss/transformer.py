@@ -12,7 +12,7 @@ class Transformer:
             f'''<![CDATA[<html><body>
             <p>{item.description}</p>
             <img src="{item.image_url}" alt="image for event" width=300 height=160/>
-            <p>When: {when} - 
+            <p>When: {when} -
                Where: <a href="{venue.url}">{venue.name} ({venue.city}, {venue.country})</a></p>
             </body></html>]]>'''
         return RSSItem(title=item.title,

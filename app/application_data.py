@@ -17,11 +17,11 @@ from app.venues.spot.spot_processor import SpotProcessor
 from app.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
 from app.venues.vera_groningen.vera_processor import VeraProcessor
 
-datastore_client = datastore.Client()
+DATASTORE_CLIENT = datastore.Client()
 venue_repository: VenueRepository = VenueRepository()
 event_entity_transformer: EventEntityTransformer = EventEntityTransformer(venue_repository=venue_repository)
 event_repository: EventRepository = EventRepository(event_entity_transformer=event_entity_transformer,
-                                                    client=datastore_client)
+                                                    client=DATASTORE_CLIENT)
 processors: List[VenueProcessor] = [SpotProcessor(event_repository, venue_repository),
                                     VeraProcessor(event_repository, venue_repository),
                                     OostGroningenProcessor(event_repository, venue_repository),
@@ -32,8 +32,8 @@ processors: List[VenueProcessor] = [SpotProcessor(event_repository, venue_reposi
 processors_map: Dict[str, VenueProcessor] = {processor.venue.venue_id: processor for processor in processors}
 
 if AppConfig.is_running_in_gae():
-    client = google.cloud.logging.Client()
-    client.setup_logging(log_level=logging.INFO)
-    client.get_default_handler().propagate = False
+    CLIENT = google.cloud.logging.Client()
+    CLIENT.setup_logging(log_level=logging.INFO)
+    CLIENT.get_default_handler().propagate = False
 else:
     logging.basicConfig(level=logging.INFO)

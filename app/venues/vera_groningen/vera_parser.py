@@ -11,7 +11,6 @@ from app.core.parser import Parser
 from app.core.parser_util import ParserUtil
 from app.core.parsing_context import ParsingContext
 from app.core.venue import Venue
-from app.venues.vera_groningen.vera_config import VeraConfig
 
 
 # parsing
@@ -39,24 +38,29 @@ from app.venues.vera_groningen.vera_config import VeraConfig
 # </div>
 class VeraParser(Parser):
 
-    def __init__(self, config: VeraConfig):
-        self.source = config.source
-        self.base_url = config.base_url
-        self.venue_id = config.venue_id
-        self.config = config
-
-    def parse(self, context: ParsingContext) -> List[Event]:
-        soup = BeautifulSoup(context.content, features='html.parser')
+    def parse(self, parsing_context: ParsingContext) -> List[Event]:
+        soup = BeautifulSoup(parsing_context.content, features='html.parser')
         events = soup.find_all('div', {'class': 'event-wrapper'})
 
-        return [self._transform(context.venue, tag) for tag in events]
+        return [VeraParser._transform(parsing_context.venue, tag) for tag in events]
 
     @staticmethod
     def _add_sup_text_from_text(parent_tag: Tag, text: str) -> str:
         sup = parent_tag.find('sup')
         return f'{text} ({sup.text})' if ParserUtil.has_non_empty_text(sup) else text
 
-    def _transform(self, venue: Venue, tag: Tag) -> Event:
+    @staticmethod
+    def _find_extra(tag: Tag) -> str:
+        extra_tag = tag.find('h4', {'class': 'extra'})
+        if extra_tag is None:
+            return ''
+        extra = ParserUtil.remove_children_text_from(extra_tag, extra_tag.text)
+        extra = VeraParser._add_sup_text_from_text(extra_tag, extra)
+        return ParserUtil.sanitize_text(extra)
+
+    @staticmethod
+    def _transform(venue: Venue, tag: Tag) -> Event:
+        source = venue.source_url
         url = tag.find('a', {'class': 'event-link'})['href']
         artist_tag = tag.find('h3', {'class': re.compile(r'artist|artist ')})
         if artist_tag is not None:
@@ -66,13 +70,7 @@ class VeraParser(Parser):
         else:
             artist = url
 
-        extra_tag = tag.find('h4', {'class': 'extra'})
-        if extra_tag is not None:
-            extra = ParserUtil.remove_children_text_from(extra_tag, extra_tag.text)
-            extra = VeraParser._add_sup_text_from_text(extra_tag, extra)
-            extra = ParserUtil.sanitize_text(extra)
-        else:
-            extra = ''
+        extra = VeraParser._find_extra(tag)
 
         extra_title = tag.find('h4', {'class': 'pretitle'})
         if extra_title is not None:
@@ -86,7 +84,7 @@ class VeraParser(Parser):
             when = ParserUtil.sanitize_text(when)
             when_time = tag.find('div', {'class': 'schedule'}).text
             when_time = when_time[when_time.find('start: ') + 7:when_time.find('start: ') + 12]
-            when_date: datetime = dateparser.parse(f'{when} {when_time}{self.config.timezone_short}', languages=['nl'])
+            when_date: datetime = dateparser.parse(f'{when} {when_time}{venue.timezone_short}', languages=['nl'])
         else:
             when_date = datetime.min
         image_url = tag.find('div', {'class': 'artist-image'})['style']
@@ -99,7 +97,7 @@ class VeraParser(Parser):
                      title=f'{artist} {extra_title}'.strip(),
                      description=f'{artist}{" with support" if extra != "" else ""} {extra}'.strip(),
                      venue=venue,
-                     source=self.source,
+                     source=source,
                      date_published=datetime.now(),
                      when=when_date,
                      image_url=image_url)

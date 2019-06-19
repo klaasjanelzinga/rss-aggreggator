@@ -12,10 +12,11 @@ class AppConfig:
 
     @staticmethod
     def is_web_request_allowed(req: request) -> bool:
+        logger = logging.getLogger(__name__)
         if not AppConfig.is_running_in_gae():
-            logging.warning('Allowing request since not running in gae')
+            logger.warning('Allowing request since not running in gae')
             return True
         if 'X-Appengine-Cron' in req.headers:
             return True
-        logging.warning('Header not set on web request. Request denied')
+        logger.warning('Header not set on web request. Request denied')
         return False

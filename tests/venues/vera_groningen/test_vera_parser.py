@@ -3,24 +3,25 @@ import unittest
 from hamcrest import equal_to, none, is_not
 from hamcrest.core import assert_that
 
-from app.core.fetcher_util import FetcherUtil
+from app.core.fetcher_util import fetch
 from app.core.parsing_context import ParsingContext
-from app.venues.vera_groningen.vera_config import VeraConfig
+from app.core.venue_processor import VenueProcessor
 from app.venues.vera_groningen.vera_parser import VeraParser
+from app.venues.vera_groningen.vera_processor import VeraProcessor
 
 
 class TestVeraGroningenParser(unittest.TestCase):
 
     def test_sample_file(self):
-        config = VeraConfig()
-        parser = VeraParser(config)
-        data = FetcherUtil.fetch(f'{config.base_url}/page=1')
+        venue = VeraProcessor.create_venue()
+        parser = VeraParser()
+        data = fetch(f'{venue.url}/page=1')
 
-        results = parser.parse(ParsingContext(venue=config.venue(), content=data))
+        results = parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(len(results), equal_to(20))
         event = results[0]
         assert_that(event.url, equal_to('http://www.vera-groningen.nl/?post_type=events&p=98899&lang=nl'))
-        assert_that(event.venue, equal_to(config.venue()))
+        assert_that(event.venue, equal_to(venue))
         assert_that(event.title, equal_to('Beyond Hip Hop (STUDIUM GENERALE PRESENTS)'))
         assert_that(event.when, is_not(none()))
         assert_that(event.image_url,
@@ -33,26 +34,27 @@ class TestVeraGroningenParser(unittest.TestCase):
         assert_that(event.description, equal_to('Marissa Nadler (USA) with support Klaske Oenema (NL)'))
         assert_that(event.title, equal_to('Marissa Nadler (USA)'))
 
-        [assert_that(event.when, is_not(none)) for event in results]
-        [assert_that(event.description, is_not(none)) for event in results]
-        [assert_that(event.title, is_not(none)) for event in results]
-        [assert_that(event.url, is_not(none)) for event in results]
+        for event in results:
+            assert_that(event.when, is_not(none))
+            assert_that(event.description, is_not(none))
+            assert_that(event.title, is_not(none))
+            assert_that(event.url, is_not(none))
 
     def test_raw_fetches(self):
-        config = VeraConfig()
-        parser = VeraParser(config)
-        data = FetcherUtil.fetch(f'{config.base_url}/page=1')
-        results = parser.parse(ParsingContext(venue=config.venue(), content=data))
-        [assert_that(event.when, is_not(none)) for event in results]
-        [assert_that(event.description, is_not(none)) for event in results]
-        [assert_that(event.title, is_not(none)) for event in results]
-        [assert_that(event.url, is_not(none)) for event in results]
+        venue = VeraProcessor.create_venue()
+        parser = VeraParser()
+        data = fetch(f'{venue.url}/page=1')
+        results = parser.parse(ParsingContext(venue=venue, content=data))
+        for event in results:
+            assert_that(event.when, is_not(none))
+            assert_that(event.description, is_not(none))
+            assert_that(event.title, is_not(none))
+            assert_that(event.url, is_not(none))
 
-        config = VeraConfig()
-        parser = VeraParser(config)
-        data = FetcherUtil.fetch(f'{config.base_url}/page=2')
-        results = parser.parse(ParsingContext(venue=config.venue(), content=data))
-        [assert_that(event.when, is_not(none)) for event in results]
-        [assert_that(event.description, is_not(none)) for event in results]
-        [assert_that(event.title, is_not(none)) for event in results]
-        [assert_that(event.url, is_not(none)) for event in results]
+        data = fetch(f'{venue.url}/page=2')
+        results = parser.parse(ParsingContext(venue=venue, content=data))
+        for event in results:
+            assert_that(event.when, is_not(none))
+            assert_that(event.description, is_not(none))
+            assert_that(event.title, is_not(none))
+            assert_that(event.url, is_not(none))

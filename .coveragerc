@@ -13,4 +13,5 @@ include=
     main.py
 
 [html]
-directory = htmlcov
+directory = build-reports/html
+

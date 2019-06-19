@@ -25,7 +25,7 @@ class ParserUtil:
 
     @staticmethod
     def sanitize_text(text: str) -> str:
-        return re.sub(r'[\ \ ]{2,}', '', text).replace('\n', '')
+        return re.sub(r' {2,}', '', text).replace('\n', '')
 
     @staticmethod
     def remove_children_text_from(parent_tag: Tag, text: str) -> str:

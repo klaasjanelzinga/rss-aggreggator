@@ -9,19 +9,13 @@ from app.core.event import Event
 from app.core.parser import Parser
 from app.core.parser_util import ParserUtil
 from app.core.parsing_context import ParsingContext
-from app.venues.melkweg_amsterdam.melkweg_config import MelkwegConfig
 
 
 class MelkwegParser(Parser):
 
-    def __init__(self, config: MelkwegConfig):
-        self.source = config.source_url
-        self.base_url = config.base_url
-        self.venue_id = config.venue_id
-        self.tz_short = config.timezone_short
-
     def parse(self, parsing_context: ParsingContext) -> List[Event]:
         venue = parsing_context.venue
+        source = venue.source_url
         content = json.loads(parsing_context.content)
 
         results = []
@@ -39,7 +33,7 @@ class MelkwegParser(Parser):
                                      title=title,
                                      description=ParserUtil.sanitize_text(description[:1400]),
                                      venue=venue,
-                                     source=self.source,
+                                     source=source,
                                      date_published=datetime.now(),
                                      when=date,
                                      image_url=image_url

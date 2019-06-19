@@ -35,6 +35,7 @@ def fixture_vera_venue() -> Venue:
                  city='Groningen',
                  country='NL',
                  timezone='Europe/Amsterdam',
+                 timezone_short='+02:00',
                  email='info@vera-groningen.nl',
+                 source_url='http://venue-url-vera-groningen',
                  url='http://venue-url-vera-groningen')
-

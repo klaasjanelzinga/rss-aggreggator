@@ -1,32 +1,36 @@
 import logging
 from abc import ABC, abstractmethod
 
-from rx.operators import filter, map, buffer_with_count
+from rx.operators import filter as rx_filter, map as rx_map, buffer_with_count
 
 from app.core.event_repository import EventRepository
 from app.core.source import Source
 from app.core.venue import Venue
-from app.core.venue_repository import VenueRepository
 
 
 class VenueProcessor(ABC):
 
-    def __init__(self, event_repository: EventRepository, venue_repository: VenueRepository, venue: Venue):
+    def __init__(self, event_repository: EventRepository, venue: Venue):
         self.event_repository = event_repository
         self.venue = venue
-        venue_repository.register(self.venue)
+        self.logger = logging.getLogger(__name__)
 
     def sync_stores(self) -> None:
         self.fetch_source().observable().pipe(
-            filter(lambda event: event.is_valid()),
+            rx_filter(lambda event: event.is_valid()),
             buffer_with_count(200),
-            map(lambda events: self.event_repository.upsert_no_slicing(events)),
-            map(lambda events: len(events)),
+            rx_map(self.event_repository.upsert_no_slicing),
+            rx_map(len),
         ).subscribe(
-            on_next=lambda e: logging.info(f'Upserted {e} events for {self.venue.venue_id}'),
-            on_error=lambda e: print(f"Error Occurred: {e}"),
+            on_next=lambda e: self.logger.info('Upserted %d events for %s', e, self.venue.venue_id),
+            on_error=lambda e: self.logger.error('Error occurred syncing stores: %s', e),
         )
 
     @abstractmethod
     def fetch_source(self) -> Source:
+        pass
+
+    @staticmethod
+    @abstractmethod
+    def create_venue() -> Venue:
         pass
