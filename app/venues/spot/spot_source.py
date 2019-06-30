@@ -1,5 +1,8 @@
-from rx import Observable, create, from_iterable
+from typing import Any
+
+from rx import create, from_iterable
 from rx.core import Observer
+from rx.core.typing import Scheduler, Disposable
 from rx.operators import flat_map
 
 from app.core.source import Source
@@ -15,10 +18,10 @@ class SpotSource(Source):
         self.venue = venue
         self.scrape_url = scrape_url
 
-    def spot_observer(self, observer: Observer, _) -> Observer:
+    def spot_observer(self, observer: Observer, _: Scheduler) -> Disposable:
         parser = SpotParser()
         return Source.parse_all_at_once_observable(observer=observer, parser=parser,
                                                    venue=self.venue, scrape_url=self.scrape_url)
 
-    def observable(self) -> Observable:
-        return create(self.spot_observer).pipe(flat_map(from_iterable))
+    def observable(self) -> Any:
+        return create(self.spot_observer).pipe(flat_map(from_iterable))  # type: ignore

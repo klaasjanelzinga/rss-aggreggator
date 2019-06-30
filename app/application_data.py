@@ -1,8 +1,8 @@
 import logging
 from typing import Dict, List
 
-import google.cloud.logging
-from google.cloud import datastore
+import google.cloud.logging  # type: ignore
+from google.cloud import datastore  # type: ignore
 
 from app.core.app_config import AppConfig
 from app.core.event_entity_transformer import EventEntityTransformer

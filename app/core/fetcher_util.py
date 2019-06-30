@@ -14,7 +14,7 @@ def fetch(url: str) -> str:
         result = requests.get(url)
         if result.status_code > 299:
             raise Exception(f'unable to fetch data from {url} - {result.status_code}')
-        return result.content
+        return str(result.content)
     logging.getLogger(__name__).warning('Retrieving stubbed data locally for %s', url)
     if re.match('.*spotgroningen.*', url):
         with open('tests/samples/spot/Programma - Spot Groningen.html') as sample_file:

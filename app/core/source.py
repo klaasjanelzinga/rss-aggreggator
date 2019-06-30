@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
+from typing import Any
 
-from rx import Observable
-from rx.core.typing import Observer
+from rx.core import Observer
+from rx.core.typing import Disposable
 
 from app.core.fetcher_util import fetch
 from app.core.parser import Parser
@@ -12,7 +13,7 @@ from app.core.venue import Venue
 class Source(ABC):
 
     @abstractmethod
-    def observable(self) -> Observable:
+    def observable(self) -> Any:
         pass
 
     @staticmethod
@@ -29,7 +30,7 @@ class Source(ABC):
             parser: Parser,
             venue: Venue,
             scrape_url_format: str,
-            items_per_page: int) -> Observer:
+            items_per_page: int) -> Disposable:
 
         page_index = 0
         done = False

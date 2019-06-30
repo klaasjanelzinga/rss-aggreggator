@@ -17,7 +17,7 @@ class MelkwegProcessor(VenueProcessor):
         return MelkwegSource(self.venue)
 
     @staticmethod
-    def create_venue():
+    def create_venue() -> Venue:
         return Venue(venue_id='melkweg-amsterdam',
                      name='Melkweg Amsterdam',
                      phone='',

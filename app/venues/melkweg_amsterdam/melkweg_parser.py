@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import List, Dict
 
 import pytz
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup  # type: ignore
 
 from app.core.event import Event
 from app.core.parser import Parser

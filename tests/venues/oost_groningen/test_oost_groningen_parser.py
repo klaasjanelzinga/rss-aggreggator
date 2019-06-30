@@ -7,7 +7,6 @@ from app.core.fetcher_util import fetch
 from app.core.parsing_context import ParsingContext
 from app.venues.oost_groningen.oost_groningen_parser import OostGroningenParser
 from app.venues.oost_groningen.oost_groningen_processor import OostGroningenProcessor
-from tests.core.fixtures import fixture_vera_venue
 
 
 class TestOostGroningenParser(unittest.TestCase):

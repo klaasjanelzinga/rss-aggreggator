@@ -1,6 +1,8 @@
-from rx import Observable, create, from_iterable
+from typing import Any
+
+from rx import create, from_iterable
 from rx.core import Observer
-from rx.core.typing import Disposable
+from rx.core.typing import Disposable, Scheduler
 from rx.operators import flat_map
 
 from app.core.fetcher_util import fetch
@@ -18,7 +20,7 @@ class SimplonSource(Source):
         self.venue = venue
         self.scrape_url = scrape_url
 
-    def simplon_observer(self, observer: Observer, _) -> Disposable:
+    def simplon_observer(self, observer: Observer, _: Scheduler) -> Disposable:
         parser = SimplonParser()
         data = fetch(self.scrape_url)
         events = parser.parse(ParsingContext(venue=self.venue, content=data))
@@ -27,5 +29,5 @@ class SimplonSource(Source):
         observer.on_completed()
         return observer
 
-    def observable(self) -> Observable:
-        return create(self.simplon_observer).pipe(flat_map(from_iterable))
+    def observable(self) -> Any:
+        return create(self.simplon_observer).pipe(flat_map(from_iterable))  # type: ignore

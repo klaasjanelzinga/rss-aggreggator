@@ -15,11 +15,11 @@ class VenueProcessor(ABC):
         self.venue = venue
         self.logger = logging.getLogger(__name__)
 
-    def _log_error(self, error):
+    def _log_error(self, error: str) -> None:
         self.logger.error('Error occurred syncing stores: %s', error)
         self.logger.fatal(error, exc_info=True)
 
-    def sync_stores(self) -> None:
+    def sync_stores(self):  # type: ignore
         self.fetch_source().observable().pipe(
             rx_filter(lambda event: event.is_valid()),
             buffer_with_count(200),

@@ -1,3 +1,5 @@
+from typing import Generator
+
 from flask import Blueprint, Response
 
 from app.application_data import event_repository, event_entity_transformer
@@ -8,8 +10,8 @@ RSS_ROUTES = Blueprint('rss', __name__, template_folder='templates')
 
 
 @RSS_ROUTES.route('/events.xml')
-def fetch_rss():
-    def generate():
+def fetch_rss() -> Response:
+    def generate() -> Generator:
         rss_channel = RSSChannel()
         pre_amble = rss_channel.generate_pre_amble()
         yield pre_amble.replace('</rss>', '').replace('</channel>', '').encode('UTF-8')

@@ -1,6 +1,8 @@
-from rx import Observable, create, from_iterable
+from typing import Any
+
+from rx import create, from_iterable
 from rx.core import Observer
-from rx.core.typing import Disposable
+from rx.core.typing import Scheduler, Disposable
 from rx.operators import flat_map
 
 from app.core.fetcher_util import fetch
@@ -19,7 +21,7 @@ class VeraSource(Source):
         self.venue = venue
         self.scrape_url = scrape_url
 
-    def vera_observer(self, observer: Observer, _) -> Disposable:
+    def vera_observer(self, observer: Observer, _: Scheduler) -> Disposable:
         vera_parser = VeraParser()
 
         items_per_page = 20
@@ -35,5 +37,5 @@ class VeraSource(Source):
         observer.on_completed()
         return observer
 
-    def observable(self) -> Observable:
-        return create(self.vera_observer).pipe(flat_map(from_iterable))
+    def observable(self) -> Any:
+        return create(self.vera_observer).pipe(flat_map(from_iterable))  # type: ignore
