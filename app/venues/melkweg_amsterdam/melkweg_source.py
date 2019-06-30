@@ -16,7 +16,7 @@ class MelkwegSource(Source):
 
     def __init__(self,
                  venue: Venue,
-                 scrape_url: str = 'https://www.melkweg.nl/nl/agenda/as_json/1/grouped/0/page_size/-1?cb=2600605'):
+                 scrape_url: str = 'https://www.melkweg.nl/nl/agenda/as_json/1/grouped/0/page_size/-1?cb=2603211'):
         self.venue = venue
         self.scrape_url = scrape_url
 
