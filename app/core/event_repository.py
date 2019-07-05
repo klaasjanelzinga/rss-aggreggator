@@ -1,9 +1,10 @@
+import base64
 from datetime import datetime
-from typing import List, Tuple, Optional, Any
+from typing import List, Tuple
 
-from google.cloud import datastore  # type: ignore
-from google.cloud.datastore import Entity  # type: ignore
-from google.cloud.datastore.client import Client  # type: ignore
+from google.cloud import datastore
+from google.cloud.datastore import Entity
+from google.cloud.datastore.client import Client
 
 from app.core.datastore_utils import DatastoreUtils
 from app.core.event import Event
@@ -30,10 +31,10 @@ class EventRepository:
         self.client.put_multi([self._generate_entity(event) for event in set(events)])
         return events
 
-    def fetch_items(self, cursor: Optional[bytes] = None, limit: int = None) -> Tuple[List[Event], bytes]:
+    def fetch_items(self, cursor: bytes = None, limit: int = None) -> Tuple[List[Event], bytes]:
         google_cursor = DatastoreUtils.create_cursor(earlier_curor=cursor)
         if google_cursor is not None and google_cursor.decode('utf-8') == 'DONE':
-            return [], DatastoreUtils.done_as_bytes_base64()
+            return [], base64.encodebytes('DONE')
         query = self.client.query(kind='Event')
         query.order = ['when']
 
@@ -42,7 +43,7 @@ class EventRepository:
 
         return [self.event_entity_transformer.to_event(entity) for entity in results], next_cursor_encoded
 
-    def fetch_all_items(self) -> Any:
+    def fetch_all_items(self):
         query = self.client.query(kind='Event')
         query.order = ['when']
         return query.fetch()
@@ -50,7 +51,7 @@ class EventRepository:
     def search(self, term: str, cursor: bytes = None, limit: int = None) -> Tuple[List[Event], bytes]:
         google_cursor = DatastoreUtils.create_cursor(earlier_curor=cursor)
         if google_cursor is not None and google_cursor.decode('utf-8') == 'DONE':
-            return [], DatastoreUtils.done_as_bytes_base64()
+            return [], base64.encodebytes('DONE')
 
         query = self.client.query(kind='Event')
         # pylint: disable=expression-not-assigned

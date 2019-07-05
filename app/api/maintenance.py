@@ -10,7 +10,7 @@ MAINTENANCE_ROUTES = Blueprint('maintenance', __name__, template_folder='templat
 
 
 @MAINTENANCE_ROUTES.route('/maintenance/fetch-data')
-def maintenance_fetch_data() -> Response:
+def maintenance_fetch_data():
     if AppConfig.is_web_request_allowed(request):
         venue_id = request.args.get('venue_id')
         if venue_id is None or not venue_repository.is_registered(venue_id):
@@ -21,7 +21,7 @@ def maintenance_fetch_data() -> Response:
 
 
 @MAINTENANCE_ROUTES.route('/maintenance/cleanup')
-def maintenance_clean_up() -> Response:
+def maintenance_clean_up():
     if AppConfig.is_web_request_allowed(request):
         number_cleaned = event_repository.clean_items_before(datetime.now() - timedelta(days=1))
         logging.getLogger(__name__).info('Number of items cleaned %d', number_cleaned)
@@ -30,5 +30,5 @@ def maintenance_clean_up() -> Response:
 
 
 @MAINTENANCE_ROUTES.route('/maintenance/ping')
-def maintenance_ping() -> Response:
+def maintenance_ping():
     return Response(status=200)

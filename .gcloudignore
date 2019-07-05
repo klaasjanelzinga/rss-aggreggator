@@ -13,6 +13,7 @@
 .git
 .gitignore
 .pytest_cache
+.mypy_cache
 
 # Python pycache:
 __pycache__/

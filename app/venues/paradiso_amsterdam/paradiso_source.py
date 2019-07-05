@@ -1,8 +1,5 @@
-from typing import Any
-
-from rx import create, from_iterable
+from rx import Observable, create, from_iterable
 from rx.core import Observer
-from rx.core.typing import Scheduler, Disposable
 from rx.operators import flat_map
 
 from app.core.source import Source
@@ -19,10 +16,10 @@ class ParadisoSource(Source):
         self.venue = venue
         self.scrape_url = scrape_url
 
-    def paradiso_observer(self, observer: Observer, _: Scheduler) -> Disposable:
+    def paradiso_observer(self, observer: Observer, _) -> Observer:
         parser = ParadisoParser()
         return Source.parse_page_indexed_observable(observer=observer, parser=parser, venue=self.venue,
                                                     scrape_url_format=self.scrape_url, items_per_page=30)
 
-    def observable(self) -> Any:
-        return create(self.paradiso_observer).pipe(flat_map(from_iterable))  # type: ignore
+    def observable(self) -> Observable:
+        return create(self.paradiso_observer).pipe(flat_map(from_iterable))

@@ -1,6 +1,7 @@
 import logging
 import os
-from typing import Any
+
+from flask import request
 
 
 class AppConfig:
@@ -10,7 +11,7 @@ class AppConfig:
         return 'GAE_ENV' in os.environ or 'DUMMY_GAE_LOCAL' in os.environ
 
     @staticmethod
-    def is_web_request_allowed(req: Any) -> bool:
+    def is_web_request_allowed(req: request) -> bool:
         logger = logging.getLogger(__name__)
         if not AppConfig.is_running_in_gae():
             logger.warning('Allowing request since not running in gae')

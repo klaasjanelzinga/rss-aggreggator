@@ -1,8 +1,5 @@
-from typing import Any
-
-from rx import create, from_iterable
+from rx import Observable, create, from_iterable
 from rx.core import Observer
-from rx.core.typing import Scheduler
 from rx.operators import flat_map
 
 from app.core.source import Source
@@ -18,10 +15,10 @@ class OostGroningenSource(Source):
         self.venue = venue
         self.scrape_url = scrape_url
 
-    def oost_observer(self, observer: Observer, _: Scheduler) -> Observer:
+    def oost_observer(self, observer: Observer, _) -> Observer:
         parser = OostGroningenParser()
         return Source.parse_all_at_once_observable(observer=observer, parser=parser, venue=self.venue,
                                                    scrape_url=self.scrape_url)
 
-    def observable(self) -> Any:
-        return create(self.oost_observer).pipe(flat_map(from_iterable))  # type: ignore
+    def observable(self) -> Observable:
+        return create(self.oost_observer).pipe(flat_map(from_iterable))

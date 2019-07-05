@@ -1,6 +1,6 @@
 import re
 
-from bs4.element import Tag  # type: ignore
+from bs4.element import Tag
 
 
 class ParserUtil:
@@ -14,14 +14,14 @@ class ParserUtil:
         return not ParserUtil.not_empty(text)
 
     @staticmethod
-    def has_non_empty_text(tag: Tag) -> bool:
+    def has_non_empty_text(tag: Tag):
         return tag is not None and ParserUtil.not_empty(tag.text)
 
     @staticmethod
     def stripped_text_or_default_if_empty(tag: Tag, default: str) -> str:
         if tag is None or ParserUtil.is_empty(tag.text):
             return default
-        return str(tag.text.strip())
+        return tag.text.strip()
 
     @staticmethod
     def sanitize_text(text: str) -> str:

@@ -10,7 +10,6 @@ script:
 - "(cd frontend && ./deploy.sh )"
 - ./run-integration-test.sh
 - pylint main.py app/**
-- mypy main.py
 
 deploy:
 - provider: gae

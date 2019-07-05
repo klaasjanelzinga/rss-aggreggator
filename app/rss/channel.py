@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from datetime import datetime
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 
@@ -13,6 +14,8 @@ class RSSChannel:
     managing_editor: str = 'klaasjanelzinga@gmail.com'
     web_master: str = 'klaasjanelzinga@gmail.com'
     generator: str = 'Python3'
+    pub_date: str = datetime.now()
+    last_build_date: str = datetime.now()
     category: str = 'Entertainment'
     docs: str = 'https://cyber.harvard.edu/rss/rss.html'
 
@@ -31,7 +34,7 @@ class RSSChannel:
         SubElement(image, 'url').text = f'{self.link}/channel-image.png'
         SubElement(image, 'title').text = self.title
         SubElement(image, 'link').text = self.link
-        return str(ElementTree.tostring(root, encoding='unicode'))
+        return ElementTree.tostring(root, encoding='unicode')
 
     @staticmethod
     def generate_post_amble() -> str:

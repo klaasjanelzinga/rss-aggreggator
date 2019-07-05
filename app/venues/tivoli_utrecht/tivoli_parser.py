@@ -2,7 +2,7 @@ import json
 from datetime import datetime
 from typing import List, Dict
 
-import dateparser  # type: ignore
+import dateparser
 
 from app.core.event import Event
 from app.core.parser import Parser

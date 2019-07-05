@@ -2,9 +2,9 @@ import re
 from datetime import datetime
 from typing import List
 
-import dateparser  # type: ignore
-from bs4 import BeautifulSoup  # type: ignore
-from bs4.element import Tag  # type: ignore
+import dateparser
+from bs4 import BeautifulSoup
+from bs4.element import Tag
 
 from app.core.event import Event
 from app.core.parser import Parser
@@ -13,6 +13,29 @@ from app.core.parsing_context import ParsingContext
 from app.core.venue import Venue
 
 
+# parsing
+# <div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+#  <div class="row nopad-vert">
+#   <a class="event-link" href="http://www.vera-groningen.nl/?post_type=events&amp;p=99134&amp;lang=nl">
+#    <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+#     <div class="image artist-image"
+#     style="background-image:
+#     url('https://www.vera-groningen.nl/content/uploads/2019/03/Sirene-Bouke-Groen-1-2-360x250.jpg');">
+#     </div>
+#    </div>
+#    <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+#     <div class="date">zondag  7 april</div>
+#     <h3 class="artist">CLASH XXL Expo<sup class="origin"></sup></h3>
+#     <div>
+#      <h4 class="extra">Bouke Groen: Sirene<sup class="origin">
+#          </sup>+ Lilnu' me Veen: SCHLÆGERCORE<sup class="origin"></sup>
+#     </h4>
+#     </div>
+#     <div class="schedule">Extra | Ticket: Gratis | doors: 14:00 - 18:00 | start: 14:00</div>
+#    </div>
+#   </a>
+#  </div>
+# </div>
 class VeraParser(Parser):
 
     def parse(self, parsing_context: ParsingContext) -> List[Event]:
