@@ -22,7 +22,7 @@ const styles = {
   },
 };
 
-class SearchBar extends React.Component {
+class SearchBox extends React.Component {
 
   constructor(props) {
     super(props);
@@ -37,7 +37,6 @@ class SearchBar extends React.Component {
   }
 
   handleEnter(event) {
-    console.log('handling event in', event)
     if (event.key === 'Enter') {
       this.props.searchEvents(this.state.value)
     }
@@ -49,7 +48,8 @@ class SearchBar extends React.Component {
     return (
       <Paper className={classes.root} elevation={1}>
         <InputBase className={classes.input}
-          placeholder="Zoek" value={this.state.value}
+          placeholder="Zoek" 
+          value={this.state.value}
           onChange={this.handleChange}
           onKeyPress={this.handleEnter}
         />
@@ -63,9 +63,9 @@ class SearchBar extends React.Component {
   }
 }
 
-SearchBar.propTypes = {
+SearchBox.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SearchBar);
+export default withStyles(styles)(SearchBox);
 

@@ -2,6 +2,7 @@ from flask import Flask, render_template, send_from_directory
 
 from app.api.api import API_ROUTES
 from app.api.maintenance import MAINTENANCE_ROUTES
+from app.api.user_api import USER_ROUTES
 from app.application_data import processors
 from app.core.app_config import AppConfig
 from app.rss.rss_api import RSS_ROUTES
@@ -17,6 +18,7 @@ app = Flask(__name__, static_folder='static/build/static', template_folder='stat
 app.register_blueprint(API_ROUTES)
 app.register_blueprint(MAINTENANCE_ROUTES)
 app.register_blueprint(RSS_ROUTES)
+app.register_blueprint(USER_ROUTES)
 
 
 @app.route('/')

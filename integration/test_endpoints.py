@@ -47,3 +47,36 @@ class TestEndpoints(unittest.TestCase):
 
     def test_channel_image(self):
         TestEndpoints.validate(f'{self.endpoint}/channel-image.png')
+
+    def test_user_profile(self):
+        response = requests.get(f'{self.endpoint}/api/user/profile')
+        assert_that(response.status_code, equal_to(404))
+        response = requests.post(f'{self.endpoint}/api/user/profile', json={
+            'email': 'klaasjanelzinga@test',
+            'givenName': 'klaasajn',
+            'familyName': 'elz'
+        })
+        assert_that(response.status_code, equal_to(404))
+        response = requests.post(f'{self.endpoint}/api/user/signup', json={
+            'email': 'klaasjanelzinga@test',
+            'givenName': 'klaasajn',
+            'familyName': 'elz'
+        })
+        assert_that(response.status_code, equal_to(404))
+        response = requests.get(f'{self.endpoint}/api/user/profile', headers={
+            'Authorization': 'Bearer 123123123123',
+            'Accepts': 'application/json'
+        })
+        assert_that(response.status_code, equal_to(404))
+        response = requests.get(f'{self.endpoint}/api/user/profile', headers={
+            'Authorization': 'Bearer',
+            'Accepts': 'application/json'
+        })
+        assert_that(response.status_code, equal_to(404))
+        response = requests.get(f'{self.endpoint}/api/user/profile', headers={
+            'Authorization': 'Beare',
+            'Accepts': 'application/json'
+        })
+        assert_that(response.status_code, equal_to(404))
+
+

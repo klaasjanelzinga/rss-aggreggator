@@ -7,6 +7,7 @@ from google.cloud import datastore
 from app.core.app_config import AppConfig
 from app.core.event_entity_transformer import EventEntityTransformer
 from app.core.event_repository import EventRepository
+from app.core.user.user_profile_repository import UserProfileRepository
 from app.core.venue_processor import VenueProcessor
 from app.core.venue_repository import VenueRepository
 from app.venues.melkweg_amsterdam.melkweg_processor import MelkwegProcessor
@@ -22,6 +23,8 @@ venue_repository: VenueRepository = VenueRepository()
 event_entity_transformer: EventEntityTransformer = EventEntityTransformer(venue_repository=venue_repository)
 event_repository: EventRepository = EventRepository(event_entity_transformer=event_entity_transformer,
                                                     client=DATASTORE_CLIENT)
+user_profile_repository: UserProfileRepository = UserProfileRepository(client=DATASTORE_CLIENT)
+
 processors: List[VenueProcessor] = [
     SpotProcessor(event_repository, venue_repository),
     VeraProcessor(event_repository, venue_repository),

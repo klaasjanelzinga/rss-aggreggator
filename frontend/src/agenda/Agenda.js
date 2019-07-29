@@ -47,7 +47,7 @@ class Agenda extends React.Component {
             let nothingFound
             if (!this.props.isFetchingDone) {
                 moreButton = <Fab color="secondary" aria-label="Next" className={classes.nextButton}
-                    onClick={this.props.fetchMoreEvents} isFetchingDone>
+                    onClick={this.props.fetchMoreEvents}>
                     <NavigateNext></NavigateNext>
                 </Fab>
             }
@@ -60,7 +60,7 @@ class Agenda extends React.Component {
                     {nothingFound}
                     <GridList cellHeight={180} cols={1} className={classes.gridList}>
                         {this.props.events.map(event => (
-                            <AgendaItem item={event} />
+                            <AgendaItem item={event} key={event.id} />
                         ))}
                     </GridList>
                     <div className={classes.agendaFooter}>

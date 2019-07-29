@@ -1,12 +1,11 @@
 import AppBar from '@material-ui/core/AppBar';
-import IconButton from '@material-ui/core/IconButton';
 import { withStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import MoreIcon from '@material-ui/icons/MoreVert';
 import PropTypes from 'prop-types';
 import React from 'react';
-import SearchBar from './SearchBar.js';
+import HeaderMenu from './HeaderMenu';
+import SearchBox from './SearchBox';
+import Title from './Title';
 
 
 const styles = theme => ({
@@ -16,12 +15,6 @@ const styles = theme => ({
   },
   grow: {
     flexGrow: 1,
-  },
-  title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
   },
   sectionDesktop: {
     display: 'none',
@@ -37,27 +30,30 @@ const styles = theme => ({
   },
 });
 
+
 class HeaderBar extends React.Component {
+
+  renderSearchBox() {
+    if (this.props.searchEvents === undefined) {
+      return <div></div>
+    } else {
+      return <SearchBox searchEvents={this.props.searchEvents} />;
+    }
+  }
 
   render() {
     const { classes } = this.props;
-
     return (
       <div className={classes.headerbar}>
         <AppBar position="static">
           <Toolbar>
-            <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              Events from all venues...
-            </Typography>
+            <Title />
             <div className={classes.grow} />
-            <SearchBar searchEvents={this.props.searchEvents}/>
-            <div className={classes.sectionMobile}>
-              <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">
-                <MoreIcon />
-              </IconButton>
-            </div>
+            {this.renderSearchBox()}
+            <HeaderMenu />
           </Toolbar>
         </AppBar>
+
       </div>
     );
   }
