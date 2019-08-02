@@ -104,7 +104,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log('=== welcome to the app ===')
     this.fetchInitialLoad()
   }
 

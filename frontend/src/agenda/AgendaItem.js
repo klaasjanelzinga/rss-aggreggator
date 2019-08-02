@@ -1,68 +1,111 @@
+import { Fab, Typography } from '@material-ui/core';
 import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
 import { withStyles } from '@material-ui/core/styles';
+import { OpenInBrowser } from '@material-ui/icons';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import ICSButton from './ICSButton';
 
 
 const styles = theme => ({
+
     gridListTile: {
         width: '100%',
-        marginBottom: '10px',
+        marginBottom: '2px',
+        height: '195px',
+        borderStyle: 'none',
+        border: '1px',
+        backgroundColor: 'lightgrey'
+    },
+    tileContents: {
+        display: 'flex',
+        overflow: 'scroll'
+    },
+    tileDetails: {
+        display: 'block',
+        width: '100%',
+    },
+    tileImage: {
+        display: 'block',
+        position: 'absolute',
+        width: '150px',
+        height: '150px',
     },
     agenda_image: {
-        position: 'left',
-        display: 'block',
-        height: '250px',
-        width: '250px',
+        width: '150px',
+        height: '150px',
     },
-    icalButton: {
-        float: 'right',
-        marginBottom: '10px',
-        marginTop: '10px',
-        marginRight: '10px',
-    },
-    details: {
+    tileItem: {
         position: 'absolute',
-        top: '0px',
-        fontWeight: 'bold',
-        left: '300px',
-        color: 'black',
+        left: '152px',
         textAlign: 'left',
-        marginLeft: '5px'
     },
-    details_title: {
-        fontSize: '48px',
+    tileActionBar: {
+        display: 'flex',
+        position: 'absolute',
+        top: '150px',
+        width: '100%',
+        backgroundColor: 'white',
     },
-    details_description: {
-        fontSize: '32px',
+    grow: {
+        flexGrow: '1',
+    },
+    actionIcon: {
+        height: '16px',
+        width: '30px',
+        margin: '5px',
     }
 });
 
 
 class AgendaItem extends React.Component {
 
+    openInBrowser(event) {
+        window.open(event.url, 'Event');
+    }
+
+    renderImage(event) {
+        const { classes } = this.props;
+        if (event.image_url === null) {
+            return;
+        }
+        return <img className={classes.agenda_image} src={event.image_url} alt={event.title} />
+    }
+
     render() {
         const { classes } = this.props;
         const event = this.props.item;
-        const image_url = event.image_url === null ? 'missing-image.png'  : event.image_url;
         return (
             <GridListTile className={classes.gridListTile} key={event.id}>
-                <a href={event.url}>
-                    <img className={classes.agenda_image} src={image_url} alt={event.title} />
-                    <div className={classes.details}>
-                        <div className={classes.details_title}>{event.title}</div>
-                        <div className={classes.description}>{event.description}</div>
-
+                <div className={classes.tileContents}>
+                    <div className={classes.tileDetails}>
+                        <a href={event.url}>
+                            <div className={classes.tileImage}>
+                                {this.renderImage(event)}
+                            </div>
+                            <div className={classes.tileItem}>
+                                <Typography variant="h6" color="textPrimary">
+                                    {event.title}
+                                </Typography>
+                                <Typography color="textSecondary" variant="subtitle2">
+                                    {event.venue.name} {event.when}
+                                </Typography>
+                                <Typography variant="subtitle1" color="textSecondary">
+                                    {event.description}
+                                </Typography>
+                            </div>
+                        </a>
                     </div>
-                    <GridListTileBar
-                        title={event.venue.name}
-                        subtitle={<span>{event.when}</span>}
-                    >
-                    </GridListTileBar>
-                </a>
-                <ICSButton event={event}></ICSButton>
+                    <div className={classes.tileActionBar}>
+                        <ICSButton event={event} className={classes.icsButton}></ICSButton>
+                        <Fab aria-label="Open in browser" className={classes.actionIcon}
+                            onClick={() => this.openInBrowser(event)}>
+                            <OpenInBrowser className={classes.calIcon}></OpenInBrowser>
+                        </Fab>
+                        <div className={classes.grow}></div>
+                    </div>
+                </div>
             </GridListTile>
         );
     }
@@ -72,5 +115,5 @@ AgendaItem.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(AgendaItem);
+export default withStyles(styles)(withRouter(AgendaItem));
 

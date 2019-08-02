@@ -7,10 +7,13 @@ import { icsFormatter } from './ics';
 
 const styles = theme => ({
     icalButton: {
-        float: 'right',
-        marginBottom: '10px',
-        marginTop: '10px',
-        marginRight: '10px',
+        height: '16px',
+        width: '30px',
+        margin: '5px',
+    },
+    calIcon: {
+        height: '14px',
+        width: '20px',
     }
 });
 
@@ -22,13 +25,12 @@ class ICSButton extends React.Component {
     }
 
     openICSFile() {
-        console.log('creating ical', this.props.event);
         var cal = icsFormatter();
         cal.addEvent(
-            this.props.event.url, 
-            this.props.event.title, 
-            this.props.event.description, 
-            this.props.event.venue.name + ' ' + this.props.event.venue.city, 
+            this.props.event.url,
+            this.props.event.title,
+            this.props.event.description,
+            this.props.event.venue.name + ' ' + this.props.event.venue.city,
             this.props.event.when,
             this.props.event.when);
         cal.download(`${this.props.event.title}.ics`)
@@ -37,11 +39,10 @@ class ICSButton extends React.Component {
     render() {
         const { classes } = this.props;
 
-        return <Fab color="secondary" aria-label="Download ical" className={classes.icalButton}
+        return <Fab aria-label="Download ical" className={classes.icalButton}
             onClick={this.openICSFile}>
-            <CalendarToday></CalendarToday>
+            <CalendarToday className={classes.calIcon}></CalendarToday>
         </Fab>
-
     }
 }
 

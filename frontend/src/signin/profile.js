@@ -11,7 +11,7 @@ import { withRouter } from 'react-router-dom';
 import HeaderBar from '../headerbar/HeaderBar.js';
 import UserProfile from './UserProfile.js';
 
-const styles = {
+const styles = theme => ( {
     saveButton: {
         marginRight: '10px',
         marginLeft: '8px',
@@ -29,12 +29,17 @@ const styles = {
     signedInUI: {
         padding: '10px',
         marginLeft: '2px',
-        width: '40%',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
+        },
+        [theme.breakpoints.up('md')]: {
+            width: '40%',
+        },
         border: 'lightgrey',
         borderStyle: 'solid',
         borderWidth: '1px',
     }
-};
+});
 
 class Profile extends React.Component {
 

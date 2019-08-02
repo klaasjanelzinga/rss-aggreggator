@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-if [ -z "$VIRTUAL_ENV" ]
-then
-    echo "sourcing venv"
-    source venv/bin/activate
-    VENV_SOURCED="YES"
-fi
-
 echo "Starting app"
 ps aux | grep main.py |grep -v gre | awk '{ print $2 }' | xargs kill
 if [[ -f ${HOME}/Downloads/test-ds.json ]]

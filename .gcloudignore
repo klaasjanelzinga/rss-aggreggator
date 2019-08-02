@@ -39,3 +39,5 @@ test-ds.json
 travis-deployer.json
 .coverage
 README.md
+nginx-dev-proxy/
+mypy.ini

@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-VENV_SOURCED="NO"
-
-if [ -z "$VIRTUAL_ENV" ]
-then
-    echo "sourcing venv"
-    source venv/bin/activate
-    VENV_SOURCED="YES"
-fi
-
 echo "Linting ..."
 pylint main.py app/**
 [[ $? -ne 0 ]] && echo "Linting failed" && exit 1
@@ -30,8 +21,3 @@ echo "Building frontend"
 (cd frontend && npm run-script build)
 [[ $? -ne 0 ]] && echo "Frontend build failed" && exit 1
 
-
-if [ ${VENV_SOURCED} == "YES" ]
-then
-    deactivate
-fi

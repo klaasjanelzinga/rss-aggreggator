@@ -8,7 +8,7 @@ import AgendaItem from './AgendaItem';
 
 const styles = theme => ({
     agenda: {
-        top: '80px',
+        top: '68px',
         left: '0px',
         right: '0px',
         bottom: '0px',
@@ -16,7 +16,7 @@ const styles = theme => ({
         justifyContent: 'space-around',
         overflowY: 'scroll',
         overflowX: 'hidden',
-        marginLeft: '10px',
+        marginLeft: '5px',
     },
     agendaFooter: {
         width: '100%',
@@ -58,7 +58,7 @@ class Agenda extends React.Component {
             return (
                 <div className={classes.agenda}>
                     {nothingFound}
-                    <GridList cellHeight={180} cols={1} className={classes.gridList}>
+                    <GridList cols={1} className={classes.gridList}>
                         {this.props.events.map(event => (
                             <AgendaItem item={event} key={event.id} />
                         ))}
