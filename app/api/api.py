@@ -8,6 +8,13 @@ API_ROUTES = Blueprint('api', __name__, template_folder='templates')
 
 @API_ROUTES.route('/api/events', methods=['GET'])
 def fetch_events():
+
+    # if not AppConfig.is_running_in_gae():
+    #     with open('tests/sample-api-events.json') as f:
+    #         ob = json.load(f)
+    #         logging.warning('Returning stubbed event data!')
+    #         return jsonify(ob)
+    #
     fetch_offset = request.args.get('fetch_offset')
     cursor = bytes(fetch_offset, 'utf-8') if fetch_offset is not None else None
 

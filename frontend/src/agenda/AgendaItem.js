@@ -16,7 +16,7 @@ const styles = theme => ({
         height: '195px',
         borderStyle: 'none',
         border: '1px',
-        backgroundColor: 'lightgrey'
+        backgroundColor: 'lightgrey',
     },
     tileContents: {
         display: 'flex',
@@ -55,14 +55,16 @@ const styles = theme => ({
         height: '16px',
         width: '30px',
         margin: '5px',
+        backgroundColor: 'lightGrey',
     }
 });
 
 
 class AgendaItem extends React.Component {
 
-    openInBrowser(event) {
-        window.open(event.url, 'Event');
+    openInBrowser(event, agendaItem) {
+        event.preventDefault()
+        window.open(agendaItem.url, 'event');
     }
 
     renderImage(event) {
@@ -77,10 +79,10 @@ class AgendaItem extends React.Component {
         const { classes } = this.props;
         const event = this.props.item;
         return (
-            <GridListTile className={classes.gridListTile} key={event.id}>
-                <div className={classes.tileContents}>
+            <GridListTile className={classes.gridListTile} key={event.id} onClick={() => null}>
+                <div className={classes.tileContents} onClick={() => null}>
                     <div className={classes.tileDetails}>
-                        <a href={event.url}>
+                        <a href={event.url} target='event'>
                             <div className={classes.tileImage}>
                                 {this.renderImage(event)}
                             </div>
@@ -97,12 +99,12 @@ class AgendaItem extends React.Component {
                             </div>
                         </a>
                     </div>
-                    <div className={classes.tileActionBar}>
+                    <div className={classes.tileActionBar} >
                         <ICSButton event={event} className={classes.icsButton}></ICSButton>
-                        <Fab aria-label="Open in browser" className={classes.actionIcon}
-                            onClick={() => this.openInBrowser(event)}>
-                            <OpenInBrowser className={classes.calIcon}></OpenInBrowser>
-                        </Fab>
+                            <Fab aria-label="Open in browser" className={classes.actionIcon}
+                                onClick={(reactEvent) => this.openInBrowser(reactEvent, event)}>
+                                <OpenInBrowser className={classes.calIcon}></OpenInBrowser>
+                            </Fab>
                         <div className={classes.grow}></div>
                     </div>
                 </div>
