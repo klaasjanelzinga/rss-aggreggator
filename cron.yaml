@@ -22,4 +22,4 @@ cron:
     schedule: every 24 hours
   - description: "clean old events"
     url: /maintenance/cleanup
-    schedule: every 24 hours
+    schedule: every 4 hours

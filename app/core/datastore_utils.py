@@ -1,6 +1,13 @@
 import base64
 import re
-from typing import List, Tuple
+from dataclasses import dataclass
+from typing import List, Iterator
+
+
+@dataclass
+class QueryResult:
+    items: Iterator
+    token: bytes
 
 
 class DatastoreUtils:
@@ -10,13 +17,12 @@ class DatastoreUtils:
         return base64.decodebytes(earlier_curor) if earlier_curor is not None else None
 
     @staticmethod
-    def entities_and_cursor(query_iter) -> Tuple[List, bytes]:
+    def construct_query_result_from_query(query_iter) -> QueryResult:
         page = next(query_iter.pages)
-        results = list(page)
         next_cursor = query_iter.next_page_token
         next_cursor_encoded = base64.encodebytes(next_cursor) if next_cursor is not None \
             else base64.encodebytes(bytes('DONE', 'UTF-8'))
-        return results, next_cursor_encoded
+        return QueryResult(items=page, token=next_cursor_encoded)
 
     @staticmethod
     def split_term(term: str) -> List[str]:

@@ -1,13 +1,13 @@
 import base64
 from datetime import datetime
-from typing import List, Tuple
+from typing import List, Optional
 
 from google.cloud import datastore
 from google.cloud.datastore import Entity
 from google.cloud.datastore.client import Client
 from google.cloud.datastore.query import Iterator
 
-from app.core.datastore_utils import DatastoreUtils
+from app.core.datastore_utils import DatastoreUtils, QueryResult
 from app.core.event import Event
 from app.core.event_entity_transformer import EventEntityTransformer
 
@@ -32,36 +32,32 @@ class EventRepository:
         self.client.put_multi([self._generate_entity(event) for event in set(events)])
         return events
 
-    def fetch_items(self, cursor: bytes = None, limit: int = None) -> Tuple[List[Event], bytes]:
+    def fetch_items(self, cursor: Optional[bytes], limit: Optional[int]) -> QueryResult:
         google_cursor = DatastoreUtils.create_cursor(earlier_curor=cursor)
         if google_cursor is not None and google_cursor.decode('utf-8') == 'DONE':
-            return [], base64.encodebytes('DONE')
+            return QueryResult(items=[], token=base64.encodebytes('DONE'))
         query = self.client.query(kind='Event')
         query.order = ['when']
 
         query_iter = query.fetch(start_cursor=google_cursor, limit=limit)
-        results, next_cursor_encoded = DatastoreUtils.entities_and_cursor(query_iter)
-
-        return [self.event_entity_transformer.to_event(entity) for entity in results], next_cursor_encoded
+        return DatastoreUtils.construct_query_result_from_query(query_iter)
 
     def fetch_all_items(self) -> Iterator:
         query = self.client.query(kind='Event')
         query.order = ['when']
         return query.fetch()
 
-    def search(self, term: str, cursor: bytes = None, limit: int = None) -> Tuple[List[Event], bytes]:
+    def search(self, term: str, cursor: Optional[bytes] = None, limit: Optional[int] = None) -> QueryResult:
         google_cursor = DatastoreUtils.create_cursor(earlier_curor=cursor)
         if google_cursor is not None and google_cursor.decode('utf-8') == 'DONE':
-            return [], base64.encodebytes('DONE')
+            return QueryResult(items=[], token=base64.encodebytes('DONE'))
 
         query = self.client.query(kind='Event')
         # pylint: disable=expression-not-assigned
         [query.add_filter('search_terms', '=', term) for term in DatastoreUtils.split_term(term)]
         query.order = ['when']
         query_iter = query.fetch(start_cursor=google_cursor, limit=limit)
-        results, next_cursor_encoded = DatastoreUtils.entities_and_cursor(query_iter)
-
-        return [self.event_entity_transformer.to_event(entity) for entity in results], next_cursor_encoded
+        return DatastoreUtils.construct_query_result_from_query(query_iter)
 
     def clean_items_before(self, date: datetime) -> int:
         query = self.client.query(kind='Event')

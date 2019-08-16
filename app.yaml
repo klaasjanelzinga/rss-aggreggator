@@ -5,25 +5,32 @@ handlers:
 - url: /static/js/(.*\.js)$
   static_files: static/build/static/js/\1
   upload: static/build/static/js/*.js
+  secure: always
 
 - url: /static/css/main.css
   static_files: static/build/static/css/main.css
   upload: static/build/static/css/main.css
+  secure: always
 
 - url: /(.*\.(json|png|ico|js))$
   static_files: static/build/\1
   upload: static/build/.*\.(json|png|ico|js)$
+  secure: always
 
 - url: /index.html
   static_files: static/build/index.html
   upload: static/build/index.html
+  secure: always
 
 - url: /
   static_files: static/build/index.html
   upload: static/build/index.html
+  secure: always
 
 - url: /api/.*
   script: auto
+  secure: always
 
 - url: /maintenance/.*
   script: auto
+  secure: always
