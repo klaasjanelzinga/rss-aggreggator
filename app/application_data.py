@@ -37,7 +37,7 @@ processors: List[VenueProcessor] = [
 processors_map: Dict[str, VenueProcessor] = {processor.venue.venue_id: processor for processor in processors}
 
 if AppConfig.is_running_in_gae():
-    CLIENT = google.cloud.logging.Client()
+    CLIENT = google.cloud.logging.Client('rss-aggregator-236707')
     CLIENT.setup_logging(log_level=logging.INFO)
     CLIENT.get_default_handler().propagate = False
 else:
