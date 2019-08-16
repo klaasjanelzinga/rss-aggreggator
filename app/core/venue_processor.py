@@ -15,7 +15,7 @@ class VenueProcessor(ABC):
         self.venue = venue
         self.logger = logging.getLogger(__name__)
 
-    def _log_error(self, error):
+    def _log_error(self, error) -> None:
         self.logger.error('Error occurred syncing stores: %s', error)
         self.logger.fatal(error, exc_info=True)
 

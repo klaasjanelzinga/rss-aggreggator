@@ -4,13 +4,13 @@ import re
 import threading
 from contextlib import contextmanager
 from datetime import datetime, timedelta
-
+from typing import Generator
 
 LOCALE_LOCK = threading.Lock()
 
 
 @contextmanager
-def setlocale(name):
+def setlocale(name: str) -> Generator:
     with LOCALE_LOCK:
         saved = locale.setlocale(locale.LC_ALL)
         try:

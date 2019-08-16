@@ -1,5 +1,6 @@
 import logging
 from datetime import timedelta, datetime
+from typing import Any
 
 from flask import Blueprint, request, Response
 
@@ -10,7 +11,7 @@ MAINTENANCE_ROUTES = Blueprint('maintenance', __name__, template_folder='templat
 
 
 @MAINTENANCE_ROUTES.route('/maintenance/fetch-data')
-def maintenance_fetch_data():
+def maintenance_fetch_data() -> Any:
     if AppConfig.is_web_request_allowed(request):
         venue_id = request.args.get('venue_id')
         if venue_id is None or not venue_repository.is_registered(venue_id):
@@ -21,7 +22,7 @@ def maintenance_fetch_data():
 
 
 @MAINTENANCE_ROUTES.route('/maintenance/cleanup')
-def maintenance_clean_up():
+def maintenance_clean_up() -> Any:
     if AppConfig.is_web_request_allowed(request):
         number_cleaned = event_repository.clean_items_before(datetime.now() - timedelta(days=1))
         logging.getLogger(__name__).info('Number of items cleaned %d', number_cleaned)
@@ -30,5 +31,5 @@ def maintenance_clean_up():
 
 
 @MAINTENANCE_ROUTES.route('/maintenance/ping')
-def maintenance_ping():
+def maintenance_ping() -> Any:
     return Response(status=200)

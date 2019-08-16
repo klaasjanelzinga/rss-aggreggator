@@ -14,7 +14,7 @@ class ParserUtil:
         return not ParserUtil.not_empty(text)
 
     @staticmethod
-    def has_non_empty_text(tag: Tag):
+    def has_non_empty_text(tag: Tag) -> bool:
         return tag is not None and ParserUtil.not_empty(tag.text)
 
     @staticmethod

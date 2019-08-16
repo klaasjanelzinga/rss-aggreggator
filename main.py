@@ -1,3 +1,5 @@
+from typing import Any
+
 from flask import Flask, render_template, send_from_directory
 
 from app.api.api import API_ROUTES
@@ -22,12 +24,12 @@ app.register_blueprint(USER_ROUTES)
 
 
 @app.route('/')
-def hello():
+def hello() -> Any:
     return render_template('index.html')
 
 
 @app.route('/channel-image.png')
-def send_channel_image():
+def send_channel_image() -> Any:
     return send_from_directory('static/build', 'channel-image.png')
 
 

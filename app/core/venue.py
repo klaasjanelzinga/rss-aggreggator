@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime
 from typing import List
 
@@ -9,7 +9,6 @@ from app.core.datastore_utils import DatastoreUtils
 
 @dataclass
 class Venue:
-
     name: str
     url: str
     venue_id: str
@@ -20,9 +19,9 @@ class Venue:
     timezone: str
     timezone_short: str
     source_url: str
-    search_terms: List[str] = None
+    search_terms: List[str] = field(default_factory=list)
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         self.search_terms = [term.lower() for term in DatastoreUtils.split_term(self.name) + [self.city]]
 
     def convert_utc_to_venue_timezone(self, when: datetime) -> datetime:

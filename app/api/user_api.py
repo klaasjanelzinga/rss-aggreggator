@@ -1,3 +1,5 @@
+from typing import Any
+
 from flask import Blueprint, request, Response, jsonify
 
 from app.application_data import user_profile_repository
@@ -8,7 +10,7 @@ USER_ROUTES = Blueprint('user', __name__, template_folder='templates')
 
 
 @USER_ROUTES.route('/api/user/signup', methods=['POST'])
-def login_user():
+def login_user() -> Any:
 
     user_profile_token = TokenVerifier.verify(request.headers)
     if not user_profile_token:
@@ -24,7 +26,7 @@ def login_user():
 
 
 @USER_ROUTES.route('/api/user/profile', methods=['POST'])
-def update_user():
+def update_user() -> Any:
     user_profile_token = TokenVerifier.verify(request.headers)
     if not user_profile_token:
         return Response(status=404)
@@ -34,7 +36,7 @@ def update_user():
 
 
 @USER_ROUTES.route('/api/user/profile', methods=['GET'])
-def fetch_user_profile():
+def fetch_user_profile() -> Any:
     user_profile_token = TokenVerifier.verify(request.headers)
     if not user_profile_token:
         return Response(status=404)

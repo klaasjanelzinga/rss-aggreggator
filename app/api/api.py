@@ -1,3 +1,5 @@
+from typing import Any
+
 from flask import Blueprint, jsonify, request
 
 from app.application_data import event_repository
@@ -7,7 +9,7 @@ API_ROUTES = Blueprint('api', __name__, template_folder='templates')
 
 
 @API_ROUTES.route('/api/events', methods=['GET'])
-def fetch_events():
+def fetch_events() -> Any:
 
     # if not AppConfig.is_running_in_gae():
     #     with open('tests/sample-api-events.json') as f:
@@ -27,7 +29,7 @@ def fetch_events():
 
 
 @API_ROUTES.route('/api/search', methods=['GET'])
-def search_events():
+def search_events() -> Any:
     term = request.args.get('term')
     fetch_offset = request.args.get('fetch_offset')
     cursor = bytes(fetch_offset, 'utf-8') if fetch_offset is not None else None

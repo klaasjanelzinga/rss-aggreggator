@@ -1,9 +1,9 @@
 import base64
 import logging
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime
-from typing import List
+from typing import List, Any
 
 import pytz
 
@@ -21,17 +21,17 @@ class Event:
     date_published: datetime
     when: datetime
     image_url: str = None
-    search_terms: List[str] = None
-    event_id: str = None
+    search_terms: List[str] = field(default_factory=list)
+    event_id: str = field(default_factory=str)
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         self.event_id = str(base64.encodebytes(bytes(self.url, 'utf-8')), 'utf-8') if self.url is not None else None
         self.search_terms = self.generate_search_terms()
 
-    def __eq__(self, other):
+    def __eq__(self, other: Any) -> bool:
         return self.event_id == other.event_id
 
-    def __hash__(self):
+    def __hash__(self) -> int:
         return hash(self.event_id)
 
     def generate_search_terms(self) -> List[str]:

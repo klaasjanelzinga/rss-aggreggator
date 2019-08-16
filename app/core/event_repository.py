@@ -5,6 +5,7 @@ from typing import List, Tuple
 from google.cloud import datastore
 from google.cloud.datastore import Entity
 from google.cloud.datastore.client import Client
+from google.cloud.datastore.query import Iterator
 
 from app.core.datastore_utils import DatastoreUtils
 from app.core.event import Event
@@ -43,7 +44,7 @@ class EventRepository:
 
         return [self.event_entity_transformer.to_event(entity) for entity in results], next_cursor_encoded
 
-    def fetch_all_items(self):
+    def fetch_all_items(self) -> Iterator:
         query = self.client.query(kind='Event')
         query.order = ['when']
         return query.fetch()
