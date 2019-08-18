@@ -2,9 +2,10 @@ from typing import Any
 
 from flask import Flask, render_template, send_from_directory
 
-from app.api.api import API_ROUTES
+from app.api.api import EVENT_API_ROUTES
 from app.api.maintenance import MAINTENANCE_ROUTES
 from app.api.user_api import USER_ROUTES
+from app.api.venue import VENUE_API_ROUTES
 from app.application_data import processors
 from app.core.app_config import AppConfig
 from app.rss.rss_api import RSS_ROUTES
@@ -17,10 +18,11 @@ app = Flask(__name__, static_folder='static/build/static', template_folder='stat
 # pylint: disable=W0106
 [processor.sync_stores() for processor in processors if not AppConfig.is_running_in_gae()]
 
-app.register_blueprint(API_ROUTES)
+app.register_blueprint(EVENT_API_ROUTES)
 app.register_blueprint(MAINTENANCE_ROUTES)
 app.register_blueprint(RSS_ROUTES)
 app.register_blueprint(USER_ROUTES)
+app.register_blueprint(VENUE_API_ROUTES)
 
 
 @app.route('/')

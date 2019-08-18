@@ -6,7 +6,7 @@ from rx.core.typing import Observer
 from app.core.fetcher_util import fetch
 from app.core.parser import Parser
 from app.core.parsing_context import ParsingContext
-from app.core.venue import Venue
+from app.core.venue.venue import Venue
 
 
 class Source(ABC):

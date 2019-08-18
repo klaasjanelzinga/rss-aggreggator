@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from app.core.venue import Venue
+from app.core.venue.venue import Venue
 
 
 @dataclass

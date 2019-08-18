@@ -7,13 +7,12 @@ from app.application_data import event_repository
 from app.core.event import Event
 from app.core.event_entity_transformer import EventEntityTransformer
 
-API_ROUTES = Blueprint('api', __name__, template_folder='templates')
+EVENT_API_ROUTES = Blueprint('events', __name__, template_folder='templates')
 
 EVENT_ENTITY_TRANSFORMER = EventEntityTransformer(venue_repository=application_data.venue_repository)
 
 
-# original runs in 100ms
-@API_ROUTES.route('/api/events', methods=['GET'])
+@EVENT_API_ROUTES.route('/api/events', methods=['GET'])
 def fetch_events() -> Any:
     # if not AppConfig.is_running_in_gae():
     #     with open('tests/sample-api-events.json') as f:
@@ -33,7 +32,7 @@ def fetch_events() -> Any:
     })
 
 
-@API_ROUTES.route('/api/search', methods=['GET'])
+@EVENT_API_ROUTES.route('/api/search', methods=['GET'])
 def search_events() -> Any:
     term = request.args.get('term')
     fetch_offset = request.args.get('fetch_offset')

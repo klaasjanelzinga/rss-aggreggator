@@ -31,7 +31,8 @@ const styles = theme => ({
         paddingLeft: '5px',
         paddingRight: '5px',
     },
-    tileDescription: {
+    linkToEvent: {
+        textDecoration: 'none'
     },
     tileText: {
         display: 'flex',
@@ -84,8 +85,8 @@ class AgendaItem extends React.Component {
         const event = this.props.item;
         return (
             <GridListTile className={classes.gridListTile} key={event.id} onClick={() => null}>
+                    <a href={event.url} target='event' className={classes.linkToEvent}>
                 <div className={classes.tileDetails}>
-                    {/* <a href={event.url} target='event'> */}
                         <div className={classes.tileImage}>
                             {this.renderImage(event)}
                         </div>
@@ -100,8 +101,8 @@ class AgendaItem extends React.Component {
                                 {event.description}
                             </Typography>
                         </div>
-                    {/* </a> */}
                 </div>
+                </a>
                 <div className={classes.tileActionBar} >
                     <ICSButton event={event} className={classes.icsButton}></ICSButton>
                     <Fab aria-label="Open in browser" className={classes.actionIcon}

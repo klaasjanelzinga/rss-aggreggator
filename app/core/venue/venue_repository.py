@@ -1,6 +1,6 @@
-from typing import Dict
+from typing import Dict, List
 
-from app.core.venue import Venue
+from app.core.venue.venue import Venue
 
 
 class VenueRepository:
@@ -17,3 +17,6 @@ class VenueRepository:
 
     def is_registered(self, venue_id: str) -> bool:
         return venue_id in self.registry
+
+    def fetch_all(self) -> List[Venue]:
+        return list(self.registry.values())

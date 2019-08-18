@@ -1,7 +1,7 @@
 from typing import Dict
 
 from app.core.event import Event
-from app.core.venue_repository import VenueRepository
+from app.core.venue.venue_repository import VenueRepository
 
 
 class EventEntityTransformer:

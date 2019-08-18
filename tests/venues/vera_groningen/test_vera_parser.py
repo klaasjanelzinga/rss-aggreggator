@@ -5,7 +5,6 @@ from hamcrest.core import assert_that
 
 from app.core.fetcher_util import fetch
 from app.core.parsing_context import ParsingContext
-from app.core.venue_processor import VenueProcessor
 from app.venues.vera_groningen.vera_parser import VeraParser
 from app.venues.vera_groningen.vera_processor import VeraProcessor
 

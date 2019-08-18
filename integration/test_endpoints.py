@@ -42,6 +42,9 @@ class TestEndpoints(unittest.TestCase):
     def test_api_events(self):
         TestEndpoints.validate(f'{self.endpoint}/api/events')
 
+    def test_api_venues(self):
+        TestEndpoints.validate(f'{self.endpoint}/api/venues')
+
     def test_api_search(self):
         TestEndpoints.validate(f'{self.endpoint}/api/search?term=groningen')
 

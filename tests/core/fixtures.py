@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 import pytz
 
 from app.core.event import Event
-from app.core.venue import Venue
+from app.core.venue.venue import Venue
 
 
 def fixture_vera_event() -> Event:

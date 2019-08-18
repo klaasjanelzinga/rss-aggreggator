@@ -3,7 +3,7 @@ from rx.core import Observer
 from rx.operators import flat_map
 
 from app.core.source import Source
-from app.core.venue import Venue
+from app.core.venue.venue import Venue
 from app.venues.tivoli_utrecht.tivoli_parser import TivoliParser
 
 

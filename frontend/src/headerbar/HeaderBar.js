@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import PropTypes from 'prop-types';
 import React from 'react';
+import AppMenu from './AppMenu';
 import HeaderMenu from './HeaderMenu';
 import SearchBox from './SearchBox';
 import Title from './Title';
@@ -50,6 +51,7 @@ class HeaderBar extends React.Component {
             <Title />
             <div className={classes.grow} />
             {this.renderSearchBox()}
+            <AppMenu />
             <HeaderMenu />
           </Toolbar>
         </AppBar>

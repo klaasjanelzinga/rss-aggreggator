@@ -5,7 +5,7 @@ from hamcrest import equal_to
 from hamcrest.core import assert_that
 
 from app.core.event_repository import EventRepository
-from app.core.venue_repository import VenueRepository
+from app.core.venue.venue_repository import VenueRepository
 from app.venues.spot.spot_processor import SpotProcessor
 
 

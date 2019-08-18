@@ -1,8 +1,8 @@
 from app.core.event_repository import EventRepository
 from app.core.source import Source
-from app.core.venue import Venue
-from app.core.venue_processor import VenueProcessor
-from app.core.venue_repository import VenueRepository
+from app.core.venue.venue import Venue
+from app.core.venue.venue_processor import VenueProcessor
+from app.core.venue.venue_repository import VenueRepository
 from app.venues.paradiso_amsterdam.paradiso_source import ParadisoSource
 
 

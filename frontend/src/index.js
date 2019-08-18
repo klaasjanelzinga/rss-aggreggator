@@ -8,19 +8,20 @@ import * as serviceWorker from './serviceWorker';
 import profile from './signin/profile';
 import signin from './signin/signin';
 import signout from './signin/signout';
-
+import VenueApp from './venues/VenueApp.js';
 
 
 ReactDOM.render(
     <Router>
-        <SnackbarProvider 
-                maxSnack={3} 
-                autoHideDuration={2000}
-                anchorOrigin={{ vertical: 'top', horizontal: 'right', }}>
+        <SnackbarProvider
+            maxSnack={3}
+            autoHideDuration={2000}
+            anchorOrigin={{ vertical: 'top', horizontal: 'right', }}>
             <Route exact path="/" component={App} />
             <Route exact path="/user/signin" component={signin} />
             <Route exact path="/user/signout" component={signout} />
             <Route exact path="/user/profile" component={profile} />
+            <Route exact path="/venues" component={VenueApp} />
         </SnackbarProvider>
     </Router>
     ,

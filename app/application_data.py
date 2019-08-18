@@ -8,8 +8,8 @@ from app.core.app_config import AppConfig
 from app.core.event_entity_transformer import EventEntityTransformer
 from app.core.event_repository import EventRepository
 from app.core.user.user_profile_repository import UserProfileRepository
-from app.core.venue_processor import VenueProcessor
-from app.core.venue_repository import VenueRepository
+from app.core.venue.venue_processor import VenueProcessor
+from app.core.venue.venue_repository import VenueRepository
 from app.venues.melkweg_amsterdam.melkweg_processor import MelkwegProcessor
 from app.venues.oost_groningen.oost_groningen_processor import OostGroningenProcessor
 from app.venues.paradiso_amsterdam.paradiso_processor import ParadisoProcessor

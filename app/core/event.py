@@ -8,7 +8,7 @@ from typing import List, Any
 import pytz
 
 from app.core.datastore_utils import DatastoreUtils
-from app.core.venue import Venue
+from app.core.venue.venue import Venue
 
 
 @dataclass

@@ -5,7 +5,7 @@ from rx.operators import flat_map
 from app.core.fetcher_util import fetch
 from app.core.parsing_context import ParsingContext
 from app.core.source import Source
-from app.core.venue import Venue
+from app.core.venue.venue import Venue
 from app.venues.melkweg_amsterdam.melkweg_parser import MelkwegParser
 
 

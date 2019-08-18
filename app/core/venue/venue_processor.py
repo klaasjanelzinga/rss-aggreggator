@@ -5,7 +5,7 @@ from rx.operators import filter as rx_filter, map as rx_map, buffer_with_count
 
 from app.core.event_repository import EventRepository
 from app.core.source import Source
-from app.core.venue import Venue
+from app.core.venue.venue import Venue
 
 
 class VenueProcessor(ABC):
