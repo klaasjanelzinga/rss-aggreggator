@@ -13,38 +13,42 @@ const styles = theme => ({
     gridListTile: {
         width: '100%',
         marginBottom: '2px',
-        height: '195px',
         borderStyle: 'none',
         border: '1px',
         backgroundColor: 'lightgrey',
-    },
-    tileContents: {
         display: 'flex',
-        overflow: 'scroll'
+        flexDirection: 'column',
+        justifyContent: 'left',
     },
     tileDetails: {
-        display: 'block',
-        width: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'nowrap',
+        justifyContent: 'left',
     },
     tileImage: {
-        display: 'block',
-        position: 'absolute',
-        width: '150px',
-        height: '150px',
+        display: 'flex',
+        paddingLeft: '5px',
+        paddingRight: '5px',
+    },
+    tileDescription: {
+    },
+    tileText: {
+        display: 'flex',
+        textAlign: 'left',
     },
     agenda_image: {
-        width: '150px',
         height: '150px',
+        width: '150px',
     },
     tileItem: {
-        position: 'absolute',
-        left: '152px',
-        textAlign: 'left',
+        display: 'flex',
+        flexDirection: 'column',
+        paddingLeft: '5px',
+        paddingRight: '5px',
     },
     tileActionBar: {
         display: 'flex',
-        position: 'absolute',
-        top: '150px',
         width: '100%',
         backgroundColor: 'white',
     },
@@ -80,33 +84,31 @@ class AgendaItem extends React.Component {
         const event = this.props.item;
         return (
             <GridListTile className={classes.gridListTile} key={event.id} onClick={() => null}>
-                <div className={classes.tileContents} onClick={() => null}>
-                    <div className={classes.tileDetails}>
-                        <a href={event.url} target='event'>
-                            <div className={classes.tileImage}>
-                                {this.renderImage(event)}
-                            </div>
-                            <div className={classes.tileItem}>
-                                <Typography variant="h6" color="textPrimary">
-                                    {event.title}
-                                </Typography>
-                                <Typography color="textSecondary" variant="subtitle2">
-                                    {event.venue.name} {event.when}
-                                </Typography>
-                                <Typography variant="subtitle1" color="textSecondary">
-                                    {event.description}
-                                </Typography>
-                            </div>
-                        </a>
-                    </div>
-                    <div className={classes.tileActionBar} >
-                        <ICSButton event={event} className={classes.icsButton}></ICSButton>
-                            <Fab aria-label="Open in browser" className={classes.actionIcon}
-                                onClick={(reactEvent) => this.openInBrowser(reactEvent, event)}>
-                                <OpenInBrowser className={classes.calIcon}></OpenInBrowser>
-                            </Fab>
-                        <div className={classes.grow}></div>
-                    </div>
+                <div className={classes.tileDetails}>
+                    {/* <a href={event.url} target='event'> */}
+                        <div className={classes.tileImage}>
+                            {this.renderImage(event)}
+                        </div>
+                        <div className={classes.tileItem}>
+                            <Typography className={classes.tileText} variant="h6" color="textPrimary">
+                                {event.title}
+                            </Typography>
+                            <Typography className={classes.tileText} color="textSecondary" variant="subtitle2">
+                                {event.venue.name} {event.when}
+                            </Typography>
+                            <Typography className={classes.tileText} variant="subtitle1" color="textSecondary">
+                                {event.description}
+                            </Typography>
+                        </div>
+                    {/* </a> */}
+                </div>
+                <div className={classes.tileActionBar} >
+                    <ICSButton event={event} className={classes.icsButton}></ICSButton>
+                    <Fab aria-label="Open in browser" className={classes.actionIcon}
+                        onClick={(reactEvent) => this.openInBrowser(reactEvent, event)}>
+                        <OpenInBrowser className={classes.calIcon}></OpenInBrowser>
+                    </Fab>
+                    <div className={classes.grow}></div>
                 </div>
             </GridListTile>
         );
