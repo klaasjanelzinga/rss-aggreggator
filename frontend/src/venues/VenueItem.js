@@ -45,6 +45,9 @@ class VenueItem extends React.Component {
                 <Typography className={classes.tileText} variant="subtitle1" color="textSecondary">
                     {venue.city} {venue.country}
                 </Typography>
+                <Typography className={classes.tileText} variant="subtitle1" color="textSecondary">
+                    Date last checked: {venue.lastFetchedDate}
+                </Typography>
             </GridListTile>
         );
     }

@@ -1,5 +1,6 @@
 import logging
 from abc import ABC, abstractmethod
+from datetime import datetime
 
 from rx.operators import filter as rx_filter, map as rx_map, buffer_with_count
 
@@ -28,6 +29,7 @@ class VenueProcessor(ABC):
             on_next=lambda e: self.logger.info('Upserted %d events for %s', len(e), self.venue.venue_id),
             on_error=self._log_error,
         )
+        self.venue.last_fetched_date = datetime.now()
 
     @abstractmethod
     def fetch_source(self) -> Source:

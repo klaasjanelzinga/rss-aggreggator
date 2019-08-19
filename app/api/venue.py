@@ -25,5 +25,6 @@ def _transform(venue: Venue) -> Dict:
         'name': venue.name,
         'phone': venue.phone,
         'source_url': venue.source_url,
+        'lastFetchedDate': venue.convert_utc_to_venue_timezone(venue.last_fetched_date).isoformat(),
         'url': venue.url
     }

@@ -19,6 +19,7 @@ class Venue:
     timezone: str
     timezone_short: str
     source_url: str
+    last_fetched_date: datetime = datetime.now()
     search_terms: List[str] = field(default_factory=list)
 
     def __post_init__(self) -> None:
