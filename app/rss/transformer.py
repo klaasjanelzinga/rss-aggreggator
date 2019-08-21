@@ -9,12 +9,12 @@ class Transformer:
         venue = item.venue
         when = venue.convert_utc_to_venue_timezone(item.when).strftime('%Y-%m-%d %H:%M')
         description = \
-            f'''<![CDATA[<html><body>
+            f'''<html><body>
             <p>{item.description}</p>
             <img src="{item.image_url}" alt="image for event" width=300 height=160/>
             <p>When: {when} -
                Where: <a href="{venue.url}">{venue.name} ({venue.city}, {venue.country})</a></p>
-            </body></html>]]>'''
+            </body></html>'''
         return RSSItem(title=item.title,
                        link=item.url,
                        description=description,
