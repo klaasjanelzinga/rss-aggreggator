@@ -39,17 +39,6 @@ class TestEvent(unittest.TestCase):
         event.when = datetime.min
         assert_that(event.is_valid(), equal_to(False))
 
-    def test_when_too_old(self):
-        event = fixture_vera_event()
-        event.when = datetime.now(pytz.timezone('Europe/Amsterdam')) - timedelta(days=1)
-        assert_that(event.is_valid(), equal_to(False))
-
-        event.when = datetime.now(pytz.timezone('Europe/Amsterdam')) - timedelta(minutes=1)
-        assert_that(event.is_valid(), equal_to(False))
-
-        event.when = datetime.now(pytz.timezone('Europe/Amsterdam')) + timedelta(minutes=1)
-        assert_that(event.is_valid(), equal_to(True))
-
     def test_equality(self):
         event = fixture_vera_event()
         event2 = fixture_vera_event()
@@ -60,3 +49,35 @@ class TestEvent(unittest.TestCase):
         assert_that(event2, equal_to(event))
         assert_that(event2, is_not(equal_to(event3)))
         assert_that(event, is_not(equal_to(event3)))
+
+    def test_invalid_when_too_old(self):
+        event = fixture_vera_event()
+        event.when = datetime.now(pytz.timezone('Europe/Amsterdam')) - timedelta(days=1)
+        assert_that(event.is_valid(), equal_to(False))
+
+        event.when = datetime.now(pytz.timezone('Europe/Amsterdam')) - timedelta(minutes=1)
+        assert_that(event.is_valid(), equal_to(False))
+
+        event.when = datetime.now(pytz.timezone('Europe/Amsterdam')) + timedelta(minutes=1)
+        assert_that(event.is_valid(), equal_to(True))
+
+    def test_invalid_event(self):
+        event = fixture_vera_event()
+        assert_that(event.is_valid(), equal_to(True))
+
+        event = fixture_vera_event()
+        event.title = None
+        assert_that(event.is_valid(), equal_to(False))
+
+        event = fixture_vera_event()
+        event.image_url = None
+        assert_that(event.is_valid(), equal_to(True))
+
+        event = fixture_vera_event()
+        event.description = None
+        assert_that(event.is_valid(), equal_to(False))
+
+        event = fixture_vera_event()
+        event.when = datetime.now(pytz.timezone('Europe/Amsterdam')) + timedelta(minutes=-1)
+        assert_that(event.is_valid(), equal_to(False))
+

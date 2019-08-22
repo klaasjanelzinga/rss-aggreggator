@@ -1,14 +1,14 @@
 from time import sleep
 
-import requests
+from aiohttp import ClientSession
 
 
-def with_url(url: str) -> None:
+async def with_url(url: str, session: ClientSession) -> None:
     number_of_tries = 0
     while number_of_tries < 30:
         try:
-            response = requests.get(url)
-            if response.status_code == 200:
+            response = await session.get(url)
+            if response.status == 200:
                 return
         except Exception:
             pass

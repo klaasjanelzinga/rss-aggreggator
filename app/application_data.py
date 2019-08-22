@@ -1,6 +1,8 @@
+import asyncio
 import logging
 from typing import Dict, List
 
+from aiohttp import ClientSession, ClientTimeout
 import google.cloud.logging
 from google.cloud import datastore
 
@@ -17,6 +19,15 @@ from app.venues.simplon_groningen.simplon_processor import SimplonProcessor
 from app.venues.spot.spot_processor import SpotProcessor
 from app.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
 from app.venues.vera_groningen.vera_processor import VeraProcessor
+
+if AppConfig.is_running_in_gae():
+    LOGGING_CLIENT = google.cloud.logging.Client('rss-aggregator-236707')
+    LOGGING_CLIENT.setup_logging(log_level=logging.INFO)
+    LOGGING_CLIENT.get_default_handler().propagate = False
+else:
+    logging.basicConfig(level=logging.INFO)
+
+# logging.basicConfig(level=logging.INFO)
 
 DATASTORE_CLIENT = datastore.Client()
 venue_repository: VenueRepository = VenueRepository()
@@ -36,9 +47,13 @@ processors: List[VenueProcessor] = [
 ]
 processors_map: Dict[str, VenueProcessor] = {processor.venue.venue_id: processor for processor in processors}
 
-if AppConfig.is_running_in_gae():
-    CLIENT = google.cloud.logging.Client('rss-aggregator-236707')
-    CLIENT.setup_logging(log_level=logging.INFO)
-    CLIENT.get_default_handler().propagate = False
-else:
-    logging.basicConfig(level=logging.INFO)
+
+async def async_venues() -> None:
+    timeout = ClientTimeout(40)
+    async with ClientSession(timeout=timeout) as session:
+        coroutines = [processor.async_store(session) for processor in processors]
+        await asyncio.gather(*coroutines)
+
+
+def sync_venues() -> None:
+    asyncio.run(async_venues())

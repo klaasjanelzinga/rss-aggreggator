@@ -1,5 +1,7 @@
 import unittest
 
+import asynctest
+from aiohttp import ClientSession
 from hamcrest import is_not, none, equal_to
 from hamcrest.core import assert_that
 
@@ -9,14 +11,14 @@ from app.venues.spot.spot_parser import SpotParser
 from app.venues.spot.spot_processor import SpotProcessor
 
 
-class TestSpotParser(unittest.TestCase):
+class TestSpotParser(asynctest.TestCase):
 
     def setUp(self):
         self.parser = SpotParser()
 
-    def test_sample_file(self):
+    async def test_sample_file(self):
         venue = SpotProcessor.create_venue()
-        data = fetch(venue.url)
+        data = await fetch(session=ClientSession(), url=venue.url)
         results = self.parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(results, is_not(none()))
         assert_that(len(results), equal_to(58))

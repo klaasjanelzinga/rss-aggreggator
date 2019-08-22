@@ -1,6 +1,8 @@
 import unittest
 from datetime import datetime
 
+import asynctest
+from aiohttp import ClientSession
 from hamcrest import equal_to, none, is_not
 from hamcrest.core import assert_that
 
@@ -10,11 +12,11 @@ from app.venues.melkweg_amsterdam.melkweg_parser import MelkwegParser
 from app.venues.melkweg_amsterdam.melkweg_processor import MelkwegProcessor
 
 
-class TestMelkwegParser(unittest.TestCase):
+class TestMelkwegParser(asynctest.TestCase):
 
-    def test_parse(self):
+    async def test_parse(self):
 
-        content = fetch('https://www.melkweg.nl/large-json')
+        content = await fetch(url='https://www.melkweg.nl/large-json', session=ClientSession())
         venue = MelkwegProcessor.create_venue()
         parser = MelkwegParser()
         results = parser.parse(ParsingContext(venue=venue, content=content))
@@ -43,9 +45,9 @@ class TestMelkwegParser(unittest.TestCase):
             assert_that(event.when, is_not(none()))
             assert_that(event.url, is_not(none()))
 
-    def test_small_sample(self):
+    async def test_small_sample(self):
         venue = MelkwegProcessor.create_venue()
-        data = fetch(venue.source_url)
+        data = await fetch(session=ClientSession(), url=venue.source_url)
         events = MelkwegParser().parse(ParsingContext(venue, data))
         assert_that(len(events), equal_to(46))
 

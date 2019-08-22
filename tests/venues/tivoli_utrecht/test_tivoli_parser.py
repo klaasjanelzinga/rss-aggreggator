@@ -1,5 +1,5 @@
-import unittest
-
+import asynctest
+from aiohttp import ClientSession
 from hamcrest import equal_to, none, is_not
 from hamcrest.core import assert_that
 
@@ -9,12 +9,12 @@ from app.venues.tivoli_utrecht.tivoli_parser import TivoliParser
 from app.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
 
 
-class TestTivoliParser(unittest.TestCase):
+class TestTivoliParser(asynctest.TestCase):
 
-    def test_sample_file(self):
+    async def test_sample_file(self):
         venue = TivoliProcessor.create_venue()
         parser = TivoliParser()
-        data = fetch(f'{venue.url}/page=1')
+        data = await fetch(session=ClientSession(), url=f'{venue.url}/page=1')
         results = parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(len(results), equal_to(30))
         event = [result for result in results if result.title == "Leuk Dat Je d'r Bent Band"][0]

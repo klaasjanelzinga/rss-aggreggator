@@ -1,5 +1,7 @@
 import unittest
 
+import asynctest
+from aiohttp import ClientSession
 from hamcrest import equal_to, none, is_not
 from hamcrest.core import assert_that
 
@@ -9,12 +11,12 @@ from app.venues.simplon_groningen.simplon_parser import SimplonParser
 from app.venues.simplon_groningen.simplon_processor import SimplonProcessor
 
 
-class TestSimplonParser(unittest.TestCase):
+class TestSimplonParser(asynctest.TestCase):
 
-    def test_parse_sample(self):
+    async def test_parse_sample(self):
         venue = SimplonProcessor.create_venue()
         parser = SimplonParser()
-        data = fetch(venue.url)
+        data = await fetch(session=ClientSession(), url=venue.url)
         results = parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(len(results), equal_to(29))
         event = results[0]

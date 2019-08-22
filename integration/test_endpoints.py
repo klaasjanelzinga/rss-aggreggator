@@ -1,85 +1,80 @@
-import unittest
-
-import requests
+import asynctest
+from aiohttp import ClientSession
 from hamcrest import equal_to
 from hamcrest.core import assert_that
 
 from integration.integration_utils import with_url
 
 
-class TestEndpoints(unittest.TestCase):
+class TestEndpoints(asynctest.TestCase):
 
-    def setUp(self) -> None:
+    async def setUp(self) -> None:
         super().setUp()
         self.endpoint = 'http://localhost:8080'
-        with_url(f'{self.endpoint}/maintenance/ping')
+        self.session = ClientSession()
+        await with_url(f'{self.endpoint}/maintenance/ping', self.session)
 
-    @staticmethod
-    def validate(url: str) -> None:
-        response = requests.get(url)
-        assert_that(response.status_code, equal_to(200))
+    async def tearDown(self) -> None:
+        await self.session.close()
 
-    def test_events_xml(self):
-        TestEndpoints.validate(f'{self.endpoint}/events.xml')
+    async def validate(self, url: str) -> None:
+        response = await self.session.get(url)
+        assert_that(response.status, equal_to(200))
 
-    def test_cleanup(self):
-        TestEndpoints.validate(f'{self.endpoint}/maintenance/cleanup')
+    async def test_events_xml(self):
+        await self.validate(f'{self.endpoint}/events.xml')
 
-    def test_maintenance(self):
-        TestEndpoints.validate(f'{self.endpoint}/maintenance/fetch-data?venue_id=spot-groningen')
-        TestEndpoints.validate(f'{self.endpoint}/maintenance/fetch-data?venue_id=vera-groningen')
-        TestEndpoints.validate(f'{self.endpoint}/maintenance/fetch-data?venue_id=simplon-groningen')
-        TestEndpoints.validate(f'{self.endpoint}/maintenance/fetch-data?venue_id=oost-groningen')
-        TestEndpoints.validate(f'{self.endpoint}/maintenance/fetch-data?venue_id=tivoli-utrecht')
-        TestEndpoints.validate(f'{self.endpoint}/maintenance/fetch-data?venue_id=paradiso-amsterdam')
-        TestEndpoints.validate(f'{self.endpoint}/maintenance/fetch-data?venue_id=melkweg-amsterdam')
-        response = requests.get(f'{self.endpoint}/maintenance/fetch-data?venue_id=kumbatcha-groningen')
-        assert_that(response.status_code, equal_to(404))
+    async def test_cleanup(self):
+        await self.validate(f'{self.endpoint}/maintenance/cleanup')
 
-    def test_root(self):
-        TestEndpoints.validate(f'{self.endpoint}')
+    async def test_maintenance(self):
+        await self.validate(f'{self.endpoint}/maintenance/fetch-data')
+        await self.validate(f'{self.endpoint}/maintenance/ping')
 
-    def test_api_events(self):
-        TestEndpoints.validate(f'{self.endpoint}/api/events')
+    async def test_root(self):
+        await self.validate(f'{self.endpoint}')
 
-    def test_api_venues(self):
-        TestEndpoints.validate(f'{self.endpoint}/api/venues')
+    async def test_api_events(self):
+        await self.validate(f'{self.endpoint}/api/events')
 
-    def test_api_search(self):
-        TestEndpoints.validate(f'{self.endpoint}/api/search?term=groningen')
+    async def test_api_venues(self):
+        await self.validate(f'{self.endpoint}/api/venues')
 
-    def test_channel_image(self):
-        TestEndpoints.validate(f'{self.endpoint}/channel-image.png')
+    async def test_api_search(self):
+        await self.validate(f'{self.endpoint}/api/search?term=groningen')
 
-    def test_user_profile(self):
-        response = requests.get(f'{self.endpoint}/api/user/profile')
-        assert_that(response.status_code, equal_to(404))
-        response = requests.post(f'{self.endpoint}/api/user/profile', json={
+    async def test_channel_image(self):
+        await self.validate(f'{self.endpoint}/channel-image.png')
+
+    async def test_user_profile(self):
+        response = await self.session.get(f'{self.endpoint}/api/user/profile')
+        assert_that(response.status, equal_to(404))
+        response = await self.session.post(f'{self.endpoint}/api/user/profile', json={
             'email': 'klaasjanelzinga@test',
             'givenName': 'klaasajn',
             'familyName': 'elz'
         })
-        assert_that(response.status_code, equal_to(404))
-        response = requests.post(f'{self.endpoint}/api/user/signup', json={
+        assert_that(response.status, equal_to(404))
+        response = await self.session.post(f'{self.endpoint}/api/user/signup', json={
             'email': 'klaasjanelzinga@test',
             'givenName': 'klaasajn',
             'familyName': 'elz'
         })
-        assert_that(response.status_code, equal_to(404))
-        response = requests.get(f'{self.endpoint}/api/user/profile', headers={
+        assert_that(response.status, equal_to(404))
+        response = await self.session.get(f'{self.endpoint}/api/user/profile', headers={
             'Authorization': 'Bearer 123123123123',
             'Accepts': 'application/json'
         })
-        assert_that(response.status_code, equal_to(404))
-        response = requests.get(f'{self.endpoint}/api/user/profile', headers={
+        assert_that(response.status, equal_to(404))
+        response = await self.session.get(f'{self.endpoint}/api/user/profile', headers={
             'Authorization': 'Bearer',
             'Accepts': 'application/json'
         })
-        assert_that(response.status_code, equal_to(404))
-        response = requests.get(f'{self.endpoint}/api/user/profile', headers={
+        assert_that(response.status, equal_to(404))
+        response = await self.session.get(f'{self.endpoint}/api/user/profile', headers={
             'Authorization': 'Beare',
             'Accepts': 'application/json'
         })
-        assert_that(response.status_code, equal_to(404))
+        assert_that(response.status, equal_to(404))
 
 

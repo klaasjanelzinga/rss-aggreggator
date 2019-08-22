@@ -1,7 +1,7 @@
 import unittest
 from xml.etree import ElementTree
 
-import requests
+from aiohttp import ClientSession
 from hamcrest import equal_to
 from hamcrest.core import assert_that
 
@@ -10,13 +10,17 @@ from integration.integration_utils import with_url
 
 class TestEventsXml(unittest.TestCase):
 
-    def setUp(self) -> None:
+    async def setUp(self) -> None:
         self.endpoint = 'http://localhost:8080'
-        with_url(f'{self.endpoint}/maintenance/ping')
+        self.session = ClientSession()
+        await with_url(f'{self.endpoint}/maintenance/ping', self.session)
 
-    def test_events_xml(self):
-        result = requests.get(f'{self.endpoint}/events.xml')
-        assert_that(result.status_code, equal_to(200))
+    async def tearDown(self) -> None:
+        await self.session.close()
+
+    async def test_events_xml(self):
+        result = await self.session.get(f'{self.endpoint}/events.xml')
+        assert_that(result.status, equal_to(200))
         root = ElementTree.fromstring(result.content)
         assert_that(len(root), equal_to(1))
         assert_that(root.tag, equal_to('rss'))

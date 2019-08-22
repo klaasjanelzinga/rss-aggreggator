@@ -48,11 +48,12 @@ class Event:
         return text is not None and text != ''
 
     def is_valid(self) -> bool:
+        invalid_date = (self.when != datetime.min and
+                        self.when > datetime.now(pytz.timezone(self.venue.timezone)))
         valid = (Event.is_not_empty(self.title) and
                  Event.is_not_empty(self.description) and
-                 self.when != datetime.min and
-                 self.when > datetime.now(pytz.timezone(self.venue.timezone)) and
+                 invalid_date and
                  Event.is_not_empty(self.url))
-        if not valid:
+        if not valid and not invalid_date:
             logging.getLogger(__name__).warning('Invalid event %s', self)
         return valid

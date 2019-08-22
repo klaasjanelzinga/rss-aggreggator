@@ -25,7 +25,7 @@ class SpotParser(Parser):
         base_url = venue.url
         url = article.a.get('href')
         content = article.find('div', {'class': 'program__content'})
-        figure = article.find('figure').img.get('data-src')
+        figure = article.find('figure').img.get('data-src') if article.find('figure').img else None
         date = article.find('time')
         title = content.h1
         content_title = title.text if title.find('span') is None else \

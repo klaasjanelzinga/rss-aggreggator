@@ -1,5 +1,7 @@
 import unittest
 
+import asynctest
+from aiohttp import ClientSession
 from hamcrest import equal_to, none, is_not
 from hamcrest.core import assert_that
 
@@ -9,12 +11,12 @@ from app.venues.vera_groningen.vera_parser import VeraParser
 from app.venues.vera_groningen.vera_processor import VeraProcessor
 
 
-class TestVeraGroningenParser(unittest.TestCase):
+class TestVeraGroningenParser(asynctest.TestCase):
 
-    def test_sample_file(self):
+    async def test_sample_file(self):
         venue = VeraProcessor.create_venue()
         parser = VeraParser()
-        data = fetch(f'{venue.url}/page=1')
+        data = await fetch(session=ClientSession(), url=f'{venue.url}/page=1')
 
         results = parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(len(results), equal_to(20))
@@ -39,10 +41,10 @@ class TestVeraGroningenParser(unittest.TestCase):
             assert_that(event.title, is_not(none))
             assert_that(event.url, is_not(none))
 
-    def test_raw_fetches(self):
+    async def test_raw_fetches(self):
         venue = VeraProcessor.create_venue()
         parser = VeraParser()
-        data = fetch(f'{venue.url}/page=1')
+        data = await fetch(session=ClientSession(), url=f'{venue.url}/page=1')
         results = parser.parse(ParsingContext(venue=venue, content=data))
         for event in results:
             assert_that(event.when, is_not(none))
@@ -50,7 +52,7 @@ class TestVeraGroningenParser(unittest.TestCase):
             assert_that(event.title, is_not(none))
             assert_that(event.url, is_not(none))
 
-        data = fetch(f'{venue.url}/page=2')
+        data = await fetch(session=ClientSession(), url=f'{venue.url}/page=2')
         results = parser.parse(ParsingContext(venue=venue, content=data))
         for event in results:
             assert_that(event.when, is_not(none))

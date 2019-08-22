@@ -12,7 +12,7 @@ USER_ROUTES = Blueprint('user', __name__, template_folder='templates')
 @USER_ROUTES.route('/api/user/signup', methods=['POST'])
 def login_user() -> Any:
 
-    user_profile_token = TokenVerifier.verify(request.headers)
+    user_profile_token = TokenVerifier.verify_for_headers(request.headers)
     if not user_profile_token:
         return Response(status=404)
 
@@ -27,7 +27,7 @@ def login_user() -> Any:
 
 @USER_ROUTES.route('/api/user/profile', methods=['POST'])
 def update_user() -> Any:
-    user_profile_token = TokenVerifier.verify(request.headers)
+    user_profile_token = TokenVerifier.verify_for_headers(request.headers)
     if not user_profile_token:
         return Response(status=404)
 
@@ -37,7 +37,7 @@ def update_user() -> Any:
 
 @USER_ROUTES.route('/api/user/profile', methods=['GET'])
 def fetch_user_profile() -> Any:
-    user_profile_token = TokenVerifier.verify(request.headers)
+    user_profile_token = TokenVerifier.verify_for_headers(request.headers)
     if not user_profile_token:
         return Response(status=404)
 

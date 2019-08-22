@@ -1,5 +1,7 @@
 import unittest
 
+import asynctest
+from aiohttp import ClientSession
 from hamcrest import equal_to, is_not, none
 from hamcrest.core import assert_that
 
@@ -10,11 +12,11 @@ from app.venues.oost_groningen.oost_groningen_processor import OostGroningenProc
 from tests.core.fixtures import fixture_vera_venue
 
 
-class TestOostGroningenParser(unittest.TestCase):
+class TestOostGroningenParser(asynctest.TestCase):
 
-    def test_parse(self):
+    async def test_parse(self):
         venue = OostGroningenProcessor.create_venue()
-        content = fetch(venue.url)
+        content = await fetch(session=ClientSession(), url=venue.url)
         results = OostGroningenParser().parse(ParsingContext(venue=venue, content=content))
         assert_that(len(results), equal_to(8))
 

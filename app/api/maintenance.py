@@ -4,7 +4,8 @@ from typing import Any
 
 from flask import Blueprint, request, Response
 
-from app.application_data import venue_repository, event_repository, processors_map
+from app import application_data
+from app.application_data import event_repository
 from app.core.app_config import AppConfig
 
 MAINTENANCE_ROUTES = Blueprint('maintenance', __name__, template_folder='templates')
@@ -13,11 +14,8 @@ MAINTENANCE_ROUTES = Blueprint('maintenance', __name__, template_folder='templat
 @MAINTENANCE_ROUTES.route('/maintenance/fetch-data')
 def maintenance_fetch_data() -> Any:
     if AppConfig.is_web_request_allowed(request):
-        venue_id = request.args.get('venue_id')
-        if venue_id is None or not venue_repository.is_registered(venue_id):
-            return Response(status=404)
-        processors_map[venue_id].sync_stores()
-        return Response()
+        application_data.sync_venues()
+        return Response(status=200)
     return Response(status=400)
 
 

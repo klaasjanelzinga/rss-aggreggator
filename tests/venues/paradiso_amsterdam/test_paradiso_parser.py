@@ -1,5 +1,7 @@
 import unittest
 
+import asynctest
+from aiohttp import ClientSession
 from hamcrest import equal_to, none, is_not
 from hamcrest.core import assert_that
 
@@ -9,12 +11,12 @@ from app.venues.paradiso_amsterdam.paradiso_parser import ParadisoParser
 from app.venues.paradiso_amsterdam.paradiso_processor import ParadisoProcessor
 
 
-class TestParadisoParser(unittest.TestCase):
+class TestParadisoParser(asynctest.TestCase):
 
-    def test_sample_file_page_1(self):
+    async def test_sample_file_page_1(self):
         venue = ParadisoProcessor.create_venue()
         parser = ParadisoParser()
-        data = fetch(f'{venue.source_url}/page=1')
+        data = await fetch(session=ClientSession(), url=f'{venue.source_url}/page=1')
 
         results = parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(len(results), equal_to(30))
@@ -35,10 +37,10 @@ class TestParadisoParser(unittest.TestCase):
             assert_that(event.title, is_not(none))
             assert_that(event.url, is_not(none))
 
-    def test_sample_file_page_2(self):
+    async def test_sample_file_page_2(self):
         venue = ParadisoProcessor.create_venue()
         parser = ParadisoParser()
-        data = fetch(f'{venue.source_url}/page=2')
+        data = await fetch(session=ClientSession(), url=f'{venue.source_url}/page=2')
 
         results = parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(len(results), equal_to(1))
