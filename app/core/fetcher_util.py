@@ -24,7 +24,6 @@ URL_TO_MOCK_FILE_DICT = {
 
 async def fetch(session: ClientSession, url: str) -> str:
     if AppConfig.is_running_in_gae():
-        logging.info('fetching url %s', url)
         async with session.get(url) as response:
             return await response.text()
     logging.getLogger(__name__).warning('Retrieving stubbed data locally for %s', url)
