@@ -20,6 +20,7 @@ class SimplonProcessor(VenueProcessor):
     def create_venue() -> Venue:
         return Venue(venue_id='simplon-groningen',
                      name='Simplon Groningen',
+                     short_name='Simplon NL-GRN',
                      phone='0503184150',
                      city='Groningen',
                      country='NL',

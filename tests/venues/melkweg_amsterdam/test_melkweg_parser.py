@@ -14,9 +14,15 @@ from app.venues.melkweg_amsterdam.melkweg_processor import MelkwegProcessor
 
 class TestMelkwegParser(asynctest.TestCase):
 
+    async def setUp(self) -> None:
+        self.session = ClientSession()
+
+    async def tearDown(self) -> None:
+        await self.session.close()
+
     async def test_parse(self):
 
-        content = await fetch(url='https://www.melkweg.nl/large-json', session=ClientSession())
+        content = await fetch(url='https://www.melkweg.nl/large-json', session=self.session)
         venue = MelkwegProcessor.create_venue()
         parser = MelkwegParser()
         results = parser.parse(ParsingContext(venue=venue, content=content))
@@ -47,7 +53,7 @@ class TestMelkwegParser(asynctest.TestCase):
 
     async def test_small_sample(self):
         venue = MelkwegProcessor.create_venue()
-        data = await fetch(session=ClientSession(), url=venue.source_url)
+        data = await fetch(session=self.session, url=venue.source_url)
         events = MelkwegParser().parse(ParsingContext(venue, data))
         assert_that(len(events), equal_to(46))
 

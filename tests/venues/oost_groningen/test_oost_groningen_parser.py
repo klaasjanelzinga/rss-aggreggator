@@ -14,9 +14,15 @@ from tests.core.fixtures import fixture_vera_venue
 
 class TestOostGroningenParser(asynctest.TestCase):
 
+    async def setUp(self) -> None:
+        self.session = ClientSession()
+
+    async def tearDown(self) -> None:
+        await self.session.close()
+
     async def test_parse(self):
         venue = OostGroningenProcessor.create_venue()
-        content = await fetch(session=ClientSession(), url=venue.url)
+        content = await fetch(session=self.session, url=venue.url)
         results = OostGroningenParser().parse(ParsingContext(venue=venue, content=content))
         assert_that(len(results), equal_to(8))
 

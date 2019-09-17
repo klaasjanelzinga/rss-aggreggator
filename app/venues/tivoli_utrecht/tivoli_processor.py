@@ -20,6 +20,7 @@ class TivoliProcessor(VenueProcessor):
     def create_venue() -> Venue:
         return Venue(venue_id='tivoli-utrecht',
                      name='Tivoli Vredenburg',
+                     short_name='Tivoli NL-UTR',
                      phone='030 - 2314544',
                      city='Utrecht',
                      country='NL',

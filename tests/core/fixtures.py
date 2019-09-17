@@ -31,6 +31,7 @@ def fixture_vera_event_mock() -> Event:
 def fixture_vera_venue() -> Venue:
     return Venue(venue_id='vera-groningen',
                  name='VERA-Groningen',
+                 short_name='Vera NL-GRN',
                  phone='+31 (0)50 313 46 81',
                  city='Groningen',
                  country='NL',

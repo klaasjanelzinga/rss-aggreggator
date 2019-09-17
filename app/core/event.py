@@ -3,7 +3,7 @@ import logging
 import re
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import List, Any
+from typing import List, Any, Optional
 
 import pytz
 
@@ -20,7 +20,7 @@ class Event:
     source: str
     date_published: datetime
     when: datetime
-    image_url: str = None
+    image_url: Optional[str] = None
     search_terms: List[str] = field(default_factory=list)
     event_id: str = field(default_factory=str)
 

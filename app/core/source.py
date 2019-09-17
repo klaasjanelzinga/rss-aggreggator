@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List, AsyncIterable, Any, Coroutine
+from typing import List, AsyncIterable
 
 from aiohttp import ClientSession
 
@@ -37,5 +37,5 @@ class Source(ABC):
             done = len(new_events) < items_per_page
 
     @abstractmethod
-    async def fetch_events(self, session: ClientSession) -> Coroutine[Any, Any, AsyncIterable[List[Event]]]:
+    async def fetch_events(self, session: ClientSession) -> AsyncIterable[List[Event]]:
         pass

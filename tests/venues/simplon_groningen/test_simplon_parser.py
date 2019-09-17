@@ -13,10 +13,16 @@ from app.venues.simplon_groningen.simplon_processor import SimplonProcessor
 
 class TestSimplonParser(asynctest.TestCase):
 
+    async def setUp(self) -> None:
+        self.session = ClientSession()
+
+    async def tearDown(self) -> None:
+        await self.session.close()
+
     async def test_parse_sample(self):
         venue = SimplonProcessor.create_venue()
         parser = SimplonParser()
-        data = await fetch(session=ClientSession(), url=venue.url)
+        data = await fetch(session=self.session, url=venue.url)
         results = parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(len(results), equal_to(29))
         event = results[0]

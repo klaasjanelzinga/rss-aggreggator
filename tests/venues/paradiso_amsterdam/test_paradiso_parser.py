@@ -13,10 +13,16 @@ from app.venues.paradiso_amsterdam.paradiso_processor import ParadisoProcessor
 
 class TestParadisoParser(asynctest.TestCase):
 
+    async def setUp(self) -> None:
+        self.session = ClientSession()
+
+    async def tearDown(self) -> None:
+        await self.session.close()
+
     async def test_sample_file_page_1(self):
         venue = ParadisoProcessor.create_venue()
         parser = ParadisoParser()
-        data = await fetch(session=ClientSession(), url=f'{venue.source_url}/page=1')
+        data = await fetch(session=self.session, url=f'{venue.source_url}/page=1')
 
         results = parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(len(results), equal_to(30))
@@ -40,7 +46,7 @@ class TestParadisoParser(asynctest.TestCase):
     async def test_sample_file_page_2(self):
         venue = ParadisoProcessor.create_venue()
         parser = ParadisoParser()
-        data = await fetch(session=ClientSession(), url=f'{venue.source_url}/page=2')
+        data = await fetch(session=self.session, url=f'{venue.source_url}/page=2')
 
         results = parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(len(results), equal_to(1))

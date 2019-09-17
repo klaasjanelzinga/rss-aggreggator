@@ -10,6 +10,7 @@ from app.core.datastore_utils import DatastoreUtils
 @dataclass
 class Venue:
     name: str
+    short_name: str
     url: str
     venue_id: str
     email: str

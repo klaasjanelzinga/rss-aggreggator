@@ -13,14 +13,18 @@ from app.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
 
 class TestTivoliUtrechtProcessor(asynctest.TestCase):
 
-    def setUp(self) -> None:
+    async def tearDown(self) -> None:
+        await self.session.close()
+
+    async def setUp(self) -> None:
+        self.session = ClientSession()
         self.event_repository = Mock(spec=EventRepository)
         self.venue_repository = Mock(spec=VenueRepository)
         self.processor = TivoliProcessor(event_repository=self.event_repository, venue_repository=self.venue_repository)
 
     async def test_process_upserted_all_events(self):
         self.event_repository.upsert_no_slicing.return_value = []
-        total = await self.processor.async_store(session=ClientSession())
+        total = await self.processor.async_store(session=self.session)
         self.event_repository.upsert_no_slicing.assert_called()
         args = self.event_repository.upsert_no_slicing.call_args[0][0]
         assert_that(total, equal_to(31))

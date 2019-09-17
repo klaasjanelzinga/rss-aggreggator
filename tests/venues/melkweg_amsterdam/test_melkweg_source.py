@@ -9,12 +9,15 @@ from app.venues.melkweg_amsterdam.melkweg_source import MelkwegSource
 
 class TestMelkwegAmsterdamSource(asynctest.TestCase):
 
-    def setUp(self) -> None:
+    async def setUp(self) -> None:
+        self.session = ClientSession()
         self.source = MelkwegSource(MelkwegProcessor.create_venue())
 
+    async def tearDown(self) -> None:
+        await self.session.close()
+
     async def test_sample_file(self):
-        session = ClientSession()
         res = 0
-        async for e in (await self.source.fetch_events(session=session)):
+        async for e in (await self.source.fetch_events(session=self.session)):
             res += len(e)
         assert_that(res, equal_to(46))

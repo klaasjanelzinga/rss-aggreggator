@@ -20,6 +20,7 @@ class SpotProcessor(VenueProcessor):
     def create_venue() -> Venue:
         return Venue(venue_id='spot-groningen',
                      name='SPOT',
+                     short_name='Spot NL-GRN',
                      phone='+31 (0)50-3680111',
                      city='Groningen',
                      country='NL',

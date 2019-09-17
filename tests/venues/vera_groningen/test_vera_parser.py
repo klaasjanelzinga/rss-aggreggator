@@ -13,10 +13,16 @@ from app.venues.vera_groningen.vera_processor import VeraProcessor
 
 class TestVeraGroningenParser(asynctest.TestCase):
 
+    async def setUp(self) -> None:
+        self.session = ClientSession()
+
+    async def tearDown(self) -> None:
+        await self.session.close()
+
     async def test_sample_file(self):
         venue = VeraProcessor.create_venue()
         parser = VeraParser()
-        data = await fetch(session=ClientSession(), url=f'{venue.url}/page=1')
+        data = await fetch(session=self.session, url=f'{venue.url}/page=1')
 
         results = parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(len(results), equal_to(20))
@@ -44,7 +50,7 @@ class TestVeraGroningenParser(asynctest.TestCase):
     async def test_raw_fetches(self):
         venue = VeraProcessor.create_venue()
         parser = VeraParser()
-        data = await fetch(session=ClientSession(), url=f'{venue.url}/page=1')
+        data = await fetch(session=self.session, url=f'{venue.url}/page=1')
         results = parser.parse(ParsingContext(venue=venue, content=data))
         for event in results:
             assert_that(event.when, is_not(none))
@@ -52,7 +58,7 @@ class TestVeraGroningenParser(asynctest.TestCase):
             assert_that(event.title, is_not(none))
             assert_that(event.url, is_not(none))
 
-        data = await fetch(session=ClientSession(), url=f'{venue.url}/page=2')
+        data = await fetch(session=self.session, url=f'{venue.url}/page=2')
         results = parser.parse(ParsingContext(venue=venue, content=data))
         for event in results:
             assert_that(event.when, is_not(none))

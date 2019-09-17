@@ -11,10 +11,16 @@ from app.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
 
 class TestTivoliParser(asynctest.TestCase):
 
+    async def setUp(self) -> None:
+        self.session = ClientSession()
+
+    async def tearDown(self) -> None:
+        await self.session.close()
+
     async def test_sample_file(self):
         venue = TivoliProcessor.create_venue()
         parser = TivoliParser()
-        data = await fetch(session=ClientSession(), url=f'{venue.url}/page=1')
+        data = await fetch(session=self.session, url=f'{venue.url}/page=1')
         results = parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(len(results), equal_to(30))
         event = [result for result in results if result.title == "Leuk Dat Je d'r Bent Band"][0]

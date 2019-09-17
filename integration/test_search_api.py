@@ -1,6 +1,6 @@
 import base64
-import unittest
 
+import asynctest
 from aiohttp import ClientSession
 from hamcrest import equal_to
 from hamcrest.core import assert_that
@@ -8,7 +8,7 @@ from hamcrest.core import assert_that
 from integration.integration_utils import with_url
 
 
-class TestSearchApi(unittest.TestCase):
+class TestSearchApi(asynctest.TestCase):
 
     async def setUp(self) -> None:
         self.endpoint = 'http://localhost:8080'

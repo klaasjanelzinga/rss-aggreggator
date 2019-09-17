@@ -1,6 +1,6 @@
-import unittest
 from xml.etree import ElementTree
 
+import asynctest
 from aiohttp import ClientSession
 from hamcrest import equal_to
 from hamcrest.core import assert_that
@@ -8,7 +8,7 @@ from hamcrest.core import assert_that
 from integration.integration_utils import with_url
 
 
-class TestEventsXml(unittest.TestCase):
+class TestEventsXml(asynctest.TestCase):
 
     async def setUp(self) -> None:
         self.endpoint = 'http://localhost:8080'
@@ -21,7 +21,7 @@ class TestEventsXml(unittest.TestCase):
     async def test_events_xml(self):
         result = await self.session.get(f'{self.endpoint}/events.xml')
         assert_that(result.status, equal_to(200))
-        root = ElementTree.fromstring(result.content)
+        root = ElementTree.fromstring(await result.text())
         assert_that(len(root), equal_to(1))
         assert_that(root.tag, equal_to('rss'))
         channel = root[0]

@@ -1,4 +1,4 @@
-from typing import AsyncIterable, List, Coroutine, Any
+from typing import AsyncIterable, List
 
 from aiohttp import ClientSession
 
@@ -17,7 +17,7 @@ class TivoliSource(Source):
         self.venue = venue
         self.scrape_url = scrape_url
 
-    async def fetch_events(self, session: ClientSession) -> Coroutine[Any, Any, AsyncIterable[List[Event]]]:
+    async def fetch_events(self, session: ClientSession) -> AsyncIterable[List[Event]]:
         return Source.fetch_page_indexed(session=session,
                                          parser=TivoliParser(),
                                          venue=self.venue,

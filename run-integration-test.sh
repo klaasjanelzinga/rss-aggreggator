@@ -9,7 +9,7 @@ else
     export GOOGLE_APPLICATION_CREDENTIALS=`pwd`/test-ds.json
 fi
 
-[[ ! -f ${GOOGLE_APPLICATION_CREDENTIALS} ]] && echo "Cannot read in test-ds.json or ~/Downloads/ds.json" && exit 1
+[[ ! -f ${GOOGLE_APPLICATION_CREDENTIALS} ]] && echo "Cannot read in test-ds.json or ~/Downloads/test-ds.json" && exit 1
 
 python3 main.py &
 

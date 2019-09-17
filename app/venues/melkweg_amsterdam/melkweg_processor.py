@@ -19,6 +19,7 @@ class MelkwegProcessor(VenueProcessor):
     @staticmethod
     def create_venue() -> Venue:
         return Venue(venue_id='melkweg-amsterdam',
+                     short_name='Melkweg NL-AMS',
                      name='Melkweg Amsterdam',
                      phone='',
                      city='Amsterdam',

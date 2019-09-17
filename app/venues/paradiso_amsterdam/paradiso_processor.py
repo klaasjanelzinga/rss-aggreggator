@@ -19,6 +19,7 @@ class ParadisoProcessor(VenueProcessor):
     @staticmethod
     def create_venue() -> Venue:
         return Venue(venue_id='paradiso-amsterdam',
+                     short_name='Paradiso NL-AMS',
                      name='Paradiso Amsterdam',
                      phone='',
                      city='Amsterdam',

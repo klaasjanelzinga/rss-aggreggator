@@ -13,7 +13,7 @@ from app.core.venue.venue import Venue
 
 class VenueProcessor(ABC):
 
-    def __init__(self, event_repository: EventRepository, venue: Venue):
+    def __init__(self, event_repository: EventRepository, venue: Venue) -> None:
         self.event_repository = event_repository
         self.venue = venue
         self.logger = logging.getLogger(__name__)
@@ -26,16 +26,16 @@ class VenueProcessor(ABC):
                 events = [e for e in fetched_events if e.is_valid()]
                 accumulator.extend(events)
                 total += len(events)
-                events = VenueProcessor.slice_it(400, events)
-                for slice_of_events in events:
+                sliced_events = VenueProcessor.slice_it(400, events)
+                for slice_of_events in sliced_events:
                     self.event_repository.upsert_no_slicing(slice_of_events)
 
             logging.getLogger(__name__).info('Upserted %d events for %s', total, self.venue.venue_id)
             self.venue.last_fetched_date = datetime.now()
-            return total
         # pylint: disable=W0703
         except Exception as exception:
             logging.getLogger(__name__).exception('Unable to sync %s %s', self.venue.venue_id, exception)
+        return total
 
     @staticmethod
     def slice_it(batches: int, items: List[Event]) -> List[List[Event]]:

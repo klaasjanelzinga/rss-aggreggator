@@ -35,7 +35,7 @@ class EventRepository:
     def fetch_items(self, cursor: Optional[bytes], limit: Optional[int]) -> QueryResult:
         google_cursor = DatastoreUtils.create_cursor(earlier_curor=cursor)
         if google_cursor is not None and google_cursor.decode('utf-8') == 'DONE':
-            return QueryResult(items=[], token=base64.encodebytes('DONE'))
+            return QueryResult(items=iter([]), token=base64.encodebytes(b'DONE'))
         query = self.client.query(kind='Event')
         query.order = ['when']
 
@@ -50,7 +50,7 @@ class EventRepository:
     def search(self, term: str, cursor: Optional[bytes] = None, limit: Optional[int] = None) -> QueryResult:
         google_cursor = DatastoreUtils.create_cursor(earlier_curor=cursor)
         if google_cursor is not None and google_cursor.decode('utf-8') == 'DONE':
-            return QueryResult(items=[], token=base64.encodebytes('DONE'))
+            return QueryResult(items=iter([]), token=base64.encodebytes(b'DONE'))
 
         query = self.client.query(kind='Event')
         # pylint: disable=expression-not-assigned

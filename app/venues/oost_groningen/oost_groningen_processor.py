@@ -19,6 +19,7 @@ class OostGroningenProcessor(VenueProcessor):
     @staticmethod
     def create_venue() -> Venue:
         return Venue(venue_id='oost-groningen',
+                     short_name='Oost NL-GRN',
                      name='Oost Groningen',
                      phone='',
                      city='Groningen',

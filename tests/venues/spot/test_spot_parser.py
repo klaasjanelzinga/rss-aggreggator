@@ -13,12 +13,16 @@ from app.venues.spot.spot_processor import SpotProcessor
 
 class TestSpotParser(asynctest.TestCase):
 
-    def setUp(self):
+    async def tearDown(self) -> None:
+        await self.session.close()
+
+    async def setUp(self):
+        self.session = ClientSession()
         self.parser = SpotParser()
 
     async def test_sample_file(self):
         venue = SpotProcessor.create_venue()
-        data = await fetch(session=ClientSession(), url=venue.url)
+        data = await fetch(session=self.session, url=venue.url)
         results = self.parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(results, is_not(none()))
         assert_that(len(results), equal_to(58))

@@ -14,8 +14,8 @@ class RSSChannel:
     managing_editor: str = 'klaasjanelzinga@gmail.com'
     web_master: str = 'klaasjanelzinga@gmail.com'
     generator: str = 'Python3'
-    pub_date: str = datetime.now()
-    last_build_date: str = datetime.now()
+    pub_date: datetime = datetime.now()
+    last_build_date: datetime = datetime.now()
     category: str = 'Entertainment'
     docs: str = 'https://cyber.harvard.edu/rss/rss.html'
 

@@ -13,11 +13,10 @@ echo "Running pytests"
 pytest tests --cov . --cov-report=html
 [[ $? -ne 0 ]] && echo "Pytests tests failed" && exit 1
 
+echo "Building frontend"
+(cd frontend && ./deploy.sh)
+[[ $? -ne 0 ]] && echo "Frontend build failed" && exit 1
+
 `pwd`/run-integration-test.sh
 [[ $? -ne 0 ]] && echo "Integration tests failed" && exit 1
 sleep 1
-
-echo "Building frontend"
-(cd frontend && npm run-script build)
-[[ $? -ne 0 ]] && echo "Frontend build failed" && exit 1
-
