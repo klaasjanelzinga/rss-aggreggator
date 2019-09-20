@@ -5,7 +5,7 @@
 
 ### running the app local
 
-        ./start-all.sh
+        scripts/start-all.sh
 
 Will start 
 
@@ -13,19 +13,29 @@ Will start
 - react frontend on port 3000
 - python backend on port 8080
 
-Connect to port 80 to see the app. You will need a gcloud database with priviliges.
+Connect to port 80 to see the app. You will need a gcloud database with priviliges, the authorization file must be
+named `test-ds.json` in `$HOME/Downloads`.
 
 ## Required software
 
 - python3.7
 - docker
+- npm / node
 
+## Building the app
 
-### python 
+        scripts/init-environment.sh - initializes pip and npm, run inside virtualenv!
+        scripts/build.sh - builds, unittest.
+        scripts/integration-test.sh - runs app integration test.
+        scripts/clean.sh - removes all build artifacts.
+        scripts/upgrade-pip.sh - upgrade pip dependencies.
 
-Upgrade all deps:
+        ./run-before-commit.sh - cleans, builds and tests the app.
 
-        cat requirements.txt | cut -f1 -d= | xargs pip install --upgrade 
+### run coverage pytest -> html
+
+        (venv) $ pytest --cov . --cov-report=html tests
+
 
 ### travis
 
@@ -39,13 +49,10 @@ Upgrade all deps:
         gcloud init
         gcloud config set project ...
 
-### gcloud - travis
+### gcloud - travis - credentials
+
+File `secrets.tar.enc` contains travis-deployer.json and test-ds.json. These files are used in the
+integration test and for deploying.
 
         travis encrypt-file secrets.tar --add --com
-        # contains travis-deployer.json and test-ds.json
-        
-    
-### run coverage pytest -> html
-
-        (venv) $ pytest --cov . --cov-report=html 
 

@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
 
+# --
+# runs integration tests
+
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+project_dir="$(cd "${script_dir}"/.. && pwd )"
+
+cd "$project_dir" || (echo "project_dir not found" && exit 1)
+
 echo "Starting app"
 ps aux | grep main.py |grep -v gre | awk '{ print $2 }' | xargs kill
 if [[ -f ${HOME}/Downloads/test-ds.json ]]
 then
-    export GOOGLE_APPLICATION_CREDENTIALS=/Users/klaasjanelzinga/Downloads/test-ds.json
+    export GOOGLE_APPLICATION_CREDENTIALS=$HOME/Downloads/test-ds.json
 else
     export GOOGLE_APPLICATION_CREDENTIALS=`pwd`/test-ds.json
 fi
