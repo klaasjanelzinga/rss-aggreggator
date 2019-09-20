@@ -8,7 +8,7 @@ class Transformer:
     def item_to_rss(item: Event) -> RSSItem:
         venue = item.venue
         when = venue.convert_utc_to_venue_timezone(item.when).strftime('%Y-%m-%d %H:%M')
-        title = f'[{venue.short_name}] {item.title}'
+        title = f'{item.title} [{venue.short_name}]'
         image_url = (f'<img src="{item.image_url}" alt="image for event" width=300 height=160/>'
                      if item.image_url is not None
                      else '')
