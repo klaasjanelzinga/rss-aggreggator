@@ -6,6 +6,7 @@ install:
 - scripts/init-environment.sh
 script:
 - scripts/build.sh
+- scripts/integration-test.sh
 
 deploy:
 - provider: gae
