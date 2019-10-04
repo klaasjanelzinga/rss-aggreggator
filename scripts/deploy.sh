@@ -12,9 +12,16 @@ then
     exit 1
 fi 
 
-if [ "git rev-parse --abbrev-ref HEAD" != "master" ]
+if [ "`git rev-parse --abbrev-ref HEAD`" != "master" ]
 then
     echo "Can only deploy from master"
+    exit 1
+fi
+
+if [ "`git diff --stat --cached origin/master`" != "" ]
+then
+    echo "Not all changes are pushed to origin/master"
+    git diff --stat --cached origin/master
     exit 1
 fi
 
