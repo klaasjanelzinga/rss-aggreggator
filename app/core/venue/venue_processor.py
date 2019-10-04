@@ -12,7 +12,6 @@ from app.core.venue.venue import Venue
 
 
 class VenueProcessor(ABC):
-
     def __init__(self, event_repository: EventRepository, venue: Venue) -> None:
         self.event_repository = event_repository
         self.venue = venue
@@ -30,11 +29,11 @@ class VenueProcessor(ABC):
                 for slice_of_events in sliced_events:
                     self.event_repository.upsert_no_slicing(slice_of_events)
 
-            logging.getLogger(__name__).info('Upserted %d events for %s', total, self.venue.venue_id)
+            logging.getLogger(__name__).info("Upserted %d events for %s", total, self.venue.venue_id)
             self.venue.last_fetched_date = datetime.now()
         # pylint: disable=W0703
         except Exception as exception:
-            logging.getLogger(__name__).exception('Unable to sync %s %s', self.venue.venue_id, exception)
+            logging.getLogger(__name__).exception("Unable to sync %s %s", self.venue.venue_id, exception)
         return total
 
     @staticmethod
@@ -44,8 +43,8 @@ class VenueProcessor(ABC):
         index = 0
         done = False
         while not done:
-            actual = min(pivot+index, len(items))
-            first = items[index:actual+index]
+            actual = min(pivot + index, len(items))
+            first = items[index : actual + index]
             done = actual == len(items)
             result.append(first)
             index += pivot

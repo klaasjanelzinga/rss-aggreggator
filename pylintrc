@@ -26,7 +26,7 @@ jobs=1
 # complex, nested conditions.
 limit-inference-results=100
 
-# List of plugins (as comma separated values of python modules names) to load,
+# List of plugins (as comma separated values of python module names) to load,
 # usually to register additional checkers.
 load-plugins=
 
@@ -60,8 +60,11 @@ confidence=
 # --enable=similarities". If you want to run only the classes checker, but have
 # no Warning level messages displayed, use "--disable=all --enable=classes
 # --disable=W".
-disable=missing-docstring,
+disable=print-statement,
+        missing-docstring,
         parameter-unpacking,
+        C0330,
+        C0301,
         unpacking-in-except,
         old-raise-syntax,
         backtick,
@@ -149,11 +152,11 @@ enable=c-extension-no-member
 
 [REPORTS]
 
-# Python expression which should return a note less than 10 (10 is the highest
-# note). You have access to the variables errors warning, statement which
-# respectively contain the number of errors / warnings messages and the total
-# number of statements analyzed. This is used by the global evaluation report
-# (RP0004).
+# Python expression which should return a score less than or equal to 10. You
+# have access to the variables 'error', 'warning', 'refactor', and 'convention'
+# which contain the number of messages in each category, as well as 'statement'
+# which is the total number of statements analyzed. This score is used by the
+# global evaluation report (RP0004).
 evaluation=10.0 - ((float(5 * error + warning + refactor + convention) / statement) * 10)
 
 # Template used to display messages. This is a python new-style format string
@@ -184,32 +187,12 @@ max-nested-blocks=5
 never-returning-functions=sys.exit
 
 
-[LOGGING]
+[STRING]
 
-# Format style used to check logging format string. `old` means using %
-# formatting, while `new` is for `{}` formatting.
-logging-format-style=old
-logging-modules=logging
-
-
-[SPELLING]
-
-# Limits count of emitted suggestions for spelling mistakes.
-max-spelling-suggestions=4
-
-# Spelling dictionary name. Available dictionaries: none. To make it working
-# install python-enchant package..
-spelling-dict=
-
-# List of comma separated words that should not be checked.
-spelling-ignore-words=
-
-# A path to a file that contains private dictionary; one word per line.
-spelling-private-dict-file=
-
-# Tells whether to store unknown words to indicated private dictionary in
-# --spelling-private-dict-file option instead of raising a message.
-spelling-store-unknown-words=no
+# This flag controls whether the implicit-str-concat-in-sequence should
+# generate a warning on implicit string concatenation in sequences defined over
+# several lines.
+check-str-concat-over-line-jumps=no
 
 
 [MISCELLANEOUS]
@@ -255,7 +238,7 @@ ignored-classes=optparse.Values,thread._local,_thread._local
 
 # List of module names for which member attributes should not be checked
 # (useful for modules/projects where namespaces are manipulated during runtime
-# and thus existing member attributes cannot be deduced by static analysis. It
+# and thus existing member attributes cannot be deduced by static analysis). It
 # supports qualified module names, as well as Unix pattern matching.
 ignored-modules=
 
@@ -271,35 +254,28 @@ missing-member-hint-distance=1
 # showing a hint for a missing member.
 missing-member-max-choices=1
 
+# List of decorators that change the signature of a decorated function.
+signature-mutators=
 
-[VARIABLES]
 
-# List of additional names supposed to be defined in builtins. Remember that
-# you should avoid defining new builtins when possible.
-additional-builtins=
+[SPELLING]
 
-# Tells whether unused global variables should be treated as a violation.
-allow-global-unused-variables=yes
+# Limits count of emitted suggestions for spelling mistakes.
+max-spelling-suggestions=4
 
-# List of strings which can identify a callback function by name. A callback
-# name must start or end with one of those strings.
-callbacks=cb_,
-          _cb
+# Spelling dictionary name. Available dictionaries: none. To make it work,
+# install the python-enchant package.
+spelling-dict=
 
-# A regular expression matching the name of dummy variables (i.e. expected to
-# not be used).
-dummy-variables-rgx=_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_
+# List of comma separated words that should not be checked.
+spelling-ignore-words=
 
-# Argument names that match this expression will be ignored. Default to name
-# with leading underscore.
-ignored-argument-names=_.*|^ignored_|^unused_
+# A path to a file that contains the private dictionary; one word per line.
+spelling-private-dict-file=
 
-# Tells whether we should check for unused import in __init__ files.
-init-import=no
-
-# List of qualified module names which can have objects that can redefine
-# builtins.
-redefining-builtins-modules=six.moves,past.builtins,future.builtins,builtins,io
+# Tells whether to store unknown words to the private dictionary (see the
+# --spelling-private-dict-file option) instead of raising a message.
+spelling-store-unknown-words=no
 
 
 [FORMAT]
@@ -339,6 +315,17 @@ single-line-class-stmt=no
 single-line-if-stmt=no
 
 
+[LOGGING]
+
+# Format style used to check logging format string. `old` means using %
+# formatting, `new` is for `{}` formatting,and `fstr` is for f-strings.
+logging-format-style=old
+
+# Logging modules to check that the string format arguments are in logging
+# function parameter format.
+logging-modules=logging
+
+
 [SIMILARITIES]
 
 # Ignore comments when computing similarities.
@@ -352,6 +339,36 @@ ignore-imports=yes
 
 # Minimum lines number of a similarity.
 min-similarity-lines=4
+
+
+[VARIABLES]
+
+# List of additional names supposed to be defined in builtins. Remember that
+# you should avoid defining new builtins when possible.
+additional-builtins=
+
+# Tells whether unused global variables should be treated as a violation.
+allow-global-unused-variables=yes
+
+# List of strings which can identify a callback function by name. A callback
+# name must start or end with one of those strings.
+callbacks=cb_,
+          _cb
+
+# A regular expression matching the name of dummy variables (i.e. expected to
+# not be used).
+dummy-variables-rgx=_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_
+
+# Argument names that match this expression will be ignored. Default to name
+# with leading underscore.
+ignored-argument-names=_.*|^ignored_|^unused_
+
+# Tells whether we should check for unused import in __init__ files.
+init-import=no
+
+# List of qualified module names which can have objects that can redefine
+# builtins.
+redefining-builtins-modules=six.moves,past.builtins,future.builtins,builtins,io
 
 
 [BASIC]
@@ -463,15 +480,67 @@ variable-naming-style=snake_case
 #variable-rgx=
 
 
-[STRING]
+[CLASSES]
 
-# This flag controls whether the implicit-str-concat-in-sequence should
-# generate a warning on implicit string concatenation in sequences defined over
-# several lines.
-check-str-concat-over-line-jumps=no
+# List of method names used to declare (i.e. assign) instance attributes.
+defining-attr-methods=__init__,
+                      __new__,
+                      setUp,
+                      __post_init__
+
+# List of member names, which should be excluded from the protected access
+# warning.
+exclude-protected=_asdict,
+                  _fields,
+                  _replace,
+                  _source,
+                  _make
+
+# List of valid names for the first argument in a class method.
+valid-classmethod-first-arg=cls
+
+# List of valid names for the first argument in a metaclass class method.
+valid-metaclass-classmethod-first-arg=cls
+
+
+[DESIGN]
+
+# Maximum number of arguments for function / method.
+max-args=5
+
+# Maximum number of attributes for a class (see R0902).
+max-attributes=20
+
+# Maximum number of boolean expressions in an if statement (see R0916).
+max-bool-expr=5
+
+# Maximum number of branch for function / method body.
+max-branches=12
+
+# Maximum number of locals for function / method body.
+max-locals=15
+
+# Maximum number of parents for a class (see R0901).
+max-parents=7
+
+# Maximum number of public methods for a class (see R0904).
+max-public-methods=20
+
+# Maximum number of return / yield for function / method body.
+max-returns=6
+
+# Maximum number of statements in function / method body.
+max-statements=50
+
+# Minimum number of public methods for a class (see R0903).
+min-public-methods=1
 
 
 [IMPORTS]
+
+# List of modules that can be imported at any level, not just the top level
+# one.
+allow-any-import-level=
 
 # Allow wildcard imports from modules that define __all__.
 allow-wildcard-with-all=no
@@ -503,60 +572,8 @@ known-standard-library=
 # Force import order to recognize a module as part of a third party library.
 known-third-party=enchant
 
-
-[CLASSES]
-
-# List of method names used to declare (i.e. assign) instance attributes.
-defining-attr-methods=__init__,
-                      __new__,
-                      setUp
-
-# List of member names, which should be excluded from the protected access
-# warning.
-exclude-protected=_asdict,
-                  _fields,
-                  _replace,
-                  _source,
-                  _make
-
-# List of valid names for the first argument in a class method.
-valid-classmethod-first-arg=cls
-
-# List of valid names for the first argument in a metaclass class method.
-valid-metaclass-classmethod-first-arg=cls
-
-
-[DESIGN]
-
-# Maximum number of arguments for function / method.
-max-args=5
-
-# Maximum number of attributes for a class (see R0902).
-max-attributes=7
-
-# Maximum number of boolean expressions in an if statement.
-max-bool-expr=5
-
-# Maximum number of branch for function / method body.
-max-branches=12
-
-# Maximum number of locals for function / method body.
-max-locals=15
-
-# Maximum number of parents for a class (see R0901).
-max-parents=7
-
-# Maximum number of public methods for a class (see R0904).
-max-public-methods=20
-
-# Maximum number of return / yield for function / method body.
-max-returns=6
-
-# Maximum number of statements in function / method body.
-max-statements=50
-
-# Minimum number of public methods for a class (see R0903).
-min-public-methods=1
+# Couples of modules and preferred modules, separated by a comma.
+preferred-modules=
 
 
 [EXCEPTIONS]

@@ -9,4 +9,4 @@ class UserProfile:
     avatar_url: str
 
     def __str__(self) -> str:
-        return f'UserProfile email={self.email}'
+        return f"UserProfile email={self.email}"

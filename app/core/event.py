@@ -25,7 +25,7 @@ class Event:
     event_id: str = field(default_factory=str)
 
     def __post_init__(self) -> None:
-        self.event_id = str(base64.encodebytes(bytes(self.url, 'utf-8')), 'utf-8') if self.url is not None else None
+        self.event_id = str(base64.encodebytes(bytes(self.url, "utf-8")), "utf-8") if self.url is not None else None
         self.search_terms = self.generate_search_terms()
 
     def __eq__(self, other: Any) -> bool:
@@ -36,24 +36,25 @@ class Event:
 
     def generate_search_terms(self) -> List[str]:
         search_terms = DatastoreUtils.split_term(self.title) + DatastoreUtils.split_term(self.description)
-        search_terms = [re.sub(r'[^\w]+', '', term.lower()) for term in search_terms if len(term) > 3]
+        search_terms = [re.sub(r"[^\w]+", "", term.lower()) for term in search_terms if len(term) > 3]
         search_terms.extend(self.venue.search_terms)
         return [term for term in search_terms if len(term) > 3]
 
     def __repr__(self) -> str:
-        return f'core.Event {self.url} {self.title} {self.description}'
+        return f"core.Event {self.url} {self.title} {self.description}"
 
     @staticmethod
     def is_not_empty(text: str) -> bool:
-        return text is not None and text != ''
+        return text is not None and text != ""
 
     def is_valid(self) -> bool:
-        valid_date = (self.when != datetime.min and
-                      self.when > datetime.now(pytz.timezone(self.venue.timezone)))
-        valid = (Event.is_not_empty(self.title) and
-                 Event.is_not_empty(self.description) and
-                 valid_date and
-                 Event.is_not_empty(self.url))
+        valid_date = self.when != datetime.min and self.when > datetime.now(pytz.timezone(self.venue.timezone))
+        valid = (
+            Event.is_not_empty(self.title)
+            and Event.is_not_empty(self.description)
+            and valid_date
+            and Event.is_not_empty(self.url)
+        )
         if not valid and valid_date:
-            logging.getLogger(__name__).warning('Invalid event %s', self)
+            logging.getLogger(__name__).warning("Invalid event %s", self)
         return valid

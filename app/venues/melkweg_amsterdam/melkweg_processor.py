@@ -7,7 +7,6 @@ from app.venues.melkweg_amsterdam.melkweg_source import MelkwegSource
 
 
 class MelkwegProcessor(VenueProcessor):
-
     def __init__(self, event_repository: EventRepository, venue_repository: VenueRepository):
         self.venue = MelkwegProcessor.create_venue()
         venue_repository.register(self.venue)
@@ -18,14 +17,16 @@ class MelkwegProcessor(VenueProcessor):
 
     @staticmethod
     def create_venue() -> Venue:
-        return Venue(venue_id='melkweg-amsterdam',
-                     short_name='Melkweg NL-AMS',
-                     name='Melkweg Amsterdam',
-                     phone='',
-                     city='Amsterdam',
-                     country='NL',
-                     timezone='Europe/Amsterdam',
-                     timezone_short='+02:00',
-                     email='info@melkweg.nl',
-                     source_url='https://www.melkweg.nl/agenda',
-                     url='https://www.melkweg.nl')
+        return Venue(
+            venue_id="melkweg-amsterdam",
+            short_name="Melkweg NL-AMS",
+            name="Melkweg Amsterdam",
+            phone="",
+            city="Amsterdam",
+            country="NL",
+            timezone="Europe/Amsterdam",
+            timezone_short="+02:00",
+            email="info@melkweg.nl",
+            source_url="https://www.melkweg.nl/agenda",
+            url="https://www.melkweg.nl",
+        )

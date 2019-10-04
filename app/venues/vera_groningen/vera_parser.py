@@ -37,23 +37,22 @@ from app.core.venue.venue import Venue
 #  </div>
 # </div>
 class VeraParser(Parser):
-
     def parse(self, parsing_context: ParsingContext) -> List[Event]:
-        soup = BeautifulSoup(parsing_context.content, features='html.parser')
-        events = soup.find_all('div', {'class': 'event-wrapper'})
+        soup = BeautifulSoup(parsing_context.content, features="html.parser")
+        events = soup.find_all("div", {"class": "event-wrapper"})
 
         return [VeraParser._transform(parsing_context.venue, tag) for tag in events]
 
     @staticmethod
     def _add_sup_text_from_text(parent_tag: Tag, text: str) -> str:
-        sup = parent_tag.find('sup')
-        return f'{text} ({sup.text})' if ParserUtil.has_non_empty_text(sup) else text
+        sup = parent_tag.find("sup")
+        return f"{text} ({sup.text})" if ParserUtil.has_non_empty_text(sup) else text
 
     @staticmethod
     def _find_extra(tag: Tag) -> str:
-        extra_tag = tag.find('h4', {'class': 'extra'})
+        extra_tag = tag.find("h4", {"class": "extra"})
         if extra_tag is None:
-            return ''
+            return ""
         extra = ParserUtil.remove_children_text_from(extra_tag, extra_tag.text)
         extra = VeraParser._add_sup_text_from_text(extra_tag, extra)
         return ParserUtil.sanitize_text(extra)
@@ -61,43 +60,45 @@ class VeraParser(Parser):
     @staticmethod
     def _transform(venue: Venue, tag: Tag) -> Event:
         source = venue.source_url
-        url = tag.find('a', {'class': 'event-link'})['href']
-        artist_tag = tag.find('h3', {'class': re.compile(r'artist|artist ')})
+        vera_url = tag.find("a", {"class": "event-link"})["href"]
+        artist_tag = tag.find("h3", {"class": re.compile(r"artist|artist ")})
         if artist_tag is not None:
             artist = ParserUtil.remove_children_text_from(artist_tag, artist_tag.text)
             artist = VeraParser._add_sup_text_from_text(artist_tag, artist)
             artist = ParserUtil.sanitize_text(artist)
         else:
-            artist = url
+            artist = vera_url
 
         extra = VeraParser._find_extra(tag)
 
-        extra_title = tag.find('h4', {'class': 'pretitle'})
+        extra_title = tag.find("h4", {"class": "pretitle"})
         if extra_title is not None:
-            extra_title = f'({ParserUtil.sanitize_text(extra_title.text)})'
+            extra_title = f"({ParserUtil.sanitize_text(extra_title.text)})"
         else:
-            extra_title = ''
+            extra_title = ""
 
-        when_tag = tag.find('div', {'class': 'date'})
+        when_tag = tag.find("div", {"class": "date"})
         if when_tag is not None:
             when = ParserUtil.remove_children_text_from(when_tag, when_tag.text)
             when = ParserUtil.sanitize_text(when)
-            when_time = tag.find('div', {'class': 'schedule'}).text
-            when_time = when_time[when_time.find('start: ') + 7:when_time.find('start: ') + 12]
-            when_date: datetime = dateparser.parse(f'{when} {when_time}{venue.timezone_short}', languages=['nl'])
+            when_time = tag.find("div", {"class": "schedule"}).text
+            when_time = when_time[when_time.find("start: ") + 7 : when_time.find("start: ") + 12]
+            when_date: datetime = dateparser.parse(f"{when} {when_time}{venue.timezone_short}", languages=["nl"])
         else:
             when_date = datetime.min
-        image_url = tag.find('div', {'class': 'artist-image'})['style']
-        image_url_end = image_url.find('\'', image_url.find('https') + 4)
-        image_url = image_url[image_url.find('https'):image_url_end]
+        image_url = tag.find("div", {"class": "artist-image"})["style"]
+        image_url_end = image_url.find("'", image_url.find("https") + 4)
+        image_url = image_url[image_url.find("https") : image_url_end]
 
         when_date = when_date if when_date is not None else datetime.now()
 
-        return Event(url=url,
-                     title=f'{artist} {extra_title}'.strip(),
-                     description=f'{artist}{" with support" if extra != "" else ""} {extra}'.strip(),
-                     venue=venue,
-                     source=source,
-                     date_published=datetime.now(),
-                     when=when_date,
-                     image_url=image_url)
+        return Event(
+            url=vera_url,
+            title=f"{artist} {extra_title}".strip(),
+            description=f'{artist}{" with support" if extra != "" else ""} {extra}'.strip(),
+            venue=venue,
+            source=source,
+            date_published=datetime.now(),
+            when=when_date,
+            image_url=image_url,
+        )

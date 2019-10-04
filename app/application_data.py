@@ -21,7 +21,7 @@ from app.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
 from app.venues.vera_groningen.vera_processor import VeraProcessor
 
 if AppConfig.is_running_in_gae():
-    LOGGING_CLIENT = google.cloud.logging.Client('rss-aggregator-236707')
+    LOGGING_CLIENT = google.cloud.logging.Client("rss-aggregator-236707")
     LOGGING_CLIENT.setup_logging(log_level=logging.INFO)
     LOGGING_CLIENT.get_default_handler().propagate = False
 else:
@@ -32,8 +32,9 @@ else:
 DATASTORE_CLIENT = datastore.Client()
 venue_repository: VenueRepository = VenueRepository()
 event_entity_transformer: EventEntityTransformer = EventEntityTransformer(venue_repository=venue_repository)
-event_repository: EventRepository = EventRepository(event_entity_transformer=event_entity_transformer,
-                                                    client=DATASTORE_CLIENT)
+event_repository: EventRepository = EventRepository(
+    event_entity_transformer=event_entity_transformer, client=DATASTORE_CLIENT
+)
 user_profile_repository: UserProfileRepository = UserProfileRepository(client=DATASTORE_CLIENT)
 
 processors: List[VenueProcessor] = [
@@ -43,7 +44,7 @@ processors: List[VenueProcessor] = [
     SimplonProcessor(event_repository, venue_repository),
     ParadisoProcessor(event_repository, venue_repository),
     MelkwegProcessor(event_repository, venue_repository),
-    TivoliProcessor(event_repository, venue_repository)
+    TivoliProcessor(event_repository, venue_repository),
 ]
 processors_map: Dict[str, VenueProcessor] = {processor.venue.venue_id: processor for processor in processors}
 

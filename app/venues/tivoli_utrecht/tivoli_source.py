@@ -9,17 +9,12 @@ from app.venues.tivoli_utrecht.tivoli_parser import TivoliParser
 
 
 class TivoliSource(Source):
-
-    def __init__(self,
-                 venue: Venue,
-                 scrape_url: str =
-                 'https://www.tivolivredenburg.nl/wp-admin/admin-ajax.php?action=get_events&page={}&categorie=&maand='):
-        self.venue = venue
-        self.scrape_url = scrape_url
+    def __init__(
+        self,
+        venue: Venue,
+        scrape_url: str = "https://www.tivolivredenburg.nl/wp-admin/admin-ajax.php?action=get_events&page={}&categorie=&maand=",
+    ):
+        super().__init__(venue, scrape_url, TivoliParser())
 
     async def fetch_events(self, session: ClientSession) -> AsyncIterable[List[Event]]:
-        return Source.fetch_page_indexed(session=session,
-                                         parser=TivoliParser(),
-                                         venue=self.venue,
-                                         scrape_url_format=self.scrape_url,
-                                         items_per_page=30)
+        return self.fetch_page_indexed(session=session, items_per_page=30)

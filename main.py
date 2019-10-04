@@ -12,7 +12,7 @@ from app.rss.rss_api import RSS_ROUTES
 
 # set to react specific build artifacts, NOTE, only localhost, gae -> app.yaml
 # pylint: disable=C0103
-app = Flask(__name__, static_folder='static/build/static', template_folder='static/build')
+app = Flask(__name__, static_folder="static/build/static", template_folder="static/build")
 
 # sync stores at start of app
 if not AppConfig.is_running_in_gae():
@@ -25,16 +25,16 @@ app.register_blueprint(USER_ROUTES)
 app.register_blueprint(VENUE_API_ROUTES)
 
 
-@app.route('/')
+@app.route("/")
 def hello() -> Any:
-    return render_template('index.html')
+    return render_template("index.html")
 
 
-@app.route('/channel-image.png')
+@app.route("/channel-image.png")
 def send_channel_image() -> Any:
-    return send_from_directory('static/build', 'channel-image.png')
+    return send_from_directory("static/build", "channel-image.png")
 
 
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8080, debug=True)
+if __name__ == "__main__":
+    app.run(host="127.0.0.1", port=8080, debug=True)
 # [END gae_python37_app]

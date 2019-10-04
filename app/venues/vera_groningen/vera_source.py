@@ -9,17 +9,13 @@ from app.venues.vera_groningen.vera_parser import VeraParser
 
 
 class VeraSource(Source):
-
-    def __init__(self,
-                 venue: Venue,
-                 scrape_url: str = 'https://www.vera-groningen.nl/wp/wp-admin/admin-ajax.php?'
-                                   'action=renderProgramme&category=all&page={}&perpage=20&lang=nl'):
-        self.venue = venue
-        self.scrape_url = scrape_url
+    def __init__(
+        self,
+        venue: Venue,
+        scrape_url: str = "https://www.vera-groningen.nl/wp/wp-admin/admin-ajax.php?"
+        "action=renderProgramme&category=all&page={}&perpage=20&lang=nl",
+    ):
+        super().__init__(venue, scrape_url, VeraParser())
 
     async def fetch_events(self, session: ClientSession) -> AsyncIterable[List[Event]]:
-        return Source.fetch_page_indexed(parser=VeraParser(),
-                                         venue=self.venue,
-                                         session=session,
-                                         scrape_url_format=self.scrape_url,
-                                         items_per_page=20)
+        return self.fetch_page_indexed(session=session, items_per_page=20)

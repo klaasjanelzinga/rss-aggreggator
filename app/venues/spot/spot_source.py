@@ -9,15 +9,8 @@ from app.venues.spot.spot_parser import SpotParser
 
 
 class SpotSource(Source):
-
-    def __init__(self,
-                 venue: Venue,
-                 scrape_url: str = 'https://www.spotgroningen.nl/programma'):
-        self.venue = venue
-        self.scrape_url = scrape_url
+    def __init__(self, venue: Venue, scrape_url: str = "https://www.spotgroningen.nl/programma"):
+        super().__init__(venue, scrape_url, SpotParser())
 
     async def fetch_events(self, session: ClientSession) -> AsyncIterable[List[Event]]:
-        return Source.fetch_page_in_one_call(session=session,
-                                             parser=SpotParser(),
-                                             venue=self.venue,
-                                             scrape_url=self.scrape_url)
+        return self.fetch_page_in_one_call(session=session)

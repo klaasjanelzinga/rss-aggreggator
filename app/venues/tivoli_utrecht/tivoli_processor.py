@@ -7,7 +7,6 @@ from app.venues.tivoli_utrecht.tivoli_source import TivoliSource
 
 
 class TivoliProcessor(VenueProcessor):
-
     def __init__(self, event_repository: EventRepository, venue_repository: VenueRepository):
         self.venue = TivoliProcessor.create_venue()
         venue_repository.register(self.venue)
@@ -18,14 +17,16 @@ class TivoliProcessor(VenueProcessor):
 
     @staticmethod
     def create_venue() -> Venue:
-        return Venue(venue_id='tivoli-utrecht',
-                     name='Tivoli Vredenburg',
-                     short_name='Tivoli NL-UTR',
-                     phone='030 - 2314544',
-                     city='Utrecht',
-                     country='NL',
-                     timezone='Europe/Amsterdam',
-                     timezone_short='+02:00',
-                     email='info@tivolivredenburg.nl',
-                     source_url='https://www.tivolivredenburg.nl/agenda/',
-                     url='https://www.tivolivredenburg.nl')
+        return Venue(
+            venue_id="tivoli-utrecht",
+            name="Tivoli Vredenburg",
+            short_name="Tivoli NL-UTR",
+            phone="030 - 2314544",
+            city="Utrecht",
+            country="NL",
+            timezone="Europe/Amsterdam",
+            timezone_short="+02:00",
+            email="info@tivolivredenburg.nl",
+            source_url="https://www.tivolivredenburg.nl/agenda/",
+            url="https://www.tivolivredenburg.nl",
+        )

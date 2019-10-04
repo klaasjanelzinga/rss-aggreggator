@@ -4,7 +4,6 @@ from app.core.venue.venue import Venue
 
 
 class VenueRepository:
-
     def __init__(self) -> None:
         self.registry: Dict[str, Venue] = {}
 

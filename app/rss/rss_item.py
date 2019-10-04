@@ -12,12 +12,12 @@ class RSSItem:
     guid: str
     source: str
 
-    def as_node(self) -> str:
-        item_element = Element('item')
-        SubElement(item_element, 'title').text = self.title
-        SubElement(item_element, 'link').text = self.link
-        SubElement(item_element, 'description').text = self.description
-        SubElement(item_element, 'guid').text = self.guid
-        SubElement(item_element, 'source').text = self.source
-        SubElement(item_element, 'author').text = self.author
+    def as_node(self) -> bytes:
+        item_element = Element("item")
+        SubElement(item_element, "title").text = self.title
+        SubElement(item_element, "link").text = self.link
+        SubElement(item_element, "description").text = self.description
+        SubElement(item_element, "guid").text = self.guid
+        SubElement(item_element, "source").text = self.source
+        SubElement(item_element, "author").text = self.author
         return ElementTree.tostring(item_element)

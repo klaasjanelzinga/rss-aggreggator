@@ -7,7 +7,6 @@ from app.venues.paradiso_amsterdam.paradiso_source import ParadisoSource
 
 
 class ParadisoProcessor(VenueProcessor):
-
     def __init__(self, event_repository: EventRepository, venue_repository: VenueRepository):
         self.venue = ParadisoProcessor.create_venue()
         venue_repository.register(self.venue)
@@ -18,14 +17,16 @@ class ParadisoProcessor(VenueProcessor):
 
     @staticmethod
     def create_venue() -> Venue:
-        return Venue(venue_id='paradiso-amsterdam',
-                     short_name='Paradiso NL-AMS',
-                     name='Paradiso Amsterdam',
-                     phone='',
-                     city='Amsterdam',
-                     country='NL',
-                     timezone='Europe/Amsterdam',
-                     email='info@paradiso.nl',
-                     timezone_short='+02:00',
-                     url='https://www.paradiso.nl',
-                     source_url='https://www.paradiso.nl/')
+        return Venue(
+            venue_id="paradiso-amsterdam",
+            short_name="Paradiso NL-AMS",
+            name="Paradiso Amsterdam",
+            phone="",
+            city="Amsterdam",
+            country="NL",
+            timezone="Europe/Amsterdam",
+            email="info@paradiso.nl",
+            timezone_short="+02:00",
+            url="https://www.paradiso.nl",
+            source_url="https://www.paradiso.nl/",
+        )

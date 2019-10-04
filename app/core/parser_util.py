@@ -4,10 +4,9 @@ from bs4.element import Tag
 
 
 class ParserUtil:
-
     @staticmethod
     def not_empty(text: str) -> bool:
-        return text is not None and text != '' and text.strip() != ''
+        return text is not None and text != "" and text.strip() != ""
 
     @staticmethod
     def is_empty(text: str) -> bool:
@@ -25,12 +24,12 @@ class ParserUtil:
 
     @staticmethod
     def sanitize_text(text: str) -> str:
-        return re.sub(r' {2,}', '', text).replace('\n', '')
+        return re.sub(r" {2,}", "", text).replace("\n", "")
 
     @staticmethod
     def remove_children_text_from(parent_tag: Tag, text: str) -> str:
         for tag in parent_tag.children:
             if isinstance(tag, Tag):
                 child_text = tag.text
-                text = text.replace(child_text, '')
+                text = text.replace(child_text, "")
         return text

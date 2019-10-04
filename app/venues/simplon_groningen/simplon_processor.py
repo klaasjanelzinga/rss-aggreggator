@@ -7,7 +7,6 @@ from app.venues.simplon_groningen.simplon_source import SimplonSource
 
 
 class SimplonProcessor(VenueProcessor):
-
     def __init__(self, event_repository: EventRepository, venue_repository: VenueRepository):
         self.venue = SimplonProcessor.create_venue()
         venue_repository.register(self.venue)
@@ -18,14 +17,16 @@ class SimplonProcessor(VenueProcessor):
 
     @staticmethod
     def create_venue() -> Venue:
-        return Venue(venue_id='simplon-groningen',
-                     name='Simplon Groningen',
-                     short_name='Simplon NL-GRN',
-                     phone='0503184150',
-                     city='Groningen',
-                     country='NL',
-                     timezone='Europe/Amsterdam',
-                     timezone_short='+02:00',
-                     email='info@simplon.nl',
-                     source_url='https://www.simplon.nl/agenda',
-                     url='https://www.simplon.nl')
+        return Venue(
+            venue_id="simplon-groningen",
+            name="Simplon Groningen",
+            short_name="Simplon NL-GRN",
+            phone="0503184150",
+            city="Groningen",
+            country="NL",
+            timezone="Europe/Amsterdam",
+            timezone_short="+02:00",
+            email="info@simplon.nl",
+            source_url="https://www.simplon.nl/agenda",
+            url="https://www.simplon.nl",
+        )
