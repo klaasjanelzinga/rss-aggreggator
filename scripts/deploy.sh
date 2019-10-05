@@ -27,7 +27,7 @@ fi
 
 
 $project_dir/run-before-commit.sh
-[[ $? -ne 0 ]] && echo "Build / test failed." && exit 1
+[ $? -ne 0 ] && echo "Build / test failed." && exit 1
 
 export version="develop-`git rev-parse --short HEAD`"
 echo "Version: $version"
