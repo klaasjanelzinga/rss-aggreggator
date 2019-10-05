@@ -1,8 +1,9 @@
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import List
 
 import dateparser
+import pytz
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 
@@ -84,13 +85,15 @@ class VeraParser(Parser):
             when_time = tag.find("div", {"class": "schedule"}).text
             when_time = when_time[when_time.find("start: ") + 7 : when_time.find("start: ") + 12]
             when_date: datetime = dateparser.parse(f"{when} {when_time}{venue.timezone_short}", languages=["nl"])
+            if when_date < (datetime.now(pytz.timezone(venue.timezone)) - timedelta(days=100)):
+                when_date = when_date + timedelta(days=365)
         else:
             when_date = datetime.min
         image_url = tag.find("div", {"class": "artist-image"})["style"]
         image_url_end = image_url.find("'", image_url.find("https") + 4)
         image_url = image_url[image_url.find("https") : image_url_end]
 
-        when_date = when_date if when_date is not None else datetime.now()
+        when_date = when_date if when_date is not None else datetime.now(pytz.timezone(venue.timezone))
 
         return Event(
             url=vera_url,

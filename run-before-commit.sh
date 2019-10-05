@@ -10,3 +10,5 @@ script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 "$script_dir"/scripts/integration-test.sh
 [[ $? -ne 0 ]] && echo "failed" && exit 1
+
+exit 0
