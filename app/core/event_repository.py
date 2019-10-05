@@ -1,5 +1,5 @@
 import base64
-from datetime import datetime
+from datetime import date, datetime
 from typing import List, Optional
 
 from google.cloud import datastore
@@ -31,6 +31,15 @@ class EventRepository:
         self.client.put_multi([self._generate_entity(event) for event in set(events)])
         return events
 
+    def fetch_items_on(self, when: date) -> QueryResult:
+        google_cursor = DatastoreUtils.create_cursor(earlier_curor=None)
+        query = self.client.query(kind="Event")
+        query.add_filter("when", ">", datetime.combine(when, datetime.min.time()))
+        query.add_filter("when", "<", datetime.combine(when, datetime.max.time()))
+        query.order = ["when"]
+        query_iter = query.fetch(start_cursor=google_cursor)
+        return DatastoreUtils.construct_query_result_from_query(query_iter)
+
     def fetch_items(self, cursor: Optional[bytes], limit: Optional[int]) -> QueryResult:
         google_cursor = DatastoreUtils.create_cursor(earlier_curor=cursor)
         if google_cursor is not None and google_cursor.decode("utf-8") == "DONE":
@@ -58,9 +67,9 @@ class EventRepository:
         query_iter = query.fetch(start_cursor=google_cursor, limit=limit)
         return DatastoreUtils.construct_query_result_from_query(query_iter)
 
-    def clean_items_before(self, date: datetime) -> int:
+    def clean_items_before(self, when: datetime) -> int:
         query = self.client.query(kind="Event")
-        query.add_filter("when", "<", date)
+        query.add_filter("when", "<", when)
         query.keys_only()
         keys = [key.key for key in list(query.fetch())]
         self.client.delete_multi(keys)

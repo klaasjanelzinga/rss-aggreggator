@@ -1,3 +1,4 @@
+from datetime import date, timedelta
 from typing import Any
 
 from flask import Blueprint, jsonify, request
@@ -27,6 +28,27 @@ def fetch_events() -> Any:
     events = [transform(EVENT_ENTITY_TRANSFORMER.to_event(item)) for item in query_result.items]
 
     return jsonify({"events": events, "fetch_offset": query_result.token.decode("utf-8")})
+
+
+@EVENT_API_ROUTES.route("/api/events/today", methods=["GET"])
+def fetch_today_events() -> Any:
+    query_result = event_repository.fetch_items_on(when=date.today())
+    events = [transform(EVENT_ENTITY_TRANSFORMER.to_event(item)) for item in query_result.items]
+    return jsonify({"events": events})
+
+
+@EVENT_API_ROUTES.route("/api/events/tomorrow", methods=["GET"])
+def fetch_tomorrow_events() -> Any:
+    query_result = event_repository.fetch_items_on(when=date.today() + timedelta(days=1))
+    events = [transform(EVENT_ENTITY_TRANSFORMER.to_event(item)) for item in query_result.items]
+    return jsonify({"events": events})
+
+
+@EVENT_API_ROUTES.route("/api/events/day-after-tomorrow", methods=["GET"])
+def fetch_day_after_tomorrow_events() -> Any:
+    query_result = event_repository.fetch_items_on(when=date.today() + timedelta(days=2))
+    events = [transform(EVENT_ENTITY_TRANSFORMER.to_event(item)) for item in query_result.items]
+    return jsonify({"events": events})
 
 
 @EVENT_API_ROUTES.route("/api/search", methods=["GET"])
