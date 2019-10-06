@@ -1,4 +1,3 @@
-import unittest
 from unittest.mock import Mock
 
 import asynctest
@@ -12,7 +11,6 @@ from app.venues.vera_groningen.vera_processor import VeraProcessor
 
 
 class TestVeraGroningenProcessor(asynctest.TestCase):
-
     async def tearDown(self) -> None:
         await self.session.close()
 
@@ -26,5 +24,4 @@ class TestVeraGroningenProcessor(asynctest.TestCase):
         self.event_repository.upsert_no_slicing.return_value = []
         result = await self.processor.async_store(session=self.session)
         self.event_repository.upsert_no_slicing.assert_called()
-        args = self.event_repository.upsert_no_slicing.call_args[0][0]
         assert_that(result, equal_to(34))

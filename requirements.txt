@@ -10,6 +10,7 @@ google-cloud-core==1.0.3
 google-cloud-datastore==1.9.0
 google-cloud-logging==1.13.0
 grpcio==1.24.1
+python-dateutil
 pytz==2019.2
 
 asynctest
