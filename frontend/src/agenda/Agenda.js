@@ -8,7 +8,7 @@ import AgendaItem from './AgendaItem';
 
 const styles = theme => ({
     agenda: {
-        top: '68px',
+        top: '120px',
         left: '0px',
         right: '0px',
         bottom: '0px',
@@ -51,7 +51,7 @@ class Agenda extends React.Component {
                     <NavigateNext></NavigateNext>
                 </Fab>
             }
-            if (this.props.events.length === 0){
+            if (this.props.events.length === 0) {
                 nothingFound = <p>Nothing found !</p>
             }
 
@@ -64,7 +64,7 @@ class Agenda extends React.Component {
                         ))}
                     </GridList>
                     <div className={classes.agendaFooter}>
-                            {moreButton}
+                        {moreButton}
                     </div>
                 </div>
             );

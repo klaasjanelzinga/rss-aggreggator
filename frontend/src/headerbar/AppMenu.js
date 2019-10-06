@@ -41,38 +41,35 @@ class AppMenu extends React.Component {
   }
 
   handleVenues() {
-
     this.handleClose();
     this.props.history.push('/venues');
   }
 
   handleEvents() {
-    console.log('handle events');
     this.handleClose();
     this.props.history.push('/');
   }
-
 
   render() {
 
     return (
       <div>
         <IconButton
-            aria-label="Application menu"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={this.handleMenu}
-            color="inherit">
-            <MenuIcon />
+          aria-label="Application menu"
+          aria-controls="menu-appbar"
+          aria-haspopup="true"
+          onClick={this.handleMenu}
+          color="inherit">
+          <MenuIcon />
         </IconButton>
         <Menu
-            id="menu-appbar"
-            anchorEl={this.state.anchorEl}
-            keepMounted
-            open={this.state.menuOpen}
-            onClose={this.handleClose} >
-            <MenuItem onClick={this.handleEvents}>Events</MenuItem>
-            <MenuItem onClick={this.handleVenues}>Venues</MenuItem>
+          id="menu-appbar"
+          anchorEl={this.state.anchorEl}
+          keepMounted
+          open={this.state.menuOpen}
+          onClose={this.handleClose} >
+          <MenuItem onClick={this.handleEvents}>Events</MenuItem>
+          <MenuItem onClick={this.handleVenues}>Venues</MenuItem>
         </Menu>
       </div>
     );
