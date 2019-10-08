@@ -49,11 +49,9 @@ class HeaderBar extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log('switching tab to ', props.selected)
     this.state = {
       selectedTab: SELECTED_TAB[props.selected],
     };
-
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -65,7 +63,6 @@ class HeaderBar extends React.Component {
 
   componentDidUpdate() {
     if (this.state.selectedTab !== SELECTED_TAB[this.props.selected]) {
-      console.log('updating view');
       this.setState({ selectedTab: SELECTED_TAB[this.props.selected] })
     }
   }
@@ -79,14 +76,18 @@ class HeaderBar extends React.Component {
   }
 
   renderTabs() {
-    if (this.props.selected === undefined) {
-      return <div></div>
-    } else {
+    if (this.props.selected === "SEARCH_RESULTS") {
       return <Tabs value={this.state.selectedTab} onChange={this.handleChange} aria-label="Tabs">
         <Tab label="Vandaag" />
         <Tab label="Morgen" />
         <Tab label="Alles" />
         <Tab label="Zoek resultaten" />
+      </Tabs>
+    } else {
+      return <Tabs value={this.state.selectedTab} onChange={this.handleChange} aria-label="Tabs">
+        <Tab label="Vandaag" />
+        <Tab label="Morgen" />
+        <Tab label="Alles" />
       </Tabs>
     }
   }

@@ -42,9 +42,6 @@ class TestEndpoints(asynctest.TestCase):
     async def test_api_events_tomorrow(self):
         await self.validate(f"{self.endpoint}/api/events/tomorrow")
 
-    async def test_api_events_day_after_tomorrow(self):
-        await self.validate(f"{self.endpoint}/api/events/day_after_tomorrow")
-
     async def test_api_venues(self):
         await self.validate(f"{self.endpoint}/api/venues")
 

@@ -40,41 +40,57 @@ const styles = theme => ({
 
 class Agenda extends React.Component {
 
+    constructor(props) {
+        super(props)
+        this.currentView = props.currentView
+    }
+
+    componentWillUpdate(props) {
+        if (props.currentView !== this.currentView) {
+            this.currentView = props.currentView
+            // attempt to scroll to top of list if the view changes. 
+            document.getElementById('top_element').scrollIntoView()
+        }
+    }
+
+    renderProgressBar(fetched) {
+        const { classes } = this.props
+        if (fetched) {
+            return <div />
+        } else {
+            return <div className={classes.progressbar}>
+                <LinearProgress />
+            </div>
+        }
+    }
+
     render() {
         const { classes } = this.props
-        if (this.props.eventsFetched) {
-            let moreButton
-            let nothingFound
-            if (!this.props.isFetchingDone) {
-                moreButton = <Fab color="secondary" aria-label="Next" className={classes.nextButton}
-                    onClick={this.props.fetchMoreEvents}>
-                    <NavigateNext></NavigateNext>
-                </Fab>
-            }
-            if (this.props.events.length === 0) {
-                nothingFound = <p>Nothing found !</p>
-            }
 
-            return (
-                <div className={classes.agenda}>
-                    {nothingFound}
-                    <GridList cols={1} className={classes.gridList}>
-                        {this.props.events.map(event => (
-                            <AgendaItem item={event} key={event.id} />
-                        ))}
-                    </GridList>
-                    <div className={classes.agendaFooter}>
-                        {moreButton}
-                    </div>
-                </div>
-            );
-        } else {
-            return (
-                <div className={classes.progressbar}>
-                    <LinearProgress />
-                </div>
-            );
+        let moreButton
+        let nothingFound
+        if (!this.props.isFetchingDone) {
+            moreButton = <Fab color="secondary" aria-label="Next" className={classes.nextButton}
+                onClick={this.props.fetchMoreEvents}>
+                <NavigateNext></NavigateNext>
+            </Fab>
         }
+        if (this.props.events.length === 0) {
+            nothingFound = <p>Nothing found, yet...</p>
+        }
+
+        return <div className={classes.agenda} id="top_element">
+            {nothingFound}
+            <GridList cols={1} className={classes.gridList}>
+                {this.props.events.map(event => (
+                    <AgendaItem item={event} key={event.id} />
+                ))}
+            </GridList>
+            {this.renderProgressBar(this.props.eventsFetched)}
+            <div className={classes.agendaFooter}>
+                {moreButton}
+            </div>
+        </div>
     }
 }
 

@@ -1,16 +1,16 @@
 aiohttp==3.6.1
 aiofiles==0.4.0
 Babel==2.7.0
-beautifulsoup4==4.8.0
+beautifulsoup4==4.8.1
 dateparser==0.7.2
 Flask
-google-api-core==1.14.2
+google-api-core==1.14.3
 google-auth==1.6.3
 google-cloud-core==1.0.3
 google-cloud-datastore==1.9.0
 google-cloud-logging==1.13.0
 grpcio==1.24.1
-pytz==2019.2
+pytz==2019.3
 
 asynctest
 coverage

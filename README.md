@@ -49,10 +49,8 @@ named `test-ds.json` in `$HOME/Downloads`.
         gcloud init
         gcloud config set project ...
 
-### gcloud - travis - credentials
+## deploy the app
 
-File `secrets.tar.enc` contains travis-deployer.json and test-ds.json. These files are used in the
-integration test and for deploying.
+        scripts/deploy.sh
 
-        travis encrypt-file secrets.tar --add --com
-
+You should have a clean repo and be on master.

@@ -8,15 +8,15 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      searchText: '',
       eventsFetched: false,
       fetch_offset: '',
       events: [],
-      is_searching: false,
       is_fetching_done: false,
       currentView: "TODAY",
     }
-    this.endpoint = '/api';
+    this.is_searching = false
+    this.searchTerms = ''
+    this.endpoint = '/api'
     this.eventEndpoint = `${this.endpoint}/events`
     this.todayEventEndpoint = `${this.endpoint}/events/today`
     this.tomorrowEventEndpoint = `${this.endpoint}/events/tomorrow`
@@ -33,9 +33,9 @@ class App extends Component {
   }
 
   fetchMoreEvents() {
-    this.setState({ 'eventsFetched': false })
-    if (this.state.is_searching) {
-      this.concatFetchedEvents(`${this.searchEndpoint}?fetch_offset=${this.state.fetch_offset}&term=${this.state.searchText}`)
+    this.setState({ eventsFetched: false })
+    if (this.is_searching) {
+      this.concatFetchedEvents(`${this.searchEndpoint}?fetch_offset=${this.state.fetch_offset}&term=${this.searchTerms}`)
     } else {
       this.concatFetchedEvents(`${this.eventEndpoint}?fetch_offset=${this.state.fetch_offset}`)
     }
@@ -45,9 +45,8 @@ class App extends Component {
     fetch(endpoint)
       .then(results => results.json())
       .then(results => {
-
         this.setState({
-          events: results.events,
+          events: this.state.events.concat(results.events),
           fetch_offset: results.fetch_offset,
           eventsFetched: true,
           is_fetching_done: this.is_fetching_done(results.fetch_offset),
@@ -60,18 +59,22 @@ class App extends Component {
       this.fetchTodayEvents()
       return;
     }
+    this.is_searching = true
+    this.searchTerms = searchTerms
     this.setState({
-      searchText: searchTerms,
       eventsFetched: false,
       fetch_offset: '',
       events: [],
-      is_searching: true,
       currentView: "SEARCH_RESULTS",
     })
     this.fetchEvents(`${this.searchEndpoint}?term=${searchTerms}`)
   }
 
   fetchEvents(endpoint) {
+    this.setState({
+      events: [],
+      eventsFetched: false,
+    })
     fetch(endpoint)
       .then(results => results.json())
       .then(results => {
@@ -85,14 +88,20 @@ class App extends Component {
   }
 
   fetchTodayEvents() {
+    this.is_searching = false
+    this.search_terms = ''
     this.fetchEvents(this.todayEventEndpoint);
   }
 
   fetchTomorrowEvents() {
+    this.is_searching = false
+    this.search_terms = ''
     this.fetchEvents(this.tomorrowEventEndpoint);
   }
 
   fetchAllEvents() {
+    this.is_searching = false
+    this.search_terms = ''
     this.fetchEvents(this.eventEndpoint);
   }
 
@@ -101,19 +110,15 @@ class App extends Component {
   }
 
   switchView(newView) {
-    console.log('swiching to ', newView)
     this.setState({ currentView: newView })
-    if (newView === "ALL" || newView === "SEARCH_RESULTS") {
+    if (newView === "ALL") {
       this.fetchAllEvents();
-      this.setState({ searching: false, searchTerms: '' });
     }
     if (newView === "TOMORROW") {
       this.fetchTomorrowEvents();
-      this.setState({ searching: false, searchTerms: '' });
     }
     if (newView === "TODAY") {
       this.fetchTodayEvents();
-      this.setState({ searching: false, searchTerms: '' });
     }
   }
 
@@ -128,6 +133,7 @@ class App extends Component {
 
         <Agenda
           events={this.state.events}
+          currentView={this.state.currentView}
           eventsFetched={this.state.eventsFetched}
           isFetchingDone={this.state.is_fetching_done}
           fetchMoreEvents={() => this.fetchMoreEvents()}

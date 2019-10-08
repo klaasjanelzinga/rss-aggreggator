@@ -23,7 +23,7 @@ def fix(line: str) -> str:
     match = re.search(r"{{random_future_date:(.*)}}", line)
     if match:
         date = datetime.now()
-        increase = random.randint(0, 5)
+        increase = random.randint(2, 20)
         future_date = date + timedelta(days=increase)
         if match.groups()[0] == "timestamp":
             return re.sub(r"{{random_future_date:\w+}}", str(int(future_date.timestamp())), line)

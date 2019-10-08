@@ -39,7 +39,6 @@ class SearchBox extends React.Component {
   handleEnter(event) {
     if (event.key === 'Enter') {
       this.props.searchEvents(this.state.value)
-      this.setState({ value: '' })
     }
   }
 
