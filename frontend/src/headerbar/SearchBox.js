@@ -48,7 +48,7 @@ class SearchBox extends React.Component {
     return (
       <Paper className={classes.root} elevation={1}>
         <InputBase className={classes.input}
-          placeholder="Zoek" 
+          placeholder="Zoek"
           value={this.state.value}
           onChange={this.handleChange}
           onKeyPress={this.handleEnter}

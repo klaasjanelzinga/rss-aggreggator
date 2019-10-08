@@ -32,5 +32,5 @@ $project_dir/run-before-commit.sh
 export version="develop-`git rev-parse --short HEAD`"
 echo "Version: $version"
 
-echo gcloud app deploy --version $version --project rss-aggregator-236707 app.yaml
-echo gcloud app deploy --version $version --project rss-aggregator-236707 cron.yaml
+gcloud app deploy --version $version --project rss-aggregator-236707 app.yaml
+gcloud app deploy --version $version --project rss-aggregator-236707 cron.yaml
