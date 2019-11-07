@@ -1,6 +1,6 @@
 from typing import Dict
 
-from app.core.event import Event
+from app.core.event.event import Event
 from app.core.venue.venue_repository import VenueRepository
 
 

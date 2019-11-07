@@ -14,7 +14,15 @@ MAINTENANCE_ROUTES = Blueprint("maintenance", __name__, template_folder="templat
 @MAINTENANCE_ROUTES.route("/maintenance/fetch-data")
 def maintenance_fetch_data() -> Any:
     if AppConfig.is_web_request_allowed(request):
-        application_data.sync_venues()
+        application_data.sync_venues(0)
+        return Response(status=200)
+    return Response(status=400)
+
+
+@MAINTENANCE_ROUTES.route("/maintenance/fetch-data-1")
+def maintenance_fetch_data_1() -> Any:
+    if AppConfig.is_web_request_allowed(request):
+        application_data.sync_venues(1)
         return Response(status=200)
     return Response(status=400)
 

@@ -2,7 +2,7 @@ from typing import AsyncIterable, List
 
 from aiohttp import ClientSession
 
-from app.core.event import Event
+from app.core.event.event import Event
 from app.core.source import Source
 from app.core.venue.venue import Venue
 from app.venues.tivoli_utrecht.tivoli_parser import TivoliParser

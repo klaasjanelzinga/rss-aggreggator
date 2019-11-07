@@ -16,7 +16,8 @@ app = Flask(__name__, static_folder="static/build/static", template_folder="stat
 
 # sync stores at start of app
 if not AppConfig.is_running_in_gae():
-    sync_venues()
+    sync_venues(0)
+    sync_venues(1)
 
 app.register_blueprint(EVENT_API_ROUTES)
 app.register_blueprint(MAINTENANCE_ROUTES)

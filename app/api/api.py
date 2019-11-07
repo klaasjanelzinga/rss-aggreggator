@@ -5,8 +5,8 @@ from flask import Blueprint, jsonify, request
 
 from app import application_data
 from app.application_data import event_repository
-from app.core.event import Event
-from app.core.event_entity_transformer import EventEntityTransformer
+from app.core.event.event import Event
+from app.core.event.event_entity_transformer import EventEntityTransformer
 
 EVENT_API_ROUTES = Blueprint("events", __name__, template_folder="templates")
 

@@ -8,7 +8,7 @@ import pytz
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 
-from app.core.event import Event
+from app.core.event.event import Event
 from app.core.parser import Parser
 from app.core.parser_util import ParserUtil
 from app.core.parsing_context import ParsingContext

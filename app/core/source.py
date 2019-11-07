@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
-from typing import List, AsyncIterable
+from typing import AsyncIterable, List
 
 from aiohttp import ClientSession
 
-from app.core.event import Event
+from app.core.event.event import Event
 from app.core.fetcher_util import fetch
 from app.core.parser import Parser
 from app.core.parsing_context import ParsingContext
@@ -30,6 +30,9 @@ class Source(ABC):
             new_events = self.parser.parse(ParsingContext(venue=self.venue, content=data))
             yield new_events
             done = len(new_events) < items_per_page
+
+    async def fetch_event_detail(self, event: Event, client_session: ClientSession) -> str:
+        return await fetch(url=event.url, session=client_session)
 
     @abstractmethod
     async def fetch_events(self, session: ClientSession) -> AsyncIterable[List[Event]]:

@@ -8,8 +8,8 @@ from google.cloud.datastore.client import Client
 from google.cloud.datastore.query import Iterator
 
 from app.core.datastore_utils import DatastoreUtils, QueryResult
-from app.core.event import Event
-from app.core.event_entity_transformer import EventEntityTransformer
+from app.core.event.event import Event
+from app.core.event.event_entity_transformer import EventEntityTransformer
 
 
 class EventRepository:

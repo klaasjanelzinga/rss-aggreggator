@@ -28,6 +28,7 @@ class TestEndpoints(asynctest.TestCase):
 
     async def test_maintenance(self):
         await self.validate(f"{self.endpoint}/maintenance/fetch-data")
+        await self.validate(f"{self.endpoint}/maintenance/fetch-data-1")
         await self.validate(f"{self.endpoint}/maintenance/ping")
 
     async def test_root(self):

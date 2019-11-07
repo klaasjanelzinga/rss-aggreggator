@@ -1,4 +1,4 @@
-from app.core.event_repository import EventRepository
+from app.core.event.event_repository import EventRepository
 from app.core.source import Source
 from app.core.venue.venue import Venue
 from app.core.venue.venue_processor import VenueProcessor

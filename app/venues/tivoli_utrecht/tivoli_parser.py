@@ -1,10 +1,11 @@
 import json
 from datetime import datetime
-from typing import List, Dict
+from typing import Dict, List
 
 import dateparser
+from bs4 import BeautifulSoup
 
-from app.core.event import Event
+from app.core.event.event import Event
 from app.core.parser import Parser
 from app.core.parser_util import ParserUtil
 from app.core.parsing_context import ParsingContext
@@ -39,3 +40,15 @@ class TivoliParser(Parser):
             date_published=datetime.now(),
             when=when,
         )
+
+    def update_event_with_details(self, event: Event, additional_details: str) -> Event:
+        soup = BeautifulSoup(additional_details, features="html.parser")
+        # find a div with info-inner/label containing a span "aanvang"
+        time = None
+        for div in soup.find_all("div", {"class": "info-inner"}):
+            label = div.find("div", {"class": "label"})
+            if label and label.find("span").text == "aanvang":
+                time = div.find("div", {"class": "values"}).find("span").text
+        if time and len(time.split(":")) == 2:
+            event.when = event.when.replace(hour=int(time.split(":")[0]), minute=int(time.split(":")[1]))
+        return event

@@ -1,0 +1,100 @@
+[
+    {
+        "name": "ryan-mcmullan-13-11-2019",
+        "link": "https:\/\/www.tivolivredenburg.nl\/agenda\/ryan-mcmullan-13-11-2019\/",
+        "spacer": "https:\/\/www.tivolivredenburg.nl\/wp-content\/themes\/tivolivredenburg\/img\/output\/spacer.gif",
+        "image": "https:\/\/www.tivolivredenburg.nl\/wp-content\/uploads\/2019\/06\/Ryan-McMullan-foto-195x130.jpg",
+        "title": "Ryan McMullan",
+        "subtitle": "Ierse singer-songwriter",
+        {{random_future_date:tivoli}}
+        "yearMonth": "201911",
+        "status": {
+            "status": "tickets",
+            "label": "Bestel tickets"
+        }
+    },
+    {
+        "name": "rabo-open-stage-the-intimate-sessions-13-11-2019",
+        "link": "https:\/\/www.tivolivredenburg.nl\/agenda\/rabo-open-stage-the-intimate-sessions-13-11-2019\/",
+        "spacer": "https:\/\/www.tivolivredenburg.nl\/wp-content\/themes\/tivolivredenburg\/img\/output\/spacer.gif",
+        "image": "https:\/\/www.tivolivredenburg.nl\/wp-content\/uploads\/2019\/10\/Input-1-195x130.jpg",
+        "title": "Rabo Open Stage: The Intimate Sessions",
+        "subtitle": "Singer-songwriteravond",
+        {{random_future_date:tivoli}}
+        "yearMonth": "201911",
+        "status": {
+            "status": "free",
+            "label": "Gratis"
+        }
+    },
+    {
+        "name": "matthew-and-the-atlas-13-11-2019",
+        "link": "https:\/\/www.tivolivredenburg.nl\/agenda\/matthew-and-the-atlas-13-11-2019\/",
+        "spacer": "https:\/\/www.tivolivredenburg.nl\/wp-content\/themes\/tivolivredenburg\/img\/output\/spacer.gif",
+        "image": "https:\/\/www.tivolivredenburg.nl\/wp-content\/uploads\/2019\/04\/Eventheader_MatthewAndTheAtlas-195x130.png",
+        "title": "Matthew and the Atlas",
+        "subtitle": "Indiefolk met uitstapjes naar electronica en alternatieve rock | in de Helling",
+        {{random_future_date:tivoli}}
+        "yearMonth": "201911",
+        "status": {
+            "status": "tickets",
+            "label": "Bestel tickets"
+        }
+    },
+    {
+        "name": "alice-phoebe-lou-13-11-2019",
+        "link": "https:\/\/www.tivolivredenburg.nl\/agenda\/alice-phoebe-lou-13-11-2019\/",
+        "spacer": "https:\/\/www.tivolivredenburg.nl\/wp-content\/themes\/tivolivredenburg\/img\/output\/spacer.gif",
+        "image": "https:\/\/www.tivolivredenburg.nl\/wp-content\/uploads\/2019\/06\/deze-gebruiken-voor-website_DSCF2300-1_klein-195x130.jpg",
+        "title": "Alice Phoebe Lou",
+        "subtitle": " Indiefolk singer-songwriter",
+        {{random_future_date:tivoli}}
+        "yearMonth": "201911",
+        "status": {
+            "status": "tickets",
+            "label": "Bestel tickets"
+        }
+    },
+    {
+        "name": "duncan-laurence-13-11-2019",
+        "link": "https:\/\/www.tivolivredenburg.nl\/agenda\/duncan-laurence-13-11-2019\/",
+        "spacer": "https:\/\/www.tivolivredenburg.nl\/wp-content\/themes\/tivolivredenburg\/img\/output\/spacer.gif",
+        "image": "https:\/\/www.tivolivredenburg.nl\/wp-content\/uploads\/2019\/05\/DUNCAN-195x130.jpg",
+        "title": "Duncan Laurence",
+        "subtitle": "Winnaar van het Eurovisie Songfestival 2019",
+        {{random_future_date:tivoli}}
+        "yearMonth": "201911",
+        "status": {
+            "status": "tickets",
+            "label": "Bestel tickets"
+        }
+    },
+    {
+        "name": "ilfu-book-talk-met-louis-theroux-14-11-2019",
+        "link": "https:\/\/www.tivolivredenburg.nl\/agenda\/ilfu-book-talk-met-louis-theroux-14-11-2019\/",
+        "spacer": "https:\/\/www.tivolivredenburg.nl\/wp-content\/themes\/tivolivredenburg\/img\/output\/spacer.gif",
+        "image": "https:\/\/www.tivolivredenburg.nl\/wp-content\/uploads\/2019\/10\/Theroux-Louis-\u00a9-Paul-Marc-Mitchell-IMG_1164R-195x130.jpg",
+        "title": "ILFU Book Talk met Louis Theroux",
+        "subtitle": "Wereldberoemde documentairemaker deelt memoires",
+        {{random_future_date:tivoli}}
+        "yearMonth": "201911",
+        "status": {
+            "status": "sold-out",
+            "label": "Uitverkocht"
+        }
+    },
+    {
+        "name": "the-specials-14-11-2019",
+        "link": "https:\/\/www.tivolivredenburg.nl\/agenda\/the-specials-14-11-2019\/",
+        "spacer": "https:\/\/www.tivolivredenburg.nl\/wp-content\/themes\/tivolivredenburg\/img\/output\/spacer.gif",
+        "image": "https:\/\/www.tivolivredenburg.nl\/wp-content\/uploads\/2019\/03\/2019-Press-Shot-The-Specials-1-195x130.jpg",
+        "title": "The Specials",
+        "subtitle": "Legendarische skaband van eind jaren '70",
+        {{random_future_date:tivoli}}
+        "yearMonth": "201911",
+        "status": {
+            "status": "sold-out",
+            "label": "Uitverkocht"
+        }
+    }
+]

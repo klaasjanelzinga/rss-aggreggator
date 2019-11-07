@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 
 import pytz
 
-from app.core.event import Event
+from app.core.event.event import Event
 from app.core.venue.venue import Venue
 
 

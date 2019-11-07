@@ -2,7 +2,7 @@ from typing import List, AsyncIterable
 
 from aiohttp import ClientSession
 
-from app.core.event import Event
+from app.core.event.event import Event
 from app.core.source import Source
 from app.core.venue.venue import Venue
 from app.venues.vera_groningen.vera_parser import VeraParser

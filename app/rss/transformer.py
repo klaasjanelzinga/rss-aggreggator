@@ -1,4 +1,4 @@
-from app.core.event import Event
+from app.core.event.event import Event
 from app.rss.rss_item import RSSItem
 
 

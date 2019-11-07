@@ -7,8 +7,8 @@ import google.cloud.logging
 from google.cloud import datastore
 
 from app.core.app_config import AppConfig
-from app.core.event_entity_transformer import EventEntityTransformer
-from app.core.event_repository import EventRepository
+from app.core.event.event_entity_transformer import EventEntityTransformer
+from app.core.event.event_repository import EventRepository
 from app.core.user.user_profile_repository import UserProfileRepository
 from app.core.venue.venue_processor import VenueProcessor
 from app.core.venue.venue_repository import VenueRepository
@@ -40,21 +40,22 @@ user_profile_repository: UserProfileRepository = UserProfileRepository(client=DA
 processors: List[VenueProcessor] = [
     SpotProcessor(event_repository, venue_repository),
     VeraProcessor(event_repository, venue_repository),
+    ParadisoProcessor(event_repository, venue_repository),
     OostGroningenProcessor(event_repository, venue_repository),
     SimplonProcessor(event_repository, venue_repository),
-    ParadisoProcessor(event_repository, venue_repository),
     MelkwegProcessor(event_repository, venue_repository),
     TivoliProcessor(event_repository, venue_repository),
 ]
 processors_map: Dict[str, VenueProcessor] = {processor.venue.venue_id: processor for processor in processors}
 
 
-async def async_venues() -> None:
+async def async_venues(slices: int) -> None:
     timeout = ClientTimeout(40)
+    venues_to_sync = processors[0:4] if slices == 0 else processors[4:]
     async with ClientSession(timeout=timeout) as session:
-        coroutines = [processor.async_store(session) for processor in processors]
+        coroutines = [processor.fetch_new_events(session) for processor in venues_to_sync]
         await asyncio.gather(*coroutines)
 
 
-def sync_venues() -> None:
-    asyncio.run(async_venues())
+def sync_venues(slices: int) -> None:
+    asyncio.run(async_venues(slices))
