@@ -34,3 +34,9 @@ handlers:
 - url: /maintenance/.*
   script: auto
   secure: always
+
+- url: /.*
+  static_files: static/build/index.html
+  require_matching_file: false
+  upload: static/build/index.html
+  secure: always

@@ -83,6 +83,7 @@ class HeaderBar extends React.Component {
         <Tab label="Alles" />
         <Tab label="Zoek resultaten" />
       </Tabs>
+    } else if (this.props.selected === undefined) {
     } else {
       return <Tabs value={this.state.selectedTab} onChange={this.handleChange} aria-label="Tabs">
         <Tab label="Vandaag" />

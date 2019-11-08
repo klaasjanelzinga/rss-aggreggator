@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HeaderBar from '../headerbar/HeaderBar';
 import Venue from './Venue.js'
+import { withRouter } from 'react-router-dom';
 
 class VenueApp extends Component {
 
@@ -11,6 +12,7 @@ class VenueApp extends Component {
             venuesFetched: false
         }
         this.endpoint = '/api/venues';
+        this.switchView = this.switchView.bind(this)
     }
 
     fetchInitialLoad() {
@@ -32,7 +34,7 @@ class VenueApp extends Component {
         return (
             <div className="App">
                 <HeaderBar />
-                <Venue 
+                <Venue
                     venues={this.state.venues}
                     venuesFetched={this.state.venuesFetched}
                 />
@@ -41,4 +43,4 @@ class VenueApp extends Component {
     }
 }
 
-export default VenueApp;
+export default withRouter(VenueApp);
