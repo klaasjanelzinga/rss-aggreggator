@@ -12,7 +12,6 @@ class VenueApp extends Component {
             venuesFetched: false
         }
         this.endpoint = '/api/venues';
-        this.switchView = this.switchView.bind(this)
     }
 
     fetchInitialLoad() {
