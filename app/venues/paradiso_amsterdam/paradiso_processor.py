@@ -1,9 +1,13 @@
+from aiohttp import ClientSession
+
 from app.core.event.event_repository import EventRepository
 from app.core.source import Source
 from app.core.venue.venue import Venue
 from app.core.venue.venue_processor import VenueProcessor
 from app.core.venue.venue_repository import VenueRepository
 from app.venues.paradiso_amsterdam.paradiso_source import ParadisoSource
+from app.core.processing_chain.database_sink import DatabaseSink
+from app.core.processing_chain.processing_chain import Chain
 
 
 class ParadisoProcessor(VenueProcessor):
@@ -14,6 +18,9 @@ class ParadisoProcessor(VenueProcessor):
 
     def fetch_source(self) -> Source:
         return ParadisoSource(self.venue)
+
+    def create_processing_chain(self, client_session: ClientSession, database_sink: DatabaseSink) -> Chain:
+        return super().processing_chain_with_additionals(client_session, database_sink)
 
     @staticmethod
     def create_venue() -> Venue:

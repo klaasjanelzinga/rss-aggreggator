@@ -1,6 +1,6 @@
 import json
 from datetime import datetime
-from typing import List, Dict
+from typing import Dict, List
 
 import dateparser
 
@@ -20,7 +20,7 @@ class ParadisoParser(Parser):
     def _transform(venue: Venue, data: Dict) -> Event:
         source = venue.source_url
         tz_short = venue.timezone_short
-        paradiso_url = f'https://www.paradiso.nl/en/program/{data["slug"]}/{data["id"]}'
+        paradiso_url = f'https://api.paradiso.nl/api/library/lists/events/{data["id"]}?lang=en'
         title = data["title"]
         description = data["subtitle"]
         description = description if ParserUtil.not_empty(description) else title
@@ -32,8 +32,19 @@ class ParadisoParser(Parser):
             url=paradiso_url,
             title=title,
             description=description,
+            date_published=datetime.now(),
             venue=venue,
             source=source,
-            date_published=datetime.now(),
             when=when,
         )
+
+    def update_event_with_details(self, event: Event, additional_details: str) -> Event:
+        additional_json = json.loads(additional_details)
+        if len(additional_json) > 0:
+            if "content" in additional_json[0]:
+                if "main_image__focus_events" in additional_json[0]["content"]:
+                    main_image = additional_json[0]["content"]["main_image__focus_events"]
+                    folder_path = main_image["folder_path"]
+                    filename = main_image["filename"]
+                    event.image_url = f"https://api.paradiso.nl/{folder_path}/{filename}"
+        return event

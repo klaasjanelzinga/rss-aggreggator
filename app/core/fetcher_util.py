@@ -75,8 +75,68 @@ URL_TO_MOCK_FILE_DICT = {
     "https://www.tivolivredenburg.nl/agenda/blackout-15-11-2019/": "tests/samples/tivoli-utrecht/blackout-15-11-2019.html",
     "https://www.tivolivredenburg.nl/agenda/pieces-of-tomorrow-festival-16-11-2019/": "tests/samples/tivoli-utrecht/pieces-of-tomorrow-festival-16-11-2019.html",
     "https://www.tivolivredenburg.nl/agenda/park-6-by-night-gesloten-16-11-2019/": "tests/samples/tivoli-utrecht/park-6-by-night-gesloten-16-11-2019.html",
-    ".*paradiso.nl.*page=1.*": "tests/samples/paradiso-amsterdam/ajax-1.js",
-    ".*paradiso.nl.*page=2.*": "tests/samples/paradiso-amsterdam/ajax-2.js",
+    ".*paradiso.nl.*page=1.*": "tests/samples/paradiso-amsterdam/para-1.json",
+    ".*paradiso.nl.*page=2.*": "tests/samples/paradiso-amsterdam/para-2.json",
+    "https://api.paradiso.nl/api/library/lists/events/60445?lang=en": "tests/samples/paradiso-amsterdam/60445.js",
+    "https://api.paradiso.nl/api/library/lists/events/67775?lang=en": "tests/samples/paradiso-amsterdam/67775.js",
+    "https://api.paradiso.nl/api/library/lists/events/57919?lang=en": "tests/samples/paradiso-amsterdam/57919.js",
+    "https://api.paradiso.nl/api/library/lists/events/63573?lang=en": "tests/samples/paradiso-amsterdam/63573.js",
+    "https://api.paradiso.nl/api/library/lists/events/66875?lang=en": "tests/samples/paradiso-amsterdam/66875.js",
+    "https://api.paradiso.nl/api/library/lists/events/68014?lang=en": "tests/samples/paradiso-amsterdam/68014.js",
+    "https://api.paradiso.nl/api/library/lists/events/65303?lang=en": "tests/samples/paradiso-amsterdam/65303.js",
+    "https://api.paradiso.nl/api/library/lists/events/61914?lang=en": "tests/samples/paradiso-amsterdam/61914.js",
+    "https://api.paradiso.nl/api/library/lists/events/62928?lang=en": "tests/samples/paradiso-amsterdam/62928.js",
+    "https://api.paradiso.nl/api/library/lists/events/60447?lang=en": "tests/samples/paradiso-amsterdam/60447.js",
+    "https://api.paradiso.nl/api/library/lists/events/63917?lang=en": "tests/samples/paradiso-amsterdam/63917.js",
+    "https://api.paradiso.nl/api/library/lists/events/58773?lang=en": "tests/samples/paradiso-amsterdam/58773.js",
+    "https://api.paradiso.nl/api/library/lists/events/69558?lang=en": "tests/samples/paradiso-amsterdam/69558.js",
+    "https://api.paradiso.nl/api/library/lists/events/65783?lang=en": "tests/samples/paradiso-amsterdam/65783.js",
+    "https://api.paradiso.nl/api/library/lists/events/61660?lang=en": "tests/samples/paradiso-amsterdam/61660.js",
+    "https://api.paradiso.nl/api/library/lists/events/67035?lang=en": "tests/samples/paradiso-amsterdam/67035.js",
+    "https://api.paradiso.nl/api/library/lists/events/61766?lang=en": "tests/samples/paradiso-amsterdam/61766.js",
+    "https://api.paradiso.nl/api/library/lists/events/65243?lang=en": "tests/samples/paradiso-amsterdam/65243.js",
+    "https://api.paradiso.nl/api/library/lists/events/62031?lang=en": "tests/samples/paradiso-amsterdam/62031.js",
+    "https://api.paradiso.nl/api/library/lists/events/65764?lang=en": "tests/samples/paradiso-amsterdam/65764.js",
+    "https://api.paradiso.nl/api/library/lists/events/63196?lang=en": "tests/samples/paradiso-amsterdam/63196.js",
+    "https://api.paradiso.nl/api/library/lists/events/63617?lang=en": "tests/samples/paradiso-amsterdam/63617.js",
+    "https://api.paradiso.nl/api/library/lists/events/61409?lang=en": "tests/samples/paradiso-amsterdam/61409.js",
+    "https://api.paradiso.nl/api/library/lists/events/65074?lang=en": "tests/samples/paradiso-amsterdam/65074.js",
+    "https://api.paradiso.nl/api/library/lists/events/66064?lang=en": "tests/samples/paradiso-amsterdam/66064.js",
+    "https://api.paradiso.nl/api/library/lists/events/66327?lang=en": "tests/samples/paradiso-amsterdam/66327.js",
+    "https://api.paradiso.nl/api/library/lists/events/62926?lang=en": "tests/samples/paradiso-amsterdam/62926.js",
+    "https://api.paradiso.nl/api/library/lists/events/67029?lang=en": "tests/samples/paradiso-amsterdam/67029.js",
+    "https://api.paradiso.nl/api/library/lists/events/63182?lang=en": "tests/samples/paradiso-amsterdam/63182.js",
+    "https://api.paradiso.nl/api/library/lists/events/60857?lang=en": "tests/samples/paradiso-amsterdam/60857.js",
+    "https://api.paradiso.nl/api/library/lists/events/67031?lang=en": "tests/samples/paradiso-amsterdam/67031.js",
+    "https://api.paradiso.nl/api/library/lists/events/63346?lang=en": "tests/samples/paradiso-amsterdam/63346.js",
+    "https://api.paradiso.nl/api/library/lists/events/66347?lang=en": "tests/samples/paradiso-amsterdam/66347.js",
+    "https://api.paradiso.nl/api/library/lists/events/69620?lang=en": "tests/samples/paradiso-amsterdam/69620.js",
+    "https://api.paradiso.nl/api/library/lists/events/67037?lang=en": "tests/samples/paradiso-amsterdam/67037.js",
+    "https://api.paradiso.nl/api/library/lists/events/62919?lang=en": "tests/samples/paradiso-amsterdam/62919.js",
+    "https://api.paradiso.nl/api/library/lists/events/61411?lang=en": "tests/samples/paradiso-amsterdam/61411.js",
+    "https://api.paradiso.nl/api/library/lists/events/63450?lang=en": "tests/samples/paradiso-amsterdam/63450.js",
+    "https://api.paradiso.nl/api/library/lists/events/63915?lang=en": "tests/samples/paradiso-amsterdam/63915.js",
+    "https://api.paradiso.nl/api/library/lists/events/65790?lang=en": "tests/samples/paradiso-amsterdam/65790.js",
+    "https://api.paradiso.nl/api/library/lists/events/63032?lang=en": "tests/samples/paradiso-amsterdam/63032.js",
+    "https://api.paradiso.nl/api/library/lists/events/67033?lang=en": "tests/samples/paradiso-amsterdam/67033.js",
+    "https://api.paradiso.nl/api/library/lists/events/61926?lang=en": "tests/samples/paradiso-amsterdam/61926.js",
+    "https://api.paradiso.nl/api/library/lists/events/59209?lang=en": "tests/samples/paradiso-amsterdam/59209.js",
+    "https://api.paradiso.nl/api/library/lists/events/68105?lang=en": "tests/samples/paradiso-amsterdam/68105.js",
+    "https://api.paradiso.nl/api/library/lists/events/65393?lang=en": "tests/samples/paradiso-amsterdam/65393.js",
+    "https://api.paradiso.nl/api/library/lists/events/66329?lang=en": "tests/samples/paradiso-amsterdam/66329.js",
+    "https://api.paradiso.nl/api/library/lists/events/62922?lang=en": "tests/samples/paradiso-amsterdam/62922.js",
+    "https://api.paradiso.nl/api/library/lists/events/63834?lang=en": "tests/samples/paradiso-amsterdam/63834.js",
+    "https://api.paradiso.nl/api/library/lists/events/61488?lang=en": "tests/samples/paradiso-amsterdam/61488.js",
+    "https://api.paradiso.nl/api/library/lists/events/64237?lang=en": "tests/samples/paradiso-amsterdam/64237.js",
+    "https://api.paradiso.nl/api/library/lists/events/65196?lang=en": "tests/samples/paradiso-amsterdam/65196.js",
+    "https://api.paradiso.nl/api/library/lists/events/69156?lang=en": "tests/samples/paradiso-amsterdam/69156.js",
+    "https://api.paradiso.nl/api/library/lists/events/66407?lang=en": "tests/samples/paradiso-amsterdam/66407.js",
+    "https://api.paradiso.nl/api/library/lists/events/67041?lang=en": "tests/samples/paradiso-amsterdam/67041.js",
+    "https://api.paradiso.nl/api/library/lists/events/61437?lang=en": "tests/samples/paradiso-amsterdam/61437.js",
+    "https://api.paradiso.nl/api/library/lists/events/57161?lang=en": "tests/samples/paradiso-amsterdam/57161.js",
+    "https://api.paradiso.nl/api/library/lists/events/62231?lang=en": "tests/samples/paradiso-amsterdam/62231.js",
+    "https://api.paradiso.nl/api/library/lists/events/62924?lang=en": "tests/samples/paradiso-amsterdam/62924.js",
+    "https://api.paradiso.nl/api/library/lists/events/58909?lang=en": "tests/samples/paradiso-amsterdam/58909.js",
     "https://www.melkweg.nl/large-json": "tests/samples/melkweg-amsterdam/-1.json",
     "https://www.melkweg.nl/.*": "tests/samples/melkweg-amsterdam/small-sample.json",
 }
@@ -87,10 +147,15 @@ async def fetch(session: ClientSession, url: str) -> str:
         async with session.get(url) as response:
             return await response.text()
     logging.getLogger(__name__).warning("Retrieving stubbed data locally for %s", url)
-    for key, value in URL_TO_MOCK_FILE_DICT.items():
-        if re.match(key, url):
-            async with aiofiles.open(value) as file:
-                lines = await file.readlines()
-                fixed_lines = [fix(line) for line in lines]
-                return "".join(fixed_lines)
-    raise Exception(f"No support for stubbed url {url}")
+    filename = URL_TO_MOCK_FILE_DICT.get(url)
+    if filename is None:
+        for key, value in URL_TO_MOCK_FILE_DICT.items():
+            if re.match(key, url):
+                filename = value
+                break
+    if filename is None:
+        raise Exception(f"No support for stubbed url {url}")
+    async with aiofiles.open(filename) as file:
+        lines = await file.readlines()
+        fixed_lines = [fix(line) for line in lines]
+        return "".join(fixed_lines)

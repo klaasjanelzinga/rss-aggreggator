@@ -10,6 +10,7 @@ from app.core.processing_chain.only_valid_events import OnlyValidEvents
 from app.core.processing_chain.processing_chain import Chain
 from app.core.source import Source
 from app.core.venue.venue import Venue
+from app.core.processing_chain.fetch_and_parse_details import FetchAndParseDetails
 
 
 class VenueProcessor(ABC):
@@ -21,6 +22,15 @@ class VenueProcessor(ABC):
     # pylint: disable= W0613, R0201
     def create_processing_chain(self, client_session: ClientSession, database_sink: DatabaseSink) -> Chain:
         return Chain([OnlyValidEvents(), database_sink])
+
+    def processing_chain_with_additionals(self, client_session: ClientSession, database_sink: DatabaseSink) -> Chain:
+        return Chain(
+            [
+                OnlyValidEvents(),
+                FetchAndParseDetails(client_session=client_session, source=self.fetch_source()),
+                database_sink,
+            ]
+        )
 
     async def fetch_new_events(self, session: ClientSession) -> int:
         database_sink = DatabaseSink(self.event_repository)

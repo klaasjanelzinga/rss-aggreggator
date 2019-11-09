@@ -12,7 +12,6 @@ from app.venues.paradiso_amsterdam.paradiso_processor import ParadisoProcessor
 
 
 class TestParadisoParser(asynctest.TestCase):
-
     async def setUp(self) -> None:
         self.session = ClientSession()
 
@@ -22,20 +21,20 @@ class TestParadisoParser(asynctest.TestCase):
     async def test_sample_file_page_1(self):
         venue = ParadisoProcessor.create_venue()
         parser = ParadisoParser()
-        data = await fetch(session=self.session, url=f'{venue.source_url}/page=1')
+        data = await fetch(session=self.session, url=f"{venue.source_url}/page=1")
 
         results = parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(len(results), equal_to(30))
         event = results[0]
 
-        assert_that(event.url, equal_to('https://www.paradiso.nl/en/program/giant-rooks/54827'))
+        assert_that(event.url, equal_to("https://api.paradiso.nl/api/library/lists/events/60445?lang=en"))
         assert_that(event.venue, equal_to(venue))
-        assert_that(event.title, equal_to("Giant Rooks"))
-        assert_that(event.description, equal_to("Aanstormende Duitse indiepopband"))
+        assert_that(event.title, equal_to("CROPFEST \u2013 40 jaar Eton Crop, 40 jaar DIY"))
+        assert_that(event.description, equal_to("Met o.a. EC Groove Society, Quazar en Joost van Bellen"))
         assert_that(event.when, is_not(none()))
         assert_that(event.image_url, none())
         assert_that(event.date_published, is_not(none()))
-        assert_that(event.source, equal_to('https://www.paradiso.nl/'))
+        assert_that(event.source, equal_to("https://www.paradiso.nl/"))
 
         for event in results:
             assert_that(event.when, is_not(none))
@@ -46,10 +45,10 @@ class TestParadisoParser(asynctest.TestCase):
     async def test_sample_file_page_2(self):
         venue = ParadisoProcessor.create_venue()
         parser = ParadisoParser()
-        data = await fetch(session=self.session, url=f'{venue.source_url}/page=2')
+        data = await fetch(session=self.session, url=f"{venue.source_url}/page=2")
 
         results = parser.parse(ParsingContext(venue=venue, content=data))
-        assert_that(len(results), equal_to(1))
+        assert_that(len(results), equal_to(5))
 
         for event in results:
             assert_that(event.when, is_not(none))
