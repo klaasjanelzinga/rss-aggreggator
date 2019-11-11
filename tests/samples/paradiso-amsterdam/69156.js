@@ -1,1 +1,160 @@
-[{"id":69156,"type":"item","content":{"id":69156,"handle":"events","title":"Super-Sonic Jazz Afterparty w\/ Henry Wu, Steve Spacek, Wix, KC the Funkaholic","posted_at":"2019-10-25 12:00:00","created_at":"2019-10-24 18:34:02","updated_at":"2019-10-25 16:34:57","template":"template_2","slug":"super-sonic-jazz-afterparty-w-henry-wu-steve-spacek-wix-kc-the-funkaholic","url_slug":"en\/program\/super-sonic-jazz-afterparty-w-henry-wu-steve-spacek-wix-kc-the-funkaholic\/69156\/","alternate_urls":{"en":"https:\/\/www.paradiso.nl\/en\/program\/super-sonic-jazz-afterparty-w-henry-wu-steve-spacek-wix-kc-the-funkaholic\/69156\/","nl":"https:\/\/www.paradiso.nl\/nl\/programma\/super-sonic-jazz-afterparty-w-henry-wu-steve-spacek-wix-b2b-kc-the-funkaholic-meer\/69156\/"},"i18n_urls":{"en":"https:\/\/www.paradiso.nl\/en\/program\/super-sonic-jazz-afterparty-w-henry-wu-steve-spacek-wix-kc-the-funkaholic\/69156\/","nl":"https:\/\/www.paradiso.nl\/nl\/programma\/super-sonic-jazz-afterparty-w-henry-wu-steve-spacek-wix-b2b-kc-the-funkaholic-meer\/69156\/"},"meta_title":"Super-Sonic Jazz Afterparty w\/ Henry Wu, Steve Spacek, Wix, KC the Funkaholic - Paradiso","meta_description":"","title__disabled":"Super-Sonic Jazz Afterparty w\/ Henry Wu, Steve Spacek, Wix b2b KC the Funkaholic & meer","subtitle__non_translatable":"Offici\u00eble afterparty van Super-Sonic Jazz Festival 2019","date__disabled":"2019-11-16 00:00:00","start_date_time":"2019-11-16 23:59:00","doors_open__disabled":"2019-10-25 23:59:00","doors_closed__disabled":"2019-10-25 05:00:00","main_date_time__disabled":"2019-10-25 23:59:00","announce_main_date_time__disabled":"2019-10-25 13:00:00","support_act__disabled":null,"support_date_time__disabled":null,"announce_support_date_time__disabled":null,"start_presale_date_time__disabled":"2019-10-25 13:00:00","remark_website__disabled":null,"locations":[{"id":13925,"type":"item","content":{"id":13925,"handle":"locations","title":"Paradiso","posted_at":"2017-05-26 16:16:00","created_at":"2017-05-26 16:16:10","updated_at":"2018-07-20 16:07:49","template":null,"meta_title":"Paradiso - Paradiso","meta_description":null,"subtitle":null,"main_image_alt_text":null,"location":null,"address":"Weteringsschans 6-8","postal_code":"1017SG","city":"Amsterdam","country":"nl","intro":"<p>Paradiso is on the Weteringschans 6-8 in Amsterdam. That is very close to Leidseplein. From every part of the city there are trams heading towards Leidseplein. From there on out you can walk to Paradiso. Travelling by car is difficult, since there are only a few busy parking lots nearby.\u00a0<\/p>","text":null}}],"timetable":[{"id":69157,"areas":"1","type":"areas"}],"highlight":null,"main_image__focus_events":{"id":"83334fc0-f6d9-4b83-8e5b-adeb22fedce0","source":"craft","type":"image","filename":"Kamaal-Williams_press.jpg","folder_path":"img\/events\/","fit":"crop-40-59"},"poster_event":null,"text__non_translatable":null,"ticket_price__disabled":"10","ticket_url__disabled":"https:\/\/frontoffice.paylogic.nl\/?event_id=133825&point_of_sale_id=19314","ticket_info":null,"sold_out":"option_0","facebook_event_url":"https:\/\/www.facebook.com\/events\/757344361380922\/","status__disabled":"1","membership__disabled":"1","extras__disabled":["1"],"passes__disabled":null,"categories":[{"id":13955,"title":"Electronic","type":"categories"},{"id":14312,"title":"Soul \/ Jazz \/ Funk","type":"categories"},{"id":14093,"title":"Dance (contemporary, urban, etc)","type":"categories"},{"id":1100,"title":"Concert","type":"categories"},{"id":1096,"title":"Club","type":"categories"}],"brands":[{"id":388,"title":"Super-Sonic Jazz","type":"brands","landing_page":[{"id":773}]}],"meta_description__non_translatable":"Op zaterdag 16 november vindt de offici\u00eble after party van Super-Sonic Jazz Festival plaats in Paradiso in Amsterdam. Koop nu je tickets.","blocks":[{"id":69171,"video_embed":"youtube_0Id1kpoLqVA","main_alt_text":"Kamaal Williams aka Henry Wu - Wivout U (DJ-Kicks)","caption":"Wivout U (DJ-Kicks)","main_title":"Kamaal Williams aka Henry Wu","main_image__focus":[{"id":"eec0973c-a315-47b4-884e-b9dfad8c1715","source":"craft","type":"image","filename":"hqdefault_191025_124055.jpg","folder_path":"img\/blocks\/","fit":"crop-50-50"}],"type":"block_video"}],"boeki_ticketing_id":4682,"boeki_timestamp":1571993983,"old_id":null,"old_url":null,"import_helper":null}}]
+[
+    {
+        "id": 69156,
+        "type": "item",
+        "content": {
+            "id": 69156,
+            "handle": "events",
+            "title": "Super-Sonic Jazz Afterparty w\/ Henry Wu, Steve Spacek, Wix, KC the Funkaholic",
+            "posted_at": "2019-10-25 12:00:00",
+            "created_at": "2019-10-24 18:34:02",
+            "updated_at": "2019-10-25 16:34:57",
+            "template": "template_2",
+            "slug": "super-sonic-jazz-afterparty-w-henry-wu-steve-spacek-wix-kc-the-funkaholic",
+            "url_slug": "en\/program\/super-sonic-jazz-afterparty-w-henry-wu-steve-spacek-wix-kc-the-funkaholic\/69156\/",
+            "alternate_urls": {
+                "en": "https:\/\/www.paradiso.nl\/en\/program\/super-sonic-jazz-afterparty-w-henry-wu-steve-spacek-wix-kc-the-funkaholic\/69156\/",
+                "nl": "https:\/\/www.paradiso.nl\/nl\/programma\/super-sonic-jazz-afterparty-w-henry-wu-steve-spacek-wix-b2b-kc-the-funkaholic-meer\/69156\/"
+            },
+            "i18n_urls": {
+                "en": "https:\/\/www.paradiso.nl\/en\/program\/super-sonic-jazz-afterparty-w-henry-wu-steve-spacek-wix-kc-the-funkaholic\/69156\/",
+                "nl": "https:\/\/www.paradiso.nl\/nl\/programma\/super-sonic-jazz-afterparty-w-henry-wu-steve-spacek-wix-b2b-kc-the-funkaholic-meer\/69156\/"
+            },
+            "meta_title": "Super-Sonic Jazz Afterparty w\/ Henry Wu, Steve Spacek, Wix, KC the Funkaholic - Paradiso",
+            "meta_description": "",
+            "title__disabled": "Super-Sonic Jazz Afterparty w\/ Henry Wu, Steve Spacek, Wix b2b KC the Funkaholic & meer",
+            "subtitle__non_translatable": "Offici\u00eble afterparty van Super-Sonic Jazz Festival 2019",
+            "date__disabled": "2019-11-16 00:00:00",
+            "start_date_time": "2019-11-16 23:59:00",
+            "doors_open__disabled": "2019-10-25 23:59:00",
+            "doors_closed__disabled": "2019-10-25 05:00:00",
+            "main_date_time__disabled": "2019-10-25 23:59:00",
+            "announce_main_date_time__disabled": "2019-10-25 13:00:00",
+            "support_act__disabled": null,
+            "support_date_time__disabled": null,
+            "announce_support_date_time__disabled": null,
+            "start_presale_date_time__disabled": "2019-10-25 13:00:00",
+            "remark_website__disabled": null,
+            "locations": [
+                {
+                    "id": 13925,
+                    "type": "item",
+                    "content": {
+                        "id": 13925,
+                        "handle": "locations",
+                        "title": "Paradiso",
+                        "posted_at": "2017-05-26 16:16:00",
+                        "created_at": "2017-05-26 16:16:10",
+                        "updated_at": "2018-07-20 16:07:49",
+                        "template": null,
+                        "meta_title": "Paradiso - Paradiso",
+                        "meta_description": null,
+                        "subtitle": null,
+                        "main_image_alt_text": null,
+                        "location": null,
+                        "address": "Weteringsschans 6-8",
+                        "postal_code": "1017SG",
+                        "city": "Amsterdam",
+                        "country": "nl",
+                        "intro": "<p>Paradiso is on the Weteringschans 6-8 in Amsterdam. That is very close to Leidseplein. From every part of the city there are trams heading towards Leidseplein. From there on out you can walk to Paradiso. Travelling by car is difficult, since there are only a few busy parking lots nearby.\u00a0<\/p>",
+                        "text": null
+                    }
+                }
+            ],
+            "timetable": [
+                {
+                    "id": 69157,
+                    "areas": "1",
+                    "type": "areas"
+                }
+            ],
+            "highlight": null,
+            "main_image__focus_events": {
+                "id": "83334fc0-f6d9-4b83-8e5b-adeb22fedce0",
+                "source": "craft",
+                "type": "image",
+                "filename": "Kamaal-Williams_press.jpg",
+                "folder_path": "img\/events\/",
+                "fit": "crop-40-59"
+            },
+            "poster_event": null,
+            "text__non_translatable": null,
+            "ticket_price__disabled": "10",
+            "ticket_url__disabled": "https:\/\/frontoffice.paylogic.nl\/?event_id=133825&point_of_sale_id=19314",
+            "ticket_info": null,
+            "sold_out": "option_0",
+            "facebook_event_url": "https:\/\/www.facebook.com\/events\/757344361380922\/",
+            "status__disabled": "1",
+            "membership__disabled": "1",
+            "extras__disabled": [
+                "1"
+            ],
+            "passes__disabled": null,
+            "categories": [
+                {
+                    "id": 13955,
+                    "title": "Electronic",
+                    "type": "categories"
+                },
+                {
+                    "id": 14312,
+                    "title": "Soul \/ Jazz \/ Funk",
+                    "type": "categories"
+                },
+                {
+                    "id": 14093,
+                    "title": "Dance (contemporary, urban, etc)",
+                    "type": "categories"
+                },
+                {
+                    "id": 1100,
+                    "title": "Concert",
+                    "type": "categories"
+                },
+                {
+                    "id": 1096,
+                    "title": "Club",
+                    "type": "categories"
+                }
+            ],
+            "brands": [
+                {
+                    "id": 388,
+                    "title": "Super-Sonic Jazz",
+                    "type": "brands",
+                    "landing_page": [
+                        {
+                            "id": 773
+                        }
+                    ]
+                }
+            ],
+            "meta_description__non_translatable": "Op zaterdag 16 november vindt de offici\u00eble after party van Super-Sonic Jazz Festival plaats in Paradiso in Amsterdam. Koop nu je tickets.",
+            "blocks": [
+                {
+                    "id": 69171,
+                    "video_embed": "youtube_0Id1kpoLqVA",
+                    "main_alt_text": "Kamaal Williams aka Henry Wu - Wivout U (DJ-Kicks)",
+                    "caption": "Wivout U (DJ-Kicks)",
+                    "main_title": "Kamaal Williams aka Henry Wu",
+                    "main_image__focus": [
+                        {
+                            "id": "eec0973c-a315-47b4-884e-b9dfad8c1715",
+                            "source": "craft",
+                            "type": "image",
+                            "filename": "hqdefault_191025_124055.jpg",
+                            "folder_path": "img\/blocks\/",
+                            "fit": "crop-50-50"
+                        }
+                    ],
+                    "type": "block_video"
+                }
+            ],
+            "boeki_ticketing_id": 4682,
+            "boeki_timestamp": 1571993983,
+            "old_id": null,
+            "old_url": null,
+            "import_helper": null
+        }
+    }
+]

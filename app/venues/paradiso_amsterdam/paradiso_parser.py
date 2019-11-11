@@ -42,6 +42,8 @@ class ParadisoParser(Parser):
         additional_json = json.loads(additional_details)
         if len(additional_json) > 0:
             if "content" in additional_json[0]:
+                if "alternate_urls" in additional_json[0]["content"]:
+                    event.url = additional_json[0]["content"]["alternate_urls"]["en"]
                 if "main_image__focus_events" in additional_json[0]["content"]:
                     main_image = additional_json[0]["content"]["main_image__focus_events"]
                     folder_path = main_image["folder_path"]
