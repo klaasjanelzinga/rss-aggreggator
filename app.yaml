@@ -31,6 +31,10 @@ handlers:
   script: auto
   secure: always
 
+- url: /events.xml
+  script: auto
+  secure: always
+
 - url: /maintenance/.*
   script: auto
   secure: always

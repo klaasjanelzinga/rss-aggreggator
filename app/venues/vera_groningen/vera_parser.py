@@ -86,9 +86,11 @@ class VeraParser(Parser):
             when_time = tag.find("div", {"class": "schedule"}).text
             when_time = when_time[when_time.find("start: ") + 7 : when_time.find("start: ") + 12]
             when_date: datetime = dateparser.parse(f"{when} {when_time}{venue.timezone_short}", languages=["nl"])
-            if when_date < (datetime.now(pytz.timezone(venue.timezone)) - relativedelta(days=100)):
+            if when_date is not None and when_date < (
+                datetime.now(pytz.timezone(venue.timezone)) - relativedelta(days=100)
+            ):
                 when_date = when_date + relativedelta(years=1)
-        else:
+        if when_date is None:
             when_date = datetime.min
         image_url = tag.find("div", {"class": "artist-image"})["style"]
         image_url_end = image_url.find("'", image_url.find("https") + 4)
