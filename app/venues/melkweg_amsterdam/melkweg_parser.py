@@ -1,6 +1,6 @@
 import json
 from datetime import datetime
-from typing import List, Dict
+from typing import Dict, List
 
 import pytz
 from bs4 import BeautifulSoup
@@ -31,7 +31,7 @@ class MelkwegParser(Parser):
             events = [event for event in day["events"] if event["type"] == "event"]
             for event in events:
                 description = MelkwegParser._make_description(event)
-                date = datetime.fromtimestamp(int(event["date"]), pytz.timezone("Europe/Amsterdam"))
+                date = datetime.fromtimestamp(int(event["date"]), pytz.timezone(venue.timezone))
                 title = event["name"]
                 image_url = (
                     f"https://s3-eu-west-1.amazonaws.com/static.melkweg.nl/uploads/images/"

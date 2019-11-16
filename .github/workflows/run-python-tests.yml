@@ -15,4 +15,4 @@ jobs:
       - name: Build the python docker image
         run: scripts/build-docker-image.sh
       - name: Verify the build
-        run: docker run rss-aggregator-app scripts/build.sh
+        run: docker run -v `pwd`:/usr/src/app rss-aggregator-app scripts/build.sh

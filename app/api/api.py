@@ -72,6 +72,6 @@ def transform(event: Event) -> dict:
         "title": event.title,
         "description": event.description,
         "image_url": event.image_url,
-        "when": venue.convert_utc_to_venue_timezone(event.when).isoformat(),
+        "when": event.when.isoformat(),
         "venue": {"id": venue.venue_id, "name": venue.name, "city": venue.city},
     }

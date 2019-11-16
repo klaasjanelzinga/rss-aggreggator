@@ -13,7 +13,6 @@ from app.venues.melkweg_amsterdam.melkweg_processor import MelkwegProcessor
 
 
 class TestMelkwegParser(asynctest.TestCase):
-
     async def setUp(self) -> None:
         self.session = ClientSession()
 
@@ -22,26 +21,34 @@ class TestMelkwegParser(asynctest.TestCase):
 
     async def test_parse(self):
 
-        content = await fetch(url='https://www.melkweg.nl/large-json', session=self.session)
+        content = await fetch(url="https://www.melkweg.nl/large-json", session=self.session)
         venue = MelkwegProcessor.create_venue()
         parser = MelkwegParser()
         results = parser.parse(ParsingContext(venue=venue, content=content))
         assert_that(len(results), equal_to(378))
-        inna_event = [r for r in results if r.title == 'Inna de Yard feat. Horace Andy'][0]
-        assert_that(inna_event.title, equal_to('Inna de Yard feat. Horace Andy'))
-        assert_that(inna_event.description, equal_to(
-            'Inna de Yard is het resultaat van een historische ontmoeting van twee generaties Jamaicaanse '
-            'zangers en muzikanten tijdens traditionele akoestische jamsessies \'inna de yard\'. Levende legendes '
-            'van de gouden jaren van de rootsreggae als Horace Andy, Ken Boothe en Cedric Myton werken samen met '
-            'jong talent van het eiland en blazen zo de originele essentie van \'jamrock\' nieuw leven in. '
-            'Na het succes van het eerste album in 2017 en enkele geweldige concerten in Parijs, is er nu een '
-            'vervolg met een nieuw album en een film. De nieuwe tour is nu al legendarisch en gelukkig slaan '
-            'ze Amsterdam niet over!\xa0'))
-        assert_that(inna_event.image_url, equal_to(
-            'https://s3-eu-west-1.amazonaws.com/static.melkweg.nl/uploads/images/scaled/agenda_thumbnail/25520'))
-        assert_that(inna_event.source, equal_to('https://www.melkweg.nl/agenda'))
-        assert_that(inna_event.url, equal_to('https://www.melkweg.nl/nl/agenda/inna-da-yard-13-06-2019'))
-        assert_that(inna_event.when, equal_to(datetime.fromisoformat('2019-06-13T19:30:00+02:00')))
+        inna_event = [r for r in results if r.title == "Inna de Yard feat. Horace Andy"][0]
+        assert_that(inna_event.title, equal_to("Inna de Yard feat. Horace Andy"))
+        assert_that(
+            inna_event.description,
+            equal_to(
+                "Inna de Yard is het resultaat van een historische ontmoeting van twee generaties Jamaicaanse "
+                "zangers en muzikanten tijdens traditionele akoestische jamsessies 'inna de yard'. Levende legendes "
+                "van de gouden jaren van de rootsreggae als Horace Andy, Ken Boothe en Cedric Myton werken samen met "
+                "jong talent van het eiland en blazen zo de originele essentie van 'jamrock' nieuw leven in. "
+                "Na het succes van het eerste album in 2017 en enkele geweldige concerten in Parijs, is er nu een "
+                "vervolg met een nieuw album en een film. De nieuwe tour is nu al legendarisch en gelukkig slaan "
+                "ze Amsterdam niet over!\xa0"
+            ),
+        )
+        assert_that(
+            inna_event.image_url,
+            equal_to(
+                "https://s3-eu-west-1.amazonaws.com/static.melkweg.nl/uploads/images/scaled/agenda_thumbnail/25520"
+            ),
+        )
+        assert_that(inna_event.source, equal_to("https://www.melkweg.nl/agenda"))
+        assert_that(inna_event.url, equal_to("https://www.melkweg.nl/nl/agenda/inna-da-yard-13-06-2019"))
+        assert_that(inna_event.when, equal_to(datetime.fromisoformat("2019-06-13T19:30:00+02:00")))
 
         for event in results:
             assert_that(event.title, is_not(none()))

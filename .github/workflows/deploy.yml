@@ -17,8 +17,8 @@ jobs:
       - name: Decrypt the secret for google-app-engine
         run: scripts/decrypt-deployer-key.sh
         env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          DEPLOYER_KEY: ${{ secrets.DEPLOYER_KEY }}
       - name: Build the python docker image
         run: scripts/build-docker-image.sh
       - name: Test and deploy the app
-        run: docker run rss-aggregator-app scripts/deploy.sh
+        run: scripts/deploy.sh

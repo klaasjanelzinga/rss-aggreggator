@@ -1,5 +1,8 @@
 from typing import Dict
 
+import pytz
+from pytz import timezone
+
 from app.core.event.event import Event
 from app.core.venue.venue_repository import VenueRepository
 
@@ -17,12 +20,13 @@ class EventEntityTransformer:
             "venue_id": event.venue.venue_id,
             "source": event.source,
             "date_published": event.date_published,
-            "when": event.when,
+            "when": event.when.astimezone(pytz.utc),
             "image_url": event.image_url,
             "search_terms": event.generate_search_terms(),
         }
 
     def to_event(self, entity_map: Dict) -> Event:
+        venue_tz = timezone("Europe/Amsterdam")
         return Event(
             url=entity_map["url"],
             title=entity_map["title"],
@@ -30,6 +34,6 @@ class EventEntityTransformer:
             venue=self.venue_repository.get_venue_for(entity_map["venue_id"]),
             source=entity_map["source"],
             date_published=entity_map["date_published"],
-            when=entity_map["when"],
+            when=entity_map["when"].astimezone(venue_tz),
             image_url=entity_map["image_url"],
         )

@@ -10,8 +10,6 @@ ENV GOOGLE_APPLICATION_CREDENTIALS secrets/google-appengine-credentials.json
 WORKDIR /usr/src/app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-RUN cd frontend && npm i
 
 VOLUME [ "/usr/src/app" ]
 

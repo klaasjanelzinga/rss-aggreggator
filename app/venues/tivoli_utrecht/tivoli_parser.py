@@ -20,15 +20,16 @@ class TivoliParser(Parser):
     @staticmethod
     def _transform(venue: Venue, data: Dict) -> Event:
         source = venue.source_url
-        tz_short = venue.timezone_short
         tivoli_url = data["link"]
         title = data["title"]
         image_url = data["image"]
         description = data["subtitle"]
         description = description if ParserUtil.not_empty(description) else title
-        when_format = f'{data["day"]} {data["month"]} {data["year"]} 00:00{tz_short}'
+        when_format = f'{data["day"]} {data["month"]} {data["year"]} 00:00'
 
-        when = dateparser.parse(when_format, languages=["nl"])
+        when = dateparser.parse(
+            when_format, languages=["nl"], settings={"TIMEZONE": venue.timezone, "RETURN_AS_TIMEZONE_AWARE": True}
+        )
 
         return Event(
             url=tivoli_url,

@@ -28,7 +28,10 @@ class SimplonParser(Parser):
         when = tag.find("div", {"class": "date"}).text
         time = details_tag.text
         time = time[time.find("Aanvang: ") + 9 : time.find("Aanvang: ") + 15]
-        when_datetime = dateparser.parse(f"{when} {time}{venue.timezone_short}")
+
+        when_datetime = dateparser.parse(
+            f"{when} {time}", settings={"TIMEZONE": venue.timezone, "RETURN_AS_TIMEZONE_AWARE": True}
+        )
         image_url_style = tag.find("div", {"class": "item-image"}).get("style")
         image_url_start = image_url_style.find("https")
         image_url = image_url_style[image_url_start : image_url_style.find(".jpg") + 4]

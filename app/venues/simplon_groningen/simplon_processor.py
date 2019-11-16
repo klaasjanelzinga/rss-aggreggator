@@ -25,7 +25,6 @@ class SimplonProcessor(VenueProcessor):
             city="Groningen",
             country="NL",
             timezone="Europe/Amsterdam",
-            timezone_short="+02:00",
             email="info@simplon.nl",
             source_url="https://www.simplon.nl/agenda",
             url="https://www.simplon.nl",

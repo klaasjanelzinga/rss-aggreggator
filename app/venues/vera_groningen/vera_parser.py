@@ -3,10 +3,10 @@ from datetime import datetime
 from typing import List
 
 import dateparser
-from dateutil.relativedelta import relativedelta
 import pytz
 from bs4 import BeautifulSoup
 from bs4.element import Tag
+from dateutil.relativedelta import relativedelta
 
 from app.core.event.event import Event
 from app.core.parser import Parser
@@ -85,7 +85,11 @@ class VeraParser(Parser):
             when = ParserUtil.sanitize_text(when)
             when_time = tag.find("div", {"class": "schedule"}).text
             when_time = when_time[when_time.find("start: ") + 7 : when_time.find("start: ") + 12]
-            when_date: datetime = dateparser.parse(f"{when} {when_time}{venue.timezone_short}", languages=["nl"])
+            when_date: datetime = dateparser.parse(
+                f"{when} {when_time}",
+                languages=["nl"],
+                settings={"TIMEZONE": venue.timezone, "RETURN_AS_TIMEZONE_AWARE": True},
+            )
             if when_date is not None and when_date < (
                 datetime.now(pytz.timezone(venue.timezone)) - relativedelta(days=100)
             ):

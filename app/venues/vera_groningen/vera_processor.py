@@ -25,7 +25,6 @@ class VeraProcessor(VenueProcessor):
             city="Groningen",
             country="NL",
             timezone="Europe/Amsterdam",
-            timezone_short="+02:00",
             email="info@vera-groningen.nl",
             source_url="https://www.vera-groningen.nl/programma/",
             url="https://www.vera-groningen.nl",

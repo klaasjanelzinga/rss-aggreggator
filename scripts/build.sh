@@ -34,6 +34,7 @@ pytest tests --cov . --cov-report=html
 echo "Building frontend"
 cd "$project_dir"/frontend
 
+npm i
 npm run-script build
 cat build/index.html | sed 's/main\..*\.chunk\.css/main.css/'  > build/index2.html
 

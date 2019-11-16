@@ -33,7 +33,6 @@ class ParadisoProcessor(VenueProcessor):
             country="NL",
             timezone="Europe/Amsterdam",
             email="info@paradiso.nl",
-            timezone_short="+02:00",
             url="https://www.paradiso.nl",
             source_url="https://www.paradiso.nl/",
         )

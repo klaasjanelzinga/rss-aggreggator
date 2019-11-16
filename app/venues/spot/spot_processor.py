@@ -25,7 +25,6 @@ class SpotProcessor(VenueProcessor):
             city="Groningen",
             country="NL",
             timezone="Europe/Amsterdam",
-            timezone_short="+02:00",
             email="info@spotgroningen.nl",
             url="https://www.spotgroningen.nl",
             source_url="https://www.spotgroningen.nl/programma",

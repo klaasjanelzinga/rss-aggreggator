@@ -25,7 +25,6 @@ class OostGroningenProcessor(VenueProcessor):
             city="Groningen",
             country="NL",
             timezone="Europe/Amsterdam",
-            timezone_short="+02:00",
             email="info@komoost.nl",
             url="https://www.komoost.nl",
             source_url="https://www.komoost.nl",

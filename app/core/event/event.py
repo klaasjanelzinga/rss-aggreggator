@@ -3,7 +3,7 @@ import logging
 import re
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import List, Any, Optional
+from typing import Any, List, Optional
 
 import pytz
 

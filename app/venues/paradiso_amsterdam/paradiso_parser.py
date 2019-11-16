@@ -19,14 +19,15 @@ class ParadisoParser(Parser):
     @staticmethod
     def _transform(venue: Venue, data: Dict) -> Event:
         source = venue.source_url
-        tz_short = venue.timezone_short
         paradiso_url = f'https://api.paradiso.nl/api/library/lists/events/{data["id"]}?lang=en'
         title = data["title"]
         description = data["subtitle"]
         description = description if ParserUtil.not_empty(description) else title
-        when_format = f'{data["start_date_time"]}{tz_short}'
+        when_format = f'{data["start_date_time"]}'
 
-        when = dateparser.parse(when_format, languages=["en"])
+        when = dateparser.parse(
+            when_format, languages=["en"], settings={"TIMEZONE": venue.timezone, "RETURN_AS_TIMEZONE_AWARE": True}
+        )
 
         return Event(
             url=paradiso_url,

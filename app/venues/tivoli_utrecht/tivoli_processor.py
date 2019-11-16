@@ -32,7 +32,6 @@ class TivoliProcessor(VenueProcessor):
             city="Utrecht",
             country="NL",
             timezone="Europe/Amsterdam",
-            timezone_short="+02:00",
             email="info@tivolivredenburg.nl",
             source_url="https://www.tivolivredenburg.nl/agenda/",
             url="https://www.tivolivredenburg.nl",
