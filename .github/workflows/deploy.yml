@@ -1,0 +1,24 @@
+name: Deploy application
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: test-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Decrypt the secret for google-app-engine
+        run: scripts/decrypt-google-appengine-credentials.sh
+        env:
+          GOOGLE_APP_ENGINE_KEY: ${{ secrets.GOOGLE_APP_ENGINE_KEY }}
+      - name: Decrypt the secret for google-app-engine
+        run: scripts/decrypt-deployer-key.sh
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+      - name: Build the python docker image
+        run: scripts/build-docker-image.sh
+      - name: Test and deploy the app
+        run: docker run rss-aggregator-app scripts/deploy.sh

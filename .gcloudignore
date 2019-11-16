@@ -7,9 +7,6 @@
 #   $ gcloud topic gcloudignore
 #
 .gcloudignore
-# If you would like to upload your .git directory, .gitignore file or files
-# from your .gitignore file, remove the corresponding line
-# below:
 .git
 .gitignore
 .pytest_cache
@@ -21,13 +18,14 @@ __pycache__/
 # Ignored by the build system
 /setup.cfg
 
-.travis.yml
+secrets/
+google-appengine-credentials.json.gpg
 
 frontend/
 tests/
+scripts/
 .idea/
 venv/
-htmlcov/
 integration/
 build-reports/
 
@@ -36,8 +34,6 @@ static/build/static/js/*.map
 *.sh
 *.tar
 *.enc
-test-ds.json
-travis-deployer.json
 .coverage
 README.md
 nginx-dev-proxy/

@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  backend:
+    image: rss-aggregator-app:latest
+    volumes:
+      - .:/usr/src/app
+    command: ["python3", "main.py"]
+
+  frontend:
+    image: rss-aggregator-app:latest
+    volumes:
+      - .:/usr/src/app
+    command: sh -c "cd frontend && npm start"
+
+  proxy:
+    build: nginx-dev-proxy
+    ports: 
+      - 80:80
