@@ -20,5 +20,7 @@ jobs:
           DEPLOYER_KEY: ${{ secrets.DEPLOYER_KEY }}
       - name: Build the python docker image
         run: scripts/build-docker-image.sh
+      - name: Login
+        run: gcloud auth activate-service-account --key-file secrets/deployer.json --project rss-aggregator-236707
       - name: Test and deploy the app
         run: scripts/deploy.sh
