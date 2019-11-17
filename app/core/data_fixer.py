@@ -19,6 +19,7 @@ def setlocale(name: str) -> Generator:
             locale.setlocale(locale.LC_ALL, saved)
 
 
+# pylint: disable=R0911
 def fix(line: str) -> str:
     match = re.search(r"{{random_future_date:(.*)}}", line)
     if match:
@@ -41,5 +42,8 @@ def fix(line: str) -> str:
         if match.groups()[0] == "vera-groningen":
             with setlocale("nl_NL.UTF-8"):
                 return line.replace("{{random_future_date:vera-groningen}}", future_date.strftime("%A %-d %B"))
+        if match.groups()[0] == "neushoorn-leeuwarden":
+            with setlocale("nl_NL.UTF-8"):
+                return line.replace("{{random_future_date:neushoorn-leeuwarden}}", future_date.strftime("%A %-d %B"))
         return re.sub(r"{{random_future_date:.*}}", future_date.strftime(match.groups()[0]), line)
     return line

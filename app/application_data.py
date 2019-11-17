@@ -2,8 +2,8 @@ import asyncio
 import logging
 from typing import Dict, List
 
-from aiohttp import ClientSession, ClientTimeout
 import google.cloud.logging
+from aiohttp import ClientSession, ClientTimeout
 from google.cloud import datastore
 
 from app.core.app_config import AppConfig
@@ -19,6 +19,7 @@ from app.venues.simplon_groningen.simplon_processor import SimplonProcessor
 from app.venues.spot.spot_processor import SpotProcessor
 from app.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
 from app.venues.vera_groningen.vera_processor import VeraProcessor
+from app.venues.neushoorn_leeuwarden.neushoorn_processor import NeushoornProcessor
 
 if AppConfig.is_running_in_gae():
     LOGGING_CLIENT = google.cloud.logging.Client("rss-aggregator-236707")
@@ -42,6 +43,7 @@ processors: List[VenueProcessor] = [
     VeraProcessor(event_repository, venue_repository),
     ParadisoProcessor(event_repository, venue_repository),
     OostGroningenProcessor(event_repository, venue_repository),
+    NeushoornProcessor(event_repository, venue_repository),
     SimplonProcessor(event_repository, venue_repository),
     MelkwegProcessor(event_repository, venue_repository),
     TivoliProcessor(event_repository, venue_repository),

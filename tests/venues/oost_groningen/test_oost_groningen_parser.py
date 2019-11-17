@@ -1,5 +1,3 @@
-import unittest
-
 import asynctest
 from aiohttp import ClientSession
 from hamcrest import equal_to, is_not, none
@@ -9,11 +7,9 @@ from app.core.fetcher_util import fetch
 from app.core.parsing_context import ParsingContext
 from app.venues.oost_groningen.oost_groningen_parser import OostGroningenParser
 from app.venues.oost_groningen.oost_groningen_processor import OostGroningenProcessor
-from tests.core.fixtures import fixture_vera_venue
 
 
 class TestOostGroningenParser(asynctest.TestCase):
-
     async def setUp(self) -> None:
         self.session = ClientSession()
 
@@ -27,14 +23,16 @@ class TestOostGroningenParser(asynctest.TestCase):
         assert_that(len(results), equal_to(8))
 
         event = results[0]
-        assert_that(event.title, equal_to('HOMOOST • Movie Night: Party Monster the Shockumentary'))
-        assert_that(event.description, equal_to('Movie Screening • Group Discussion'))
+        assert_that(event.title, equal_to("HOMOOST • Movie Night: Party Monster the Shockumentary"))
+        assert_that(event.description, equal_to("Movie Screening • Group Discussion"))
         assert_that(event.when, is_not(none()))
-        assert_that(event.url, equal_to('https://www.facebook.com/events/610421539383220/'))
-        assert_that(event.image_url,
-                    equal_to('https://www.komoost.nl/media/56721601_1992667177522931_8267801960216788992_o.jpg'))
+        assert_that(event.url, equal_to("https://www.facebook.com/events/610421539383220/"))
+        assert_that(
+            event.image_url,
+            equal_to("https://www.komoost.nl/media/56721601_1992667177522931_8267801960216788992_o.jpg"),
+        )
         assert_that(event.venue, equal_to(venue))
-        assert_that(event.source, equal_to('https://www.komoost.nl'))
+        assert_that(event.source, equal_to("https://www.komoost.nl"))
         assert_that(event.event_id, is_not(none()))
         assert_that(event.date_published, is_not(none()))
 

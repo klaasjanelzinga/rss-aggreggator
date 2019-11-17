@@ -6,6 +6,7 @@ RUN locale-gen
 
 EXPOSE 8080
 ENV GOOGLE_APPLICATION_CREDENTIALS secrets/google-appengine-credentials.json
+ENV PYTHONDONTWRITEBYTECODE 3
 
 WORKDIR /usr/src/app
 COPY requirements.txt .

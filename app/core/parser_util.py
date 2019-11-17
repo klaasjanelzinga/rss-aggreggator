@@ -1,9 +1,18 @@
+import logging
 import re
+from datetime import datetime
+from typing import Optional
 
+import dateparser
+import pytz
 from bs4.element import Tag
+from dateutil.relativedelta import relativedelta
 
 
 class ParserUtil:
+
+    logger = logging.getLogger(__name__)
+
     @staticmethod
     def not_empty(text: str) -> bool:
         return text is not None and text != "" and text.strip() != ""
@@ -33,3 +42,34 @@ class ParserUtil:
                 child_text = tag.text
                 text = text.replace(child_text, "")
         return text
+
+    @staticmethod
+    def parse_date_time_to_datetime(date: str, time: str, tz_str: str) -> Optional[datetime]:
+        when_date = dateparser.parse(
+            f"{date} {time}", languages=["nl"], settings={"TIMEZONE": tz_str, "RETURN_AS_TIMEZONE_AWARE": True},
+        )
+        if when_date is None:
+            now = datetime.now()
+            year = now.year
+            when_date = dateparser.parse(
+                f"{date} {year} {time}",
+                languages=["nl"],
+                settings={"TIMEZONE": tz_str, "RETURN_AS_TIMEZONE_AWARE": True},
+            )
+
+        if when_date is None:
+            now = datetime.now()
+            year = now.year + 1
+            when_date = dateparser.parse(
+                f"{date} {year} {time}",
+                languages=["nl"],
+                settings={"TIMEZONE": tz_str, "RETURN_AS_TIMEZONE_AWARE": True},
+            )
+        if when_date is None:
+            logging.warning("Cannot parse date time from %s %s in timezone %s", date, time, tz_str)
+            return None
+
+        # If more than a year ago, we probably mean the next year.
+        if when_date is not None and when_date < (datetime.now(pytz.timezone(tz_str)) - relativedelta(days=100)):
+            when_date = when_date + relativedelta(years=1)
+        return when_date

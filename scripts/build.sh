@@ -46,7 +46,7 @@ rm -rf ../static/build && mv build ../static
 echo "coverage report: see file://$project_dir/build-reports/html/index.html"
 
 cd $project_dir
-python3 main.py &
+python3 -B main.py &
 
 echo "Running integration..."
 pytest integration
