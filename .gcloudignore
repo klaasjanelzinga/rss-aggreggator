@@ -12,6 +12,8 @@
 .pytest_cache
 .mypy_cache
 .vscode
+.coveragerc
+.github 
 
 # Python pycache:
 __pycache__/
@@ -20,6 +22,10 @@ __pycache__/
 
 secrets/
 google-appengine-credentials.json.gpg
+deployer.json.gpg
+Dockerfile
+docker-compose.yml
+pylintrc
 
 frontend/
 tests/
