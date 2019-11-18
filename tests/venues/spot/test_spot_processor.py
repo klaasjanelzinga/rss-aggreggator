@@ -1,4 +1,3 @@
-import unittest
 from unittest.mock import Mock
 
 import asynctest
@@ -26,4 +25,4 @@ class TestSpotProcessor(asynctest.TestCase):
         await self.processor.fetch_new_events(session=self.session)
         self.event_repository.upsert_no_slicing.assert_called_once()
         args = self.event_repository.upsert_no_slicing.call_args[0][0]
-        assert_that(len(args), equal_to(58))
+        assert_that(len(args), equal_to(20))

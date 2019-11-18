@@ -3,6 +3,7 @@ from typing import List
 
 from bs4 import BeautifulSoup
 from bs4.element import Tag
+from pytz import timezone
 
 from app.core.event.event import Event
 from app.core.parser import Parser
@@ -26,7 +27,7 @@ class SpotParser(Parser):
         url = article.a.get("href")
         content = article.find("div", {"class": "program__content"})
         figure = article.find("figure").img.get("data-src") if article.find("figure").img else None
-        date = article.find("time")
+        date = datetime.fromtimestamp(int(article["data-datetime"]), tz=timezone(venue.timezone))
         title = content.h1
         content_title = (
             title.text
@@ -43,5 +44,5 @@ class SpotParser(Parser):
             image_url=f"{base_url}{figure}",
             source=source,
             date_published=datetime.now(),
-            when=datetime.fromisoformat(date.get("datetime")),
+            when=date,
         )

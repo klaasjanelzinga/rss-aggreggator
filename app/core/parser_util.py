@@ -46,7 +46,7 @@ class ParserUtil:
     @staticmethod
     def parse_date_time_to_datetime(date: str, time: str, tz_str: str) -> Optional[datetime]:
         when_date = dateparser.parse(
-            f"{date} {time}", languages=["nl"], settings={"TIMEZONE": tz_str, "RETURN_AS_TIMEZONE_AWARE": True},
+            f"{date} {time}", languages=["nl"], settings={"TIMEZONE": tz_str, "RETURN_AS_TIMEZONE_AWARE": True}
         )
         if when_date is None:
             now = datetime.now()
