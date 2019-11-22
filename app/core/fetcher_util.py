@@ -157,6 +157,7 @@ URL_TO_MOCK_FILE_DICT = {
     "https://neushoorn.nl/production/a-special-holiday-event-with-arstidir/": "tests/samples/neushoorn-leeuwarden/neushoorn-15.html",
     "https://neushoorn.nl/production/insomnium-the-black-dahlia-murder-stam1na/": "tests/samples/neushoorn-leeuwarden/neushoorn-16.html",
     "https://neushoorn.nl/production/downtown-cafe-tromptheater/": "tests/samples/neushoorn-leeuwarden/neushoorn-17.html",
+    "https://www.hedon-zwolle.nl/#programma": "tests/samples/hedon-zwolle/programma.html",
 }
 
 
