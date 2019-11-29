@@ -34,9 +34,9 @@ class TivoliParser(Parser):
         return Event(
             url=tivoli_url,
             title=title,
-            description=description,
             venue=venue,
             image_url=image_url,
+            description=description,
             source=source,
             date_published=datetime.now(),
             when=when,

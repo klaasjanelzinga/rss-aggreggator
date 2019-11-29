@@ -51,5 +51,5 @@ class TestSearchApi(asynctest.TestCase):
             token: str = json["fetch_offset"]
             done = base64.decodebytes(token.encode("utf-8")).decode("utf-8") == "DONE"
 
-        assert_that(ite, equal_to(5))
-        assert_that(tot_items, equal_to(111))
+        assert_that(ite, equal_to(4))
+        assert_that(tot_items, equal_to(92))

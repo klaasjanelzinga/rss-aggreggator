@@ -158,6 +158,7 @@ URL_TO_MOCK_FILE_DICT = {
     "https://neushoorn.nl/production/insomnium-the-black-dahlia-murder-stam1na/": "tests/samples/neushoorn-leeuwarden/neushoorn-16.html",
     "https://neushoorn.nl/production/downtown-cafe-tromptheater/": "tests/samples/neushoorn-leeuwarden/neushoorn-17.html",
     "https://www.hedon-zwolle.nl/#programma": "tests/samples/hedon-zwolle/programma.html",
+    "https://www.013.nl/programma": "tests/samples/t013-tilburg/programma.html",
 }
 
 
@@ -176,5 +177,14 @@ async def fetch(session: ClientSession, url: str) -> str:
         raise Exception(f"No support for stubbed url {url}")
     async with aiofiles.open(filename) as file:
         lines = await file.readlines()
-        fixed_lines = [fix(line) for line in lines]
+
+        def fix_a_line(line: str) -> str:
+            result = line
+            match = re.search(r"{{random_future_date:(.*?)}}", result)
+            while match:
+                result = fix(result)
+                match = re.search(r"{{random_future_date:(.*?)}}", result)
+            return result
+
+        fixed_lines = [fix_a_line(line) for line in lines]
         return "".join(fixed_lines)

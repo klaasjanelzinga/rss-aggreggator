@@ -21,7 +21,7 @@ def setlocale(name: str) -> Generator:
 
 # pylint: disable=R0911
 def fix(line: str) -> str:
-    match = re.search(r"{{random_future_date:(.*)}}", line)
+    match = re.search(r"{{random_future_date:(.*?)}}", line)
     if match:
         date = datetime.now()
         increase = random.randint(2, 20)
@@ -45,5 +45,5 @@ def fix(line: str) -> str:
         if match.groups()[0] == "neushoorn-leeuwarden":
             with setlocale("nl_NL.UTF-8"):
                 return line.replace("{{random_future_date:neushoorn-leeuwarden}}", future_date.strftime("%A %-d %B"))
-        return re.sub(r"{{random_future_date:.*}}", future_date.strftime(match.groups()[0]), line)
+        return re.sub(r"{{random_future_date:.*?}}", future_date.strftime(match.groups()[0]), line)
     return line

@@ -19,6 +19,7 @@ from app.venues.paradiso_amsterdam.paradiso_processor import ParadisoProcessor
 from app.venues.simplon_groningen.simplon_processor import SimplonProcessor
 from app.venues.spot.spot_processor import SpotProcessor
 from app.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
+from app.venues.t013_tilburg.t013_processor import T013Processor
 from app.venues.vera_groningen.vera_processor import VeraProcessor
 from app.venues.hedon_zwolle.hedon_processor import HedonProcessor
 
@@ -45,11 +46,14 @@ processors: List[VenueProcessor] = [
     ParadisoProcessor(event_repository, venue_repository),
     OostGroningenProcessor(event_repository, venue_repository),
     NeushoornProcessor(event_repository, venue_repository),
-    HedonProcessor(event_repository, venue_repository),
+    T013Processor(event_repository, venue_repository),
     SimplonProcessor(event_repository, venue_repository),
     MelkwegProcessor(event_repository, venue_repository),
     TivoliProcessor(event_repository, venue_repository),
 ]
+# Hedon does not have date fixing data. Exclude in the unit tests.
+if AppConfig.is_running_in_gae():
+    processors.append(HedonProcessor(event_repository, venue_repository))
 processors_map: Dict[str, VenueProcessor] = {processor.venue.venue_id: processor for processor in processors}
 
 
