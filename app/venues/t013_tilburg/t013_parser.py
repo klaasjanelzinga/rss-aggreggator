@@ -19,7 +19,7 @@ class T013Parser(Parser):
         program_items = soup.find("body").find_all("script")
         data_script = [p for p in program_items if "src" not in p][0].text
         start_index = data_script.find("event_index:") + 12
-        end_index = data_script.find("""]},\\n   """) + 2
+        end_index = data_script.find("""]},""") + 2
         json_script = data_script[start_index:end_index]
         json_script = json_script.replace("\\n", "").replace("""\\""", "")
         json_data_events = json.loads(json_script)
