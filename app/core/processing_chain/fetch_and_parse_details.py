@@ -4,6 +4,7 @@ import logging
 from json import JSONDecodeError
 
 from aiohttp import ClientSession
+from aiohttp.client import ServerDisconnectedError
 
 from app.core.event.event import Event
 from app.core.processing_chain.processing_chain import Link
@@ -25,4 +26,6 @@ class FetchAndParseDetails(Link):
             self.logger.info("Exception parsing response for details, event %s for %s", event, event.venue)
         except (concurrent.futures.TimeoutError, asyncio.TimeoutError):
             self.logger.info("Timeout fetching response for details, event %s for %s", event, event.venue)
+        except ServerDisconnectedError:
+            self.logger.info("Server disconnected error response for details, event %s for %s", event, event.venue)
         await self.invoke_next_link(event)
