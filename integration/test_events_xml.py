@@ -40,5 +40,3 @@ class TestEventsXml(asynctest.TestCase):
                 assert_that(child.text, equal_to("Python3"))
             if child.tag == "category":
                 assert_that(child.text, equal_to("Entertainment"))
-
-        assert_that(len(channel), equal_to(241))

@@ -3,14 +3,17 @@ from abc import ABC, abstractmethod
 from datetime import datetime
 
 from aiohttp import ClientSession
+from opencensus.stats.measure import MeasureInt
+from opencensus.stats.stats import stats
+from opencensus.tags import tag_key, tag_map, tag_value
 
 from app.core.event.event_repository import EventRepository
 from app.core.processing_chain.database_sink import DatabaseSink
+from app.core.processing_chain.fetch_and_parse_details import FetchAndParseDetails
 from app.core.processing_chain.only_valid_events import OnlyValidEvents
 from app.core.processing_chain.processing_chain import Chain
 from app.core.source import Source
 from app.core.venue.venue import Venue
-from app.core.processing_chain.fetch_and_parse_details import FetchAndParseDetails
 
 
 class VenueProcessor(ABC):
@@ -40,6 +43,11 @@ class VenueProcessor(ABC):
                 await chain.start_chain(fetched_events)
 
             database_sink.flush()
+            mmap = stats.stats_recorder.new_measurement_map()
+            mmap.measure_int_put(self.number_of_events_measure(), database_sink.total_sunk)
+            tmap = tag_map.TagMap()
+            tmap.insert(tag_key.TagKey("venue_id"), tag_value.TagValue(self.venue.venue_id))
+            mmap.record(tmap)
             logging.getLogger(__name__).info("Upserted %d events for %s", database_sink.total_sunk, self.venue.venue_id)
             self.venue.last_fetched_date = datetime.now()
         # pylint: disable=W0703
@@ -49,6 +57,10 @@ class VenueProcessor(ABC):
 
     @abstractmethod
     def fetch_source(self) -> Source:
+        pass
+
+    @abstractmethod
+    def number_of_events_measure(self) -> MeasureInt:
         pass
 
     @staticmethod
