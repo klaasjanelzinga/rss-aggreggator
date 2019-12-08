@@ -5,12 +5,11 @@ from typing import Dict, List
 import google.cloud.logging
 from aiohttp import ClientSession, ClientTimeout
 from google.cloud import datastore
-from opencensus.stats.stats import stats
 
 from app.core.app_config import AppConfig
 from app.core.event.event_entity_transformer import EventEntityTransformer
 from app.core.event.event_repository import EventRepository
-from app.core.opencensus_util import initialize_stats_exporter, initialize_tracer
+from app.core.opencensus_util import OC_TRACER
 from app.core.user.user_profile_repository import UserProfileRepository
 from app.core.venue.venue_processor import VenueProcessor
 from app.core.venue.venue_repository import VenueRepository
@@ -42,10 +41,6 @@ event_repository: EventRepository = EventRepository(
 )
 user_profile_repository: UserProfileRepository = UserProfileRepository(client=DATASTORE_CLIENT)
 
-# Set op opencensus (OC) trace and metrics with exporter.
-OC_TRACER = initialize_tracer()
-stats.view_manager.register_exporter(initialize_stats_exporter())
-
 processors: List[VenueProcessor] = [
     SpotProcessor(event_repository, venue_repository),
     VeraProcessor(event_repository, venue_repository),
@@ -66,9 +61,10 @@ processors_map: Dict[str, VenueProcessor] = {processor.venue.venue_id: processor
 async def async_venues(slices: int) -> None:
     timeout = ClientTimeout(40)
     venues_to_sync = processors[0:4] if slices == 0 else processors[4:]
-    async with ClientSession(timeout=timeout) as session:
-        coroutines = [processor.fetch_new_events(session) for processor in venues_to_sync]
-        await asyncio.gather(*coroutines)
+    with OC_TRACER.span("async_venues"):
+        async with ClientSession(timeout=timeout) as session:
+            coroutines = [processor.fetch_new_events(session) for processor in venues_to_sync]
+            await asyncio.gather(*coroutines)
 
 
 def sync_venues(slices: int) -> None:

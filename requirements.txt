@@ -13,8 +13,8 @@ grpcio==1.25.0
 opencensus==0.7.6
 opencensus-ext-flask==0.7.3
 opencensus-ext-zipkin==0.2.2
-opencensus-ext-prometheus==0.2.1
 opencensus-ext-stackdriver==0.7.2
+prometheus_client==0.7.1
 python-dateutil
 pytz==2019.3
 

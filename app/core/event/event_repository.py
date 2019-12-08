@@ -10,6 +10,7 @@ from google.cloud.datastore.query import Iterator
 from app.core.datastore_utils import DatastoreUtils, QueryResult
 from app.core.event.event import Event
 from app.core.event.event_entity_transformer import EventEntityTransformer
+from app.core.opencensus_util import OC_TRACER
 
 
 class EventRepository:
@@ -28,8 +29,10 @@ class EventRepository:
         return entity
 
     def upsert_no_slicing(self, events: List[Event]) -> List[Event]:
-        self.client.put_multi([self._generate_entity(event) for event in set(events)])
-        return events
+        with OC_TRACER.span("upsert_no_slicing") as span:
+            span.add_annotation(f"len events {len(events)}")
+            self.client.put_multi([self._generate_entity(event) for event in set(events)])
+            return events
 
     def fetch_items_on(self, when: date) -> QueryResult:
         google_cursor = DatastoreUtils.create_cursor(earlier_curor=None)

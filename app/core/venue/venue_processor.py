@@ -8,6 +8,7 @@ from opencensus.stats.stats import stats
 from opencensus.tags import tag_key, tag_map, tag_value
 
 from app.core.event.event_repository import EventRepository
+from app.core.opencensus_util import OC_TRACER
 from app.core.processing_chain.database_sink import DatabaseSink
 from app.core.processing_chain.fetch_and_parse_details import FetchAndParseDetails
 from app.core.processing_chain.only_valid_events import OnlyValidEvents
@@ -39,8 +40,10 @@ class VenueProcessor(ABC):
         database_sink = DatabaseSink(self.event_repository)
         chain = self.create_processing_chain(session, database_sink)
         try:
-            async for fetched_events in await self.fetch_source().fetch_events(session=session):
-                await chain.start_chain(fetched_events)
+            with OC_TRACER.span(f"fetch_new_events") as span:
+                span.add_annotation(self.venue.venue_id)
+                async for fetched_events in await self.fetch_source().fetch_events(session=session):
+                    await chain.start_chain(fetched_events)
 
             database_sink.flush()
             mmap = stats.stats_recorder.new_measurement_map()
