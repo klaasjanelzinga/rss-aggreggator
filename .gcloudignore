@@ -40,7 +40,9 @@ static/build/static/js/*.map
 *.sh
 *.tar
 *.enc
+*.toml
 .coverage
 README.md
 nginx-dev-proxy/
+prometheus/
 mypy.ini
