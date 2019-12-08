@@ -44,5 +44,5 @@ static/build/static/js/*.map
 .coverage
 README.md
 nginx-dev-proxy/
-prometheus/
+prometheus/prometheus.yml
 mypy.ini
