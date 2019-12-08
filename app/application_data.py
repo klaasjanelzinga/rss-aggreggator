@@ -5,17 +5,12 @@ from typing import Dict, List
 import google.cloud.logging
 from aiohttp import ClientSession, ClientTimeout
 from google.cloud import datastore
-from opencensus.ext import prometheus
-from opencensus.ext.prometheus import stats_exporter as prometheus
-from opencensus.ext.stackdriver import stats_exporter
-from opencensus.ext.zipkin.trace_exporter import ZipkinExporter
 from opencensus.stats.stats import stats
-from opencensus.trace.samplers import AlwaysOnSampler
-from opencensus.trace.tracer import Tracer
 
 from app.core.app_config import AppConfig
 from app.core.event.event_entity_transformer import EventEntityTransformer
 from app.core.event.event_repository import EventRepository
+from app.core.opencensus_util import initialize_stats_exporter, initialize_tracer
 from app.core.user.user_profile_repository import UserProfileRepository
 from app.core.venue.venue_processor import VenueProcessor
 from app.core.venue.venue_repository import VenueRepository
@@ -47,18 +42,9 @@ event_repository: EventRepository = EventRepository(
 )
 user_profile_repository: UserProfileRepository = UserProfileRepository(client=DATASTORE_CLIENT)
 
-# Set op opencensus (OC) with stackdriver exporter.
-TRACE_EXPORTER = None
-STATS_EXPORTER = None
-if AppConfig.is_running_in_gae():
-    STACKDRIVER_EXPORTER = stats_exporter.new_stats_exporter()
-    STATS_EXPORTER = STACKDRIVER_EXPORTER
-    TRACE_EXPORTER = STACKDRIVER_EXPORTER
-else:
-    TRACE_EXPORTER = ZipkinExporter(service_name="local-rss", host_name="zipkin", port=9411, endpoint="/api/v2/spans")
-    STATS_EXPORTER = prometheus.new_stats_exporter(prometheus.Options(address="", port=8081, namespace="rss-local"))
-OC_TRACER = Tracer(sampler=AlwaysOnSampler(), exporter=TRACE_EXPORTER)
-stats.view_manager.register_exporter(STATS_EXPORTER)
+# Set op opencensus (OC) trace and metrics with exporter.
+OC_TRACER = initialize_tracer()
+stats.view_manager.register_exporter(initialize_stats_exporter())
 
 processors: List[VenueProcessor] = [
     SpotProcessor(event_repository, venue_repository),
