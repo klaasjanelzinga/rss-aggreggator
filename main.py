@@ -1,7 +1,6 @@
 from typing import Any
 
 from flask import Flask, render_template, send_from_directory
-from opencensus.ext.flask.flask_middleware import FlaskMiddleware
 
 from app.api.api import EVENT_API_ROUTES
 from app.api.maintenance import MAINTENANCE_ROUTES
@@ -14,7 +13,6 @@ from app.rss.rss_api import RSS_ROUTES
 # set to react specific build artifacts, NOTE, only localhost, gae -> app.yaml
 # pylint: disable=C0103
 app = Flask(__name__, static_folder="static/build/static", template_folder="static/build")
-middleware = FlaskMiddleware(app)
 
 # sync stores at start of app
 if not AppConfig.is_running_in_gae():
