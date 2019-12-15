@@ -8,7 +8,6 @@ from app.venues.melkweg_amsterdam.melkweg_source import MelkwegSource
 
 
 class TestMelkwegAmsterdamSource(asynctest.TestCase):
-
     async def setUp(self) -> None:
         self.session = ClientSession()
         self.source = MelkwegSource(MelkwegProcessor.create_venue())

@@ -8,7 +8,6 @@ from app.venues.vera_groningen.vera_source import VeraSource
 
 
 class TestVeraGroningenSource(asynctest.TestCase):
-
     async def tearDown(self) -> None:
         await self.session.close()
 

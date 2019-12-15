@@ -23,4 +23,3 @@ class TestRSSChannel(unittest.TestCase):
         assert_that(root.find("./author").text, equal_to("junit"))
         assert_that(root.find("./source").text, equal_to("the-truth"))
         assert_that(root.find("./guid").text, equal_to("unique"))
-

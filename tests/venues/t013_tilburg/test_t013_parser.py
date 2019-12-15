@@ -25,16 +25,14 @@ class TestT013Parser(asynctest.TestCase):
         results = self.parser.parse(ParsingContext(venue=venue, content=data))
         assert_that(results, is_not(none()))
         assert_that(len(results), equal_to(7))
-        reunie = [item for item in results if item.url == 'https://www.013.nl/programma/5423/snelle']
+        reunie = [item for item in results if item.url == "https://www.013.nl/programma/5423/snelle"]
         assert_that(len(reunie), equal_to(1))
         assert_that(reunie[0].source, equal_to(venue.source_url))
         assert_that(reunie[0].description, equal_to("Tot op de reu00fcnie!"))
         assert_that(reunie[0].date_published, is_not(none()))
         assert_that(
             reunie[0].image_url,
-            equal_to(
-                'https://www.013.nl/uploads/cache/event_main_mobile/5d7febc5306f2.jpg?version=1568700682'
-            ),
+            equal_to("https://www.013.nl/uploads/cache/event_main_mobile/5d7febc5306f2.jpg?version=1568700682"),
         )
         assert_that(reunie[0].title, equal_to("Snelle + Pjotr"))
         assert_that(reunie[0].when, is_not(none()))

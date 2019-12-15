@@ -9,7 +9,7 @@ from google.cloud import datastore
 from app.core.app_config import AppConfig
 from app.core.event.event_entity_transformer import EventEntityTransformer
 from app.core.event.event_repository import EventRepository
-from app.core.opencensus_util import OC_TRACER
+from app.core.opencensus_util import OC_TRACER, OpenCensusHelper
 from app.core.user.user_profile_repository import UserProfileRepository
 from app.core.venue.venue_processor import VenueProcessor
 from app.core.venue.venue_repository import VenueRepository
@@ -41,20 +41,22 @@ event_repository: EventRepository = EventRepository(
 )
 user_profile_repository: UserProfileRepository = UserProfileRepository(client=DATASTORE_CLIENT)
 
+OC_HELPER = OpenCensusHelper()
+
 processors: List[VenueProcessor] = [
-    SpotProcessor(event_repository, venue_repository),
-    VeraProcessor(event_repository, venue_repository),
-    ParadisoProcessor(event_repository, venue_repository),
-    OostGroningenProcessor(event_repository, venue_repository),
-    NeushoornProcessor(event_repository, venue_repository),
-    T013Processor(event_repository, venue_repository),
-    SimplonProcessor(event_repository, venue_repository),
-    MelkwegProcessor(event_repository, venue_repository),
-    TivoliProcessor(event_repository, venue_repository),
+    SpotProcessor(event_repository, venue_repository, OC_HELPER),
+    VeraProcessor(event_repository, venue_repository, OC_HELPER),
+    ParadisoProcessor(event_repository, venue_repository, OC_HELPER),
+    OostGroningenProcessor(event_repository, venue_repository, OC_HELPER),
+    NeushoornProcessor(event_repository, venue_repository, OC_HELPER),
+    T013Processor(event_repository, venue_repository, OC_HELPER),
+    SimplonProcessor(event_repository, venue_repository, OC_HELPER),
+    MelkwegProcessor(event_repository, venue_repository, OC_HELPER),
+    TivoliProcessor(event_repository, venue_repository, OC_HELPER),
 ]
 # Hedon does not have date fixing data. Exclude in the unit tests.
 if AppConfig.is_running_in_gae():
-    processors.append(HedonProcessor(event_repository, venue_repository))
+    processors.append(HedonProcessor(event_repository, venue_repository, OC_HELPER))
 processors_map: Dict[str, VenueProcessor] = {processor.venue.venue_id: processor for processor in processors}
 
 

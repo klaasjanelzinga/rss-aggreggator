@@ -79,4 +79,3 @@ class TestEvent(unittest.TestCase):
         event = fixture_vera_event()
         event.when = datetime.now(pytz.timezone("Europe/Amsterdam")) + timedelta(minutes=-1)
         assert_that(event.is_valid(), equal_to(False))
-

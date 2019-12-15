@@ -3,12 +3,9 @@ from abc import ABC, abstractmethod
 from datetime import datetime
 
 from aiohttp import ClientSession
-from opencensus.stats.measure import MeasureInt
-from opencensus.stats.stats import stats
-from opencensus.tags import tag_key, tag_map, tag_value
 
 from app.core.event.event_repository import EventRepository
-from app.core.opencensus_util import OC_TRACER
+from app.core.opencensus_util import OC_TRACER, OpenCensusHelper
 from app.core.processing_chain.database_sink import DatabaseSink
 from app.core.processing_chain.fetch_and_parse_details import FetchAndParseDetails
 from app.core.processing_chain.only_valid_events import OnlyValidEvents
@@ -18,9 +15,10 @@ from app.core.venue.venue import Venue
 
 
 class VenueProcessor(ABC):
-    def __init__(self, event_repository: EventRepository, venue: Venue) -> None:
+    def __init__(self, event_repository: EventRepository, venue: Venue, open_census_helper: OpenCensusHelper) -> None:
         self.event_repository = event_repository
         self.venue = venue
+        self.open_census_helper = open_census_helper
         self.logger = logging.getLogger(__name__)
 
     # pylint: disable= W0613, R0201
@@ -46,11 +44,7 @@ class VenueProcessor(ABC):
                     await chain.start_chain(fetched_events)
 
             database_sink.flush()
-            mmap = stats.stats_recorder.new_measurement_map()
-            mmap.measure_int_put(self.number_of_events_measure(), database_sink.total_sunk)
-            tmap = tag_map.TagMap()
-            tmap.insert(tag_key.TagKey("venue_id"), tag_value.TagValue(self.venue.venue_id))
-            mmap.record(tmap)
+            self.open_census_helper.count_venue_total(self.venue, database_sink.total_sunk)
             logging.getLogger(__name__).info("Upserted %d events for %s", database_sink.total_sunk, self.venue.venue_id)
             self.venue.last_fetched_date = datetime.now()
         # pylint: disable=W0703
@@ -60,10 +54,6 @@ class VenueProcessor(ABC):
 
     @abstractmethod
     def fetch_source(self) -> Source:
-        pass
-
-    @abstractmethod
-    def number_of_events_measure(self) -> MeasureInt:
         pass
 
     @staticmethod

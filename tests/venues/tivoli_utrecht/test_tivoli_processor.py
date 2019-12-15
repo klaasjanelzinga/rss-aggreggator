@@ -6,6 +6,7 @@ from hamcrest import equal_to
 from hamcrest.core import assert_that
 
 from app.core.event.event_repository import EventRepository
+from app.core.opencensus_util import OpenCensusHelper
 from app.core.venue.venue_repository import VenueRepository
 from app.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
 
@@ -18,7 +19,12 @@ class TestTivoliUtrechtProcessor(asynctest.TestCase):
         self.session = ClientSession()
         self.event_repository = Mock(spec=EventRepository)
         self.venue_repository = Mock(spec=VenueRepository)
-        self.processor = TivoliProcessor(event_repository=self.event_repository, venue_repository=self.venue_repository)
+        self.oc_helper = Mock(spec=OpenCensusHelper)
+        self.processor = TivoliProcessor(
+            event_repository=self.event_repository,
+            venue_repository=self.venue_repository,
+            open_census_helper=self.oc_helper,
+        )
 
     async def test_process_upserted_all_events(self):
         self.event_repository.upsert_no_slicing.return_value = []
@@ -28,4 +34,3 @@ class TestTivoliUtrechtProcessor(asynctest.TestCase):
         assert_that(total, equal_to(37))
         assert_that(args[0].when.hour, equal_to(20))
         assert_that(args[0].description, equal_to("Mozart, Berg en Grieg"))
-

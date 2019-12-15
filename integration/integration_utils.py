@@ -12,6 +12,5 @@ async def with_url(url: str, session: ClientSession) -> None:
                 return
         except Exception:
             pass
-        sleep(.5)
+        sleep(0.5)
         number_of_tries += 1
-

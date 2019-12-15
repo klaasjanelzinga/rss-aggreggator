@@ -1,8 +1,7 @@
 from aiohttp import ClientSession
-from opencensus.stats.measure import MeasureInt
 
 from app.core.event.event_repository import EventRepository
-from app.core.opencensus_util import create_count_measurement_for_venue
+from app.core.opencensus_util import OpenCensusHelper
 from app.core.processing_chain.database_sink import DatabaseSink
 from app.core.processing_chain.processing_chain import Chain
 from app.core.source import Source
@@ -13,20 +12,18 @@ from app.venues.tivoli_utrecht.tivoli_source import TivoliSource
 
 
 class TivoliProcessor(VenueProcessor):
-    def __init__(self, event_repository: EventRepository, venue_repository: VenueRepository):
+    def __init__(
+        self, event_repository: EventRepository, venue_repository: VenueRepository, open_census_helper: OpenCensusHelper
+    ):
         self.venue = TivoliProcessor.create_venue()
         venue_repository.register(self.venue)
-        self.oc_number_of_events_measure = create_count_measurement_for_venue(self.venue)
-        super().__init__(event_repository, self.venue)
+        super().__init__(event_repository, self.venue, open_census_helper)
 
     def create_processing_chain(self, client_session: ClientSession, database_sink: DatabaseSink) -> Chain:
         return super().processing_chain_with_additionals(client_session, database_sink)
 
     def fetch_source(self) -> Source:
         return TivoliSource(self.venue)
-
-    def number_of_events_measure(self) -> MeasureInt:
-        return self.oc_number_of_events_measure
 
     @staticmethod
     def create_venue() -> Venue:
