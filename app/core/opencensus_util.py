@@ -29,7 +29,7 @@ class OpenCensusHelper:
             f"number_of_items/{venue.venue_id}", f"Number of items uploaded for venue {venue.venue_id}", "By"
         )
         created_view = view.View(
-            f"number_of_events/{venue.venue_id}",
+            f"number_of_events/{venue.venue_id}_last_value",
             f"The number of events that were received for {venue.venue_id}",
             [tag_key.TagKey("venue_id")],
             requested_measure,
