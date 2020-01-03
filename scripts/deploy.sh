@@ -2,9 +2,6 @@ script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 project_dir="$(cd "${script_dir}"/.. && pwd )"
 
 set -e
-cd $project_dir
-
-docker run -v $project_dir:/usr/src/app rss-aggregator-app scripts/build.sh
 
 export version="develop-`git rev-parse --short HEAD`"
 echo "Version: $version"

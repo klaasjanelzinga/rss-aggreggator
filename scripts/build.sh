@@ -45,12 +45,4 @@ rm -rf ../static/build && mv build ../static
 
 echo "coverage report: see file://$project_dir/build-reports/html/index.html"
 
-cd $project_dir
-python3 -B main.py &
-
-echo "Running integration..."
-pytest integration
-
-ps aux | grep main.py |grep -v gre | awk '{ print $2 }' | xargs kill
-
-exit $?
+exit 0

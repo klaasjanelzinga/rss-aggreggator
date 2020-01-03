@@ -14,13 +14,17 @@ jobs:
         run: scripts/decrypt-google-appengine-credentials.sh
         env:
           GOOGLE_APP_ENGINE_KEY: ${{ secrets.GOOGLE_APP_ENGINE_KEY }}
+      - name: Build the python docker image
+        run: scripts/build-docker-image.sh
+      - name: Verify the build
+        run: docker run -v `pwd`:/usr/src/app rss-aggregator-app scripts/build.sh
+      - name: Integration tests
+        run: docker-compose -f integration-test-dc.yml up --build --exit-code-from integration_test integration_test
       - name: Decrypt the secret for google-app-engine
         run: scripts/decrypt-deployer-key.sh
         env:
           DEPLOYER_KEY: ${{ secrets.DEPLOYER_KEY }}
-      - name: Build the python docker image
-        run: scripts/build-docker-image.sh
-      - name: Login
+      - name: Login to gcloud
         run: gcloud auth activate-service-account --key-file secrets/deployer.json --project rss-aggregator-236707
-      - name: Test and deploy the app
+      - name: Deploy the app
         run: scripts/deploy.sh

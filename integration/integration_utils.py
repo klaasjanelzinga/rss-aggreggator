@@ -3,6 +3,8 @@ from time import sleep
 from aiohttp import ClientSession
 
 
+BACKEND_URL = "http://backend:8080"
+
 async def with_url(url: str, session: ClientSession) -> None:
     number_of_tries = 0
     while number_of_tries < 30:

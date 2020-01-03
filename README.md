@@ -1,6 +1,7 @@
 # rss-aggreggator
 
-[![Build Status](https://travis-ci.com/klaasjanelzinga/rss-aggreggator.svg?branch=master)](https://travis-ci.com/klaasjanelzinga/rss-aggreggator)
+
+Master is ![](https://github.com/klaasjanelzinga/rss-aggreggator/workflows/Deploy%20application/badge.svg)
 
 
 ### running the app local
@@ -42,6 +43,4 @@ the instructions in `scripts/create-google-appengine-credentials.sh`
 
 ## deploy the app
 
-        scripts/deploy.sh
-
-You should have a clean repo and be on master.
+        see the Activities.

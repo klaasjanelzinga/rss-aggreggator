@@ -5,12 +5,12 @@ from aiohttp import ClientSession
 from hamcrest import equal_to
 from hamcrest.core import assert_that
 
-from integration.integration_utils import with_url
+from integration.integration_utils import BACKEND_URL, with_url
 
 
 class TestEventsXml(asynctest.TestCase):
     async def setUp(self) -> None:
-        self.endpoint = "http://localhost:8080"
+        self.endpoint = BACKEND_URL
         self.session = ClientSession()
         await with_url(f"{self.endpoint}/maintenance/ping", self.session)
 

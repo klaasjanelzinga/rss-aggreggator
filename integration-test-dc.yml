@@ -1,0 +1,31 @@
+version: '3.3'
+
+services:
+  backend:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    command: ["python3", "main.py"]
+    depends_on:
+      - zipkin
+      - prometheus
+
+  integration_test:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    command: ["pytest", "integration"]
+    depends_on:
+      - backend
+
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - 9411:9411
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
