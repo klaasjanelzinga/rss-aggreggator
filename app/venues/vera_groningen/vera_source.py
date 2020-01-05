@@ -1,4 +1,4 @@
-from typing import List, AsyncIterable
+from typing import AsyncIterable, List
 
 from aiohttp import ClientSession
 

@@ -2,7 +2,7 @@ from typing import Any, Generator
 
 from flask import Blueprint, Response
 
-from app.application_data import event_repository, event_entity_transformer
+from app.application_data import event_entity_transformer, event_repository
 from app.rss.channel import RSSChannel
 from app.rss.transformer import Transformer
 

@@ -1,6 +1,6 @@
 import base64
-import re
 from dataclasses import dataclass
+import re
 from typing import List, Optional
 
 from google.cloud.datastore.query import Iterator

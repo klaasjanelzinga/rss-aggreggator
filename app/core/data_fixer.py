@@ -1,9 +1,9 @@
+from contextlib import contextmanager
+from datetime import datetime, timedelta
 import locale
 import random
 import re
 import threading
-from contextlib import contextmanager
-from datetime import datetime, timedelta
 from typing import Generator
 
 LOCALE_LOCK = threading.Lock()

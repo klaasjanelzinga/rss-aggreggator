@@ -1,5 +1,5 @@
-import logging
 from datetime import datetime, timedelta
+import logging
 from typing import Any
 
 from flask import Blueprint, Response, request
@@ -34,6 +34,16 @@ def maintenance_clean_up() -> Any:
     if AppConfig.is_web_request_allowed(request):
         with OC_TRACER.span("maintenance_cleanup"):
             number_cleaned = event_repository.clean_items_before(datetime.now() - timedelta(hours=2))
+            logging.getLogger(__name__).info("Number of items cleaned %d", number_cleaned)
+            return Response(status=200)
+    return Response(status=400)
+
+
+@MAINTENANCE_ROUTES.route("/maintenance/cleanup-all")
+def maintenance_clean_up_all() -> Any:
+    if AppConfig.is_web_request_allowed(request):
+        with OC_TRACER.span("maintenance_cleanup_all"):
+            number_cleaned = event_repository.clean_items_before(datetime(9999, 1, 1, 1, 1, 1))
             logging.getLogger(__name__).info("Number of items cleaned %d", number_cleaned)
             return Response(status=200)
     return Response(status=400)

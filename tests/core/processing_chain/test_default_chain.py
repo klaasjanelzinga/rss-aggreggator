@@ -1,14 +1,12 @@
-import asyncio
 from datetime import datetime
 
-import asynctest
 from hamcrest.core.assert_that import assert_that
 from hamcrest.core.core.isequal import equal_to
+import pytest
 
 from app.core.event.event import Event
 from app.core.processing_chain.only_valid_events import OnlyValidEvents
 from app.core.processing_chain.processing_chain import Chain, Link
-from tests.core.fixtures import fixture_vera_event
 
 
 class SinkMock(Link):
@@ -21,19 +19,19 @@ class SinkMock(Link):
         self.mocked.append(event)
 
 
-class TestEvent(asynctest.TestCase):
-    async def setUp(self):
-        self.sink = SinkMock()
+@pytest.mark.asyncio
+async def test_valid_event(valid_event: Event):
+    sink = SinkMock()
+    chain = Chain([OnlyValidEvents(), sink])
+    await chain.start_chain([valid_event])
 
-    async def test_valid_event(self):
-        chain = Chain([OnlyValidEvents(), self.sink])
-        await chain.start_chain([fixture_vera_event()])
+    assert_that(len(sink.mocked), equal_to(1))
 
-        assert_that(len(self.sink.mocked), equal_to(1))
-
-    async def test_invalid_event(self):
-        chain = Chain([OnlyValidEvents(), self.sink])
-        event = fixture_vera_event()
-        event.when = datetime.min
-        await chain.start_chain([event])
-        assert_that(len(self.sink.mocked), equal_to(0))
+@pytest.mark.asyncio
+async def test_invalid_event(valid_event: Event):
+    sink = SinkMock()
+    chain = Chain([OnlyValidEvents(), sink])
+    event = valid_event
+    event.when = datetime.min
+    await chain.start_chain([event])
+    assert_that(len(sink.mocked), equal_to(0))

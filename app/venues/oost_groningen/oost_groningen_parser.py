@@ -1,9 +1,9 @@
 from datetime import datetime
 from typing import List
 
-import dateparser
 from bs4 import BeautifulSoup
 from bs4.element import Tag
+import dateparser
 
 from app.core.event.event import Event
 from app.core.parser import Parser

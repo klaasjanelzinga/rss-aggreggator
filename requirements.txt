@@ -22,9 +22,12 @@ asynctest
 coverage
 mypy
 black
+faker
+isort
 PyHamcrest
 pylint
 pytest
+pytest-asyncio
 pytest-cov
 watchdog
 

@@ -1,36 +1,20 @@
-from unittest.mock import Mock
-
-import asynctest
 from aiohttp import ClientSession
 from hamcrest import equal_to
 from hamcrest.core import assert_that
+import pytest
 
 from app.core.event.event_repository import EventRepository
-from app.core.opencensus_util import OpenCensusHelper
-from app.core.venue.venue_repository import VenueRepository
 from app.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
 
 
-class TestTivoliUtrechtProcessor(asynctest.TestCase):
-    async def tearDown(self) -> None:
-        await self.session.close()
-
-    async def setUp(self) -> None:
-        self.session = ClientSession()
-        self.event_repository = Mock(spec=EventRepository)
-        self.venue_repository = Mock(spec=VenueRepository)
-        self.oc_helper = Mock(spec=OpenCensusHelper)
-        self.processor = TivoliProcessor(
-            event_repository=self.event_repository,
-            venue_repository=self.venue_repository,
-            open_census_helper=self.oc_helper,
-        )
-
-    async def test_process_upserted_all_events(self):
-        self.event_repository.upsert_no_slicing.return_value = []
-        total = await self.processor.fetch_new_events(session=self.session)
-        self.event_repository.upsert_no_slicing.assert_called()
-        args = self.event_repository.upsert_no_slicing.call_args[0][0]
-        assert_that(total, equal_to(37))
-        assert_that(args[0].when.hour, equal_to(20))
-        assert_that(args[0].description, equal_to("Mozart, Berg en Grieg"))
+@pytest.mark.asyncio
+async def test_process_upserted_all_events(
+    client_session: ClientSession, tivoli_processor: TivoliProcessor, mock_event_repository: EventRepository
+):      
+    mock_event_repository.upsert_no_slicing.return_value = []
+    total = await tivoli_processor.fetch_new_events(session=client_session)
+    mock_event_repository.upsert_no_slicing.assert_called()
+    args = mock_event_repository.upsert_no_slicing.call_args[0][0]
+    assert_that(total, equal_to(37))
+    assert_that(args[0].when.hour, equal_to(20))
+    assert_that(args[0].description, equal_to("Mozart, Berg en Grieg"))

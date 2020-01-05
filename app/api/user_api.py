@@ -1,6 +1,6 @@
 from typing import Any
 
-from flask import Blueprint, request, Response, jsonify
+from flask import Blueprint, Response, jsonify, request
 
 from app.application_data import user_profile_repository
 from app.core.authorization.token_verifier import TokenVerifier

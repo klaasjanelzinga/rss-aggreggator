@@ -1,12 +1,12 @@
-import re
 from datetime import datetime
+import re
 from typing import List
 
-import dateparser
-import pytz
 from bs4 import BeautifulSoup
 from bs4.element import Tag
+import dateparser
 from dateutil.relativedelta import relativedelta
+import pytz
 
 from app.core.event.event import Event
 from app.core.parser import Parser

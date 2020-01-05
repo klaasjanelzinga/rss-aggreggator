@@ -1,7 +1,7 @@
 import asyncio
 import concurrent
-import logging
 from json import JSONDecodeError
+import logging
 
 from aiohttp import ClientSession
 from aiohttp.client import ServerDisconnectedError

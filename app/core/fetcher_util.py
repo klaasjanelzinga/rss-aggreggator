@@ -1,4 +1,3 @@
-import logging
 import re
 
 import aiofiles
@@ -169,7 +168,7 @@ async def fetch(session: ClientSession, url: str) -> str:
         if AppConfig.is_running_in_gae():
             async with session.get(url) as response:
                 return await response.text()
-        logging.getLogger(__name__).warning("Retrieving stubbed data locally for %s", url)
+        # logging.getLogger(__name__).warning("Retrieving stubbed data locally for %s", url)
         filename = URL_TO_MOCK_FILE_DICT.get(url)
         if filename is None:
             for key, value in URL_TO_MOCK_FILE_DICT.items():

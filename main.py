@@ -6,18 +6,11 @@ from app.api.api import EVENT_API_ROUTES
 from app.api.maintenance import MAINTENANCE_ROUTES
 from app.api.user_api import USER_ROUTES
 from app.api.venue import VENUE_API_ROUTES
-from app.application_data import sync_venues
-from app.core.app_config import AppConfig
 from app.rss.rss_api import RSS_ROUTES
 
 # set to react specific build artifacts, NOTE, only localhost, gae -> app.yaml
 # pylint: disable=C0103
 app = Flask(__name__, static_folder="static/build/static", template_folder="static/build")
-
-# sync stores at start of app
-if not AppConfig.is_running_in_gae():
-    sync_venues(0)
-    sync_venues(1)
 
 app.register_blueprint(EVENT_API_ROUTES)
 app.register_blueprint(MAINTENANCE_ROUTES)

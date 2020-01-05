@@ -1,12 +1,12 @@
+from datetime import datetime
 import logging
 import re
-from datetime import datetime
 from typing import Optional
 
-import dateparser
-import pytz
 from bs4.element import Tag
+import dateparser
 from dateutil.relativedelta import relativedelta
+import pytz
 
 
 class ParserUtil:

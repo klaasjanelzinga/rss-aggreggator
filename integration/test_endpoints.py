@@ -1,80 +1,79 @@
-import asynctest
 from aiohttp import ClientSession
 from hamcrest import equal_to
 from hamcrest.core import assert_that
+import pytest
 
-from integration.integration_utils import BACKEND_URL, with_url
 
+async def validate(client_session: ClientSession, url: str) -> None:
+    response = await client_session.get(url)
+    assert_that(response.status, equal_to(200))
 
-class TestEndpoints(asynctest.TestCase):
-    async def setUp(self) -> None:
-        super().setUp()
-        self.endpoint = BACKEND_URL
-        self.session = ClientSession()
-        await with_url(f"{self.endpoint}/maintenance/ping", self.session)
+@pytest.mark.asyncio
+async def test_events_xml(client_session, backend_url):
+    await validate(client_session, f"{backend_url}/events.xml")
 
-    async def tearDown(self) -> None:
-        await self.session.close()
+@pytest.mark.asyncio
+async def test_cleanup(client_session, backend_url):
+    await validate(client_session, f"{backend_url}/maintenance/cleanup")
 
-    async def validate(self, url: str) -> None:
-        response = await self.session.get(url)
-        assert_that(response.status, equal_to(200))
+@pytest.mark.asyncio
+async def test_maintenance(client_session, backend_url):
+    await validate(client_session, f"{backend_url}/maintenance/fetch-data")
+    await validate(client_session, f"{backend_url}/maintenance/fetch-data-1")
+    await validate(client_session, f"{backend_url}/maintenance/ping")
 
-    async def test_events_xml(self):
-        await self.validate(f"{self.endpoint}/events.xml")
+@pytest.mark.asyncio
+async def test_root(client_session, backend_url):
+    await validate(client_session, f"{backend_url}")
 
-    async def test_cleanup(self):
-        await self.validate(f"{self.endpoint}/maintenance/cleanup")
+@pytest.mark.asyncio
+async def test_api_events(client_session, backend_url):
+    await validate(client_session, f"{backend_url}/api/events")
 
-    async def test_maintenance(self):
-        await self.validate(f"{self.endpoint}/maintenance/fetch-data")
-        await self.validate(f"{self.endpoint}/maintenance/fetch-data-1")
-        await self.validate(f"{self.endpoint}/maintenance/ping")
+@pytest.mark.asyncio
+async def test_api_events_today(client_session, backend_url):
+    await validate(client_session, f"{backend_url}/api/events/today")
 
-    async def test_root(self):
-        await self.validate(f"{self.endpoint}")
+@pytest.mark.asyncio
+async def test_api_events_tomorrow(client_session, backend_url):
+    await validate(client_session, f"{backend_url}/api/events/tomorrow")
 
-    async def test_api_events(self):
-        await self.validate(f"{self.endpoint}/api/events")
+@pytest.mark.asyncio
+async def test_api_venues(client_session, backend_url):
+    await validate(client_session, f"{backend_url}/api/venues")
 
-    async def test_api_events_today(self):
-        await self.validate(f"{self.endpoint}/api/events/today")
+@pytest.mark.asyncio
+async def test_api_search(client_session, backend_url):
+    await validate(client_session, f"{backend_url}/api/search?term=groningen")
 
-    async def test_api_events_tomorrow(self):
-        await self.validate(f"{self.endpoint}/api/events/tomorrow")
+@pytest.mark.asyncio
+async def test_channel_image(client_session, backend_url):
+    await validate(client_session, f"{backend_url}/channel-image.png")
 
-    async def test_api_venues(self):
-        await self.validate(f"{self.endpoint}/api/venues")
-
-    async def test_api_search(self):
-        await self.validate(f"{self.endpoint}/api/search?term=groningen")
-
-    async def test_channel_image(self):
-        await self.validate(f"{self.endpoint}/channel-image.png")
-
-    async def test_user_profile(self):
-        response = await self.session.get(f"{self.endpoint}/api/user/profile")
-        assert_that(response.status, equal_to(404))
-        response = await self.session.post(
-            f"{self.endpoint}/api/user/profile",
-            json={"email": "klaasjanelzinga@test", "givenName": "klaasajn", "familyName": "elz"},
-        )
-        assert_that(response.status, equal_to(404))
-        response = await self.session.post(
-            f"{self.endpoint}/api/user/signup",
-            json={"email": "klaasjanelzinga@test", "givenName": "klaasajn", "familyName": "elz"},
-        )
-        assert_that(response.status, equal_to(404))
-        response = await self.session.get(
-            f"{self.endpoint}/api/user/profile",
-            headers={"Authorization": "Bearer 123123123123", "Accepts": "application/json"},
-        )
-        assert_that(response.status, equal_to(404))
-        response = await self.session.get(
-            f"{self.endpoint}/api/user/profile", headers={"Authorization": "Bearer", "Accepts": "application/json"}
-        )
-        assert_that(response.status, equal_to(404))
-        response = await self.session.get(
-            f"{self.endpoint}/api/user/profile", headers={"Authorization": "Beare", "Accepts": "application/json"}
-        )
-        assert_that(response.status, equal_to(404))
+@pytest.mark.asyncio
+async def test_user_profile(client_session, backend_url):
+    response = await client_session.get(f"{backend_url}/api/user/profile")
+    assert_that(response.status, equal_to(404))
+    response = await client_session.post(
+        f"{backend_url}/api/user/profile",
+        json={"email": "klaasjanelzinga@test", "givenName": "klaasajn", "familyName": "elz"},
+    )
+    assert_that(response.status, equal_to(404))
+    response = await client_session.post(
+        f"{backend_url}/api/user/signup",
+        json={"email": "klaasjanelzinga@test", "givenName": "klaasajn", "familyName": "elz"},
+    )
+    assert_that(response.status, equal_to(404))
+    response = await client_session.get(
+        f"{backend_url}/api/user/profile",
+        headers={"Authorization": "Bearer 123123123123", "Accepts": "application/json"},
+    )
+    assert_that(response.status, equal_to(404))
+    response = await client_session.get(
+        f"{backend_url}/api/user/profile", headers={"Authorization": "Bearer", "Accepts": "application/json"}
+    )
+    assert_that(response.status, equal_to(404))
+    response = await client_session.get(
+        f"{backend_url}/api/user/profile", headers={"Authorization": "Beare", "Accepts": "application/json"}
+    )
+    assert_that(response.status, equal_to(404))

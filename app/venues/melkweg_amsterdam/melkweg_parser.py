@@ -1,9 +1,9 @@
-import json
 from datetime import datetime
+import json
 from typing import Dict, List
 
-import pytz
 from bs4 import BeautifulSoup
+import pytz
 
 from app.core.event.event import Event
 from app.core.parser import Parser
