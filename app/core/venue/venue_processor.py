@@ -1,6 +1,6 @@
+import logging
 from abc import ABC, abstractmethod
 from datetime import datetime
-import logging
 
 from aiohttp import ClientSession
 
@@ -12,14 +12,23 @@ from app.core.processing_chain.only_valid_events import OnlyValidEvents
 from app.core.processing_chain.processing_chain import Chain
 from app.core.source import Source
 from app.core.venue.venue import Venue
+from app.core.venue.venue_repository import VenueRepository
 
 
 class VenueProcessor(ABC):
-    def __init__(self, event_repository: EventRepository, venue: Venue, open_census_helper: OpenCensusHelper) -> None:
+    def __init__(
+        self,
+        event_repository: EventRepository,
+        venue_repository: VenueRepository,
+        venue: Venue,
+        open_census_helper: OpenCensusHelper,
+    ) -> None:
         self.event_repository = event_repository
+        self.venue_repository = venue_repository
         self.venue = venue
         self.open_census_helper = open_census_helper
         self.logger = logging.getLogger(__name__)
+        self.venue_repository.insert(self.venue)
 
     # pylint: disable= W0613, R0201
     def create_processing_chain(self, client_session: ClientSession, database_sink: DatabaseSink) -> Chain:
@@ -47,6 +56,7 @@ class VenueProcessor(ABC):
             self.open_census_helper.count_venue_total(self.venue, database_sink.total_sunk)
             logging.getLogger(__name__).info("Upserted %d events for %s", database_sink.total_sunk, self.venue.venue_id)
             self.venue.last_fetched_date = datetime.now()
+            self.venue_repository.upsert(self.venue)
         # pylint: disable=W0703
         except Exception as exception:
             logging.getLogger(__name__).exception("Unable to sync %s %s", self.venue.venue_id, exception)

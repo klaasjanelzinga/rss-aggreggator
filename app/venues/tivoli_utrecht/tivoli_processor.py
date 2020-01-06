@@ -16,8 +16,7 @@ class TivoliProcessor(VenueProcessor):
         self, event_repository: EventRepository, venue_repository: VenueRepository, open_census_helper: OpenCensusHelper
     ):
         self.venue = TivoliProcessor.create_venue()
-        venue_repository.register(self.venue)
-        super().__init__(event_repository, self.venue, open_census_helper)
+        super().__init__(event_repository, venue_repository, self.venue, open_census_helper)
 
     def create_processing_chain(self, client_session: ClientSession, database_sink: DatabaseSink) -> Chain:
         return super().processing_chain_with_additionals(client_session, database_sink)

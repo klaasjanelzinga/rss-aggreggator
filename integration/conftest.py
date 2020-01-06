@@ -28,14 +28,9 @@ async def clean_datastore(session: ClientSession) -> None:
 
 
 async def insert_default_in_datastore(session: ClientSession) -> None:
-    results = [
-        await session.get(f"{BACKEND_URL}/maintenance/fetch-data"),
-        await session.get(f"{BACKEND_URL}/maintenance/fetch-data-1"),
-    ]
-
-    for result in results:
-        if result.status > 299:
-            raise Exception(f"fetch-data failed {result}")
+    result = await session.get(f"{BACKEND_URL}/maintenance/fetch-integration-test-data")
+    if result.status > 299:
+        raise Exception(f"fetch-data failed {result}")
 
 
 async def init_integration_test(session: ClientSession) -> None:
@@ -45,7 +40,7 @@ async def init_integration_test(session: ClientSession) -> None:
 
 
 async def call_init():
-    timeout = ClientTimeout(40)
+    timeout = ClientTimeout(120)
     async with ClientSession(timeout=timeout) as session:
         await asyncio.gather(init_integration_test(session))
 
@@ -57,7 +52,7 @@ def backend_url() -> str:
 
 @pytest.fixture
 async def client_session():
-    timeout = ClientTimeout(40)
+    timeout = ClientTimeout(120)
     a_client_session = ClientSession(timeout=timeout)
     yield a_client_session
     await a_client_session.close()

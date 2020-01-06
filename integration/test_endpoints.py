@@ -19,7 +19,6 @@ async def test_cleanup(client_session, backend_url):
 @pytest.mark.asyncio
 async def test_maintenance(client_session, backend_url):
     await validate(client_session, f"{backend_url}/maintenance/fetch-data")
-    await validate(client_session, f"{backend_url}/maintenance/fetch-data-1")
     await validate(client_session, f"{backend_url}/maintenance/ping")
 
 @pytest.mark.asyncio

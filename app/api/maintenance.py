@@ -15,16 +15,25 @@ MAINTENANCE_ROUTES = Blueprint("maintenance", __name__, template_folder="templat
 def maintenance_fetch_data() -> Any:
     if AppConfig.is_web_request_allowed(request):
         with OC_TRACER.span("fetch_data"):
-            application_data.sync_venues(0)
+            application_data.sync_venues()
             return Response(status=200)
     return Response(status=400)
 
 
-@MAINTENANCE_ROUTES.route("/maintenance/fetch-data-1")
-def maintenance_fetch_data_1() -> Any:
+@MAINTENANCE_ROUTES.route("/maintenance/fetch-integration-test-data")
+def maintenance_fetch_integration_test_data() -> Any:
     if AppConfig.is_web_request_allowed(request):
-        with OC_TRACER.span("fetch_data_1"):
-            application_data.sync_venues(1)
+        with OC_TRACER.span("fetch_integration_test_data"):
+            application_data.sync_integration_test_venues()
+            return Response(status=200)
+    return Response(status=400)
+
+
+@MAINTENANCE_ROUTES.route("/maintenance/fetch-all-data")
+def maintenance_fetch_all_data() -> Any:
+    if AppConfig.is_web_request_allowed(request):
+        with OC_TRACER.span("fetch_all_data"):
+            application_data.sync_all_venues()
             return Response(status=200)
     return Response(status=400)
 

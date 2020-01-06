@@ -18,8 +18,7 @@ class NeushoornProcessor(VenueProcessor):
         self, event_repository: EventRepository, venue_repository: VenueRepository, open_census_helper: OpenCensusHelper
     ):
         self.venue = NeushoornProcessor.create_venue()
-        venue_repository.register(self.venue)
-        super().__init__(event_repository, self.venue, open_census_helper)
+        super().__init__(event_repository, venue_repository, self.venue, open_census_helper)
 
     def fetch_source(self) -> Source:
         return NeushoornSource(self.venue)
@@ -38,7 +37,7 @@ class NeushoornProcessor(VenueProcessor):
     def create_venue() -> Venue:
         return Venue(
             venue_id="neushoorn-leeuwarden",
-            short_name="Neus LEE",
+            short_name="Neus NL-LEE",
             name="Neushoorn Leeuwarden",
             phone="",
             city="Leeuwarden",

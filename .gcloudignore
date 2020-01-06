@@ -25,6 +25,7 @@ google-appengine-credentials.json.gpg
 deployer.json.gpg
 Dockerfile
 docker-compose.yml
+integration-test-dc.yml
 pylintrc
 
 frontend/
@@ -42,6 +43,8 @@ static/build/static/js/*.map
 *.enc
 *.toml
 .coverage
+.isort.cfg
+.dockerignore
 README.md
 nginx-dev-proxy/
 prometheus/prometheus.yml

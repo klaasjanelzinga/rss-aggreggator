@@ -1,10 +1,7 @@
 cron:
   - description: "refresh data on venues"
     url: /maintenance/fetch-data
-    schedule: every 24 hours
-  - description: "refresh data on venues"
-    url: /maintenance/fetch-data-1
-    schedule: every 24 hours
+    schedule: every 7 hours
   - description: "clean old events"
     url: /maintenance/cleanup
     schedule: every 4 hours

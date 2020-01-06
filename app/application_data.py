@@ -1,10 +1,12 @@
 import asyncio
 import logging
+from datetime import datetime, timedelta
 from typing import Dict, List
 
+import google.cloud.logging
+import pytz
 from aiohttp import ClientSession, ClientTimeout
 from google.cloud import datastore
-import google.cloud.logging
 
 from app.core.app_config import AppConfig
 from app.core.event.event_entity_transformer import EventEntityTransformer
@@ -31,10 +33,8 @@ if AppConfig.is_running_in_gae():
 else:
     logging.basicConfig(level=logging.INFO)
 
-# logging.basicConfig(level=logging.INFO)
-
 DATASTORE_CLIENT = datastore.Client()
-venue_repository: VenueRepository = VenueRepository()
+venue_repository: VenueRepository = VenueRepository(client=DATASTORE_CLIENT)
 event_entity_transformer: EventEntityTransformer = EventEntityTransformer(venue_repository=venue_repository)
 event_repository: EventRepository = EventRepository(
     event_entity_transformer=event_entity_transformer, client=DATASTORE_CLIENT
@@ -60,14 +60,39 @@ if AppConfig.is_running_in_gae():
 processors_map: Dict[str, VenueProcessor] = {processor.venue.venue_id: processor for processor in processors}
 
 
-async def async_venues(slices: int) -> None:
+async def _sync_these_processors(procs: List[VenueProcessor]) -> None:
     timeout = ClientTimeout(40)
-    venues_to_sync = processors[0:4] if slices == 0 else processors[4:]
     with OC_TRACER.span("async_venues"):
         async with ClientSession(timeout=timeout) as session:
-            coroutines = [processor.fetch_new_events(session) for processor in venues_to_sync]
+            coroutines = [processor.fetch_new_events(session) for processor in procs]
             await asyncio.gather(*coroutines)
 
 
-def sync_venues(slices: int) -> None:
-    asyncio.run(async_venues(slices))
+async def _sync_these_processors_wrapper(procs: List[VenueProcessor]) -> None:
+    await _sync_these_processors(procs)
+
+
+async def async_venues(venues_before_utc: datetime, max_to_sync: int = 3) -> None:
+    venues = [
+        venue
+        for venue in venue_repository.fetch_all()
+        if venue.last_fetched_date < venue.convert_utc_to_venue_timezone(venues_before_utc)
+    ]
+    venues = sorted(venues, key=lambda v: v.last_fetched_date)
+    await _sync_these_processors([processors_map[venue.venue_id] for venue in venues[:max_to_sync]])
+
+
+def sync_venues() -> None:
+    asyncio.run(async_venues(venues_before_utc=datetime.now(tz=pytz.utc) - timedelta(hours=20)))
+
+
+def sync_all_venues() -> None:
+    asyncio.run(async_venues(max_to_sync=99, venues_before_utc=datetime(9999, 1, 1, 1, 1, 1, 1, pytz.utc)))
+
+
+def sync_integration_test_venues() -> None:
+    asyncio.run(
+        _sync_these_processors_wrapper(
+            [processors_map["simplon-groningen"], processors_map["vera-groningen"], processors_map["spot-groningen"],]
+        )
+    )

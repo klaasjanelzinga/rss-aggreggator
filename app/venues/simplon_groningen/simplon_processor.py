@@ -12,8 +12,7 @@ class SimplonProcessor(VenueProcessor):
         self, event_repository: EventRepository, venue_repository: VenueRepository, open_census_helper: OpenCensusHelper
     ):
         self.venue = SimplonProcessor.create_venue()
-        venue_repository.register(self.venue)
-        super().__init__(event_repository, self.venue, open_census_helper)
+        super().__init__(event_repository, venue_repository, self.venue, open_census_helper)
 
     def fetch_source(self) -> Source:
         return SimplonSource(self.venue)

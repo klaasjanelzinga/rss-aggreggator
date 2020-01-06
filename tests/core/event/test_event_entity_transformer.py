@@ -43,3 +43,4 @@ def test_mapping_to_entity(valid_event: Event):
     assert_that(entity["when"], valid_event.when)
     assert_that(entity["description"], valid_event.description)
     assert_that(entity["title"], valid_event.title)
+    assert_that(len(entity), equal_to(9))
