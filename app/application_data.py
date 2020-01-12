@@ -91,8 +91,4 @@ def sync_all_venues() -> None:
 
 
 def sync_integration_test_venues() -> None:
-    asyncio.run(
-        _sync_these_processors_wrapper(
-            [processors_map["simplon-groningen"], processors_map["vera-groningen"], processors_map["spot-groningen"],]
-        )
-    )
+    asyncio.run(_sync_these_processors_wrapper([processors_map["simplon-groningen"], processors_map["vera-groningen"]]))
