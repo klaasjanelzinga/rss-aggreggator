@@ -14,10 +14,14 @@ jobs:
         - run:
             name: build docker image
             command: scripts/build-docker-image.sh
-
         - run:
             name: verify the build
-            command: docker run -v `pwd`:/usr/src/app rss-aggregator-app scripts/build.sh
+            command: |
+                docker create -v /usr/src/app --name configs alpine:3.4 /bin/true
+                docker cp . configs:/usr/src/app
+                docker run --volumes-from configs --name app rss-aggregator-app scripts/build.sh
+                docker cp app:/usr/src/app/static static/
+                docker cp app:/usr/src/app/build-reports build-reports
         - run:
             name: integration tests
             command: docker-compose -f integration-test-dc.yml up --build --exit-code-from integration_test integration_test
