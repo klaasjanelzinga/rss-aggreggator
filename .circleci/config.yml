@@ -1,41 +1,26 @@
-#
-# Check https://circleci.com/docs/2.0/language-python/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.7
+        - image: circleci/python:3.7
     working_directory: ~/repo
 
     steps:
-      - checkout
+        - checkout
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "requirements.txt" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+        - run:
+            name: decrypt test connection
+            command: scripts/decrypt-google-appengine-credentials.sh
+        - run:
+            name: build docker image
+            command: scripts/build-docker-image.sh
 
-      - run:
-          name: install dependencies
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r requirements.txt
-
-      - save_cache:
-          paths:
-            - ./venv
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
-
-      - run:
-          name: run tests
-          command: |
-            . venv/bin/activate
-            scripts/build.sh
-
-      - store_artifacts:
-          path: build-reports/html
-          destination: test-reports
+        - run:
+            name: verify the build
+            command: docker run -v `pwd`:/usr/src/app rss-aggregator-app scripts/build.sh
+        - run:
+            name: integration tests
+            command: docker-compose -f integration-test-dc.yml up --build --exit-code-from integration_test integration_test
+        - store_artifacts:
+            path: build-reports/html
+            destination: test-reports
