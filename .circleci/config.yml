@@ -1,13 +1,12 @@
 version: 2
 jobs:
-  build:
-    docker:
-        - image: circleci/python:3.7
+    build:
+        machine:
+          image: ubuntu-1604:201903-01
     working_directory: ~/repo
 
     steps:
         - checkout
-        - setup_remote_docker
         - run:
             name: decrypt test connection
             command: scripts/decrypt-google-appengine-credentials.sh
@@ -17,11 +16,7 @@ jobs:
         - run:
             name: verify the build
             command: |
-                docker create -v /usr/src/app --name configs alpine:3.4 /bin/true
-                docker cp . configs:/usr/src/app
-                docker run --volumes-from configs --name app rss-aggregator-app scripts/build.sh
-                docker cp app:/usr/src/app/static static/
-                docker cp app:/usr/src/app/build-reports build-reports
+                docker run -v `pwd`:/usr/src/app rss-aggregator-app scripts/build.sh
         - run:
             name: integration tests
             command: docker-compose -f integration-test-dc.yml up --build --exit-code-from integration_test integration_test

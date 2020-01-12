@@ -24,8 +24,6 @@ services:
       - 9411:9411
 
   prometheus:
-    image: prom/prometheus
+    build: prometheus
     ports:
       - 9090:9090
-    volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
