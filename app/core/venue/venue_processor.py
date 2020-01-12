@@ -50,7 +50,6 @@ class VenueProcessor(ABC):
         try:
             with OC_TRACER.span(f"fetch_new_events") as span:
                 span.add_annotation(self.venue.venue_id)
-                logging.getLogger(__name__).info("Starting venue")
                 fetched_events = await self.fetch_source().fetch_events(session)
                 tasks = [
                     asyncio.create_task(chain.start_chain(fetched_event)) async for fetched_event in fetched_events
