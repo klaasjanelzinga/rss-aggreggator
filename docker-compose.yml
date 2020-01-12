@@ -3,9 +3,11 @@ version: '3.3'
 services:
   backend:
     build: .
+    ports:
+      - 5678:5678
     volumes:
       - .:/usr/src/app
-    command: ["watchmedo", "auto-restart", "--recursive", "--pattern=*.py", "--directory=.", "python3", "main.py"]
+    command: ["watchmedo", "auto-restart", "--recursive", "--pattern=*.py", "--directory=.", "--", "python3", "-m", "ptvsd", "--host", "0.0.0.0", "--port", "5678", "main.py"]
 
   frontend:
     build: .

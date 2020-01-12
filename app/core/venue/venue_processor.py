@@ -1,6 +1,7 @@
-import logging
 from abc import ABC, abstractmethod
+import asyncio
 from datetime import datetime
+import logging
 
 from aiohttp import ClientSession
 
@@ -49,8 +50,12 @@ class VenueProcessor(ABC):
         try:
             with OC_TRACER.span(f"fetch_new_events") as span:
                 span.add_annotation(self.venue.venue_id)
-                async for fetched_events in await self.fetch_source().fetch_events(session=session):
-                    await chain.start_chain(fetched_events)
+                logging.getLogger(__name__).info("Starting venue")
+                fetched_events = await self.fetch_source().fetch_events(session)
+                tasks = [
+                    asyncio.create_task(chain.start_chain(fetched_event)) async for fetched_event in fetched_events
+                ]
+                await asyncio.gather(*tasks)
 
             database_sink.flush()
             self.open_census_helper.count_venue_total(self.venue, database_sink.total_sunk)
