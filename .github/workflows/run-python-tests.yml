@@ -18,5 +18,3 @@ jobs:
         run: scripts/build-docker-image.sh
       - name: Verify the build
         run: docker run -v `pwd`:/usr/src/app rss-aggregator-app scripts/build.sh
-      - name: Integration tests
-        run: docker-compose -f integration-test-dc.yml up --build --exit-code-from integration_test integration_test
