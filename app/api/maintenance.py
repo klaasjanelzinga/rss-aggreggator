@@ -7,6 +7,7 @@ from flask import Blueprint, Response, request
 from app import application_data
 from app.application_data import OC_TRACER, event_repository
 from app.core.app_config import AppConfig
+from app.application_data import venue_repository
 
 MAINTENANCE_ROUTES = Blueprint("maintenance", __name__, template_folder="templates")
 
@@ -53,6 +54,9 @@ def maintenance_clean_up_all() -> Any:
     if AppConfig.is_web_request_allowed(request):
         with OC_TRACER.span("maintenance_cleanup_all"):
             number_cleaned = event_repository.clean_items_before(datetime(9999, 1, 1, 1, 1, 1))
+            for venue in venue_repository.fetch_all():
+                venue.last_fetched_date = datetime.min
+                venue_repository.upsert(venue)
             logging.getLogger(__name__).info("Number of items cleaned %d", number_cleaned)
             return Response(status=200)
     return Response(status=400)
