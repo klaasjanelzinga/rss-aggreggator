@@ -24,5 +24,7 @@ jobs:
           DEPLOYER_KEY: ${{ secrets.DEPLOYER_KEY }}
       - name: Login to gcloud
         run: gcloud auth activate-service-account --key-file secrets/deployer.json --project rss-aggregator-v2
+      - name: Login docker to gcloud
+        run: gcloud auth configure-docker
       - name: Deploy the app
         run: scripts/deploy.sh --version $GITHUB_SHA api cron frontend
