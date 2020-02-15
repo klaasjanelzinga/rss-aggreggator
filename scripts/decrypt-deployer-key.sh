@@ -14,5 +14,5 @@ then
     echo "password not set"
     exit 1
 fi
-gpg --quiet --batch --yes --decrypt --passphrase="$DEPLOYER_KEY" --output $project_dir/secrets/deployer.json $project_dir/deployer.json.gpg
+gpg --quiet --batch --yes --decrypt --passphrase="$DEPLOYER_KEY" --output $project_dir/secrets/deployer.json $project_dir/etc/rss-aggregator-v2-c5f683e853f5.json.gpg
 exit $?
