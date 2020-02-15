@@ -4,11 +4,11 @@ Babel==2.8.0
 beautifulsoup4==4.8.2
 dateparser==0.7.2
 Flask
+flask-cors==3.0.8
 google-api-core==1.15.0
 google-auth==1.10.0
 google-cloud-core==1.1.0
 google-cloud-datastore==1.10.0
-google-cloud-logging==1.14.0
 grpcio==1.26.0
 opencensus==0.7.6
 opencensus-ext-flask==0.7.3
@@ -18,17 +18,4 @@ prometheus_client==0.7.1
 python-dateutil
 pytz==2019.3
 
-asynctest
-coverage
-mypy
-black
-faker
-isort
-ptvsd
-PyHamcrest
-pylint
-pytest
-pytest-asyncio
-pytest-cov
-watchdog
 

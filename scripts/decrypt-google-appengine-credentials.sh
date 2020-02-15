@@ -8,7 +8,7 @@ project_dir="$(cd "${script_dir}"/.. && pwd )"
 
 cd "$project_dir" || (echo "project_dir not found" && exit 1)
 
-[ ! -f $project_dir/google-appengine-credentials.json.gpg ] && echo "Input encrypted file not found" && exit 1
+[ ! -f $project_dir/etc/google-appengine-credentials.json.gpg ] && echo "Input encrypted file not found" && exit 1
 if [ -z "$GOOGLE_APP_ENGINE_KEY" ]
 then
     echo -n Password: 
@@ -22,6 +22,6 @@ then
     echo "password not set"
     exit 1
 fi
-gpg --quiet --batch --yes --decrypt --passphrase="$GOOGLE_APP_ENGINE_KEY" --output $project_dir/secrets/google-appengine-credentials.json $project_dir/google-appengine-credentials.json.gpg
+gpg --quiet --batch --yes --decrypt --passphrase="$GOOGLE_APP_ENGINE_KEY" --output $project_dir/secrets/google-appengine-credentials.json $project_dir/etc/google-appengine-credentials.json.gpg
 
 echo "Credentials created in secrets/google-appengine-credentials.json"

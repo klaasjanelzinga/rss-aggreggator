@@ -165,7 +165,7 @@ URL_TO_MOCK_FILE_DICT = {
 async def fetch(session: ClientSession, url: str) -> str:
     with OC_TRACER.span("fetch") as span:
         span.add_annotation(url)
-        if AppConfig.is_running_in_gae():
+        if AppConfig.is_production():
             async with session.get(url) as response:
                 return await response.text()
         # logging.getLogger(__name__).warning("Retrieving stubbed data locally for %s", url)

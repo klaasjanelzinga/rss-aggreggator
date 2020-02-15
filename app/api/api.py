@@ -2,25 +2,26 @@ from datetime import date, timedelta
 from typing import Any
 
 from flask import Blueprint, jsonify, request
+from flask_cors import cross_origin
 
 from app import application_data
 from app.application_data import event_repository
+from app.core.app_config import AppConfig
 from app.core.event.event import Event
 from app.core.event.event_entity_transformer import EventEntityTransformer
 
 EVENT_API_ROUTES = Blueprint("events", __name__, template_folder="templates")
-
 EVENT_ENTITY_TRANSFORMER = EventEntityTransformer(venue_repository=application_data.venue_repository)
 
 
 @EVENT_API_ROUTES.route("/api/events", methods=["GET"])
+@cross_origin(**AppConfig.cors())
 def fetch_events() -> Any:
     # if not AppConfig.is_running_in_gae():
     #     with open('tests/sample-api-events.json') as f:
     #         ob = json.load(f)
     #         logging.warning('Returning stubbed event data!')
     #         return jsonify(ob)
-    #
     fetch_offset = request.args.get("fetch_offset")
     cursor = bytes(fetch_offset, "utf-8") if fetch_offset is not None else None
 
@@ -31,6 +32,7 @@ def fetch_events() -> Any:
 
 
 @EVENT_API_ROUTES.route("/api/events/today", methods=["GET"])
+@cross_origin(**AppConfig.cors())
 def fetch_today_events() -> Any:
     query_result = event_repository.fetch_items_on(when=date.today())
     events = [transform(EVENT_ENTITY_TRANSFORMER.to_event(item)) for item in query_result.items]
@@ -38,6 +40,7 @@ def fetch_today_events() -> Any:
 
 
 @EVENT_API_ROUTES.route("/api/events/tomorrow", methods=["GET"])
+@cross_origin(**AppConfig.cors())
 def fetch_tomorrow_events() -> Any:
     query_result = event_repository.fetch_items_on(when=date.today() + timedelta(days=1))
     events = [transform(EVENT_ENTITY_TRANSFORMER.to_event(item)) for item in query_result.items]
@@ -45,6 +48,7 @@ def fetch_tomorrow_events() -> Any:
 
 
 @EVENT_API_ROUTES.route("/api/events/day-after-tomorrow", methods=["GET"])
+@cross_origin(**AppConfig.cors())
 def fetch_day_after_tomorrow_events() -> Any:
     query_result = event_repository.fetch_items_on(when=date.today() + timedelta(days=2))
     events = [transform(EVENT_ENTITY_TRANSFORMER.to_event(item)) for item in query_result.items]
@@ -52,6 +56,7 @@ def fetch_day_after_tomorrow_events() -> Any:
 
 
 @EVENT_API_ROUTES.route("/api/search", methods=["GET"])
+@cross_origin(**AppConfig.cors())
 def search_events() -> Any:
     term = request.args.get("term")
     fetch_offset = request.args.get("fetch_offset")

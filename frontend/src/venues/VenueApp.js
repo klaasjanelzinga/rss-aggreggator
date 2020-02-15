@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import HeaderBar from '../headerbar/HeaderBar';
 import Venue from './Venue.js'
 import { withRouter } from 'react-router-dom';
+import config from '../Config'
 
 class VenueApp extends Component {
 
@@ -11,7 +12,7 @@ class VenueApp extends Component {
             venues: [],
             venuesFetched: false
         }
-        this.endpoint = '/api/venues';
+        this.endpoint = `${config.apihost}/api/venues`;
     }
 
     fetchInitialLoad() {

@@ -24,7 +24,7 @@ class HedonProcessor(VenueProcessor):
         return HedonSource(self.venue)
 
     def create_processing_chain(self, client_session: ClientSession, database_sink: DatabaseSink) -> Chain:
-        if AppConfig.is_running_in_gae():
+        if AppConfig.is_production():
             return super().create_processing_chain(client_session, database_sink)
         return Chain([OnlyEventsWithWhen(), database_sink])
 

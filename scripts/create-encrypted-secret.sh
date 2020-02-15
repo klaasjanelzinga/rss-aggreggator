@@ -20,8 +20,8 @@ echo "Save the json token and pass to this script"
 
 set -e
 gpg --symmetric --cipher-algo AES256 $file_to_encrypt
-mv $file_to_encrypt.gpg $project_dir
+mv $file_to_encrypt.gpg $project_dir/etc
 
-echo "Add $file_to_encrypt.gpg to git"
+echo "Add etc/$file_to_encrypt.gpg to git"
 echo "Add secret to github as environment variable GOOGLE_APP_ENGINE_KEY"
 echo "You can delete $file_to_encrypt"

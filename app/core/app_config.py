@@ -1,21 +1,29 @@
-import logging
-import os
+from enum import Enum
+from os import getenv
+from typing import Dict
 
-from flask import Request
+
+class Environment(Enum):
+    LOCALHOST = "LOCALHOST"
+    PRODUCTION = "PRODUCTION"
 
 
 class AppConfig:
-    @staticmethod
-    def is_running_in_gae() -> bool:
-        return "GAE_ENV" in os.environ or "DUMMY_GAE_LOCAL" in os.environ
+
+    _environment: Environment = Environment(getenv("ENVIRONMENT", "LOCALHOST"))
 
     @staticmethod
-    def is_web_request_allowed(req: Request) -> bool:
-        logger = logging.getLogger(__name__)
-        if not AppConfig.is_running_in_gae():
-            logger.warning("Allowing request since not running in gae")
-            return True
-        if "X-Appengine-Cron" in req.headers:
-            return True
-        logger.warning("Header not set on web request. Request denied")
-        return False
+    def is_production() -> bool:
+        return AppConfig._environment == Environment.PRODUCTION
+
+    @staticmethod
+    def is_localhost() -> bool:
+        return AppConfig._environment == Environment.LOCALHOST
+
+    @staticmethod
+    def cors() -> Dict[str, str]:
+        return {"origins": "http://localhost:3000" if AppConfig.is_localhost() else "https://venues-v2.n-kj.nl"}
+
+    @staticmethod
+    def get_port() -> int:
+        return int(getenv("PORT", "8080"))

@@ -3,7 +3,6 @@ import logging
 from datetime import datetime, timedelta
 from typing import Dict, List
 
-import google.cloud.logging
 import pytz
 from aiohttp import ClientSession, ClientTimeout
 from google.cloud import datastore
@@ -26,12 +25,7 @@ from app.venues.t013_tilburg.t013_processor import T013Processor
 from app.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
 from app.venues.vera_groningen.vera_processor import VeraProcessor
 
-if AppConfig.is_running_in_gae():
-    LOGGING_CLIENT = google.cloud.logging.Client("rss-aggregator-236707")
-    LOGGING_CLIENT.setup_logging(log_level=logging.INFO)
-    LOGGING_CLIENT.get_default_handler().propagate = False
-else:
-    logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO)
 
 DATASTORE_CLIENT = datastore.Client()
 venue_repository: VenueRepository = VenueRepository(client=DATASTORE_CLIENT)
@@ -55,7 +49,7 @@ processors: List[VenueProcessor] = [
     TivoliProcessor(event_repository, venue_repository, OC_HELPER),
 ]
 # Hedon does not have date fixing data. Exclude in the unit tests.
-if AppConfig.is_running_in_gae():
+if AppConfig.is_production():
     processors.append(HedonProcessor(event_repository, venue_repository, OC_HELPER))
 processors_map: Dict[str, VenueProcessor] = {processor.venue.venue_id: processor for processor in processors}
 

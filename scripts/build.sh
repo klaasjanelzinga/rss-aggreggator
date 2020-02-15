@@ -20,28 +20,18 @@ echo "Checking for pip upgrades ..."
 pip list --outdated
 
 echo "Code formatting ..."
-black --target-version py37 --check main.py app/**
+black --target-version py37 --check cron.py api.py app/**
 
 echo "Linting ..."
-pylint main.py app/**
+pylint api.py cron.py app/**
 
 echo "Type checking ..."
-mypy main.py
+mypy -p app
+mypy api.py
+mypy cron.py
 
 echo "Running unit tests ..."
 pytest tests --cov . --cov-report=html
-
-echo "Building frontend"
-cd "$project_dir"/frontend
-
-npm i
-npm run-script build
-cat build/index.html | sed 's/main\..*\.chunk\.css/main.css/'  > build/index2.html
-
-mv build/index2.html build/index.html
-mv build/static/css/main.*.chunk.css build/static/css/main.css
-
-rm -rf ../static/build && mv build ../static
 
 echo "coverage report: see file://$project_dir/build-reports/html/index.html"
 

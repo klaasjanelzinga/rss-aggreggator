@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Agenda from './agenda/Agenda';
 import './App.css';
 import HeaderBar from './headerbar/HeaderBar';
+import config from './Config'
 
 class App extends Component {
 
@@ -16,7 +17,7 @@ class App extends Component {
     }
     this.is_searching = false
     this.searchTerms = ''
-    this.endpoint = '/api'
+    this.endpoint = `${config.apihost}/api`
     this.eventEndpoint = `${this.endpoint}/events`
     this.todayEventEndpoint = `${this.endpoint}/events/today`
     this.tomorrowEventEndpoint = `${this.endpoint}/events/tomorrow`

@@ -1,33 +1,62 @@
 version: '3.3'
 
 services:
-  backend:
-    build: .
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    environment:
+      PORT: 8080
+      ENVIRONMENT: LOCALHOST
+      GOOGLE_APPLICATION_CREDENTIALS: secrets/google-appengine-credentials.json
     ports:
-      - 5678:5678
+      - 8080:8080
     volumes:
       - .:/usr/src/app
-    command: ["watchmedo", "auto-restart", "--recursive", "--pattern=*.py", "--directory=.", "--", "python3", "-m", "ptvsd", "--host", "0.0.0.0", "--port", "5678", "main.py"]
+    command: ./scripts/start-python-in-dev-server.sh api.py
+
+  cron:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    environment:
+      PORT: 8080
+      ENVIRONMENT: LOCALHOST
+      GOOGLE_APPLICATION_CREDENTIALS: secrets/google-appengine-credentials.json
+    ports:
+      - 8090:8080
+    volumes:
+      - .:/usr/src/app
+    command: ./scripts/start-python-in-dev-server.sh cron.py
 
   frontend:
-    build: .
+    build: frontend
+    environment:
+      PORT: 3000
+    ports:
+      - 3000:3000
     volumes:
-      - .:/usr/src/app
-    command: sh -c "cd frontend && npm start"
+      - ./frontend:/usr/src/app
+    command: sh -c "cd /usr/src/app && cp src/Config.localhost.js src/Config.js && npm start"
 
-  proxy:
-    build: nginx-dev-proxy
-    ports: 
-      - 80:80
-
+#  proxy:
+#    build: services/proxy
+#    environment:
+#      PORT: 80
+#      UPSTREAM_API: http://localhost:8080
+#      UPSTREAM_FRONTEND: http://localhost:3000
+#    ports:
+#      - 80:80
+#    network_mode: "host"
+#
   zipkin:
     image: openzipkin/zipkin
     ports:
       - 9411:9411
 
-  prometheus:
-    image: prom/prometheus
-    ports:
-      - 9090:9090
-    volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+#  prometheus:
+#    image: prom/prometheus
+#    ports:
+#      - 9090:9090
+#    volumes:
+#      - ./services/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml

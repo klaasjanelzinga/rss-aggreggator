@@ -57,7 +57,7 @@ class VenueProcessor(ABC):
                 await asyncio.gather(*tasks)
 
             database_sink.flush()
-            self.open_census_helper.count_venue_total(self.venue, database_sink.total_sunk)
+            # self.open_census_helper.count_venue_total(self.venue, database_sink.total_sunk)
             logging.getLogger(__name__).info("Upserted %d events for %s", database_sink.total_sunk, self.venue.venue_id)
             self.venue.last_fetched_date = datetime.now()
             self.venue_repository.upsert(self.venue)

@@ -1,29 +1,43 @@
 version: '3.3'
 
 services:
-  backend:
-    build: .
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    environment:
+      PORT: 8080
+      ENVIRONMENT: LOCALHOST
+      GOOGLE_APPLICATION_CREDENTIALS: secrets/google-appengine-credentials.json
     volumes:
       - .:/usr/src/app
-    command: ["python3", "main.py"]
-    depends_on:
-      - zipkin
-      - prometheus
+    command: ["python3", "api.py"]
+
+  cron:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    environment:
+      PORT: 8090
+      ENVIRONMENT: LOCALHOST
+      GOOGLE_APPLICATION_CREDENTIALS: secrets/google-appengine-credentials.json
+    volumes:
+      - .:/usr/src/app
+    command: ["python3", "cron.py"]
 
   integration_test:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
     volumes:
       - .:/usr/src/app
     command: ["pytest", "integration"]
     depends_on:
-      - backend
+      - api
+      - cron
+      - zipkin
 
   zipkin:
     image: openzipkin/zipkin
     ports:
-      - 9411:9411
-
-  prometheus:
-    build: prometheus
-    ports:
-      - 9090:9090
+      - 9411

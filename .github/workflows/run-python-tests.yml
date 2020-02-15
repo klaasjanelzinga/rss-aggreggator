@@ -15,6 +15,6 @@ jobs:
         env:
           GOOGLE_APP_ENGINE_KEY: ${{ secrets.GOOGLE_APP_ENGINE_KEY }}
       - name: Build the python docker image
-        run: scripts/build-docker-image.sh
+        run: scripts/build-docker-images.sh --version $GITHUB_SHA
       - name: Verify the build
-        run: docker run -v `pwd`:/usr/src/app rss-aggregator-app scripts/build.sh
+        run: docker run -v `pwd`:/usr/src/app rss-aggregator/dev:latest scripts/build.sh

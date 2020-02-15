@@ -49,7 +49,7 @@ class OpenCensusHelper:
 
 
 def initialize_tracer() -> Tracer:
-    if AppConfig.is_running_in_gae():
+    if AppConfig.is_production():
         exporter = stackdriver_exporter.StackdriverExporter(transport=AsyncTransport)
     else:
         exporter = ZipkinExporter(service_name="local-rss", host_name="zipkin", port=9411, endpoint="/api/v2/spans")
@@ -57,7 +57,7 @@ def initialize_tracer() -> Tracer:
 
 
 def initialize_stats_exporter() -> Exporter:
-    if AppConfig.is_running_in_gae():
+    if AppConfig.is_production():
         return stackdriver_stats_exporter.new_stats_exporter()
     return new_stats_exporter(Options(address="", port=8081, namespace="rss-local"))
 

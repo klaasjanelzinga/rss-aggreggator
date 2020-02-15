@@ -1,14 +1,17 @@
 from typing import Any, Dict
 
 from flask import Blueprint, jsonify
+from flask_cors import cross_origin
 
 from app import application_data
+from app.core.app_config import AppConfig
 from app.core.venue.venue import Venue
 
 VENUE_API_ROUTES = Blueprint("venues", __name__, template_folder="templates")
 
 
 @VENUE_API_ROUTES.route("/api/venues", methods=["GET"])
+@cross_origin(**AppConfig.cors())
 def fetch_events() -> Any:
     venues = application_data.venue_repository.fetch_all()
     return jsonify({"venues": [_transform(venue) for venue in venues]})

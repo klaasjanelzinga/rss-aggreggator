@@ -4,7 +4,8 @@ from time import sleep
 from aiohttp import ClientSession, ClientTimeout
 import pytest
 
-BACKEND_URL = "http://backend:8080"
+API_URL = "http://api:8080"
+CRON_URL = "http://cron:8090"
 
 
 async def with_url(url: str, session: ClientSession) -> None:
@@ -21,38 +22,44 @@ async def with_url(url: str, session: ClientSession) -> None:
 
 
 async def clean_datastore(session: ClientSession) -> None:
-    url = f"{BACKEND_URL}/maintenance/cleanup-all"
+    url = f"{CRON_URL}/cron/cleanup-all"
     response = await session.get(url)
     if response.status > 299:
         raise Exception(f"cleanup-all failed {response}")
 
 
 async def insert_default_in_datastore(session: ClientSession) -> None:
-    result = await session.get(f"{BACKEND_URL}/maintenance/fetch-integration-test-data")
+    result = await session.get(f"{CRON_URL}/cron/fetch-integration-test-data")
     if result.status > 299:
         raise Exception(f"fetch-data failed {result}")
 
 
 async def init_integration_test(session: ClientSession) -> None:
-    await with_url(BACKEND_URL, session)
+    await with_url(f"{CRON_URL}/maintenance/ping", session)
+    await with_url(f"{API_URL}/maintenance/ping", session)
     await clean_datastore(session)
     await insert_default_in_datastore(session)
 
 
 async def call_init():
-    timeout = ClientTimeout(120)
+    timeout = ClientTimeout(30)
     async with ClientSession(timeout=timeout) as session:
         await asyncio.gather(init_integration_test(session))
 
 
 @pytest.fixture
-def backend_url() -> str:
-    return BACKEND_URL
+def api_url() -> str:
+    return API_URL
+
+
+@pytest.fixture
+def cron_url() -> str:
+    return API_URL
 
 
 @pytest.fixture
 async def client_session():
-    timeout = ClientTimeout(120)
+    timeout = ClientTimeout(30)
     a_client_session = ClientSession(timeout=timeout)
     yield a_client_session
     await a_client_session.close()

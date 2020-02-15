@@ -6,8 +6,8 @@ import pytest
 
 
 @pytest.mark.asyncio
-async def test_events_xml(client_session, backend_url):
-    result = await client_session.get(f"{backend_url}/events.xml")
+async def test_events_xml(client_session, api_url):
+    result = await client_session.get(f"{api_url}/events.xml")
     assert_that(result.status, equal_to(200))
     root = ElementTree.fromstring(await result.text())
     assert_that(len(root), equal_to(1))

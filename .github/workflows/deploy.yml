@@ -15,7 +15,7 @@ jobs:
         env:
           GOOGLE_APP_ENGINE_KEY: ${{ secrets.GOOGLE_APP_ENGINE_KEY }}
       - name: Build the python docker image
-        run: scripts/build-docker-image.sh
+        run: scripts/build-docker-images.sh --version $GITHUB_SHA
       - name: Verify the build
         run: docker run -v `pwd`:/usr/src/app rss-aggregator-app scripts/build.sh
       - name: Decrypt the secret for google-app-engine
@@ -23,6 +23,6 @@ jobs:
         env:
           DEPLOYER_KEY: ${{ secrets.DEPLOYER_KEY }}
       - name: Login to gcloud
-        run: gcloud auth activate-service-account --key-file secrets/deployer.json --project rss-aggregator-236707
+        run: gcloud auth activate-service-account --key-file secrets/deployer.json --project rss-aggregator-v2
       - name: Deploy the app
-        run: scripts/deploy.sh
+        run: scripts/deploy.sh --version $GITHUB_SHA api cron frontend
