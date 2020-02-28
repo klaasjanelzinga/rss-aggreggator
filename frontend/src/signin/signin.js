@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import HeaderBar from '../headerbar/HeaderBar';
 import GoogleCard from './googlecard';
 import UserProfile from './UserProfile';
+import config from '../Config'
 
 
 const styles = {
@@ -60,7 +61,7 @@ class SignIn extends React.Component {
     validateSignInWithServer(userProfile) {
         this.userProfile = UserProfile.save(userProfile);
 
-        const request = new Request('/api/user/signup', {
+        const request = new Request(`${config.apihost}/api/user/signup`, {
             method: 'POST',
             headers: {
                 'Authorization': userProfile.bearerToken,

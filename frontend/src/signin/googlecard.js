@@ -89,7 +89,7 @@ class GoogleCard extends React.Component {
                 </div>
                 <div className={classes.googleButton}>
                     <GoogleLogin
-                        clientId="274288767473-3csldch2v5qm7v15b35f25325cqtbp7f.apps.googleusercontent.com"
+                        clientId="533901621191-qeb3c8r94s21h1q3vld1jmapc6blkp9s.apps.googleusercontent.com"
                         buttonText="Login"
                         onSuccess={this.responseGoogle}
                         onFailure={this.handleFailure}

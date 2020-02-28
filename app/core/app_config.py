@@ -22,7 +22,7 @@ class AppConfig:
 
     @staticmethod
     def cors() -> Dict[str, str]:
-        return {"origins": "http://localhost:3000" if AppConfig.is_localhost() else "https://venues-v2.n-kj.nl"}
+        return {"origins": "http://localhost:3000" if AppConfig.is_localhost() else "https://venues.n-kj.nl"}
 
     @staticmethod
     def get_port() -> int:

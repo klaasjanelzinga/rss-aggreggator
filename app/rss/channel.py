@@ -7,7 +7,7 @@ from xml.etree.ElementTree import Element, SubElement
 @dataclass
 class RSSChannel:
     title: str = "Events from all venues"
-    link: str = "https://rss-aggregator-236707.appspot.com"
+    link: str = "https://api.n-kj.nl"
     description: str = "Aggregation of several venues"
     language: str = "nl"
     copyright: str = "None"

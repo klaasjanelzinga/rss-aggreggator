@@ -10,6 +10,7 @@ import { default as React } from 'react';
 import { withRouter } from 'react-router-dom';
 import HeaderBar from '../headerbar/HeaderBar.js';
 import UserProfile from './UserProfile.js';
+import config from '../Config'
 
 const styles = theme => ( {
     saveButton: {
@@ -94,7 +95,7 @@ class Profile extends React.Component {
         this.userProfile.familyName = this.state.familyName;
         this.userProfile.merge(this.userProfile);
 
-        const request = new Request('/api/user/profile', {
+        const request = new Request(`${config.apihost}/api/user/profile`, {
             method: 'POST',
             headers: {
                 'Authorization': this.userProfile.bearerToken,

@@ -11,6 +11,9 @@ do
       VERSION="$2"
       shift
       ;;
+    "api") services="$services api"  ;;
+    "frontend") services="$services frontend"  ;;
+    "cron") services="$services cron"  ;;
     *)
       echo "$1 $0 -v|--version" && exit 1
       ;;
