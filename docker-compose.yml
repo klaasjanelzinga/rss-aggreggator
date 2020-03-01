@@ -39,24 +39,8 @@ services:
       - ./frontend:/usr/src/app
     command: sh -c "cd /usr/src/app && cp src/Config.localhost.js src/Config.js && npm start"
 
-#  proxy:
-#    build: services/proxy
-#    environment:
-#      PORT: 80
-#      UPSTREAM_API: http://localhost:8080
-#      UPSTREAM_FRONTEND: http://localhost:3000
-#    ports:
-#      - 80:80
-#    network_mode: "host"
-#
   zipkin:
     image: openzipkin/zipkin
     ports:
       - 9411:9411
 
-#  prometheus:
-#    image: prom/prometheus
-#    ports:
-#      - 9090:9090
-#    volumes:
-#      - ./services/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml

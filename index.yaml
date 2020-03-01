@@ -4,3 +4,4 @@ indexes:
   properties:
   - name: search_terms
   - name: when
+  - name: date_published

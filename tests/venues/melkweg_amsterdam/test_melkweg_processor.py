@@ -12,6 +12,7 @@ async def test_process_upserted_all_events(
     client_session: ClientSession, melkweg_processor: MelkwegProcessor, mock_event_repository: EventRepository
 ):
     mock_event_repository.upsert_no_slicing.return_value = []
+    mock_event_repository.fetch_all_keys_as_string_for_venue.return_value = []
     await melkweg_processor.fetch_new_events(session=client_session)
     mock_event_repository.upsert_no_slicing.assert_called()
     args = mock_event_repository.upsert_no_slicing.call_args[0][0]

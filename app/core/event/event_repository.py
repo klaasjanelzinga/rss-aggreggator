@@ -1,5 +1,5 @@
 import base64
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from typing import List, Optional
 
 from google.cloud import datastore
@@ -11,6 +11,7 @@ from app.core.datastore_utils import DatastoreUtils, QueryResult
 from app.core.event.event import Event
 from app.core.event.event_entity_transformer import EventEntityTransformer
 from app.core.opencensus_util import OC_TRACER
+from app.core.venue.venue import Venue
 
 
 class EventRepository:
@@ -20,6 +21,12 @@ class EventRepository:
 
     def fetch_all_keys_as_string(self) -> List[str]:
         query = self.client.query(kind="Event")
+        query.keys_only()
+        return [key.key.name for key in list(query.fetch())]
+
+    def fetch_all_keys_as_string_for_venue(self, venue: Venue) -> List[str]:
+        query = self.client.query(kind="Event")
+        query.add_filter("venue_id", "=", venue.venue_id)
         query.keys_only()
         return [key.key.name for key in list(query.fetch())]
 
@@ -57,6 +64,11 @@ class EventRepository:
         query = self.client.query(kind="Event")
         query.order = ["when"]
         return query.fetch()
+
+    def fetch_all_rss_items(self) -> Iterator:
+        query = self.client.query(kind="Event")
+        query.add_filter("date_published", ">", datetime.now() - timedelta(days=7))
+        return query.fetch(limit=50)
 
     def search(self, term: str, cursor: Optional[bytes] = None, limit: Optional[int] = None) -> QueryResult:
         google_cursor = DatastoreUtils.create_cursor(earlier_curor=cursor)

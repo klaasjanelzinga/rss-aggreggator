@@ -18,7 +18,7 @@ async def test_events_xml(client_session, api_url):
         if child.tag == "title":
             assert_that(child.text, equal_to("Events from all venues"))
         if child.tag == "link":
-            assert_that(child.text, equal_to("https://rss-aggregator-236707.appspot.com"))
+            assert_that(child.text, equal_to("https://venues.n-kj.nl"))
         if child.tag == "description":
             assert_that(child.text, equal_to("Aggregation of several venues"))
         if child.tag == "webMaster":

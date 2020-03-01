@@ -9,6 +9,7 @@ from app.core.event.event_repository import EventRepository
 from app.core.opencensus_util import OC_TRACER, OpenCensusHelper
 from app.core.processing_chain.database_sink import DatabaseSink
 from app.core.processing_chain.fetch_and_parse_details import FetchAndParseDetails
+from app.core.processing_chain.only_changed_events import OnlyChangedEventsFilter
 from app.core.processing_chain.only_valid_events import OnlyValidEvents
 from app.core.processing_chain.processing_chain import Chain
 from app.core.source import Source
@@ -33,11 +34,17 @@ class VenueProcessor(ABC):
 
     # pylint: disable= W0613, R0201
     def create_processing_chain(self, client_session: ClientSession, database_sink: DatabaseSink) -> Chain:
-        return Chain([OnlyValidEvents(), database_sink])
+        existing_keys = self.event_repository.fetch_all_keys_as_string_for_venue(self.venue)
+        only_changed_events_filter = OnlyChangedEventsFilter(existing_keys)
+        return Chain([only_changed_events_filter, OnlyValidEvents(), database_sink])
 
     def processing_chain_with_additionals(self, client_session: ClientSession, database_sink: DatabaseSink) -> Chain:
+        existing_keys = self.event_repository.fetch_all_keys_as_string_for_venue(self.venue)
+        only_changed_events_filter = OnlyChangedEventsFilter(existing_keys)
+
         return Chain(
             [
+                only_changed_events_filter,
                 OnlyValidEvents(),
                 FetchAndParseDetails(client_session=client_session, source=self.fetch_source()),
                 database_sink,
