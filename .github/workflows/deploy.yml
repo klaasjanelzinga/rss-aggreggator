@@ -18,13 +18,13 @@ jobs:
         run: scripts/build-docker-images.sh --version $GITHUB_SHA
       - name: Verify the build
         run: docker run -v `pwd`:/usr/src/app rss-aggregator/dev:latest scripts/build.sh
-#      - name: Decrypt the secret for google-app-engine
-#        run: scripts/decrypt-deployer-key.sh
-#        env:
-#          DEPLOYER_KEY: ${{ secrets.DEPLOYER_KEY }}
-#      - name: Login to gcloud
-#        run: gcloud auth activate-service-account --key-file secrets/deployer.json --project rss-aggregator-v2
-#      - name: Login docker to gcloud
-#        run: gcloud auth configure-docker
-#      - name: Deploy the app
-#        run: scripts/deploy.sh --version $GITHUB_SHA api cron frontend
+      - name: Decrypt the secret for google-app-engine
+        run: scripts/decrypt-deployer-key.sh
+        env:
+          DEPLOYER_KEY: ${{ secrets.DEPLOYER_KEY }}
+      - name: Login to gcloud
+        run: gcloud auth activate-service-account --key-file secrets/deployer.json --project rss-aggregator-v3
+      - name: Login docker to gcloud
+        run: gcloud auth configure-docker
+      - name: Deploy the app
+        run: scripts/deploy.sh --version $GITHUB_SHA api cron frontend

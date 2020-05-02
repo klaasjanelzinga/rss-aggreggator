@@ -6,6 +6,21 @@ PROJECT_ID=??
 CRON_FETCH_DATA_URL=https://cron-ntapdiwuga-ez.a.run.app/cron/fetch-data
 CRON_CLEANUP_URL=https://cron-ntapdiwuga-ez.a.run.app/cron/cleanup
 
+
+# Enable Cloud Run in console.
+# Add datastore:
+# You selected Cloud Firestore in Datastore mode. Now choose a database location. (europe-west3)
+# scripts/build-docker-images.sh
+#
+# docker tag rss-aggregator/api:BETA gcr.io/rss-aggregator-v3/api:BETA
+# docker push gcr.io/rss-aggregator-v3/api
+# gcloud --project rss-aggregator-v3 run deploy api --platform managed --region europe-west4 --image=gcr.io/rss-aggregator-v3/api:BETA --allow-unauthenticated --command=python --args=api.py
+#
+# goto iam -> service account Add service account:
+# name deployer
+# Roles gcloud run admin, service account user
+
+
 gcloud components update
 gcloud config set run/platform managed
 gcloud config set run/region europe-west4
@@ -20,13 +35,13 @@ gcloud run services add-iam-policy-binding cron \
    --role=roles/run.invoker
 
 # Schedule two jobs.
-gcloud beta scheduler jobs create http test-job --schedule "every 7 hours" \
+gcloud beta scheduler jobs create http fetch-job --schedule "every 7 hours" \
    --http-method=GET \
-   --uri=${CRON_FETCH_DATA_URL} \
-   --oidc-service-account-email=rss-aggregator-scheduler@${PROJECT_ID}.iam.gserviceaccount.com   \
-   --oidc-token-audience=${CRON_FETCH_DATA_URL}
-gcloud beta scheduler jobs create http test-job --schedule "every 7 hours" \
+   --uri=https://cron-gv7afzwicq-ez.a.run.app/cron/fetch-data \
+   --oidc-service-account-email=rss-aggregator-scheduler@rss-aggregator-v3.iam.gserviceaccount.com   \
+   --oidc-token-audience=https://cron-gv7afzwicq-ez.a.run.app/cron/fetch-data
+gcloud beta scheduler jobs create http clean-job --schedule "every 8 hours" \
    --http-method=GET \
-   --uri=${CRON_CLEANUP_URL} \
-   --oidc-service-account-email=rss-aggregator-scheduler@${PROJECT_ID}.iam.gserviceaccount.com   \
-   --oidc-token-audience=${CRON_CLEANUP_URL}
+   --uri=https://cron-gv7afzwicq-ez.a.run.app/cron/cleanup \
+   --oidc-service-account-email=rss-aggregator-scheduler@rss-aggregator-v3.iam.gserviceaccount.com   \
+   --oidc-token-audience=https://cron-gv7afzwicq-ez.a.run.app/cron/cleanup
