@@ -1,5 +1,4 @@
 from app.core.event.event_repository import EventRepository
-from app.core.opencensus_util import OpenCensusHelper
 from app.core.source import Source
 from app.core.venue.venue import Venue
 from app.core.venue.venue_processor import VenueProcessor
@@ -8,11 +7,9 @@ from app.venues.spot.spot_source import SpotSource
 
 
 class SpotProcessor(VenueProcessor):
-    def __init__(
-        self, event_repository: EventRepository, venue_repository: VenueRepository, open_census_helper: OpenCensusHelper
-    ):
+    def __init__(self, event_repository: EventRepository, venue_repository: VenueRepository):
         self.venue = SpotProcessor.create_venue()
-        super().__init__(event_repository, venue_repository, self.venue, open_census_helper)
+        super().__init__(event_repository, venue_repository, self.venue)
 
     def fetch_source(self) -> Source:
         return SpotSource(self.venue)

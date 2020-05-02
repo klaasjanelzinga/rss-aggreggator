@@ -48,6 +48,17 @@ async def call_init():
 
 
 @pytest.fixture
+def event_loop():
+    """
+    See https://github.com/pytest-dev/pytest-asyncio/pull/156  This is required to ensure the same loop is used in
+    initialization and in the test run.
+    """
+    loop = asyncio.new_event_loop()
+    yield loop
+    loop.close()
+
+
+@pytest.fixture
 def api_url() -> str:
     return API_URL
 
@@ -58,9 +69,10 @@ def cron_url() -> str:
 
 
 @pytest.fixture
-async def client_session():
+async def client_session(event_loop):
     timeout = ClientTimeout(30)
-    a_client_session = ClientSession(timeout=timeout)
+    # See https://github.com/pytest-dev/pytest-asyncio/pull/156 on why the loop is required.
+    a_client_session = ClientSession(timeout=timeout, loop=event_loop)
     yield a_client_session
     await a_client_session.close()
 

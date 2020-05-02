@@ -2,14 +2,14 @@
 
 echo "Log on to console and create a new project."
 
-PROJECT_ID=??
-CRON_FETCH_DATA_URL=https://cron-ntapdiwuga-ez.a.run.app/cron/fetch-data
-CRON_CLEANUP_URL=https://cron-ntapdiwuga-ez.a.run.app/cron/cleanup
+PROJECT_ID=rss-aggregator-v3
+CRON_URL=https://cron-ntapdiwuga-ez.a.run.app
 
 
 # Enable Cloud Run in console.
 # Add datastore:
 # You selected Cloud Firestore in Datastore mode. Now choose a database location. (europe-west3)
+# Add indexes: gcloud datastore indexes create index.yaml
 # scripts/build-docker-images.sh
 #
 # docker tag rss-aggregator/api:BETA gcr.io/rss-aggregator-v3/api:BETA
@@ -37,11 +37,11 @@ gcloud run services add-iam-policy-binding cron \
 # Schedule two jobs.
 gcloud beta scheduler jobs create http fetch-job --schedule "every 7 hours" \
    --http-method=GET \
-   --uri=https://cron-gv7afzwicq-ez.a.run.app/cron/fetch-data \
-   --oidc-service-account-email=rss-aggregator-scheduler@rss-aggregator-v3.iam.gserviceaccount.com   \
-   --oidc-token-audience=https://cron-gv7afzwicq-ez.a.run.app/cron/fetch-data
+   --uri=${CRON_URL}/cron/fetch-data \
+   --oidc-service-account-email=rss-aggregator-scheduler@${PROJECT_ID}.iam.gserviceaccount.com   \
+   --oidc-token-audience=${CRON_URL}/cron/fetch-data
 gcloud beta scheduler jobs create http clean-job --schedule "every 8 hours" \
    --http-method=GET \
-   --uri=https://cron-gv7afzwicq-ez.a.run.app/cron/cleanup \
-   --oidc-service-account-email=rss-aggregator-scheduler@rss-aggregator-v3.iam.gserviceaccount.com   \
-   --oidc-token-audience=https://cron-gv7afzwicq-ez.a.run.app/cron/cleanup
+   --uri=${CRON_URL}/cron/cleanup \
+   --oidc-service-account-email=rss-aggregator-scheduler@${PROJECT_ID}.iam.gserviceaccount.com   \
+   --oidc-token-audience=${CRON_URL}/cron/cleanup

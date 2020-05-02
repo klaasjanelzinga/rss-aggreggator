@@ -6,7 +6,6 @@ import logging
 from aiohttp import ClientSession
 
 from app.core.event.event_repository import EventRepository
-from app.core.opencensus_util import OC_TRACER, OpenCensusHelper
 from app.core.processing_chain.database_sink import DatabaseSink
 from app.core.processing_chain.fetch_and_parse_details import FetchAndParseDetails
 from app.core.processing_chain.only_changed_events import OnlyChangedEventsFilter
@@ -18,17 +17,10 @@ from app.core.venue.venue_repository import VenueRepository
 
 
 class VenueProcessor(ABC):
-    def __init__(
-        self,
-        event_repository: EventRepository,
-        venue_repository: VenueRepository,
-        venue: Venue,
-        open_census_helper: OpenCensusHelper,
-    ) -> None:
+    def __init__(self, event_repository: EventRepository, venue_repository: VenueRepository, venue: Venue,) -> None:
         self.event_repository = event_repository
         self.venue_repository = venue_repository
         self.venue = venue
-        self.open_census_helper = open_census_helper
         self.logger = logging.getLogger(__name__)
         self.venue_repository.insert(self.venue)
 
@@ -55,13 +47,9 @@ class VenueProcessor(ABC):
         database_sink = DatabaseSink(self.event_repository)
         chain = self.create_processing_chain(session, database_sink)
         try:
-            with OC_TRACER.span("fetch_new_events") as span:
-                span.add_annotation(self.venue.venue_id)
-                fetched_events = await self.fetch_source().fetch_events(session)
-                tasks = [
-                    asyncio.create_task(chain.start_chain(fetched_event)) async for fetched_event in fetched_events
-                ]
-                await asyncio.gather(*tasks)
+            fetched_events = await self.fetch_source().fetch_events(session)
+            tasks = [asyncio.create_task(chain.start_chain(fetched_event)) async for fetched_event in fetched_events]
+            await asyncio.gather(*tasks)
 
             database_sink.flush()
             # self.open_census_helper.count_venue_total(self.venue, database_sink.total_sunk)

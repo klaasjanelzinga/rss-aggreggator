@@ -5,7 +5,6 @@ from aiohttp import ClientSession
 
 from app.core.app_config import AppConfig
 from app.core.data_fixer import fix
-from app.core.opencensus_util import OC_TRACER
 
 URL_TO_MOCK_FILE_DICT = {
     ".*spotgroningen.*": "tests/samples/spot/Programma - Spot Groningen.html",
@@ -163,30 +162,28 @@ URL_TO_MOCK_FILE_DICT = {
 
 
 async def fetch(session: ClientSession, url: str) -> str:
-    with OC_TRACER.span("fetch") as span:
-        span.add_annotation(url)
-        if AppConfig.is_production():
-            async with session.get(url) as response:
-                return await response.text()
-        # logging.getLogger(__name__).warning("Retrieving stubbed data locally for %s", url)
-        filename = URL_TO_MOCK_FILE_DICT.get(url)
-        if filename is None:
-            for key, value in URL_TO_MOCK_FILE_DICT.items():
-                if re.match(key, url):
-                    filename = value
-                    break
-        if filename is None:
-            raise Exception(f"No support for stubbed url {url}")
-        async with aiofiles.open(filename) as file:
-            lines = await file.readlines()
+    if AppConfig.is_production():
+        async with session.get(url) as response:
+            return await response.text()
+    # logging.getLogger(__name__).warning("Retrieving stubbed data locally for %s", url)
+    filename = URL_TO_MOCK_FILE_DICT.get(url)
+    if filename is None:
+        for key, value in URL_TO_MOCK_FILE_DICT.items():
+            if re.match(key, url):
+                filename = value
+                break
+    if filename is None:
+        raise Exception(f"No support for stubbed url {url}")
+    async with aiofiles.open(filename) as file:
+        lines = await file.readlines()
 
-            def fix_a_line(line: str) -> str:
-                result = line
+        def fix_a_line(line: str) -> str:
+            result = line
+            match = re.search(r"{{random_future_date:(.*?)}}", result)
+            while match:
+                result = fix(result)
                 match = re.search(r"{{random_future_date:(.*?)}}", result)
-                while match:
-                    result = fix(result)
-                    match = re.search(r"{{random_future_date:(.*?)}}", result)
-                return result
+            return result
 
-            fixed_lines = [fix_a_line(line) for line in lines]
-            return "".join(fixed_lines)
+        fixed_lines = [fix_a_line(line) for line in lines]
+        return "".join(fixed_lines)

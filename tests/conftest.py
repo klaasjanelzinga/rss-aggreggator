@@ -7,7 +7,6 @@ from faker import Faker
 
 from app.core.event.event import Event
 from app.core.event.event_repository import EventRepository
-from app.core.opencensus_util import OpenCensusHelper
 from app.core.user.user_profile import UserProfile
 from app.core.venue.venue import Venue
 from app.core.venue.venue_repository import VenueRepository
@@ -36,97 +35,82 @@ def mock_event_repository() -> EventRepository:
 
 
 @pytest.fixture
-def mock_oc_helper() -> OpenCensusHelper:
-    return Mock(spec=OpenCensusHelper)
-
-
-@pytest.fixture
-def hedon_processor(mock_event_repository, mock_venue_repository, mock_oc_helper) -> HedonProcessor:
+def hedon_processor(mock_event_repository, mock_venue_repository) -> HedonProcessor:
     return HedonProcessor(
         event_repository=mock_event_repository,
         venue_repository=mock_venue_repository,
-        open_census_helper=mock_oc_helper,
     )
 
 
 @pytest.fixture
-def melkweg_processor(mock_event_repository, mock_venue_repository, mock_oc_helper) -> MelkwegProcessor:
+def melkweg_processor(mock_event_repository, mock_venue_repository) -> MelkwegProcessor:
     return MelkwegProcessor(
         event_repository=mock_event_repository,
         venue_repository=mock_venue_repository,
-        open_census_helper=mock_oc_helper,
     )
 
 
 @pytest.fixture
-def neushoorn_processor(mock_event_repository, mock_venue_repository, mock_oc_helper) -> NeushoornProcessor:
+def neushoorn_processor(mock_event_repository, mock_venue_repository) -> NeushoornProcessor:
     return NeushoornProcessor(
         event_repository=mock_event_repository,
         venue_repository=mock_venue_repository,
-        open_census_helper=mock_oc_helper,
     )
 
 
 @pytest.fixture
-def oost_processor(mock_event_repository, mock_venue_repository, mock_oc_helper) -> OostGroningenProcessor:
+def oost_processor(mock_event_repository, mock_venue_repository) -> OostGroningenProcessor:
     return OostGroningenProcessor(
         event_repository=mock_event_repository,
         venue_repository=mock_venue_repository,
-        open_census_helper=mock_oc_helper,
     )
 
 
 @pytest.fixture
-def paradiso_processor(mock_event_repository, mock_venue_repository, mock_oc_helper) -> ParadisoProcessor:
+def paradiso_processor(mock_event_repository, mock_venue_repository) -> ParadisoProcessor:
     return ParadisoProcessor(
         event_repository=mock_event_repository,
         venue_repository=mock_venue_repository,
-        open_census_helper=mock_oc_helper,
     )
 
 
 @pytest.fixture
-def simplon_processor(mock_event_repository, mock_venue_repository, mock_oc_helper) -> SimplonProcessor:
+def simplon_processor(mock_event_repository, mock_venue_repository) -> SimplonProcessor:
     return SimplonProcessor(
         event_repository=mock_event_repository,
         venue_repository=mock_venue_repository,
-        open_census_helper=mock_oc_helper,
     )
 
 
 @pytest.fixture
-def spot_processor(mock_event_repository, mock_venue_repository, mock_oc_helper) -> SpotProcessor:
+def spot_processor(mock_event_repository, mock_venue_repository) -> SpotProcessor:
     return SpotProcessor(
         event_repository=mock_event_repository,
         venue_repository=mock_venue_repository,
-        open_census_helper=mock_oc_helper,
     )
 
 
 @pytest.fixture
-def t013_processor(mock_event_repository, mock_venue_repository, mock_oc_helper) -> T013Processor:
+def t013_processor(mock_event_repository, mock_venue_repository) -> T013Processor:
     return T013Processor(
         event_repository=mock_event_repository,
         venue_repository=mock_venue_repository,
-        open_census_helper=mock_oc_helper,
     )
 
 
 @pytest.fixture
-def tivoli_processor(mock_event_repository, mock_venue_repository, mock_oc_helper) -> TivoliProcessor:
+def tivoli_processor(mock_event_repository, mock_venue_repository) -> TivoliProcessor:
     return TivoliProcessor(
         event_repository=mock_event_repository,
         venue_repository=mock_venue_repository,
-        open_census_helper=mock_oc_helper,
     )
 
 
 @pytest.fixture
-def vera_processor(mock_event_repository, mock_venue_repository, mock_oc_helper) -> VeraProcessor:
+def vera_processor(mock_event_repository, mock_venue_repository) -> VeraProcessor:
     return VeraProcessor(
         event_repository=mock_event_repository,
         venue_repository=mock_venue_repository,
-        open_census_helper=mock_oc_helper,
     )
 
 

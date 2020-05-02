@@ -35,9 +35,3 @@ services:
     depends_on:
       - api
       - cron
-      - zipkin
-
-  zipkin:
-    image: openzipkin/zipkin
-    ports:
-      - 9411

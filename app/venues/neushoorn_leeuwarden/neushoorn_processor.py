@@ -1,7 +1,6 @@
 from aiohttp import ClientSession
 
 from app.core.event.event_repository import EventRepository
-from app.core.opencensus_util import OpenCensusHelper
 from app.core.processing_chain.database_sink import DatabaseSink
 from app.core.processing_chain.fetch_and_parse_details import FetchAndParseDetails
 from app.core.processing_chain.only_valid_events import OnlyValidEvents
@@ -14,11 +13,9 @@ from app.venues.neushoorn_leeuwarden.neushoorn_source import NeushoornSource
 
 
 class NeushoornProcessor(VenueProcessor):
-    def __init__(
-        self, event_repository: EventRepository, venue_repository: VenueRepository, open_census_helper: OpenCensusHelper
-    ):
+    def __init__(self, event_repository: EventRepository, venue_repository: VenueRepository):
         self.venue = NeushoornProcessor.create_venue()
-        super().__init__(event_repository, venue_repository, self.venue, open_census_helper)
+        super().__init__(event_repository, venue_repository, self.venue)
 
     def fetch_source(self) -> Source:
         return NeushoornSource(self.venue)

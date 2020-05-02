@@ -16,8 +16,8 @@ class T013Parser(Parser):
 
     def parse(self, parsing_context: ParsingContext) -> List[Event]:
         soup = BeautifulSoup(parsing_context.content, "html.parser")
-        program_items = soup.find("body").find_all("script")
-        data_script = [p for p in program_items if "src" not in p][0].text
+        program_items = soup.find("body").find_all_next("script")
+        data_script = [p for p in program_items if "src" not in p][0].string
         start_index = data_script.find("event_index:") + 12
         end_index = data_script.find("""]},""") + 2
         json_script = data_script[start_index:end_index]
