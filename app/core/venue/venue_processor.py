@@ -55,7 +55,7 @@ class VenueProcessor(ABC):
         database_sink = DatabaseSink(self.event_repository)
         chain = self.create_processing_chain(session, database_sink)
         try:
-            with OC_TRACER.span(f"fetch_new_events") as span:
+            with OC_TRACER.span("fetch_new_events") as span:
                 span.add_annotation(self.venue.venue_id)
                 fetched_events = await self.fetch_source().fetch_events(session)
                 tasks = [
