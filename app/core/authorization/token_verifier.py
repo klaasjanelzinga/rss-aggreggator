@@ -36,7 +36,7 @@ class TokenVerifier:
             result = jwt.decode(
                 token=token,
                 certs=await token_certs_task,
-                audience="274288767473-3csldch2v5qm7v15b35f25325cqtbp7f.apps.googleusercontent.com",
+                audience="15312417872-5ivulh19fbim50jkjf47kenjamnhc3dp.apps.googleusercontent.com",
             )
             return UserProfile(
                 given_name=result["given_name"],

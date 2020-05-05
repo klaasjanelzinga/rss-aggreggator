@@ -45,8 +45,8 @@ class GoogleCard extends React.Component {
             response.profileObj.email,
             response.profileObj.imageUrl,
 
-            response.Zi.access_token,
-            response.Zi.id_token,
+            response.accessToken,
+            response.tokenId,
         );
         this.props.validateSignInWithServer(userProfile);        
     }
@@ -89,7 +89,7 @@ class GoogleCard extends React.Component {
                 </div>
                 <div className={classes.googleButton}>
                     <GoogleLogin
-                        clientId="533901621191-qeb3c8r94s21h1q3vld1jmapc6blkp9s.apps.googleusercontent.com"
+                        clientId="15312417872-5ivulh19fbim50jkjf47kenjamnhc3dp.apps.googleusercontent.com"
                         buttonText="Login"
                         onSuccess={this.responseGoogle}
                         onFailure={this.handleFailure}
