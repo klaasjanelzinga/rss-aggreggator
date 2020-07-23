@@ -3,10 +3,9 @@ coverage
 mypy
 black
 faker
-isort
+isort==4.3.4
 PyHamcrest
 flake8
-flake8-isort
 flake8-print
 flake8-logging-format
 flake8-builtins

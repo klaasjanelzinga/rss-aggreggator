@@ -6,18 +6,22 @@ Master is ![](https://github.com/klaasjanelzinga/rss-aggreggator/workflows/Deplo
 
 ### running the app local
 
+        mkvirtualenv rss-aggreggator
+        pip install -r requirements.txt
+        pip install -r requirements-dev.txt --upgrade
         scripts/build-docker-image.sh
         docker-compose up --build
 
 Will start 
 
-- a docker nginx frontend in docker on port 80
 - react frontend on port 3000
-- python backend on port 8080
+- api python backend on port 8080
+- cron python backend on port 8090
 
-Connect to port 80 to see the app. First decypt the secret to connect to a database or follow 
+Connect to port http://localhost:3000 to see the app. First decypt the secret to connect to a database or follow 
 the instructions in `scripts/create-google-appengine-credentials.sh`
 
+If you want to debug a process, stop that process with `docker-compose stop <api|cron|frontend>` and start it locally.
 
 ## Required software
 

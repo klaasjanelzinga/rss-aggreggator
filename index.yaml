@@ -5,3 +5,7 @@ indexes:
   - name: search_terms
   - name: when
   - name: date_published
+- kind: Event
+  properties:
+  - name: search_terms
+  - name: when

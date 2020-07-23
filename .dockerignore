@@ -31,3 +31,4 @@ secrets
 services
 static
 tests
+frontend/node_modules
