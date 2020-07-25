@@ -8,13 +8,13 @@ export var icsFormatter = function() {
         return;
     }
 
-    var SEPARATOR = (navigator.appVersion.indexOf('Win') !== -1) ? '\r\n' : '\n';
-    var calendarEvents = [];
-    var calendarStart = [
+    const SEPARATOR = (navigator.appVersion.indexOf('Win') !== -1) ? '\r\n' : '\n';
+    const calendarEvents = [];
+    const calendarStart = [
         'BEGIN:VCALENDAR',
         'VERSION:2.0'
     ].join(SEPARATOR);
-    var calendarEnd = SEPARATOR + 'END:VCALENDAR';
+    const calendarEnd = SEPARATOR + 'END:VCALENDAR';
 
     return {
         /**

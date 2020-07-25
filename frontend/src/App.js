@@ -28,8 +28,8 @@ class App extends Component {
   }
 
   is_fetching_done(base64EncodedDone) {
-    var base64 = require('base-64');
-    var decoded = base64.decode(base64EncodedDone)
+    const base64 = require('base-64');
+    const decoded = base64.decode(base64EncodedDone)
     return decoded === 'DONE'
   }
 

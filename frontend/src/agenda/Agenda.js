@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import AgendaItem from './AgendaItem';
 
-const styles = theme => ({
+const styles = ({
     agenda: {
         top: '120px',
         left: '0px',
@@ -45,10 +45,10 @@ class Agenda extends React.Component {
         this.currentView = props.currentView
     }
 
-    componentWillUpdate(props) {
-        if (props.currentView !== this.currentView) {
-            this.currentView = props.currentView
-            // attempt to scroll to top of list if the view changes. 
+    componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS) {
+        if (prevProps.currentView !== this.currentView) {
+            this.currentView = prevProps.currentView
+            // attempt to scroll to top of list if the view changes.
             document.getElementById('top_element').scrollIntoView()
         }
     }

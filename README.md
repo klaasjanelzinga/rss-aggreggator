@@ -23,6 +23,15 @@ the instructions in `scripts/create-google-appengine-credentials.sh`
 
 If you want to debug a process, stop that process with `docker-compose stop <api|cron|frontend>` and start it locally.
 
+        #   (you may have to sudo rm -rf node_modules && npm i && npm start)
+        cd frontend && npm start   # starts frontend
+        python api.py   # starts api
+        
+All processes started with docker-compose are in hot-reload, using watchmedo for python
+and npm start for the frontend.
+
+Insert some testdata: `curl localhost:8090/cron/fetch-integration-test-data`
+
 ## Required software
 
 - docker

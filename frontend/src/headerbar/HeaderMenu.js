@@ -26,7 +26,7 @@ class HeaderMenu extends React.Component {
     this.handleMyProfile = this.handleMyProfile.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.userProfile = UserProfile.load();
     this.setState({signedIn: this.userProfile !== null })
   }

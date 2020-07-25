@@ -6,7 +6,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 
-const styles = theme => ({
+const styles = ({
 
     gridListTile: {
         width: '100%',

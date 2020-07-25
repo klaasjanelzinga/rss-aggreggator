@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import VenueItem from './VenueItem.js';
 
-const styles = theme => ({
+const styles = ({
     progressbar: {
         flexGrow: 1,
         marginTop: '10px',
@@ -33,13 +33,6 @@ class Venue extends React.Component {
                     </GridList>
                 </div>
             );
-        // } else {
-        //     return (
-        //         <div className={classes.progressbar}>
-        //             <LinearProgress />
-        //         </div>
-        //     );
-        // }
     }
 }
 

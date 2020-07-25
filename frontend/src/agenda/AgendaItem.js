@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom';
 import ICSButton from './ICSButton';
 
 
-const styles = theme => ({
+const styles = ({
 
     gridListTile: {
         width: '100%',

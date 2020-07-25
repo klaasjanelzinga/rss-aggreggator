@@ -23,9 +23,6 @@ class AppMenu extends React.Component {
     this.handleVenues = this.handleVenues.bind(this);
   }
 
-  componentWillMount() {
-  }
-
   handleMenu(event) {
     this.setState({
       anchorEl: event.currentTarget,
