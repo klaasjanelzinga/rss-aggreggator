@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-
+# -----
+# -v VERSION
 set -e
 
 VERSION="BETA"
@@ -11,9 +12,6 @@ do
       VERSION="$2"
       shift
       ;;
-    "api") services="$services api"  ;;
-    "frontend") services="$services frontend"  ;;
-    "cron") services="$services cron"  ;;
     *)
       echo "$1 $0 -v|--version" && exit 1
       ;;
@@ -24,15 +22,11 @@ done
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 echo "Building app container"
-(cd $script_dir/.. && docker build -t rss-aggregator/application:$VERSION .)
-(cd $script_dir/.. && docker build -t rss-aggregator/dev:$VERSION -f Dockerfile-dev .)
+(cd $script_dir/.. && docker build -t rss-aggregator/api:$VERSION -f api/Dockerfile .)
+(cd $script_dir/.. && docker build -t rss-aggregator/cron:$VERSION -f cron/Dockerfile .)
 (cd $script_dir/../frontend && docker build -t rss-aggregator/frontend:$VERSION .)
 
-docker tag rss-aggregator/application:$VERSION rss-aggregator/api:$VERSION
-docker tag rss-aggregator/application:$VERSION rss-aggregator/cron:$VERSION
-
 # tag application version -> latest
-docker tag rss-aggregator/application:$VERSION rss-aggregator/application:latest
+docker tag rss-aggregator/api:$VERSION rss-aggregator/api:latest
+docker tag rss-aggregator/cron:$VERSION rss-aggregator/cron:latest
 docker tag rss-aggregator/frontend:$VERSION rss-aggregator/frontend:latest
-docker tag rss-aggregator/dev:$VERSION rss-aggregator/dev:latest
-

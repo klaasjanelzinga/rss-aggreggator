@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+
+  api:
+    image: rss-aggregator/api:BETA
+    environment:
+      PORT: 8080
+      ENVIRONMENT: LOCALHOST
+      GOOGLE_APPLICATION_CREDENTIALS: /usr/src/app/secrets/google-appengine-credentials.json
+    volumes:
+      - ../secrets/google-appengine-credentials.json:/usr/src/app/secrets/google-appengine-credentials.json
+    command: ["api/entrypoint.sh"]
+
+  cron:
+    image: rss-aggregator/cron:BETA
+    environment:
+      PORT: 8080
+      ENVIRONMENT: LOCALHOST
+      GOOGLE_APPLICATION_CREDENTIALS: /usr/src/app/secrets/google-appengine-credentials.json
+    volumes:
+      - ../secrets/google-appengine-credentials.json:/usr/src/app/secrets/google-appengine-credentials.json
+      - ../core_lib/tests/samples/:/usr/src/app/cron/tests/samples/
+    command: ["cron/entrypoint.sh"]
+
+  integration_test:
+    image: rss-aggregator/api:BETA
+    environment:
+      CRON_URL: http://cron:8080
+      API_URL: http://api:8080
+    volumes:
+      - ..:/usr/src/app
+    command: ["integration/entrypoint.sh"]
+    depends_on:
+      - api
+      - cron

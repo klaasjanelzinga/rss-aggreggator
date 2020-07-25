@@ -1,0 +1,16 @@
+from typing import AsyncIterable, List
+
+from aiohttp import ClientSession
+
+from core_lib.core.event.event import Event
+from core_lib.core.source import Source
+from core_lib.core.venue.venue import Venue
+from core_lib.venues.simplon_groningen.simplon_parser import SimplonParser
+
+
+class SimplonSource(Source):
+    def __init__(self, venue: Venue, scrape_url: str = "https://www.simplon.nl"):
+        super().__init__(venue, scrape_url, SimplonParser())
+
+    async def fetch_events(self, session: ClientSession) -> AsyncIterable[List[Event]]:
+        return self.fetch_page_in_one_call(session=session)

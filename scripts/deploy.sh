@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# ----
+# --version <VERSION>
+# api | cron | frontend
 set -e
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"

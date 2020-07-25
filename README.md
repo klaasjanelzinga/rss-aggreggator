@@ -3,52 +3,55 @@
 
 Master is ![](https://github.com/klaasjanelzinga/rss-aggreggator/workflows/Deploy%20application/badge.svg)
 
+The application is constists of the following modules: 
+
+- api - API for the frontend and for the cron.
+- cron - Used to initiate crawls and maintenance.
+- core_lib - shared library for cron and api.
+- frontend - react site.
 
 ### running the app local
 
-        mkvirtualenv rss-aggreggator
-        pip install -r requirements.txt
-        pip install -r requirements-dev.txt --upgrade
-        scripts/build-docker-image.sh
         docker-compose up --build
 
-Will start 
+Will start:
 
 - react frontend on port 3000
 - api python backend on port 8080
 - cron python backend on port 8090
 
+All connections are done over localhost. This way you can run a process locally for debugging purposes.
+
 Connect to port http://localhost:3000 to see the app. First decypt the secret to connect to a database or follow 
 the instructions in `scripts/create-google-appengine-credentials.sh`
+
+### Develop the app
 
 If you want to debug a process, stop that process with `docker-compose stop <api|cron|frontend>` and start it locally.
 
         #   (you may have to sudo rm -rf node_modules && npm i && npm start)
         cd frontend && npm start   # starts frontend
-        python api.py   # starts api
+        cd api && python -m api
         
 All processes started with docker-compose are in hot-reload, using watchmedo for python
 and npm start for the frontend.
 
 Insert some testdata: `curl localhost:8090/cron/fetch-integration-test-data`
 
-## Required software
+        make black    # Run formatting
+        make mypy     # Run mypy check
+        make pylint   # Run linting
+        make flakes   # Run all code checkers
 
-- docker
+### Running tests
 
-## Building the app
+        make tests
+        make integration-tests
 
-        scripts/build.sh - builds, unittest.
-        scripts/clean.sh - removes all build artifacts.
-        scripts/upgrade-pip.sh - upgrade pip dependencies.
+### Committing
 
-        ./run-before-commit.sh - cleans, builds and tests the app.
+        make before-commit    # runs flakes and the tests, all should pass.
 
-### run coverage pytest -> html
-
-        (venv) $ pytest --cov . --cov-report=html tests
-
-     
 ### gcloud
 
         download sdk: https://cloud.google.com/sdk/docs/
