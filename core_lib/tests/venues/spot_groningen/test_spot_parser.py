@@ -4,9 +4,8 @@ from hamcrest.core import assert_that
 import pytest
 
 from core_lib.core.fetcher_util import fetch
-from core_lib.core.parsing_context import ParsingContext
-from core_lib.venues.spot.spot_parser import SpotParser
-from core_lib.venues.spot.spot_processor import SpotProcessor
+from core_lib.core.parser import ParsingContext
+from core_lib.venues.spot_groningen import SpotParser, SpotProcessor
 
 
 @pytest.mark.asyncio

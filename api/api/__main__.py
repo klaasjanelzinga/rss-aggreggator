@@ -1,11 +1,13 @@
 from flask import Flask
 
-from core_lib.api.api import EVENT_API_ROUTES
-from core_lib.api.maintenance import MAINTENANCE_ROUTES
-from core_lib.api.user_api import USER_ROUTES
-from core_lib.api.venue import VENUE_API_ROUTES
+from api.api import (
+    EVENT_API_ROUTES,
+    USER_ROUTES,
+    VENUE_API_ROUTES,
+    MAINTENANCE_ROUTES,
+    RSS_ROUTES,
+)
 from core_lib.core.app_config import AppConfig
-from core_lib.rss.rss_api import RSS_ROUTES
 
 APP = Flask(
     __name__, static_folder="static/build/static", template_folder="static/build"

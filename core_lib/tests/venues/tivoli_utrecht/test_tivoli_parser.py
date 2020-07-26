@@ -4,9 +4,8 @@ from hamcrest.core import assert_that
 import pytest
 
 from core_lib.core.fetcher_util import fetch
-from core_lib.core.parsing_context import ParsingContext
-from core_lib.venues.tivoli_utrecht.tivoli_parser import TivoliParser
-from core_lib.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
+from core_lib.core.parser import ParsingContext
+from core_lib.venues.tivoli_utrecht import TivoliParser, TivoliProcessor
 
 
 @pytest.mark.asyncio

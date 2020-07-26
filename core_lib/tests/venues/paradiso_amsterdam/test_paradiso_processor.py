@@ -4,8 +4,8 @@ from hamcrest.core import assert_that
 from hamcrest.core.core.isnone import not_none
 import pytest
 
-from core_lib.core.event.event_repository import EventRepository
-from core_lib.venues.paradiso_amsterdam.paradiso_processor import ParadisoProcessor
+from core_lib.core.repositories import EventRepository
+from core_lib.venues.paradiso_amsterdam import ParadisoProcessor
 
 
 @pytest.mark.asyncio

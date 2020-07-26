@@ -4,9 +4,8 @@ from hamcrest.core import assert_that
 import pytest
 
 from core_lib.core.fetcher_util import fetch
-from core_lib.core.parsing_context import ParsingContext
-from core_lib.venues.vera_groningen.vera_parser import VeraParser
-from core_lib.venues.vera_groningen.vera_processor import VeraProcessor
+from core_lib.core.parser import ParsingContext
+from core_lib.venues.vera_groningen import VeraParser, VeraProcessor
 
 
 @pytest.mark.asyncio

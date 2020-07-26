@@ -2,7 +2,7 @@ from xml.etree import ElementTree
 
 from hamcrest import assert_that, equal_to
 
-from core_lib.rss.rss_item import RSSItem
+from core_lib.core.rss import RSSItem
 
 
 def test_as_xml():

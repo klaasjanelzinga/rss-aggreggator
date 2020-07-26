@@ -4,9 +4,8 @@ from hamcrest.core import assert_that
 import pytest
 
 from core_lib.core.fetcher_util import fetch
-from core_lib.core.parsing_context import ParsingContext
-from core_lib.venues.simplon_groningen.simplon_parser import SimplonParser
-from core_lib.venues.simplon_groningen.simplon_processor import SimplonProcessor
+from core_lib.core.parser import ParsingContext
+from core_lib.venues.simplon_groningen import SimplonParser, SimplonProcessor
 
 
 @pytest.mark.asyncio

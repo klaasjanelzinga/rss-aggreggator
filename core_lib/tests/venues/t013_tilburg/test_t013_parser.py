@@ -6,9 +6,8 @@ from hamcrest.core import assert_that
 import pytest
 
 from core_lib.core.fetcher_util import fetch
-from core_lib.core.parsing_context import ParsingContext
-from core_lib.venues.t013_tilburg.t013_parser import T013Parser
-from core_lib.venues.t013_tilburg.t013_processor import T013Processor
+from core_lib.core.parser import ParsingContext
+from core_lib.venues.t013_tilburg import T013Parser, T013Processor
 
 
 @pytest.mark.asyncio

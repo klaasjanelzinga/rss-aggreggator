@@ -27,6 +27,7 @@ services:
       - 8090:8080
     volumes:
       - .:/usr/src/app
+      - ./core_lib/tests/samples:/usr/src/app/cron/tests/samples
     command: cron/entrypoint-dev.sh
 
   frontend:

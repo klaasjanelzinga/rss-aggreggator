@@ -4,9 +4,8 @@ from hamcrest.core import assert_that
 import pytest
 
 from core_lib.core.fetcher_util import fetch
-from core_lib.core.parsing_context import ParsingContext
-from core_lib.venues.oost_groningen.oost_groningen_parser import OostGroningenParser
-from core_lib.venues.oost_groningen.oost_groningen_processor import OostGroningenProcessor
+from core_lib.core.parser import ParsingContext
+from core_lib.venues.oost_groningen import OostGroningenParser, OostGroningenProcessor
 
 
 @pytest.mark.asyncio

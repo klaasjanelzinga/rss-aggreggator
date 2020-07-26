@@ -1,7 +1,6 @@
 from hamcrest.core import assert_that, equal_to
 
-from core_lib.core.user.user_profile import UserProfile
-from core_lib.core.user.user_profile_entity_transformer import UserProfileEntityTransformer
+from core_lib.core.user_profile import UserProfileEntityTransformer, UserProfile
 
 
 def test_transform_to_entity(valid_user_profile: UserProfile):

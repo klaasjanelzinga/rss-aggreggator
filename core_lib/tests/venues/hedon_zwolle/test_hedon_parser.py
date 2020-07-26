@@ -6,9 +6,8 @@ from hamcrest.core import assert_that
 import pytest
 
 from core_lib.core.fetcher_util import fetch
-from core_lib.core.parsing_context import ParsingContext
-from core_lib.venues.hedon_zwolle.hedon_parser import HedonParser
-from core_lib.venues.hedon_zwolle.hedon_processor import HedonProcessor
+from core_lib.core.parser import ParsingContext
+from core_lib.venues.hedon_zwolle import HedonParser, HedonProcessor
 
 
 @pytest.mark.asyncio

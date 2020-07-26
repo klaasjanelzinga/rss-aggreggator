@@ -4,9 +4,8 @@ from hamcrest.core.assert_that import assert_that
 from hamcrest.core.core.isequal import equal_to
 import pytest
 
-from core_lib.core.event.event import Event
-from core_lib.core.processing_chain.only_valid_events import OnlyValidEvents
-from core_lib.core.processing_chain.processing_chain import Chain, Link
+from core_lib.core.models import Event
+from core_lib.core.processing_chain import Chain, Link, OnlyValidEvents
 
 
 class SinkMock(Link):

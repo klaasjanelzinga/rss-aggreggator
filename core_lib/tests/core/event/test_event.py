@@ -5,7 +5,7 @@ import pytz
 from hamcrest import equal_to, is_not
 from hamcrest.core import assert_that
 
-from core_lib.core.event.event import Event
+from core_lib.core.models import Event
 
 
 def test_valid(valid_event: Event):

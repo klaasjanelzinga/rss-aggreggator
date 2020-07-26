@@ -3,11 +3,9 @@ from typing import AsyncIterable, List
 
 from aiohttp import ClientSession
 
-from core_lib.core.event.event import Event
+from core_lib.core.models import Event, Venue
 from core_lib.core.fetcher_util import fetch
-from core_lib.core.parser import Parser
-from core_lib.core.parsing_context import ParsingContext
-from core_lib.core.venue.venue import Venue
+from core_lib.core.parser import Parser, ParsingContext
 
 
 class Source(ABC):

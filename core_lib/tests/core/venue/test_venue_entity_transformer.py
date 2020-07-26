@@ -1,8 +1,8 @@
 from hamcrest.core.assert_that import assert_that
 from hamcrest.core.core.isequal import equal_to
 
-from core_lib.core.venue.venue import Venue
-from core_lib.core.venue.venue_entity_transformer import VenueEntityTransformer
+from core_lib.core.models import Venue
+from core_lib.core.repositories import VenueEntityTransformer
 
 
 def test_to_entity(valid_venue: Venue):

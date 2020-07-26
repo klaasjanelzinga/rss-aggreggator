@@ -3,8 +3,8 @@ from hamcrest import equal_to
 from hamcrest.core import assert_that
 import pytest
 
-from core_lib.core.event.event_repository import EventRepository
-from core_lib.venues.neushoorn_leeuwarden.neushoorn_processor import NeushoornProcessor
+from core_lib.core.repositories import EventRepository
+from core_lib.venues.neushoorn_leeuwarden import NeushoornProcessor
 
 
 @pytest.mark.asyncio

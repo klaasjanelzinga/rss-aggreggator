@@ -3,10 +3,8 @@ from datetime import datetime
 from hamcrest import equal_to, not_none
 from hamcrest.core import assert_that
 
-from core_lib.core.event.event import Event
-from core_lib.core.event.event_entity_transformer import EventEntityTransformer
-from core_lib.core.venue.venue import Venue
-from core_lib.core.venue.venue_repository import VenueRepository
+from core_lib.core.models import Event, Venue
+from core_lib.core.repositories import VenueRepository, EventEntityTransformer
 
 
 def test_mapping_to_event(mock_venue_repository: VenueRepository, valid_venue: Venue):

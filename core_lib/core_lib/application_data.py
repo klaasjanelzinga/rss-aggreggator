@@ -8,21 +8,19 @@ from aiohttp import ClientSession, ClientTimeout
 from google.cloud import datastore
 
 from core_lib.core.app_config import AppConfig
-from core_lib.core.event.event_entity_transformer import EventEntityTransformer
-from core_lib.core.event.event_repository import EventRepository
-from core_lib.core.user.user_profile_repository import UserProfileRepository
-from core_lib.core.venue.venue_processor import VenueProcessor
-from core_lib.core.venue.venue_repository import VenueRepository
-from core_lib.venues.hedon_zwolle.hedon_processor import HedonProcessor
-from core_lib.venues.melkweg_amsterdam.melkweg_processor import MelkwegProcessor
-from core_lib.venues.neushoorn_leeuwarden.neushoorn_processor import NeushoornProcessor
-from core_lib.venues.oost_groningen.oost_groningen_processor import OostGroningenProcessor
-from core_lib.venues.paradiso_amsterdam.paradiso_processor import ParadisoProcessor
-from core_lib.venues.simplon_groningen.simplon_processor import SimplonProcessor
-from core_lib.venues.spot.spot_processor import SpotProcessor
-from core_lib.venues.t013_tilburg.t013_processor import T013Processor
-from core_lib.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
-from core_lib.venues.vera_groningen.vera_processor import VeraProcessor
+from core_lib.core.user_profile import UserProfileRepository
+from core_lib.core.venue_processor import VenueProcessor
+from core_lib.core.repositories import VenueRepository, EventEntityTransformer, EventRepository
+from core_lib.venues.hedon_zwolle import HedonProcessor
+from core_lib.venues.melkweg_amsterdam import MelkwegProcessor
+from core_lib.venues.neushoorn_leeuwarden import NeushoornProcessor
+from core_lib.venues.oost_groningen import OostGroningenProcessor
+from core_lib.venues.paradiso_amsterdam import ParadisoProcessor
+from core_lib.venues.simplon_groningen import SimplonProcessor
+from core_lib.venues.spot_groningen import SpotProcessor
+from core_lib.venues.t013_tilburg import T013Processor
+from core_lib.venues.tivoli_utrecht import TivoliProcessor
+from core_lib.venues.vera_groningen import VeraProcessor
 
 logging.basicConfig(level=logging.INFO)
 

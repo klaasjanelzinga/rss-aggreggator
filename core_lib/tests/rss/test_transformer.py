@@ -1,7 +1,7 @@
 from hamcrest import assert_that, equal_to, matches_regexp
 
-from core_lib.rss.transformer import Transformer
-from core_lib.core.event.event import Event
+from core_lib.core.rss import Transformer
+from core_lib.core.models import Event
 
 
 def test_as_xml(valid_event: Event):

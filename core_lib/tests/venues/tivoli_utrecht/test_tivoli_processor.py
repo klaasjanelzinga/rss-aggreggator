@@ -3,8 +3,8 @@ from hamcrest import equal_to
 from hamcrest.core import assert_that
 import pytest
 
-from core_lib.core.event.event_repository import EventRepository
-from core_lib.venues.tivoli_utrecht.tivoli_processor import TivoliProcessor
+from core_lib.core.repositories import EventRepository
+from core_lib.venues.tivoli_utrecht import TivoliProcessor
 
 
 @pytest.mark.asyncio

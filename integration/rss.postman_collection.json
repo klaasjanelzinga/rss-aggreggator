@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "aac9cf53-e77f-4c49-bbef-ec614adf0bde",
+		"name": "rss",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/events.xml",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"events.xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "events-json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/search?term=Beyond Hip Hop with support A Lecture By Rich Medina",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "term",
+							"value": "Beyond Hip Hop with support A Lecture By Rich Medina"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "maintenance ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/maintenance/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"maintenance",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cron maintenance ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/maintenance/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"maintenance",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cron fetch-integration-test-data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/cron/fetch-integration-test-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"cron",
+						"fetch-integration-test-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cron cleanup",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/cron/cleanup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"cron",
+						"cleanup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cron cleanup-all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/cron/cleanup-all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"cron",
+						"cleanup-all"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

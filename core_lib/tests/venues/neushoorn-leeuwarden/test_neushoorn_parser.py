@@ -4,9 +4,8 @@ from hamcrest.core.core.isequal import equal_to
 import pytest
 
 from core_lib.core.fetcher_util import fetch
-from core_lib.core.parsing_context import ParsingContext
-from core_lib.venues.neushoorn_leeuwarden.neushoorn_parser import NeushoornParser
-from core_lib.venues.neushoorn_leeuwarden.neushoorn_processor import NeushoornProcessor
+from core_lib.core.parser import ParsingContext
+from core_lib.venues.neushoorn_leeuwarden import NeushoornParser, NeushoornProcessor
 
 
 @pytest.mark.asyncio

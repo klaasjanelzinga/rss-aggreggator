@@ -3,8 +3,8 @@ from hamcrest import equal_to
 from hamcrest.core import assert_that
 import pytest
 
-from core_lib.core.event.event_repository import EventRepository
-from core_lib.venues.vera_groningen.vera_processor import VeraProcessor
+from core_lib.core.repositories import EventRepository
+from core_lib.venues.vera_groningen import VeraProcessor
 
 
 @pytest.mark.asyncio

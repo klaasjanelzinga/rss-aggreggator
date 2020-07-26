@@ -3,8 +3,8 @@ from hamcrest import equal_to
 from hamcrest.core import assert_that
 import pytest
 
-from core_lib.core.event.event_repository import EventRepository
-from core_lib.venues.spot.spot_processor import SpotProcessor
+from core_lib.core.repositories import EventRepository
+from core_lib.venues.spot_groningen import SpotProcessor
 
 
 @pytest.mark.asyncio
