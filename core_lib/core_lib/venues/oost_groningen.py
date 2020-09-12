@@ -26,7 +26,9 @@ class OostGroningenParser(Parser):
         when_text = when_text[0 : when_text.find("/")].strip()
 
         when_datetime = dateparser.parse(
-            f"{when_text}", languages=["nl"], settings={"TIMEZONE": venue.timezone, "RETURN_AS_TIMEZONE_AWARE": True},
+            f"{when_text}",
+            languages=["nl"],
+            settings={"TIMEZONE": venue.timezone, "RETURN_AS_TIMEZONE_AWARE": True},
         )
         title = tag.find("h3", {"class": "agenda-title"}).text
         description_tag = tag.find("span", {"class": "small"})

@@ -34,52 +34,82 @@ def mock_event_repository() -> EventRepository:
 
 @pytest.fixture
 def hedon_processor(mock_event_repository, mock_venue_repository) -> HedonProcessor:
-    return HedonProcessor(event_repository=mock_event_repository, venue_repository=mock_venue_repository,)
+    return HedonProcessor(
+        event_repository=mock_event_repository,
+        venue_repository=mock_venue_repository,
+    )
 
 
 @pytest.fixture
 def melkweg_processor(mock_event_repository, mock_venue_repository) -> MelkwegProcessor:
-    return MelkwegProcessor(event_repository=mock_event_repository, venue_repository=mock_venue_repository,)
+    return MelkwegProcessor(
+        event_repository=mock_event_repository,
+        venue_repository=mock_venue_repository,
+    )
 
 
 @pytest.fixture
 def neushoorn_processor(mock_event_repository, mock_venue_repository) -> NeushoornProcessor:
-    return NeushoornProcessor(event_repository=mock_event_repository, venue_repository=mock_venue_repository,)
+    return NeushoornProcessor(
+        event_repository=mock_event_repository,
+        venue_repository=mock_venue_repository,
+    )
 
 
 @pytest.fixture
 def oost_processor(mock_event_repository, mock_venue_repository) -> OostGroningenProcessor:
-    return OostGroningenProcessor(event_repository=mock_event_repository, venue_repository=mock_venue_repository,)
+    return OostGroningenProcessor(
+        event_repository=mock_event_repository,
+        venue_repository=mock_venue_repository,
+    )
 
 
 @pytest.fixture
 def paradiso_processor(mock_event_repository, mock_venue_repository) -> ParadisoProcessor:
-    return ParadisoProcessor(event_repository=mock_event_repository, venue_repository=mock_venue_repository,)
+    return ParadisoProcessor(
+        event_repository=mock_event_repository,
+        venue_repository=mock_venue_repository,
+    )
 
 
 @pytest.fixture
 def simplon_processor(mock_event_repository, mock_venue_repository) -> SimplonProcessor:
-    return SimplonProcessor(event_repository=mock_event_repository, venue_repository=mock_venue_repository,)
+    return SimplonProcessor(
+        event_repository=mock_event_repository,
+        venue_repository=mock_venue_repository,
+    )
 
 
 @pytest.fixture
 def spot_processor(mock_event_repository, mock_venue_repository) -> SpotProcessor:
-    return SpotProcessor(event_repository=mock_event_repository, venue_repository=mock_venue_repository,)
+    return SpotProcessor(
+        event_repository=mock_event_repository,
+        venue_repository=mock_venue_repository,
+    )
 
 
 @pytest.fixture
 def t013_processor(mock_event_repository, mock_venue_repository) -> T013Processor:
-    return T013Processor(event_repository=mock_event_repository, venue_repository=mock_venue_repository,)
+    return T013Processor(
+        event_repository=mock_event_repository,
+        venue_repository=mock_venue_repository,
+    )
 
 
 @pytest.fixture
 def tivoli_processor(mock_event_repository, mock_venue_repository) -> TivoliProcessor:
-    return TivoliProcessor(event_repository=mock_event_repository, venue_repository=mock_venue_repository,)
+    return TivoliProcessor(
+        event_repository=mock_event_repository,
+        venue_repository=mock_venue_repository,
+    )
 
 
 @pytest.fixture
 def vera_processor(mock_event_repository, mock_venue_repository) -> VeraProcessor:
-    return VeraProcessor(event_repository=mock_event_repository, venue_repository=mock_venue_repository,)
+    return VeraProcessor(
+        event_repository=mock_event_repository,
+        venue_repository=mock_venue_repository,
+    )
 
 
 @pytest.fixture

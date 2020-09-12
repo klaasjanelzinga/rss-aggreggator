@@ -13,7 +13,12 @@ from core_lib.core.source import Source
 
 
 class VenueProcessor(ABC):
-    def __init__(self, event_repository: EventRepository, venue_repository: VenueRepository, venue: Venue,) -> None:
+    def __init__(
+        self,
+        event_repository: EventRepository,
+        venue_repository: VenueRepository,
+        venue: Venue,
+    ) -> None:
         self.event_repository = event_repository
         self.venue_repository = venue_repository
         self.venue = venue

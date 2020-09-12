@@ -22,7 +22,8 @@ async def test_sample_file(client_session: ClientSession):
     assert_that(event.title, equal_to("Worry Dolls"))
     assert_that(event.when, is_not(none()))
     assert_that(
-        event.image_url, equal_to("https://www.tivolivredenburg.nl/wp-content/uploads/2019/05/Duo-Print-195x130.jpg"),
+        event.image_url,
+        equal_to("https://www.tivolivredenburg.nl/wp-content/uploads/2019/05/Duo-Print-195x130.jpg"),
     )
     assert_that(event.description, equal_to("Britse folk vol meerstemmige zang, banjo, ukulele, gitaar en mandoline"))
     assert_that(event.date_published, is_not(none()))

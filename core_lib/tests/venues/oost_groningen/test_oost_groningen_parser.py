@@ -21,7 +21,8 @@ async def test_parse(client_session: ClientSession):
     assert_that(event.when, is_not(none()))
     assert_that(event.url, equal_to("https://www.facebook.com/events/610421539383220/"))
     assert_that(
-        event.image_url, equal_to("https://www.komoost.nl/media/56721601_1992667177522931_8267801960216788992_o.jpg"),
+        event.image_url,
+        equal_to("https://www.komoost.nl/media/56721601_1992667177522931_8267801960216788992_o.jpg"),
     )
     assert_that(event.venue, equal_to(venue))
     assert_that(event.source, equal_to("https://www.komoost.nl"))
