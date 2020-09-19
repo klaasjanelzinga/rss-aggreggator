@@ -12,6 +12,7 @@ def test_as_xml():
         description="omschrijving",
         author="junit",
         guid="unique",
+        pub_date="Thu, 20 Sep 2020 13:14:15 +0000",
         source="the-truth",
     )
     root = ElementTree.fromstring(rss_item.as_node())
