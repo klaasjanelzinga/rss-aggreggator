@@ -198,7 +198,7 @@ LOCALE_LOCK = threading.Lock()
 
 
 @contextmanager
-def _setlocale(name: str) -> Generator:
+def setlocale(name: str) -> Generator:
     with LOCALE_LOCK:
         saved = locale.setlocale(locale.LC_ALL)
         try:
@@ -217,7 +217,7 @@ def _fix(line: str) -> str:
         if match.groups()[0] == "timestamp":
             return re.sub(r"{{random_future_date:\w+}}", str(int(future_date.timestamp())), line)
         if match.groups()[0] == "tivoli":
-            with _setlocale("nl_NL.UTF-8"):
+            with setlocale("nl_NL.UTF-8"):
                 tivolies = (
                     f'"day": "{future_date.strftime("%a %-d")}", '
                     f'"month": "{future_date.strftime("%B")}", '
@@ -225,13 +225,13 @@ def _fix(line: str) -> str:
                 )
                 return line.replace("{{random_future_date:tivoli}}", tivolies)
         if match.groups()[0] == "simplon-groningen":
-            with _setlocale("nl_NL.UTF-8"):
+            with setlocale("nl_NL.UTF-8"):
                 return line.replace("{{random_future_date:simplon-groningen}}", future_date.strftime("%a %-d %B %Y"))
         if match.groups()[0] == "vera-groningen":
-            with _setlocale("nl_NL.UTF-8"):
+            with setlocale("nl_NL.UTF-8"):
                 return line.replace("{{random_future_date:vera-groningen}}", future_date.strftime("%A %-d %B"))
         if match.groups()[0] == "neushoorn-leeuwarden":
-            with _setlocale("nl_NL.UTF-8"):
+            with setlocale("nl_NL.UTF-8"):
                 return line.replace("{{random_future_date:neushoorn-leeuwarden}}", future_date.strftime("%A %-d %B"))
         return re.sub(r"{{random_future_date:.*?}}", future_date.strftime(match.groups()[0]), line)
     return line

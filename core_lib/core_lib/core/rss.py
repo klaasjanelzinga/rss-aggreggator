@@ -3,6 +3,7 @@ from datetime import datetime
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 
+from core_lib.core.fetcher_util import setlocale
 from core_lib.core.models import Event
 
 
@@ -51,6 +52,7 @@ class RSSItem:
     author: str
     guid: str
     source: str
+    pub_date: str
 
     def as_node(self) -> bytes:
         item_element = Element("item")
@@ -60,6 +62,7 @@ class RSSItem:
         SubElement(item_element, "guid").text = self.guid
         SubElement(item_element, "source").text = self.source
         SubElement(item_element, "author").text = self.author
+        SubElement(item_element, "pubDate").text = self.pub_date
         return ElementTree.tostring(item_element)
 
 
@@ -74,6 +77,9 @@ class Transformer:
             if item.image_url is not None
             else ""
         )
+        # Thu, 20 Aug 2020 20:07:59 +0000
+        with setlocale("C.UTF-8"):
+            pub_date = item.date_published.strftime("%a, %d %b %Y %H:%M:%S %z")
         description = f"""<html><body>
             <p>{item.description}</p>
             {image_url}
@@ -81,5 +87,11 @@ class Transformer:
                Where: <a href="{venue.url}">{venue.name} ({venue.city}, {venue.country})</a></p>
             </body></html>"""
         return RSSItem(
-            title=title, link=item.url, description=description, author=item.source, guid=item.url, source=item.source
+            title=title,
+            link=item.url,
+            description=description,
+            author=item.source,
+            guid=item.url,
+            source=item.source,
+            pub_date=pub_date,
         )
