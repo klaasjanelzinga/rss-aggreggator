@@ -160,6 +160,7 @@ class EventRepository:
     def fetch_all_rss_items(self) -> Iterator:
         query = self.client.query(kind="Event")
         query.add_filter("date_published", ">", datetime.now() - timedelta(days=7))
+        query.order = ["-date_published"]
         return query.fetch(limit=50)
 
     def search(self, term: str, cursor: Optional[bytes] = None, limit: Optional[int] = None) -> QueryResult:
