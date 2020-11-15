@@ -1,5 +1,4 @@
 aiohttp==3.7.2
-aiofiles==0.6.0
 Babel==2.9.0
 beautifulsoup4==4.9.3
 dateparser==0.7.6
