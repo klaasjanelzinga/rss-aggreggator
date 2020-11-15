@@ -6,7 +6,6 @@ from contextlib import contextmanager
 from datetime import datetime, timedelta
 from typing import Generator
 
-import aiofiles
 from aiohttp import ClientSession
 
 from core_lib.core.app_config import AppConfig
@@ -179,8 +178,8 @@ async def fetch(session: ClientSession, url: str) -> str:
                 break
     if filename is None:
         raise Exception(f"No support for stubbed url {url}")
-    async with aiofiles.open(filename) as file:
-        lines = await file.readlines()
+    with open(filename) as file:
+        lines = file.readlines()
 
         def fix_a_line(line: str) -> str:
             result = line

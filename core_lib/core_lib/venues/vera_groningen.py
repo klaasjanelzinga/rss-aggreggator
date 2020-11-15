@@ -1,6 +1,6 @@
 import re
 from datetime import datetime
-from typing import List, AsyncIterable
+from typing import List, AsyncIterable, Optional
 
 import dateparser
 import pytz
@@ -62,7 +62,7 @@ class VeraParser(Parser):
             when = ParserUtil.sanitize_text(when)
             when_time = tag.find("div", {"class": "schedule"}).text
             when_time = when_time[when_time.find("start: ") + 7 : when_time.find("start: ") + 12]
-            when_date: datetime = dateparser.parse(
+            when_date: Optional[datetime] = dateparser.parse(
                 f"{when} {when_time}",
                 languages=["nl"],
                 settings={"TIMEZONE": venue.timezone, "RETURN_AS_TIMEZONE_AWARE": True},
@@ -71,8 +71,6 @@ class VeraParser(Parser):
                 datetime.now(pytz.timezone(venue.timezone)) - relativedelta(days=100)
             ):
                 when_date = when_date + relativedelta(years=1)
-        if when_date is None:
-            when_date = datetime.min
         image_url = tag.find("div", {"class": "artist-image"})["style"]
         image_url_end = image_url.find("'", image_url.find("https") + 4)
         image_url = image_url[image_url.find("https") : image_url_end]

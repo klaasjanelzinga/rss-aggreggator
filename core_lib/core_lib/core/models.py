@@ -6,7 +6,6 @@ from datetime import datetime
 from typing import Optional, List, Any
 
 import pytz
-from babel.dates import get_timezone
 
 
 def split_term(term: str) -> List[str]:
@@ -32,7 +31,7 @@ class Venue:
         self.search_terms = [term.lower() for term in split_term(self.name) + [self.city]]
 
     def convert_utc_to_venue_timezone(self, when: datetime) -> datetime:
-        venue_tz = get_timezone(self.timezone)
+        venue_tz = pytz.timezone(self.timezone)
         return when.astimezone(venue_tz)
 
 
@@ -44,7 +43,7 @@ class Event:
     venue: Venue
     source: str
     date_published: datetime
-    when: datetime
+    when: Optional[datetime]
     image_url: Optional[str] = None
     search_terms: List[str] = field(default_factory=list)
     event_id: str = field(default_factory=str)
@@ -73,13 +72,13 @@ class Event:
         return text is not None and text != ""
 
     def is_valid(self) -> bool:
-        valid_date = self.when != datetime.min and self.when > datetime.now(pytz.timezone(self.venue.timezone))
+        valid_date = self.when is not None and self.when > datetime.now(pytz.timezone(self.venue.timezone))
         valid = (
             Event.is_not_empty(self.title)
             and Event.is_not_empty(self.description)
             and valid_date
             and Event.is_not_empty(self.url)
         )
-        if not valid and valid_date:
+        if not valid:
             logging.getLogger(__name__).warning("Invalid event %s", self)
         return valid

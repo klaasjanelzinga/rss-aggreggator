@@ -31,7 +31,7 @@ async def test_sample_file(client_session: ClientSession):
     assert_that(reunie[0].event_id, is_not(none()))
     assert_that(reunie[0].venue, equal_to(venue))
 
-    for event in [r for r in results if r.when != datetime.min]:
+    for event in [r for r in results if r.when is not None]:
         assert_that(event.when, is_not(none))
         assert_that(event.description, is_not(none))
         assert_that(event.title, is_not(none))

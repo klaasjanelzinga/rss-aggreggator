@@ -3,6 +3,7 @@ from datetime import datetime
 from typing import List, Dict, AsyncIterable
 
 import dateparser
+import pytz
 from aiohttp import ClientSession
 from bs4 import BeautifulSoup
 
@@ -31,7 +32,7 @@ class TivoliParser(Parser):
 
         when = dateparser.parse(
             when_format, languages=["nl"], settings={"TIMEZONE": venue.timezone, "RETURN_AS_TIMEZONE_AWARE": True}
-        )
+        ) or datetime.now(tz=pytz.timezone(venue.timezone))
 
         return Event(
             url=tivoli_url,

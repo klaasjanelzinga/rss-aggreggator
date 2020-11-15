@@ -32,6 +32,6 @@ async def test_invalid_event(valid_event: Event):
     sink = SinkMock()
     chain = Chain([OnlyValidEvents(), sink])
     event = valid_event
-    event.when = datetime.min
+    event.when = None
     await chain.start_chain([event])
     assert_that(len(sink.mocked), equal_to(0))

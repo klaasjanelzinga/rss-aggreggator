@@ -81,7 +81,7 @@ class HedonParser(Parser):
             image_url=figure,
             source=source,
             date_published=datetime.now(),
-            when=when if when is not None else datetime.min,
+            when=when,
         )
 
 

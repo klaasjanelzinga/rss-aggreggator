@@ -48,7 +48,7 @@ class OnlyChangedEventsFilter(Link):
 
 class OnlyEventsWithWhen(Link):
     async def chain(self, event: Event) -> None:
-        if event.when is not None and event.when != datetime.min:
+        if event.when is not None:
             await self.invoke_next_link(event)
 
 

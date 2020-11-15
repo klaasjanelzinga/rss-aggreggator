@@ -39,7 +39,7 @@ def test_description(valid_event: Event):
 
 def test_when(valid_event: Event):
     event = valid_event
-    event.when = datetime.min
+    event.when = None
     assert_that(event.is_valid(), equal_to(False))
 
 

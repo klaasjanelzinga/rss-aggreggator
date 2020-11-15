@@ -3,6 +3,7 @@ from datetime import datetime
 from typing import List, Dict, AsyncIterable
 
 import dateparser
+import pytz
 from aiohttp import ClientSession
 from bs4 import BeautifulSoup
 
@@ -38,7 +39,9 @@ class T013Parser(Parser):
         source = venue.source_url
         url = f"{venue.url}{json_event['url']}"
         starts_at = json_event["dates"]["startsAt"]
-        date = dateparser.parse(starts_at, settings={"TIMEZONE": venue.timezone, "RETURN_AS_TIMEZONE_AWARE": True})
+        date = dateparser.parse(
+            starts_at, settings={"TIMEZONE": venue.timezone, "RETURN_AS_TIMEZONE_AWARE": True}
+        ) or datetime.now(tz=pytz.timezone(venue.timezone))
         image_url = f"{venue.url}{json_event['images']['regular']['mobile']}"
         return Event(
             url=url,

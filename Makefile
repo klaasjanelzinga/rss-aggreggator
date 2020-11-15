@@ -19,15 +19,21 @@ mypy:
 outdated:
 	pip list --outdated
 
-flakes: black-check pylint mypy outdated flake8
+flakes: black pylint mypy outdated flake8
+
+flakes-check: black-check pylint mypy outdated flake8
 
 flake8:
 	flake8 core_lib/core_lib
+
 tests:
 	(cd core_lib && pytest --cov core_lib --cov-report=html tests)
 
 dev-requirements:
 	pip install -r requirements.txt
+	(cd core_lib && pip install -r requirements.txt)
+	(cd api && pip install -r requirements.txt)
+	(cd cron && pip install -r requirements.txt)
 
 build-docker-images:
 	scripts/build-docker-images.sh

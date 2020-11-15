@@ -3,6 +3,7 @@ from datetime import datetime
 from typing import List, Dict, AsyncIterable
 
 import dateparser
+import pytz
 from aiohttp import ClientSession
 
 from core_lib.core.models import Event, Venue
@@ -29,7 +30,7 @@ class ParadisoParser(Parser):
 
         when = dateparser.parse(
             when_format, languages=["en"], settings={"TIMEZONE": venue.timezone, "RETURN_AS_TIMEZONE_AWARE": True}
-        )
+        ) or datetime.now(tz=pytz.timezone(venue.timezone))
 
         return Event(
             url=paradiso_url,

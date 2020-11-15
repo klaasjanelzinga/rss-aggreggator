@@ -2,6 +2,7 @@ from datetime import datetime
 from typing import List, AsyncIterable
 
 import dateparser
+import pytz
 from aiohttp import ClientSession
 from bs4 import BeautifulSoup, Tag
 
@@ -32,7 +33,7 @@ class SimplonParser(Parser):
 
         when_datetime = dateparser.parse(
             f"{when} {time}", settings={"TIMEZONE": venue.timezone, "RETURN_AS_TIMEZONE_AWARE": True}
-        )
+        ) or datetime.now(tz=pytz.timezone(venue.timezone))
         image_url_style = tag.find("div", {"class": "item-image"}).get("style")
         image_url_start = image_url_style.find("https")
         image_url = image_url_style[image_url_start : image_url_style.find(".jpg") + 4]

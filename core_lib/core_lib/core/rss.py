@@ -78,7 +78,7 @@ class Transformer:
             else ""
         )
         # Thu, 20 Aug 2020 20:07:59 +0000
-        with setlocale("C.UTF-8"):
+        with setlocale("C"):
             pub_date = item.date_published.strftime("%a, %d %b %Y %H:%M:%S %z")
         description = f"""<html><body>
             <p>{item.description}</p>

@@ -35,7 +35,7 @@ class NeushoornParser(Parser):
                     venue=parsing_context.venue,
                     source=parsing_context.venue.url,
                     date_published=datetime.now(),
-                    when=datetime.min,
+                    when=None,
                     image_url=None,
                 )
             )
