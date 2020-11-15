@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from datetime import datetime
 from typing import List, Optional
 
 from core_lib.core.models import Event

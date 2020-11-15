@@ -89,7 +89,7 @@ class EventEntityTransformer:
             "venue_id": event.venue.venue_id,
             "source": event.source,
             "date_published": event.date_published,
-            "when": event.when.astimezone(pytz.utc),
+            "when": event.when.astimezone(pytz.utc) if event.when else datetime.now(tz=pytz.utc),
             "image_url": event.image_url,
             "search_terms": event.generate_search_terms(),
         }

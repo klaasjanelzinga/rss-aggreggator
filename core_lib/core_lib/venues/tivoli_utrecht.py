@@ -53,7 +53,7 @@ class TivoliParser(Parser):
             label = div.find("div", {"class": "label"})
             if label and label.find("span").text == "aanvang":
                 time = div.find("div", {"class": "values"}).find("span").text
-        if time and len(time.split(":")) == 2:
+        if event.when and time and len(time.split(":")) == 2:
             event.when = event.when.replace(hour=int(time.split(":")[0]), minute=int(time.split(":")[1]))
         return event
 

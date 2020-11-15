@@ -3,6 +3,8 @@ from datetime import datetime
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 
+import pytz
+
 from core_lib.core.fetcher_util import setlocale
 from core_lib.core.models import Event
 
@@ -70,7 +72,9 @@ class Transformer:
     @staticmethod
     def item_to_rss(item: Event) -> RSSItem:
         venue = item.venue
-        when = venue.convert_utc_to_venue_timezone(item.when).strftime("%Y-%m-%d %H:%M")
+        when = venue.convert_utc_to_venue_timezone(item.when if item.when else datetime.now(tz=pytz.utc)).strftime(
+            "%Y-%m-%d %H:%M"
+        )
         title = f"{item.title} [{venue.short_name}]"
         image_url = (
             f'<img src="{item.image_url}" alt="image for event" width=300 height=160/>'
