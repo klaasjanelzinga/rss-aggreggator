@@ -76,11 +76,7 @@ class Transformer:
             "%Y-%m-%d %H:%M"
         )
         title = f"{item.title} [{venue.short_name}]"
-        image_url = (
-            f'<img src="{item.image_url}" alt="image for event" width=300 height=160/>'
-            if item.image_url is not None
-            else ""
-        )
+        image_url = f'<img src="{item.image_url}" alt="image for event"/>' if item.image_url is not None else ""
         # Thu, 20 Aug 2020 20:07:59 +0000
         with setlocale("C"):
             pub_date = item.date_published.strftime("%a, %d %b %Y %H:%M:%S %z")
