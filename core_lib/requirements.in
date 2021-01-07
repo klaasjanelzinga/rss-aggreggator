@@ -1,0 +1,14 @@
+aiohttp
+Babel
+beautifulsoup4
+dateparser
+Flask
+flask-cors
+google-api-core
+google-auth
+google-cloud-core
+google-cloud-datastore
+grpcio
+python-dateutil
+pytz
+

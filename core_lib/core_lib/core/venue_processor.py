@@ -57,8 +57,7 @@ class VenueProcessor(ABC):
             logging.getLogger(__name__).info("Upserted %d events for %s", database_sink.total_sunk, self.venue.venue_id)
             self.venue.last_fetched_date = datetime.now()
             self.venue_repository.upsert(self.venue)
-        # pylint: disable=W0703
-        except Exception as exception:
+        except IOError as exception:
             logging.getLogger(__name__).exception("Unable to sync %s %s", self.venue.venue_id, exception)
         return database_sink.total_sunk
 

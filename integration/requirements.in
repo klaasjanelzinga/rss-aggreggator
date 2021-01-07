@@ -1,0 +1,6 @@
+asynctest
+faker
+PyHamcrest
+pytest
+pytest-asyncio
+pytest-cov

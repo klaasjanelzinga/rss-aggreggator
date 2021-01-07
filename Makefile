@@ -29,11 +29,19 @@ flake8:
 tests:
 	(cd core_lib && pytest --cov core_lib --cov-report=html tests)
 
-dev-requirements:
+requirements:
 	pip install -r requirements.txt
 	(cd core_lib && pip install -r requirements.txt)
 	(cd api && pip install -r requirements.txt)
 	(cd cron && pip install -r requirements.txt)
+	(cd integration && pip install -r requirements.txt)
+
+update-requirements:
+	pip-compile requirements.in
+	(cd core_lib && pip-compile requirements.in)
+	(cd api && pip-compile requirements.in)
+	(cd cron && pip-compile requirements.in)
+	(cd integration && pip-compile requirements.in)
 
 build-docker-images:
 	scripts/build-docker-images.sh
@@ -43,7 +51,6 @@ integration-tests:
 
 integration-tests-down:
 	(cd integration && docker-compose down)
-
 
 up: 
 	docker-compose up --build
