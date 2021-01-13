@@ -16,11 +16,11 @@ from core_lib.core.venue_processor import VenueProcessor
 
 
 class VeraParser(Parser):
-    def parse(self, parsing_context: ParsingContext) -> List[Event]:
+    def do_parse(self, parsing_context: ParsingContext) -> List[Event]:
         soup = BeautifulSoup(parsing_context.content, features="html.parser")
         events = soup.find_all("div", {"class": "event-wrapper"})
 
-        return [VeraParser._transform(parsing_context.venue, tag) for tag in events]
+        return [VeraParser._transform(parsing_context.venue, tag, parsing_context) for tag in events]
 
     @staticmethod
     def _add_sup_text_from_text(parent_tag: Tag, text: str) -> str:
@@ -37,7 +37,8 @@ class VeraParser(Parser):
         return ParserUtil.sanitize_text(extra)
 
     @staticmethod
-    def _transform(venue: Venue, tag: Tag) -> Event:
+    def _transform(venue: Venue, tag: Tag, parsing_context: ParsingContext) -> Event:
+        parsing_context.currently_parsing = tag
         source = venue.source_url
         vera_url = tag.find("a", {"class": "event-link"})["href"]
         artist_tag = tag.find("h3", {"class": re.compile(r"artist|artist ")})

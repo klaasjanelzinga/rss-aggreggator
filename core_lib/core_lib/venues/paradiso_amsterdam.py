@@ -15,12 +15,13 @@ from core_lib.core.venue_processor import VenueProcessor
 
 
 class ParadisoParser(Parser):
-    def parse(self, parsing_context: ParsingContext) -> List[Event]:
+    def do_parse(self, parsing_context: ParsingContext) -> List[Event]:
         program_items = json.loads(parsing_context.content)
-        return [ParadisoParser._transform(parsing_context.venue, item) for item in program_items]
+        return [ParadisoParser._transform(parsing_context.venue, item, parsing_context) for item in program_items]
 
     @staticmethod
-    def _transform(venue: Venue, data: Dict) -> Event:
+    def _transform(venue: Venue, data: Dict, parsing_context: ParsingContext) -> Event:
+        parsing_context.currently_parsing = data
         source = venue.source_url
         paradiso_url = f'https://api.paradiso.nl/api/library/lists/events/{data["id"]}?lang=en'
         title = data["title"]
@@ -47,7 +48,7 @@ class ParadisoParser(Parser):
         if len(additional_json) > 0:
             if "content" in additional_json[0]:
                 if "alternate_urls" in additional_json[0]["content"]:
-                    event.url = additional_json[0]["content"]["alternate_urls"]["en"]
+                    event.update_url(additional_json[0]["content"]["alternate_urls"]["en"])
                 if "main_image__focus_events" in additional_json[0]["content"]:
                     main_image = additional_json[0]["content"]["main_image__focus_events"]
                     folder_path = main_image["folder_path"]

@@ -24,7 +24,7 @@ class Venue:
     country: str
     timezone: str
     source_url: str
-    last_fetched_date: datetime = datetime.min
+    last_fetched_date: datetime = datetime(1900, 1, 1, 1, 1, 1, 0, pytz.utc)
     search_terms: List[str] = field(default_factory=list)
 
     def __post_init__(self) -> None:
@@ -57,6 +57,11 @@ class Event:
 
     def __hash__(self) -> int:
         return hash(self.event_id)
+
+    def update_url(self, new_url: str) -> None:
+        """ Updates event_id as well! Use at own risk. """
+        self.url = new_url
+        self.event_id = str(base64.encodebytes(bytes(self.url, "utf-8")), "utf-8") if self.url is not None else None
 
     def generate_search_terms(self) -> List[str]:
         search_terms = split_term(self.title) + split_term(self.description)

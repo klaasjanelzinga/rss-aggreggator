@@ -2,8 +2,6 @@ aiohttp
 Babel
 beautifulsoup4
 dateparser
-Flask
-flask-cors
 google-api-core
 google-auth
 google-cloud-core

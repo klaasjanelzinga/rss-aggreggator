@@ -4,22 +4,17 @@ from typing import Any, Dict, Generator
 from flask import Blueprint, jsonify, request, Response
 from flask_cors import cross_origin
 
-from core_lib import application_data
-from core_lib.application_data import (
-    event_repository,
-    user_profile_repository,
-    event_entity_transformer,
-)
+from core_lib.application_data import repositories, event_entity_transformer
 from core_lib.core.app_config import AppConfig
 from core_lib.core.models import Event, Venue
 from core_lib.core.repositories import EventEntityTransformer
+from core_lib.core.rss import RSSChannel, Transformer
 from core_lib.core.token_verifier import TokenVerifier
 from core_lib.core.user_profile import UserProfile
-from core_lib.core.rss import RSSChannel, Transformer
 
 EVENT_API_ROUTES = Blueprint("events", __name__, template_folder="templates")
 EVENT_ENTITY_TRANSFORMER = EventEntityTransformer(
-    venue_repository=application_data.venue_repository
+    venue_repository=repositories.venue_repository
 )
 VENUE_API_ROUTES = Blueprint("venues", __name__, template_folder="templates")
 USER_ROUTES = Blueprint("user", __name__, template_folder="templates")
@@ -43,7 +38,7 @@ def fetch_events() -> Any:
     fetch_offset = request.args.get("fetch_offset")
     cursor = bytes(fetch_offset, "utf-8") if fetch_offset is not None else None
 
-    query_result = event_repository.fetch_items(cursor=cursor, limit=25)
+    query_result = repositories.event_repository.fetch_items(cursor=cursor, limit=25)
     events = [
         transform(EVENT_ENTITY_TRANSFORMER.to_event(item))
         for item in query_result.items
@@ -57,7 +52,7 @@ def fetch_events() -> Any:
 @EVENT_API_ROUTES.route("/api/events/today", methods=["GET"])
 @cross_origin(**AppConfig.cors())
 def fetch_today_events() -> Any:
-    query_result = event_repository.fetch_items_on(when=date.today())
+    query_result = repositories.event_repository.fetch_items_on(when=date.today())
     events = [
         transform(EVENT_ENTITY_TRANSFORMER.to_event(item))
         for item in query_result.items
@@ -70,7 +65,7 @@ def fetch_today_events() -> Any:
 @EVENT_API_ROUTES.route("/api/events/tomorrow", methods=["GET"])
 @cross_origin(**AppConfig.cors())
 def fetch_tomorrow_events() -> Any:
-    query_result = event_repository.fetch_items_on(
+    query_result = repositories.event_repository.fetch_items_on(
         when=date.today() + timedelta(days=1)
     )
     events = [
@@ -85,7 +80,7 @@ def fetch_tomorrow_events() -> Any:
 @EVENT_API_ROUTES.route("/api/events/day-after-tomorrow", methods=["GET"])
 @cross_origin(**AppConfig.cors())
 def fetch_day_after_tomorrow_events() -> Any:
-    query_result = event_repository.fetch_items_on(
+    query_result = repositories.event_repository.fetch_items_on(
         when=date.today() + timedelta(days=2)
     )
     events = [
@@ -105,7 +100,9 @@ def search_events() -> Any:
     cursor = bytes(fetch_offset, "utf-8") if fetch_offset is not None else None
     if term is None:
         return fetch_events()
-    query_result = event_repository.search(term=term, cursor=cursor, limit=25)
+    query_result = repositories.event_repository.search(
+        term=term, cursor=cursor, limit=25
+    )
     events = [
         transform(EVENT_ENTITY_TRANSFORMER.to_event(item))
         for item in query_result.items
@@ -138,13 +135,13 @@ def login_user() -> Any:
         return Response(status=404)
 
     user_profile_in_request = transform_to_user_profile(request.json)
-    user_profile = user_profile_repository.fetch_user_by_email(
+    user_profile = repositories.user_profile_repository.fetch_user_by_email(
         user_profile_in_request.email
     )
     if user_profile:
         return jsonify(transform_to_json(user_profile))
 
-    user_profile = user_profile_repository.insert(user_profile_in_request)
+    user_profile = repositories.user_profile_repository.insert(user_profile_in_request)
     return jsonify(transform_to_json(user_profile)), 201
 
 
@@ -155,7 +152,7 @@ def update_user() -> Any:
     if not user_profile_token:
         return Response(status=404)
 
-    user_profile = user_profile_repository.insert(
+    user_profile = repositories.user_profile_repository.insert(
         transform_to_user_profile(request.json)
     )
     return jsonify(transform_to_json(user_profile))
@@ -168,7 +165,9 @@ def fetch_user_profile() -> Any:
     if not user_profile_token:
         return Response(status=404)
 
-    result = user_profile_repository.fetch_user_by_email(user_profile_token.email)
+    result = repositories.user_profile_repository.fetch_user_by_email(
+        user_profile_token.email
+    )
     if not result:
         return Response(status=401)
     return jsonify(transform_to_json(result))
@@ -195,7 +194,7 @@ def transform_to_user_profile(body: dict) -> UserProfile:
 @VENUE_API_ROUTES.route("/api/venues", methods=["GET"])
 @cross_origin(**AppConfig.cors())
 def fetch_venues() -> Any:
-    venues = application_data.venue_repository.fetch_all()
+    venues = repositories.venue_repository.fetch_all()
     return jsonify({"venues": [_transform(venue) for venue in venues]})
 
 
@@ -223,7 +222,7 @@ def fetch_rss() -> Any:
         yield pre_amble.replace("</rss>", "").replace("</channel>", "").encode("UTF-8")
         for event in [
             event_entity_transformer.to_event(event)
-            for event in event_repository.fetch_all_rss_items()
+            for event in repositories.event_repository.fetch_all_rss_items()
         ]:
             yield Transformer.item_to_rss(event).as_node()
         yield rss_channel.generate_post_amble()

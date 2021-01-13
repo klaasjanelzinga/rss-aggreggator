@@ -1,2 +1,5 @@
 -e file:../core_lib
 
+Flask
+flask-cors
+

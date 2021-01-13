@@ -20,13 +20,18 @@ do
 done
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+application=rss-aggregator
 
-echo "Building app container"
-(cd $script_dir/.. && docker build -t rss-aggregator/api:$VERSION -f api/Dockerfile .)
-(cd $script_dir/.. && docker build -t rss-aggregator/cron:$VERSION -f cron/Dockerfile .)
-(cd $script_dir/../frontend && docker build -t rss-aggregator/frontend:$VERSION .)
+echo "Build python base-image"
+(cd $script_dir/../images/python-base && docker build --no-cache --tag ${application}/python-base:latest .)
 
-# tag application version -> latest
-docker tag rss-aggregator/api:$VERSION rss-aggregator/api:latest
-docker tag rss-aggregator/cron:$VERSION rss-aggregator/cron:latest
-docker tag rss-aggregator/frontend:$VERSION rss-aggregator/frontend:latest
+
+echo "Building app containers"
+for service in unittests cron api frontend
+do
+  set +e
+  docker pull gcr.io/newsroom-v1/${service}:latest
+  set -e
+  (cd $script_dir/.. && docker build --cache-from gcr.io/rss-aggregator-v3/${service}:latest -t ${application}/${service}:$VERSION -f ${service}/Dockerfile .)
+  docker tag ${application}/${service}:$VERSION ${application}/${service}:latest
+done

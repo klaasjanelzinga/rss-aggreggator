@@ -1,0 +1,33 @@
+-e file:../core_lib
+
+aiohttp
+pytz
+
+# Testing dependencies
+asynctest
+coverage
+pytest
+pytest-asyncio
+pytest-cov
+faker
+PyHamcrest
+
+# Linting
+mypy
+black
+isort==4.3.4
+flake8
+flake8-print
+flake8-logging-format
+flake8-builtins
+flake8-blind-except
+flake8-comprehensions
+flake8-string-format
+flake8-bugbear
+flake8-functions
+flake8-todo
+flake8-variables-names
+flake8-tidy-imports
+flake8-bandit
+flake8-assertive
+pylint

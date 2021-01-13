@@ -3,8 +3,10 @@ import logging
 from abc import ABC, abstractmethod
 from datetime import datetime
 
+import pytz
 from aiohttp import ClientSession
 
+from core_lib.core.exceptions import AppException
 from core_lib.core.models import Venue
 from core_lib.core.fetch_and_parse_details import FetchAndParseDetails
 from core_lib.core.processing_chain import Chain, OnlyValidEvents, OnlyChangedEventsFilter, DatabaseSink
@@ -55,10 +57,12 @@ class VenueProcessor(ABC):
             database_sink.flush()
             # self.open_census_helper.count_venue_total(self.venue, database_sink.total_sunk)
             logging.getLogger(__name__).info("Upserted %d events for %s", database_sink.total_sunk, self.venue.venue_id)
-            self.venue.last_fetched_date = datetime.now()
+            self.venue.last_fetched_date = datetime.now(tz=pytz.utc)
             self.venue_repository.upsert(self.venue)
         except IOError as exception:
             logging.getLogger(__name__).exception("Unable to sync %s %s", self.venue.venue_id, exception)
+        except AppException as app_exception:
+            logging.getLogger(__name__).exception("Cannot sync", exc_info=app_exception)
         return database_sink.total_sunk
 
     @abstractmethod

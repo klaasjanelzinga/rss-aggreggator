@@ -1,0 +1,623 @@
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=107111&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/09/Plants-2400-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://p.scdn.co/mp3-preview/689576e0892ae873b0df5cc8b4a0385c731d9eb1?cid=4d3ed0c8310446659ee82c9537337218" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    WORDT VERPLAATST                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Plants And Animals<sup class="origin ">CAN</sup></h3>
+        <div>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;10,- | doors: 20:30 - 21:30 | start: 21:00</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert " href="https://vera.stager.nl/web/tickets/111012171" target="_blank">Koop ticket</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=107558&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/10/meadow2400-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://p.scdn.co/mp3-preview/05157b0fc62d394e6c5b92e7f2c201cb04fd18ad?cid=4d3ed0c8310446659ee82c9537337218" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    VERPLAATST NAAR                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Meadowlake<sup class="origin ">GRN</sup></h3>
+        <div>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;5,- | doors: 21:00 - 21:30 | start: 21:30</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert soldout-event" href="https://vera.stager.nl/web/tickets/111024385" target="_blank">Sold out</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=106880&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2019/11/benjamin_herman_7-1746x981-c-center-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://open.spotify.com/track/53kFiDelvHFg2W9oIpsnvB?si=sPGhbt0IQAa9U7btbFTKiw" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    VROEGE SHOW                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Benjamin Herman's Bughouse<sup class="origin "></sup></h3>
+        <div>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;13,- | doors: 16:00 - 16:30 | start: 16:30</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert soldout-event" href="https://vera.stager.nl/web/tickets/450515" target="_blank">Sold out</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=103720&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2019/11/benjamin_herman_7-1746x981-c-center-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://open.spotify.com/track/53kFiDelvHFg2W9oIpsnvB?si=sPGhbt0IQAa9U7btbFTKiw" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    LATE SHOW                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Benjamin Herman's Bughouse<sup class="origin "></sup></h3>
+        <div>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;13,- | doors: 20:00 - 20:30 | start: 20:30</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert soldout-event" href="https://vera.stager.nl/web/tickets/391152" target="_blank">Sold out</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=107333&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/09/Rats-webheader-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://p.scdn.co/mp3-preview/7431de041db8023b31921d7d8e615624e2262ea4?cid=4d3ed0c8310446659ee82c9537337218" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                    {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Rats on Rafts<sup class="origin ">NL</sup></h3>
+        <div>
+                            <h4 class="extra ">
+                                            Support<sup class="origin "></sup>
+                                    </h4>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;12,- | doors: 20:30 - 22:30 | start: 21:00</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert " href="https://vera.stager.nl/web/tickets/111018929" target="_blank">Koop ticket</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=107469&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/10/jan-rot-webheader-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://p.scdn.co/mp3-preview/0ca9d90e7394a1c3adc3295a142be41d42a79fe5?cid=4d3ed0c8310446659ee82c9537337218" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    VERPLAATST NAAR                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Jan Rot<sup class="origin "></sup></h3>
+        <div>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;10,- | doors: 19:00 - 19:30 | start: 19:30</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert " href="https://vera.stager.nl/web/tickets/111022625" target="_blank">Koop ticket</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=107471&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/10/jan-rot-webheader-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://p.scdn.co/mp3-preview/0ca9d90e7394a1c3adc3295a142be41d42a79fe5?cid=4d3ed0c8310446659ee82c9537337218" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    VERPLAATST NAAR                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Jan Rot<sup class="origin "></sup></h3>
+        <div>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;10,- | doors: 21:00 - 21:30 | start: 21:30</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert " href="https://vera.stager.nl/web/tickets/111022626" target="_blank">Koop ticket</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=107292&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/09/traumastones-2400-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://p.scdn.co/mp3-preview/925f3b73aaf835d4c30faa90385357f63ac07137?cid=4d3ed0c8310446659ee82c9537337218" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    VROEGE SHOW / VERPLAATST NAAR                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Traumahelikopter<sup class="origin "></sup></h3>
+        <div>
+                            <h4 class="extra ">
+                                            plays the Rolling Stones <sup class="origin "></sup>
+                                    </h4>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;7,- | doors: 19:30 - 20:00 | start: 20:00</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert soldout-event" href="https://vera.stager.nl/web/tickets/111018066" target="_blank">Sold out</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=107296&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/09/traumastones-2400-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://p.scdn.co/mp3-preview/925f3b73aaf835d4c30faa90385357f63ac07137?cid=4d3ed0c8310446659ee82c9537337218" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    LATE SHOW / VERPLAATST NAAR                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Traumahelikopter<sup class="origin "></sup></h3>
+        <div>
+                            <h4 class="extra ">
+                                            plays The Rolling Stones <sup class="origin "></sup>
+                                    </h4>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;7,- | doors: 21:30 - 22:00 | start: 22:00</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert soldout-event" href="https://vera.stager.nl/web/tickets/111018069" target="_blank">Sold out</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=107381&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/09/traumastones-2400-1-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://p.scdn.co/mp3-preview/925f3b73aaf835d4c30faa90385357f63ac07137?cid=4d3ed0c8310446659ee82c9537337218" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    VROEGE SHOW / VERPLAATST NAAR                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Traumahelikopter<sup class="origin "></sup></h3>
+        <div>
+                            <h4 class="extra ">
+                                            plays The Rolling Stones <sup class="origin "></sup>
+                                    </h4>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;7,- | doors: 16:00 - 16:30 | start: 16:30</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert soldout-event" href="https://vera.stager.nl/web/tickets/111019784" target="_blank">Sold out</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=107384&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/09/traumastones-2400-1-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://p.scdn.co/mp3-preview/925f3b73aaf835d4c30faa90385357f63ac07137?cid=4d3ed0c8310446659ee82c9537337218" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    LATE SHOW / VERPLAATST NAAR                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Traumahelikopter<sup class="origin "></sup></h3>
+        <div>
+                            <h4 class="extra ">
+                                            plays The Rolling Stones <sup class="origin "></sup>
+                                    </h4>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;7,- | doors: 20:00 - 20:30 | start: 20:30</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert soldout-event" href="https://vera.stager.nl/web/tickets/111019785" target="_blank">Sold out</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=104326&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/10/marike-2-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://p.scdn.co/mp3-preview/b6ed6f95398ae21c80a47a961d33b96c80d5f261?cid=4d3ed0c8310446659ee82c9537337218" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    VERPLAATST NAAR                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Marike Jager & Martijn Bosman<sup class="origin "></sup></h3>
+        <div>
+                            <h4 class="extra ">
+                                            HIT ME<sup class="origin "></sup>
+                                    </h4>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;16,- | doors: 20:00 - 22:00 | start: 20:30</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert soldout-event" href="https://vera.stager.nl/web/tickets/401419" target="_blank">Sold out</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=107054&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/08/promofoto-Meindert-Igor-DJB-PePr-Kesanova-Show-site-360x250.jpg');">
+                                    </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    VERPLAATST NAAR                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">De Meindert & Igor & De Jonge Boschfazant & PePr & Kesanova Show<sup class="origin "></sup></h3>
+        <div>
+                            <h4 class="extra ">
+                                            LIVE: DAS AUDIO COMBO<sup class="origin "></sup>
+                                    </h4>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;5,- | doors: 20:00 - 20:30 | start: 20:30</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert soldout-event" href="https://vera.stager.nl/web/tickets/111007029" target="_blank">Sold out</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=105104&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/01/Feng-Suave-Tour-Announce-Jan-2020-PRESS-SHOT-banner-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://open.spotify.com/track/6B1Q7hi48RVUvak1SLoiJX?si=PCMWBC8gREC8vlMCfGOEXw" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-42 col-md-47 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    MOVED TO                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Feng Suave<sup class="origin ">NL</sup></h3>
+        <div>
+                            <h4 class="extra ">
+                                            Support: Banji <sup class="origin "></sup>
+                                    </h4>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;12,- | doors: 20:30 - 22:30 | start: 21:00</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                                            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=107888&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/12/vices-header-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="spotify:artist:6TSjJlhB2taxea58rCkMkj" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    VROEGE SHOW // SOLD OUT                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">The Vices<sup class="origin "></sup></h3>
+        <div>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;7,- | doors: 19:00 - 19:30 | start: 19:30</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert soldout-event" href="https://vera.stager.nl/web/tickets/111041400" target="_blank">Sold out</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=107889&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/12/vices-header-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="spotify:artist:6TSjJlhB2taxea58rCkMkj" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    LATE SHOW // SOLD OUT                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">The Vices<sup class="origin "></sup></h3>
+        <div>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;7,- | doors: 21:00 - 21:30 | start: 21:30</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert soldout-event" href="https://vera.stager.nl/web/tickets/111041395" target="_blank">Sold out</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=105945&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/02/kaia-kater-2400-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://p.scdn.co/mp3-preview/2e3db4da1bbb193b9ed21c183e9815cbcdcd8577?cid=4d3ed0c8310446659ee82c9537337218" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                    {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">Kaia Kater<sup class="origin ">CAN</sup></h3>
+        <div>
+                            <h4 class="extra ">
+                                            Support<sup class="origin "></sup>
+                                    </h4>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;10,- | doors: 20:00 - 22:00 | start: 20:30</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert " href="https://vera.stager.nl/web/tickets/422598" target="_blank">Koop ticket</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=107334&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/01/HI-RES-Foto-De-Kift-27mb-verabanner-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://open.spotify.com/track/68MmktEYGXRu63uOLgV7nK?si=g1tv2gZQQJuRJpYvqO-c4A" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    EXTRA SHOW / VERPLAATST NAAR                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">De Kift<sup class="origin "></sup></h3>
+        <div>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;16,- | doors: 19:00 - 19:30 | start: 19:30</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert " href="https://vera.stager.nl/web/tickets/111018804" target="_blank">Koop ticket</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xs-60 col-lg-60 event-wrapper fade-in nopad-hor">
+    <div class="row nopad-vert">
+        <a class="event-link vert-aligneable-container concert" href="http://www.vera-groningen.nl/?post_type=events&p=105245&lang=nl">
+            <div class="fade-in col-sm-18 col-md-13 col-lg-11 nopad hidden-xs-down">
+                <div class="image artist-image" style="background-image: url('https://www.vera-groningen.nl/content/uploads/2020/01/HI-RES-Foto-De-Kift-27mb-verabanner-360x250.jpg');">
+                                <div class="image track-preview">
+                <audio src="https://open.spotify.com/track/68MmktEYGXRu63uOLgV7nK?si=g1tv2gZQQJuRJpYvqO-c4A" type="audio/ogg"></audio>
+            </div>
+                        </div>
+            </div>
+            <div class="col-xs-60 col-sm-34 col-md-39 col-lg-41 nopad-vert pull-down data">
+                <div class="spacer20 hidden-xs-down"></div>
+                <div class="date">
+                                <h4 class="pretitle">
+                <span>
+                    LATE SHOW / VERPLAATST NAAR                </span>
+            </h4>
+            {{random_future_date:vera-groningen}}                </div>
+                <h3 class="artist ">De Kift<sup class="origin "></sup></h3>
+        <div>
+                                </div>
+                        <div class="schedule">Mainstage | Ticket: &euro;16,- | doors: 21:30 - 22:00 | start: 22:00</div>
+            </div>
+            <div class="col-xs-60 col-sm-8 col-md-8 col-lg-8 nopad pull-down visible-sm-up">
+
+                <div class="spacer20"></div>                
+            <object><a class="button hvr-shutter-out-vertical concert soldout-event" href="https://vera.stager.nl/web/tickets/411703" target="_blank">Sold out</a></object>
+                        </div>
+        </a>
+    </div>
+</div>
+

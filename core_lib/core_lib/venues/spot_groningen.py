@@ -15,13 +15,14 @@ from core_lib.core.venue_processor import VenueProcessor
 class SpotParser(Parser):
     dateformat: str = "%Y-%m-%dT:%H%M:%S%z"
 
-    def parse(self, parsing_context: ParsingContext) -> List[Event]:
+    def do_parse(self, parsing_context: ParsingContext) -> List[Event]:
         soup = BeautifulSoup(parsing_context.content, "html.parser")
         program_items = soup.find_all("article")
-        return [SpotParser._transform(parsing_context.venue, f) for f in program_items]
+        return [SpotParser._transform(parsing_context.venue, f, parsing_context) for f in program_items]
 
     @staticmethod
-    def _transform(venue: Venue, article: Tag) -> Event:
+    def _transform(venue: Venue, article: Tag, parsing_context: ParsingContext) -> Event:
+        parsing_context.currently_parsing = article
         source = venue.source_url
         base_url = venue.url
         url = article.a.get("href")

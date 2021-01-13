@@ -22,16 +22,8 @@ chardet==3.0.4
     # via
     #   aiohttp
     #   requests
-click==7.1.2
-    # via flask
 dateparser==1.0.0
     # via -r requirements.in
-flask-cors==3.0.10
-    # via -r requirements.in
-flask==1.1.2
-    # via
-    #   -r requirements.in
-    #   flask-cors
 google-api-core[grpc]==1.24.1
     # via
     #   -r requirements.in
@@ -57,14 +49,8 @@ idna==2.10
     # via
     #   requests
     #   yarl
-itsdangerous==1.1.0
-    # via flask
-jinja2==2.11.2
-    # via flask
 libcst==0.3.16
     # via google-cloud-datastore
-markupsafe==1.1.1
-    # via jinja2
 multidict==5.1.0
     # via
     #   aiohttp
@@ -105,7 +91,6 @@ rsa==4.6
     # via google-auth
 six==1.15.0
     # via
-    #   flask-cors
     #   google-api-core
     #   google-auth
     #   google-cloud-core
@@ -125,8 +110,6 @@ tzlocal==2.1
     # via dateparser
 urllib3==1.26.2
     # via requests
-werkzeug==1.0.1
-    # via flask
 yarl==1.6.3
     # via aiohttp
 

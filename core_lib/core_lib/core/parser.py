@@ -3,13 +3,14 @@ import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from datetime import datetime
-from typing import List, Optional
+from typing import List, Optional, Any
 
 import dateparser
 import pytz
 from bs4 import Tag
 from dateutil.relativedelta import relativedelta
 
+from core_lib.core.exceptions import AppException
 from core_lib.core.models import Event, Venue
 
 
@@ -17,12 +18,28 @@ from core_lib.core.models import Event, Venue
 class ParsingContext:
     venue: Venue
     content: str
+    currently_parsing: Optional[Any] = None
+
+
+class ParsingFailed(AppException):
+    def __init__(self, parsing_context: ParsingContext):
+        self.parsing_context = parsing_context
+        super().__init__(
+            f"Parsing failed of context {parsing_context.venue}. "
+            f"Currently parsing {parsing_context.currently_parsing}"
+        )
 
 
 class Parser(ABC):
     @abstractmethod
-    def parse(self, parsing_context: ParsingContext) -> List[Event]:
+    def do_parse(self, parsing_context: ParsingContext) -> List[Event]:
         pass
+
+    def parse(self, parsing_context: ParsingContext) -> List[Event]:
+        try:
+            return self.do_parse(parsing_context)
+        except Exception as ex:  # noqa: B902
+            raise ParsingFailed(parsing_context) from ex
 
     def update_event_with_details(self, event: Event, additional_details: str) -> Event:
         pass

@@ -14,14 +14,15 @@ from core_lib.core.venue_processor import VenueProcessor
 
 
 class SimplonParser(Parser):
-    def parse(self, parsing_context: ParsingContext) -> List[Event]:
+    def do_parse(self, parsing_context: ParsingContext) -> List[Event]:
         soup = BeautifulSoup(parsing_context.content, features="html.parser")
         events = soup.find_all("a", {"class": "item"})
 
-        return [SimplonParser._transform(parsing_context.venue, tag) for tag in events]
+        return [SimplonParser._transform(parsing_context.venue, tag, parsing_context) for tag in events]
 
     @staticmethod
-    def _transform(venue: Venue, tag: Tag) -> Event:
+    def _transform(venue: Venue, tag: Tag, parsing_context: ParsingContext) -> Event:
+        parsing_context.currently_parsing = tag
         simplon_url = tag.get("href")
         title = tag.get("title")
         subtitle_tag = tag.find("div", {"class": "subtitle"})
@@ -68,7 +69,7 @@ class SimplonProcessor(VenueProcessor):
             country="NL",
             timezone="Europe/Amsterdam",
             email="info@simplon.nl",
-            source_url="https://www.simplon.nl/agenda",
+            source_url="https://www.simplon.nl",
             url="https://www.simplon.nl",
         )
 

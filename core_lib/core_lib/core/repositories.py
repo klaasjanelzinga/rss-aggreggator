@@ -152,11 +152,6 @@ class EventRepository:
         query_iter = query.fetch(start_cursor=google_cursor, limit=limit)
         return DatastoreUtils.construct_query_result_from_query(query_iter)
 
-    def fetch_all_items(self) -> Iterator:
-        query = self.client.query(kind="Event")
-        query.order = ["when"]
-        return query.fetch()
-
     def fetch_all_rss_items(self) -> Iterator:
         query = self.client.query(kind="Event")
         query.add_filter("date_published", ">", datetime.now() - timedelta(days=7))

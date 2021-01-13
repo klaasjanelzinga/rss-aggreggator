@@ -16,12 +16,13 @@ from core_lib.core.venue_processor import VenueProcessor
 
 
 class TivoliParser(Parser):
-    def parse(self, parsing_context: ParsingContext) -> List[Event]:
+    def do_parse(self, parsing_context: ParsingContext) -> List[Event]:
         program_items = json.loads(parsing_context.content)
-        return [TivoliParser._transform(parsing_context.venue, f) for f in program_items]
+        return [TivoliParser._transform(parsing_context.venue, f, parsing_context) for f in program_items]
 
     @staticmethod
-    def _transform(venue: Venue, data: Dict) -> Event:
+    def _transform(venue: Venue, data: Dict, parsing_context: ParsingContext) -> Event:
+        parsing_context.currently_parsing = data
         source = venue.source_url
         tivoli_url = data["link"]
         title = data["title"]

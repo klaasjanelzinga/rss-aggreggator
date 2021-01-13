@@ -23,7 +23,7 @@ class MelkwegParser(Parser):
             else event["name"]
         )
 
-    def parse(self, parsing_context: ParsingContext) -> List[Event]:
+    def do_parse(self, parsing_context: ParsingContext) -> List[Event]:
         venue = parsing_context.venue
         source = venue.source_url
         content = json.loads(parsing_context.content)
@@ -32,6 +32,7 @@ class MelkwegParser(Parser):
         for day in content:
             events = [event for event in day["events"] if event["type"] == "event"]
             for event in events:
+                parsing_context.currently_parsing = event
                 description = MelkwegParser._make_description(event)
                 date = datetime.fromtimestamp(int(event["date"]), pytz.timezone(venue.timezone))
                 title = event["name"]

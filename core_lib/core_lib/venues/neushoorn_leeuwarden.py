@@ -15,10 +15,11 @@ from core_lib.core.venue_processor import VenueProcessor
 
 
 class NeushoornParser(Parser):
-    def parse(self, parsing_context: ParsingContext) -> List[Event]:
+    def do_parse(self, parsing_context: ParsingContext) -> List[Event]:
         root = ElementTree.fromstring(parsing_context.content)
         events = []
         for item in root.iter("item"):
+            parsing_context.currently_parsing = item
             maybe_url = item.find("link")
             maybe_description = item.find("description")
             maybe_title = item.find("title")

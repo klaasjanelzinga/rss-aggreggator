@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup, Tag
 
 from core_lib.core.app_config import AppConfig
 from core_lib.core.models import Event, Venue
-from core_lib.core.parser import Parser, ParsingContext, ParserUtil
+from core_lib.core.parser import Parser, ParsingContext
 from core_lib.core.processing_chain import DatabaseSink, Chain, OnlyEventsWithWhen
 from core_lib.core.repositories import EventRepository, VenueRepository
 from core_lib.core.source import Source
@@ -38,7 +38,7 @@ class HedonParser(Parser):
     </article>
     """
 
-    def parse(self, parsing_context: ParsingContext) -> List[Event]:
+    def do_parse(self, parsing_context: ParsingContext) -> List[Event]:
         soup = BeautifulSoup(parsing_context.content, "html.parser")
         program_items = soup.find_all("article")
         unique_items: Dict[str, Tag] = {}
@@ -54,10 +54,11 @@ class HedonParser(Parser):
                     unique_items[url] = program_item
                 if has_time and not old_has_time:
                     unique_items[url] = program_item
-        return [HedonParser._transform(parsing_context.venue, f) for f in unique_items.values()]
+        return [HedonParser._transform(parsing_context.venue, f, parsing_context) for f in unique_items.values()]
 
     @staticmethod
-    def _transform(venue: Venue, article: Tag) -> Event:
+    def _transform(venue: Venue, article: Tag, parsing_context: ParsingContext) -> Event:
+        parsing_context.currently_parsing = article
         source = venue.source_url
         base_url = venue.url
         url = f"{base_url}{article.a.get('href')}"
@@ -69,9 +70,9 @@ class HedonParser(Parser):
             figure = article.find("figure").img.get("src")
             figure = f"https:{figure}" if not figure.startswith("https://") else figure
         if article.find("time"):
-            date = article.find("time", {"class": "date"}).text
-            time = article.find("time", {"class": "time"}).text
-            when = ParserUtil.parse_date_time_to_datetime(date, time, venue.timezone)
+            date = article.find("time", {"class": "date"})["datetime"]
+            time = article.find("time", {"class": "time"})["datetime"]
+            when = venue.convert_utc_to_venue_timezone(datetime.fromisoformat(f"{date}T{time}"))
 
         return Event(
             url=url,

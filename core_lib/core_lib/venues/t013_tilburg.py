@@ -17,7 +17,7 @@ from core_lib.core.venue_processor import VenueProcessor
 class T013Parser(Parser):
     dateformat: str = "%Y-%m-%dT:%H%M:%S%z"
 
-    def parse(self, parsing_context: ParsingContext) -> List[Event]:
+    def do_parse(self, parsing_context: ParsingContext) -> List[Event]:
         soup = BeautifulSoup(parsing_context.content, "html.parser")
         program_items = soup.find("body").find_all_next("script")
         data_script = [p for p in program_items if "src" not in p][0].string
@@ -26,12 +26,16 @@ class T013Parser(Parser):
         json_script = data_script[start_index:end_index]
         json_script = json_script.replace("\\n", "").replace("""\\""", "")
         json_data_events = json.loads(json_script)
-        return [T013Parser._transform(parsing_context.venue, json_data) for json_data in json_data_events["events"]]
+        return [
+            T013Parser._transform(parsing_context.venue, json_data, parsing_context)
+            for json_data in json_data_events["events"]
+        ]
 
     @staticmethod
-    def _transform(venue: Venue, json_event: Dict) -> Event:
+    def _transform(venue: Venue, json_event: Dict, parsing_context: ParsingContext) -> Event:
+        parsing_context.currently_parsing = json_event
         title = json_event["title"]
-        description = json_event["subtitle"]
+        description = json_event["subTitle"]
         if not description:
             description = title
         if "supportAct" in json_event and not json_event["supportAct"] is None:
