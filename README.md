@@ -1,7 +1,7 @@
 # rss-aggreggator
 
 
-Master is ![](https://github.com/klaasjanelzinga/rss-aggreggator/workflows/Deploy%20application/badge.svg)
+Main is ![](https://github.com/klaasjanelzinga/rss-aggreggator/workflows/Deploy%20application/badge.svg)
 
 The application is constists of the following modules: 
 
