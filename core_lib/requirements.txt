@@ -51,6 +51,8 @@ idna==2.10
     #   yarl
 libcst==0.3.16
     # via google-cloud-datastore
+lxml==4.6.2
+    # via -r requirements.in
 multidict==5.1.0
     # via
     #   aiohttp

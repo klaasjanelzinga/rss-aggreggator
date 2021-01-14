@@ -1,9 +1,8 @@
 from dataclasses import dataclass
 from datetime import datetime
-from xml.etree import ElementTree
-from xml.etree.ElementTree import Element, SubElement
 
 import pytz
+from lxml.etree import Element, SubElement, tostring
 
 from core_lib.core.fetcher_util import setlocale
 from core_lib.core.models import Event
@@ -25,7 +24,7 @@ class RSSChannel:
     docs: str = "https://cyber.harvard.edu/rss/rss.html"
 
     def generate_pre_amble(self) -> str:
-        root = Element("rss", {"version": "2.0"})
+        root = Element("rss", version="2.0")
         channel = SubElement(root, "channel")
         SubElement(channel, "title").text = self.title
         SubElement(channel, "link").text = self.link
@@ -39,7 +38,7 @@ class RSSChannel:
         SubElement(image, "url").text = f"{self.link}/channel-image.png"
         SubElement(image, "title").text = self.title
         SubElement(image, "link").text = self.link
-        return ElementTree.tostring(root, encoding="unicode")
+        return tostring(root).decode("utf-8")
 
     @staticmethod
     def generate_post_amble() -> str:
@@ -65,7 +64,7 @@ class RSSItem:
         SubElement(item_element, "source").text = self.source
         SubElement(item_element, "author").text = self.author
         SubElement(item_element, "pubDate").text = self.pub_date
-        return ElementTree.tostring(item_element)
+        return tostring(item_element)
 
 
 class Transformer:

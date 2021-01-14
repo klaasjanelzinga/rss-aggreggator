@@ -219,7 +219,7 @@ def fetch_rss() -> Any:
     def generate() -> Generator:
         rss_channel = RSSChannel()
         pre_amble = rss_channel.generate_pre_amble()
-        yield pre_amble.replace("</rss>", "").replace("</channel>", "").encode("UTF-8")
+        yield pre_amble.replace("</rss>", "").replace("</channel>", "")
         for event in [
             event_entity_transformer.to_event(event)
             for event in repositories.event_repository.fetch_all_rss_items()

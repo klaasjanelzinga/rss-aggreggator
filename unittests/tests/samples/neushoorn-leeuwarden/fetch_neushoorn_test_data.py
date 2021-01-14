@@ -1,10 +1,9 @@
 import asyncio
 import os
-from xml.etree import ElementTree
 
 from aiohttp import ClientSession
 from aiohttp.client import ClientTimeout
-
+from lxml.etree import fromstring
 
 """
 1. fetch index pages from neushoorn:
@@ -17,7 +16,7 @@ curl neushoorn.nl/upcoming-events.xml
 async def fetch(filename: str, client_session: ClientSession):
     directory = os.path.dirname(filename)
     with open(filename) as json_fp:
-        root = ElementTree.fromstring("".join(json_fp.readlines()))
+        root = fromstring("".join(json_fp.readlines()))
         item_no = 0
         for item in root.iter("item"):
             url = item.find("link").text

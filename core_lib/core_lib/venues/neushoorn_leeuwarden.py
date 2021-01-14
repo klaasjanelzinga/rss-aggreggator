@@ -1,9 +1,9 @@
 from datetime import datetime
 from typing import List, AsyncIterable
-from xml.etree import ElementTree
 
 from aiohttp import ClientSession
 from bs4 import BeautifulSoup
+from lxml import etree
 
 from core_lib.core.fetch_and_parse_details import FetchAndParseDetails
 from core_lib.core.models import Event, Venue
@@ -16,7 +16,7 @@ from core_lib.core.venue_processor import VenueProcessor
 
 class NeushoornParser(Parser):
     def do_parse(self, parsing_context: ParsingContext) -> List[Event]:
-        root = ElementTree.fromstring(parsing_context.content)
+        root = etree.fromstring(parsing_context.content)
         events = []
         for item in root.iter("item"):
             parsing_context.currently_parsing = item

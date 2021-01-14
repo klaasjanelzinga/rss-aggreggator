@@ -1,6 +1,5 @@
-from xml.etree import ElementTree
-
 from hamcrest import assert_that, equal_to, is_not, none
+from lxml.etree import fromstring
 
 from core_lib.core.rss import RSSChannel
 
@@ -9,7 +8,7 @@ def test_as_xml():
     channel = RSSChannel()
     as_xml = channel.generate_pre_amble()
     assert_that(as_xml, is_not(none()))
-    root = ElementTree.fromstring(as_xml)
+    root = fromstring(as_xml)
     channel = root.findall("channel")
     assert_that(len(channel), equal_to(1))
     assert_that(channel[0].find("title").text, equal_to("Events from all venues"))

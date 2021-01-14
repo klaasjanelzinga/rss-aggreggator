@@ -62,3 +62,7 @@ fetch-integration-test-data:
 
 fetch-data:
 	curl localhost:8090/cron/fetch-data
+
+fetch-events-xml:
+	curl localhost:8080/events.xml
+

@@ -10,6 +10,7 @@ pytest
 pytest-asyncio
 pytest-cov
 faker
+lxml
 PyHamcrest
 
 # Linting
@@ -28,6 +29,5 @@ flake8-functions
 flake8-todo
 flake8-variables-names
 flake8-tidy-imports
-flake8-bandit
 flake8-assertive
 pylint
