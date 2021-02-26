@@ -62,6 +62,7 @@ confidence=
 # --disable=W".
 disable=print-statement,
         missing-docstring,
+			unsubscriptable-object,
         parameter-unpacking,
         C0330,
         R0801,
