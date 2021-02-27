@@ -37,6 +37,8 @@ do
 
   docker tag rss-aggregator/$service:$version gcr.io/rss-aggregator-v3/$service:$version
   docker push gcr.io/rss-aggregator-v3/$service:$version
+  docker tag rss-aggregator/$service:$version gcr.io/rss-aggregator-v3/$service:latest
+  docker push gcr.io/rss-aggregator-v3/$service:latest
   gcloud --project rss-aggregator-v3 run deploy $service --platform managed --region europe-west4 $EXTRA_ARGS --image=gcr.io/rss-aggregator-v3/$service:$version
 done
 
