@@ -9,6 +9,8 @@ project_dir="$(cd "${script_dir}"/.. && pwd )"
 
 cd "$project_dir" || (echo "project_dir not found" && exit 1)
 
+mkdir -p $project_dir/secrets
+
 if [ -z "$DEPLOYER_KEY" ]
 then
     echo "password not set"
