@@ -30,7 +30,7 @@ echo "Building app containers"
 for service in unittests cron api frontend
 do
   set +e
-  docker pull gcr.io/newsroom-v1/${service}:latest
+  docker pull gcr.io/rss-aggregator-v3/${service}:latest
   set -e
   (cd $script_dir/.. && docker build --cache-from gcr.io/rss-aggregator-v3/${service}:latest -t ${application}/${service}:$VERSION -f ${service}/Dockerfile .)
   docker tag ${application}/${service}:$VERSION ${application}/${service}:latest

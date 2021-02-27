@@ -36,7 +36,7 @@ do
   source ${project_dir}/etc/deploy-settings-$service.env
 
   docker tag rss-aggregator/$service:$version gcr.io/rss-aggregator-v3/$service:$version
-  docker push gcr.io/rss-aggregator-v3/$service
+  docker push gcr.io/rss-aggregator-v3/$service:$version
   gcloud --project rss-aggregator-v3 run deploy $service --platform managed --region europe-west4 $EXTRA_ARGS --image=gcr.io/rss-aggregator-v3/$service:$version
 done
 
